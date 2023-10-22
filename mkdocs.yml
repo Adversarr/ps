@@ -1,0 +1,42 @@
+site_name: PS is not Physical Simulation
+nav:
+  - Home: index.md
+  - Papers: Papers/index.md
+  - Conf&Jour: confandjour.md
+  - Tags: tags.md
+  - Wiki: Wiki/index.md
+
+hooks:
+  - libr.py
+paperSourceIndexFile: 'confandjour.md'
+
+theme: 
+  name: material
+  features:
+    - header.autohide
+    - navigation.tabs
+
+plugins:
+  - tags:
+      enabled: true
+      tags_file: tags.md
+  - blog:
+      enabled: true
+      blog_dir: Papers
+      post_dir: "{blog}/_articles"
+
+markdown_extensions:
+  - tables
+  - toc
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
