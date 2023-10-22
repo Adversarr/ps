@@ -1,4 +1,5 @@
 site_name: PS is not Physical Simulation
+site_url: https://adversarr.github.io/ps/
 nav:
   - Home: index.md
   - Papers: Papers/index.md
