@@ -1,0 +1,866 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://adversarr.github.io/ps/Wiki/FluidSimulation/LBM/books/LBM%20Principles%20and%20practice/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+    
+    
+      
+        <title>LBM: Principles and practice - PS is not Physical Simulation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.35e1ed30.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="PS is not Physical Simulation" class="md-header__button md-logo" aria-label="PS is not Physical Simulation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PS is not Physical Simulation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              LBM: Principles and practice
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../Papers/" class="md-tabs__link">
+        
+  
+    
+  
+  Papers
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../registry/" class="md-tabs__link">
+        
+  
+    
+  
+  Registry
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../tags/" class="md-tabs__link">
+        
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../" class="md-tabs__link">
+        
+  
+    
+  
+  Wiki
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="PS is not Physical Simulation" class="md-nav__button md-logo" aria-label="PS is not Physical Simulation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    PS is not Physical Simulation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Papers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Papers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../registry/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Registry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tags/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tags
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wiki
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ns" class="md-nav__link">
+    NS、连续介质力学
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    动力学
+  </a>
+  
+    <nav class="md-nav" aria-label="动力学">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    分布函数和它的动量
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    稳定分布函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boltzmann-eqn-and-collision-operator" class="md-nav__link">
+    Boltzmann eqn and collision operator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    宏观守恒定律
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boltzmann-theorem" class="md-nav__link">
+    Boltzmann Theorem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+<nav class="md-tags" >
+  
+    
+    
+    
+      <a href="../../../../../tags/#lbm" class="md-tag">LBM</a>
+    
+  
+</nav>
+
+
+
+<p>Hierarchy in wiki:</p>
+<ul>
+<li><a href="../../../../">Wiki/</a></li>
+<li><a href="../../../">Wiki/FluidSimulation/</a></li>
+<li><a href="../../">Lattice Boltzmann Method</a></li>
+</ul>
+<hr>
+<!-- more -->
+
+<h1 id="_1">空气动力学</h1>
+<h2 id="ns">NS、连续介质力学</h2>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=26">The Lattice Boltzmann Method Principles and Practice.pdf - p26 - 连续性方程</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P26-20231014205622-20231014205624-xt2obbk.png" />​</p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=27">The Lattice Boltzmann Method Principles and Practice.pdf - p27 - the change of net momentum can be due to (i) flow of momentum into or out of the fluid element, (ii) differences in pressure p and (iii) external body forces F. </a></p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=28">The Lattice Boltzmann Method Principles and Practice.pdf - p28 - Euler 方程：流体的动量守恒形式</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P28-20231014205801-20231014205803-wu1b0jb.png" />​</p>
+<blockquote>
+<p>流体控制方程主要是如下形式：（非守恒形式）</p>
+<blockquote>
+<p><a href="https://en.wikipedia.org/wiki/Navier–Stokes_equations">Navier–Stokes equations</a>
+</p>
+</blockquote>
+<div class="arithmatex">\[
+\begin{aligned}
+\frac{\partial \vec u}{ \partial t} + \vec u \cdot \nabla \vec u + \frac 1 {\rho} \nabla p
+&amp;= \vec g + \nu\nabla ^2 \vec u\\
+\nabla \cdot \vec u&amp; = 0
+\end{aligned}
+\]</div>
+</blockquote>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=29">The Lattice Boltzmann Method Principles and Practice.pdf - p29 - NS方程</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P29-20231014210156-20231014210158-q1e4xhp.png" />​</p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=29">The Lattice Boltzmann Method Principles and Practice.pdf - p29 - 不可压缩流的NS方程（非守恒型）</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P29-20231014210223-20231014210225-61xzcm7.png" />​</p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=31">The Lattice Boltzmann Method Principles and Practice.pdf - p31 - 理想气体的状态方程</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P31-20231014210415-20231014210417-kpwebx9.png" />​</p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=32">The Lattice Boltzmann Method Principles and Practice.pdf - p32 - 恒定压强</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P32-20231014210436-20231014210438-v59d41e.png" />​</p>
+<h2 id="_2">动力学</h2>
+<h3 id="_3">分布函数和它的动量</h3>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=38">The Lattice Boltzmann Method Principles and Practice.pdf - p38 - 分布</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P38-20231014210554-20231014210558-3cn6eo5.png" />​</p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=39">The Lattice Boltzmann Method Principles and Practice.pdf - p39 - 动量和质量密度，通过动量来联系</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P39-20231014210627-20231014210629-tgzi2kk.png" />​</p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=40">The Lattice Boltzmann Method Principles and Practice.pdf - p40 - The Lattice Boltzmann Method Principles and Practice-P40-20231014210700</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P40-20231014210700-20231014210702-defh75w.png" />​</p>
+<h3 id="_4">稳定分布函数</h3>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=42">The Lattice Boltzmann Method Principles and Practice.pdf - p42 - The Lattice Boltzmann fMethod Principles and Practice-P42-20231014210732</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P42-20231014210732-20231014210733-trvwdc6.png" />​</p>
+<h3 id="boltzmann-eqn-and-collision-operator">Boltzmann eqn and collision operator</h3>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=43">The Lattice Boltzmann Method Principles and Practice.pdf - p43 - The Lattice Boltzmann Method Principles and Practice-P43-20231014210927</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P43-20231014210927-20231014210929-vmemk2k.png" />​</p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=44">The Lattice Boltzmann Method Principles and Practice.pdf - p44 - 守恒律表达</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P44-20231014211025-20231014211027-qvts5nr.png" />​</p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=44">The Lattice Boltzmann Method Principles and Practice.pdf - p44 - BGK model</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P44-20231014211005-20231014211006-4b9wa3p.png" />​</p>
+<h3 id="_5">宏观守恒定律</h3>
+<p>验证细节不展开了。自动满足：</p>
+<ol>
+<li>质量守恒：<a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=46">The Lattice Boltzmann Method Principles and Practice.pdf - p46 - the collision operator’s mass conservation property</a></li>
+<li>动量守恒</li>
+<li>能量守恒</li>
+</ol>
+<h3 id="boltzmann-theorem">Boltzmann Theorem</h3>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=49">The Lattice Boltzmann Method Principles and Practice.pdf - p49 - The Lattice Boltzmann Method Principles and Practice-P49-20231014211805</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P49-20231014211805-20231014211807-wslf2ok.png" />​</p>
+<p>最小化熵。</p>
+<h1 id="the-lattice-boltzmann-equation">The lattice boltzmann equation</h1>
+<ul>
+<li>之前的Boltzmann方程，描述了统计意义下的气体变化性质<a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=81">The Lattice Boltzmann Method Principles and Practice.pdf - p81 - The Boltzmann equation in Sect. 1.3 describes the dynamics of a gas on amesoscopic scale. </a></li>
+<li>尽管BE比NSE更加复杂（七个变量），但如果有好的数值方法，就比nse好算。<a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=82">The Lattice Boltzmann Method Principles and Practice.pdf - p82 - solve the Boltzmann equation numerically,this may also indirectly give us a solution to the NSE</a></li>
+</ul>
+<p>我们还是重新强调一下Incompressible的NSE的形式：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\frac{\partial \vec u}{ \partial t} + \vec u \cdot \nabla \vec u + \frac 1 {\rho} \nabla p
+&amp;= \vec g + \nu\nabla ^2 \vec u\\
+\nabla \cdot \vec u&amp; = 0
+\end{aligned}
+\]</div>
+<p>一个重要的事实是：</p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=82">The Lattice Boltzmann Method Principles and Practice.pdf - p82 - The Lattice Boltzmann Method Principles and Practice-P82-20231015101823</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P82-20231015101823-20231015101825-duugf8d.png" />​</p>
+<p>之前的数值方法的主要缺点是，对流项很难处理</p>
+<blockquote>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=82">The Lattice Boltzmann Method Principles and Practice.pdf - p82 - A major difficulty with these methods is discretising the advection term .u  r/u;complicated iterative numerical schemes with approximation errors are introduced to deal with this.</a></p>
+</blockquote>
+<h2 id="the-lattice-boltzmann-method-in-a-nutshell">The lattice boltzmann method in a nutshell</h2>
+<p>A quick intro.</p>
+<h3 id="overview">Overview</h3>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=83">The Lattice Boltzmann Method Principles and Practice.pdf - p83 - 密度和动量的计算从概率密度中恢复。</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P83-20231015110351-20231015110352-j85bact.png" />​</p>
+<p>单位可以通过一系列转化，变成“相同”的（无量纲数不变）》 </p>
+<blockquote>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=83">The Lattice Boltzmann Method Principles and Practice.pdf - p83 - another possible choice would be Imperial units. The most common choice in the LB literature, however, is lattice units, a simple artificial set of units scaled such that ĩt D 1 and ĩx D 1.</a></p>
+</blockquote>
+<p>常用的速度集合：<a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=83">The Lattice Boltzmann Method Principles and Practice.pdf - p83 - The most commonly used velocity sets to solve the Navier-Stokes equation are D1Q3, D2Q9, D3Q15, D3Q19 and D3Q27. </a></p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=84">The Lattice Boltzmann Method Principles and Practice.pdf - p84 - Lattice Boltzmann Equation：差分</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P84-20231015110801-20231015110803-2umcal7.png" />​</p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=84">The Lattice Boltzmann Method Principles and Practice.pdf - p84 - BGK碰撞算子</a>：注意稳定态对速度是非线性的<br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P84-20231015110938-20231015110939-vcyirup.png" />​</p>
+<p>其中的 <span class="arithmatex">\(w_i\)</span> 的选取和速度集合有关。</p>
+<p>这样的<span class="arithmatex">\(f_i^{eq}\)</span>能够保证<strong>动量</strong>和<strong>质量守恒</strong>。</p>
+<p>如果是无粘性流体，<span class="arithmatex">\(\Omega_i = - \frac12 (f_i - f_i^{eq})\)</span></p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=85">The Lattice Boltzmann Method Principles and Practice.pdf - p85 - 粘性项与等式中的参数的关系</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P85-20231015112245-20231015112247-vj658ki.png" />​</p>
+<h3 id="time-stepping">Time stepping</h3>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=85">The Lattice Boltzmann Method Principles and Practice.pdf - p85 - LatticeBoltzmann + BGK Operator ⇒ LBGK eqn</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P85-20231015112426-20231015112428-ugjnho9.png" />​</p>
+<p>分成两部分：</p>
+<ol>
+<li>Relaxation/Collision</li>
+<li>Propagation</li>
+</ol>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=86">The Lattice Boltzmann Method Principles and Practice.pdf - p86 - 不考虑所有其他外界情况下，LBM的两步骤</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P86-20231015112556-20231015112557-ybcaq2b.png" />​</p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=85">The Lattice Boltzmann Method Principles and Practice.pdf - p85 - The Lattice Boltzmann Method Principles and Practice-P85-20231015112638</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P85-20231015112638-20231015112640-lzlwhor.png" />​</p>
+<p>需要注意的是：</p>
+<ol>
+<li>
+<p>collision是<strong>局部的</strong>​</p>
+<ol>
+<li>计算密度 <span class="arithmatex">\(\rho\)</span>​</li>
+<li>计算宏观速度 <span class="arithmatex">\(u\)</span>​</li>
+<li>从而计算出平衡态的<span class="arithmatex">\(f_i^{eq}\)</span> ⇒ <span class="arithmatex">\(f_i^*\)</span></li>
+<li>stream，全局更新，但是线性且简单</li>
+</ol>
+</li>
+</ol>
+<blockquote>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=86">The Lattice Boltzmann Method Principles and Practice.pdf - p86 - 总结</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P86-20231015112804-20231015112806-60izka8.png" />​</p>
+</blockquote>
+<h3 id="implementation-of-lbm">Implementation of LBM</h3>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=87">The Lattice Boltzmann Method Principles and Practice.pdf - p87 - Full LBM</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P87-20231015112730-20231015112732-sq9xifk.png" />​</p>
+<p>初始化：假设流体从平衡态开始，当然也有别的初始化方法</p>
+<ul>
+<li>初始条件给出的是<span class="arithmatex">\(t=0\)</span>时刻的流体密度和速度场，通过之前的<span class="arithmatex">\(f_i^{eq}\)</span>公式给出。</li>
+</ul>
+<div class="arithmatex">\[
+f_i^{eq}(x, t=0) = f_i^{eq}(\rho(x, 0), u(x, 0))
+\]</div>
+<blockquote>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=87">The Lattice Boltzmann Method Principles and Practice.pdf - p87 - 初始化</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P87-20231015113136-20231015113137-2c5slwg.png" />​</p>
+</blockquote>
+<p>时间步：</p>
+<blockquote>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=87">The Lattice Boltzmann Method Principles and Practice.pdf - p87 - Time step</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P87-20231015113330-20231015113332-i1cfzr7.png" />​</p>
+</blockquote>
+<p>很简单吧。为了方便还是将平衡方程放在这里：</p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=84">The Lattice Boltzmann Method Principles and Practice.pdf - p84 - 平衡态分布函数</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P84-20231015113556-20231015113557-us8wce8.png" />​</p>
+<h3 id="memory-layout-and-coding-hint">Memory layout and coding hint</h3>
+<h2 id="_6">速度空间离散化</h2>
+<p>之前我们没有对于速度空间进行离散化。</p>
+<p>当然也可以直接对速度空间用稠密的网格进行离散，但是效率很低。我们可以直接将其限制在一个很稀疏的网格上：</p>
+<div class="arithmatex">\[
+f(v; x, t) = f(v_{i, j} ; x, t)
+\]</div>
+<p>这里的<span class="arithmatex">\(v_{i, j}\)</span>经过离散化后只有<span class="arithmatex">\(n\)</span>个，所以一般直接写成 <span class="arithmatex">\(v_i\)</span> 的形式，避免两重指标。</p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=91">The Lattice Boltzmann Method Principles and Practice.pdf - p91 - 经过相当粗暴的离散后，这样的方程依然足够求解NSE</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P91-20231015114610-20231015114611-1dcly1i.png" />​</p>
+<h3 id="non-dimensionalization">non-dimensionalization（无量纲化？）</h3>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=92">The Lattice Boltzmann Method Principles and Practice.pdf - p92 - 无量纲化过程</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P92-20231015115401-20231015115403-0sz8da7.png" />​</p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=93">The Lattice Boltzmann Method Principles and Practice.pdf - p93 - 维度无关形式</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P93-20231015114739-20231015114741-95esy8o.png" />​</p>
+<h3 id="conservation-laws">Conservation laws</h3>
+<p>我们需要找出在进行速度离散后，积分所对应的离散形式。</p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=93">The Lattice Boltzmann Method Principles and Practice.pdf - p93 - 守恒定律</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P93-20231015143121-20231015143123-8ul9fo8.png" />​</p>
+<h3 id="hermite-polynomials">Hermite Polynomials</h3>
+<p>对于积分离散近似很常用。</p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=97">The Lattice Boltzmann Method Principles and Practice.pdf - p97 - Hermite展开和积分</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P97-20231015143335-20231015143337-36b65ez.png" />​</p>
+<h3 id="hermite-series-expansion-of-the-eq-distribution">Hermite Series Expansion of the eq distribution</h3>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=98">The Lattice Boltzmann Method Principles and Practice.pdf - p98 - Hermite多项式展开形式</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P98-20231015143430-20231015143431-me83qlz.png" />​</p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=98">The Lattice Boltzmann Method Principles and Practice.pdf - p98 - 这边说明了，展开的前三项就能够计算出完整的质量动量能量</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P98-20231015144228-20231015144232-l3x8le3.png" /></p>
+<p>因为这样的性质，我们可以值计算前三项</p>
+<blockquote>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=99">The Lattice Boltzmann Method Principles and Practice.pdf - p99 - 足以能够恢复宏观空气动力学守恒方程。</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P99-20231015144520-20231015144522-yhowlpt.png" />​</p>
+</blockquote>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=99">The Lattice Boltzmann Method Principles and Practice.pdf - p99 - 因此近似时，可以只需要保留前三项</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P99-20231015143628-20231015143630-qu6s4nw.png" />​</p>
+<h3 id="discretization-of-the-eq-dist-function">Discretization of the eq dist function</h3>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=101">The Lattice Boltzmann Method Principles and Practice.pdf - p101 - 对于连续方程，选取有限个速度分量并不影响守恒律。</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P101-20231015143703-20231015143706-h614mii.png" />​</p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=102">The Lattice Boltzmann Method Principles and Practice.pdf - p102 - 最终的分布函数离散</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P102-20231015143719-20231015143721-uwg5tjq.png" />​</p>
+<h3 id="discretization-of-the-particle-distribution-function">Discretization of the particle distribution function</h3>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=103">The Lattice Boltzmann Method Principles and Practice.pdf - p103 - 对于求解变量用Hermite展开，取三项，然后离散化</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P103-20231015145310-20231015145312-bfvb88r.png" />​</p>
+<h2 id="_7">速度集合</h2>
+<h3 id="construction-and-requirements">Construction and requirements.</h3>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=105">The Lattice Boltzmann Method Principles and Practice.pdf - p105 - 从旋转无关等角度考虑</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P105-20231015150412-20231015150414-x1sud1h.png" />​</p>
+<p>一些常用的速度集</p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=106">The Lattice Boltzmann Method Principles and Practice.pdf - p106 - D1Q3,D2Q9</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P106-20231015150711-20231015150713-8actxwt.png" />​</p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=107">The Lattice Boltzmann Method Principles and Practice.pdf - p107 - D3Q15 19 27</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P107-20231015150729-20231015150731-ydd7dnp.png" />​</p>
+<p>Table for implementation</p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=108">The Lattice Boltzmann Method Principles and Practice.pdf - p108 - The Lattice Boltzmann Method Principles and Practice-P108-20231015150757</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P108-20231015150757-20231015150759-llfhj7e.png" />​</p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=109">The Lattice Boltzmann Method Principles and Practice.pdf - p109 - d3q19</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P109-20231015150816-20231015150817-n9ksfuy.png" />​</p>
+<h2 id="_8">时间和空间离散化</h2>
+<p>终于是正常一点的东西。</p>
+<p>一般就是等距网格，以及可以选择如下的Refinement。</p>
+<blockquote>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=114">The Lattice Boltzmann Method Principles and Practice.pdf - p114 - local grid refinement of the LBM on structured grids is possible ([31] gives an overview of this), the most common form of space discretisation is a uniform and structured grid.</a></p>
+</blockquote>
+<p>原始的LB算法假设其每个格点都迁移到其邻居（或自身）。</p>
+<blockquote>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=114">The Lattice Boltzmann Method Principles and Practice.pdf - p114 - Overall, the original LB algorithm assumes that populations fi move with velocity ci from one lattice site to another. After one time step ĩt, each population should exactly reach a neighbouring site.</a></p>
+</blockquote>
+<p>这对于原始问题有一定的要求。</p>
+<ol>
+<li>空间网格是等距规则的</li>
+<li>速度分量是<span class="arithmatex">\(dx/dt\)</span>的倍数</li>
+</ol>
+<h3 id="_9">特征线方程</h3>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=114">The Lattice Boltzmann Method Principles and Practice.pdf - p114 - 类似于传输线方程，但含一个系数</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P114-20231015163556-20231015163557-ngbpzl3.png" />​</p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=116">The Lattice Boltzmann Method Principles and Practice.pdf - p116 - The Lattice Boltzmann Method Principles and Practice-P116-20231015163732</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P116-20231015163732-20231015163734-sdyaqbg.png" />​</p>
+<h3 id="first-and-second-order-discretisation">First and second order discretisation</h3>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=117">The Lattice Boltzmann Method Principles and Practice.pdf - p117 - LBE</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P117-20231015164037-20231015164039-p72u7mg.png" />​</p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=118">The Lattice Boltzmann Method Principles and Practice.pdf - p118 - Second Order method</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P118-20231015164258-20231015164300-mn9r00v.png" />​</p>
+<h3 id="bgk-operator">BGK Operator</h3>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=119">The Lattice Boltzmann Method Principles and Practice.pdf - p119 - This collision operator is only suitable for gas simulations, as it only accounts for binary collisions between molecules.</a></p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=119">The Lattice Boltzmann Method Principles and Practice.pdf - p119 - 碰撞算子的一大性质是保持质量和动量守恒</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P119-20231015164900-20231015164902-2gacsga.png" />​</p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=120">The Lattice Boltzmann Method Principles and Practice.pdf - p120 - LBGK方程，将BGK算子离散化后代入</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P120-20231015164946-20231015164952-o6cae26.png" />​</p>
+<h4 id="over-relaxation">Over Relaxation</h4>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=120">The Lattice Boltzmann Method Principles and Practice.pdf - p120 - 如果选取的参数错误，将导致问题</a>，<span class="arithmatex">\(\tau\)</span>决定了 <span class="arithmatex">\(\Delta t\)</span>的取值。<br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P120-20231015165313-20231015165328-8mb398l.png" />​</p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=121">The Lattice Boltzmann Method Principles and Practice.pdf - p121 - 这里直接给出了Stability 的必要条件。</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P121-20231015165542-20231015165544-cdwykix.png" />​</p>
+<h2 id="streaming-and-collision">Streaming and collision</h2>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=122">The Lattice Boltzmann Method Principles and Practice.pdf - p122 - LBGK算法，类似Operator Splitting</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P122-20231015165827-20231015165831-ui4ni0w.png" />​</p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=122">The Lattice Boltzmann Method Principles and Practice.pdf - p122 - Now we have derived everything required to write a first LB simulation code, except boundary conditions and forces.</a></p>
+<h1 id="stability">Stability</h1>
+<h2 id="analysis">Analysis</h2>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=148">The Lattice Boltzmann Method Principles and Practice.pdf - p148 - The Lattice Boltzmann Method Principles and Practice-P148-20231015170322</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P148-20231015170322-20231015170324-s9vzvax.png" />​</p>
+<h2 id="bgk-model">BGK model</h2>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=150">The Lattice Boltzmann Method Principles and Practice.pdf - p150 - BGK model：一定条件下，所有的eq非负，但eq是由速度决定的，可以通过速度来推导</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P150-20231015170408-20231015170410-9051yor.png" />​</p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=151">The Lattice Boltzmann Method Principles and Practice.pdf - p151 - 在参数满足的条件下，对流速有如下的要求可以保证稳定性</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P151-20231015170142-20231015170144-3evb7mj.png" />​</p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=153">The Lattice Boltzmann Method Principles and Practice.pdf - p153 - 可以看出，粘性对于LBM的稳定有很大的意义</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P153-20231015170737-20231015170739-zs2ceb3.png" />​</p>
+<h1 id="boundaries">Boundaries</h1>
+<h2 id="periodic">Periodic</h2>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=191">The Lattice Boltzmann Method Principles and Practice.pdf - p191 - The Lattice Boltzmann Method Principles and Practice-P191-20231015170953</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P191-20231015170953-20231015170955-k92s3at.png" />​</p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=192">The Lattice Boltzmann Method Principles and Practice.pdf - p192 - 虚拟节点，直接按周期传递。</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P192-20231015171004-20231015171006-dwg3nji.png" />​</p>
+<h2 id="solid-boundariesbounce-back-approach">Solid boundaries：Bounce back approach</h2>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=195">The Lattice Boltzmann Method Principles and Practice.pdf - p195 - Despite its age, it is still the most popular wall boundary scheme in the LB community, largely due to its simplicity of implementation.</a></p>
+<h3 id="principle">Principle</h3>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=196">The Lattice Boltzmann Method Principles and Practice.pdf - p196 - 图示</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P196-20231015171057-20231015171059-ks0py2l.png" />​</p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=196">The Lattice Boltzmann Method Principles and Practice.pdf - p196 - 原理是，碰到墙反弹到它原来的地方。</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P196-20231015190852-20231015190854-80klbj5.png" />​</p>
+<p>满足no-slip条件！</p>
+<h3 id="fullway-vs-halfway-bounce-back-method">Fullway v.s. Halfway bounce-back method.</h3>
+<p>两种实现方式：</p>
+<ol>
+<li>Fullway：下一个时间步反弹回来</li>
+<li>Halfway：当前时间步骤直接反弹</li>
+</ol>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=197">The Lattice Boltzmann Method Principles and Practice.pdf - p197 - The Lattice Boltzmann Method Principles and Practice-P197-20231015191535</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P197-20231015191535-20231015191537-b7ernn8.png" />​</p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=198">The Lattice Boltzmann Method Principles and Practice.pdf - p198 - 无论是哪种，都假设了碰撞发生在Midway。</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P198-20231015191631-20231015191633-ne4eqwm.png" />​</p>
+<ul>
+<li>实现上：fullway简单</li>
+<li>准确性上：Halfway</li>
+</ul>
+<blockquote>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=198">The Lattice Boltzmann Method Principles and Practice.pdf - p198 - The question that arises is: which strategy to implement? Fullway or halfway? There is no definitive answer. If simplicity is our main criterion, then fullway bounce-back wins. Here, the boundary treatment is independent of the direction of fi and the execution time is shorter, cf. Chap. 13. 13 Yet, halfway bounce-back is more accurate for unsteady flows as explained below.</a></p>
+</blockquote>
+<h3 id="resting-walls">Resting walls</h3>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=199">The Lattice Boltzmann Method Principles and Practice.pdf - p199 - 固定边界</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P199-20231015191855-20231015191858-vv9ddyt.png" />​</p>
+<h3 id="moving-walls">Moving walls</h3>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=200">The Lattice Boltzmann Method Principles and Practice.pdf - p200 - 移动边界</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P200-20231015192314-20231015192316-7jrfhe9.png" />​</p>
+<p>第二项的作用是使其能够满足质量守恒。</p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=209">The Lattice Boltzmann Method Principles and Practice.pdf - p209 - The Lattice Boltzmann Method Principles and Practice-P209-20231015192559</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P209-20231015192559-20231015192600-smq8f28.png" />​</p>
+<h2 id="solid-bc-wet-node-approach">Solid bc: Wet-node approach</h2>
+<p>idea：在边界上赋予合适的值，期望LBM能有合理的输出。</p>
+<blockquote>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=209">The Lattice Boltzmann Method Principles and Practice.pdf - p209 - The idea of the wet-node approach is to assign suitable values for the unknown boundary populations such that the known and constructed populations reproduce the intended hydrodynamics at the boundary.</a></p>
+</blockquote>
+<p>通常而言，会有导致欠定</p>
+<blockquote>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=209">The Lattice Boltzmann Method Principles and Practice.pdf - p209 - there are typically more unknown boundary populations than macroscopic conditions</a></p>
+</blockquote>
+<p>变成法向相对速度为零</p>
+<blockquote>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=210">The Lattice Boltzmann Method Principles and Practice.pdf - p210 - The continuity of the fluid at the boundary is described by the well-known impermeable wall condition, i.e. zero relative normal velocity of the fluid</a></p>
+</blockquote>
+<h3 id="eq-state">Eq state</h3>
+<p>用<span class="arithmatex">\(f_i^{eq}\)</span>来设置边界处的BC</p>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=211">The Lattice Boltzmann Method Principles and Practice.pdf - p211 - The Lattice Boltzmann Method Principles and Practice-P211-20231015193430</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P211-20231015193430-20231015193432-qbhgdyb.png" />​</p>
+<p>好用，但问题也很大。</p>
+<h3 id="non-eq-extrapolation">Non-eq Extrapolation</h3>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=214">The Lattice Boltzmann Method Principles and Practice.pdf - p214 - The Lattice Boltzmann Method Principles and Practice-P214-20231015193824</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P214-20231015193824-20231015193827-cjydc83.png" />​</p>
+<p>用一部分流体项修正。</p>
+<h3 id="nebb">NEBB</h3>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=216">The Lattice Boltzmann Method Principles and Practice.pdf - p216 - The Lattice Boltzmann Method Principles and Practice-P216-20231015193904</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P216-20231015193904-20231015193906-s9v4dmx.png" />​</p>
+<p>很麻烦，很精确。</p>
+<h3 id="open-bc">Open bc</h3>
+<p><a href="LBM Principles and practice/The Lattice Boltzmann Method Principles and Practice-20231014203512-ry3qjqr.pdf?p=219">The Lattice Boltzmann Method Principles and Practice.pdf - p219 - The Lattice Boltzmann Method Principles and Practice-P219-20231015194010</a><br />
+​<img alt="" src="The%20Lattice%20Boltzmann%20Method%20Principles%20and%20Practice-P219-20231015194010-20231015194012-0vmx4ad.png" />​</p>
+<p>‍</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["header.autohide", "navigation.tabs"], "search": "../../../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

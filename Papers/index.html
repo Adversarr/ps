@@ -14,7 +14,7 @@
         <link rel="prev" href="..">
       
       
-        <link rel="next" href="../confandjour/">
+        <link rel="next" href="../registry/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -110,6 +110,43 @@
     
     
     
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
     
   </nav>
   
@@ -166,12 +203,12 @@
   
   
     <li class="md-tabs__item">
-      <a href="../confandjour/" class="md-tabs__link">
+      <a href="../registry/" class="md-tabs__link">
         
   
     
   
-  Conf&Jour
+  Registry
 
       </a>
     </li>
@@ -299,11 +336,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../confandjour/" class="md-nav__link">
+      <a href="../registry/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Conf&Jour
+    Registry
   </span>
   
 
@@ -363,7 +400,9 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
   
   
   
@@ -381,6 +420,22 @@
     <div class="md-content__inner">
       <header class="md-typeset">
         <h1 id="paper-reading-list">Paper Reading List</h1>
+<p>The following content is ordered by reading date. See <a href="../registry/">Registry</a>.</p>
+<details class="note">
+<summary>阅读论文的三遍法: Reference <a href="http://staff.ustc.edu.cn/~lgliu/Resources/ForMyStudents/How_to_Read_a_Paper.rar">How to Read a Paper</a> from my tutor <a href="http://staff.ustc.edu.cn/~lgliu/">Ligang Liu</a></summary>
+<ol>
+<li><strong>第一遍，问题泛读，看Title，Abstract，Introduction，Subtitles 和 Figures。</strong>了解论文是做什么的（做什么问题）？Introduction中对这个问题的描述及motivation是否说明该问题值得做？重点看一遍图及其说明。一图胜千言，一篇好的论文光看图就能大致了解其内容。这篇论文是否能引起我的兴趣？</li>
+<li><strong>第二遍，技术泛读，稍微看一下技术部分。</strong>了解论文是怎么做的？论文所用的技术方法、技术路线是否合理？是否非平凡的方法？是否有技术含量和技术贡献？必须认真看一下其limitation和future work.</li>
+<li><strong>第三遍，精读，这只有在报告论文或评审论文时需要进一步阅读的。</strong>你需要脱稿能描述该论文的问题、方法，以便你能报告或写review意见。如果需要实现该论文，还需再精读，了解其所有细节。通过实现论文能够发现论文中更多的问题。</li>
+</ol>
+<p>理解一篇论文的三个层次：</p>
+<ol>
+<li>读一遍论文（浅，问题及思想），</li>
+<li>报告一遍论文（深，技术及贡献），</li>
+<li>实现一遍论文（最深，技术细节及存在的问题）。</li>
+</ol>
+<p>对于一些好的和经典的论文，必须多读几遍，深刻理解其结构，写作及展示技巧，体会其写作的“艺术”，对于自己写作论文会有很大的帮助。</p>
+</details>
       </header>
       
         <article class="md-post md-post--excerpt">
@@ -406,47 +461,12 @@
   <div class="md-post__content md-typeset">
     <h2 id="hydrophobic-and-hydrophilic-solid-fluid-interaction"><a class="toclink" href="2023/10/22/hydrophobic-and-hydrophilic-solid-fluid-interaction/">Hydrophobic and Hydrophilic Solid-Fluid Interaction</a></h2>
 <ol>
-<li>a Lagrangian model that tackles the coupling, evolution, and equilibrium of dynamic contact lines evolving on the interface between surface-tension ￿uid and deformable objects. </li>
+<li>a Lagrangian model that tackles the coupling, evolution, and equilibrium of dynamic contact lines evolving on the interface between surface-tension fluid and deformable objects. </li>
 <li>a mesh-based level set method to evolve the three-phase T-junction on a deformable solid surface</li>
 </ol>
 
     <nav class="md-post__action">
       <a href="2023/10/22/hydrophobic-and-hydrophilic-solid-fluid-interaction/">
-        Continue reading
-      </a>
-    </nav>
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2023-10-22 00:00:00">October 22, 2023</time></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="second-order-stencil-descent-for-interior-point-hyperelasticity"><a class="toclink" href="2023/10/22/second-order-stencil-descent-for-interior-point-hyperelasticity/">Second-order Stencil Descent for Interior-point Hyperelasticity</a></h2>
-<ol>
-<li>a Lagrangian model that tackles the coupling, evolution, and equilibrium of dynamic contact lines evolving on the interface between surface-tension ￿uid and deformable objects. </li>
-<li>a mesh-based level set method to evolve the three-phase T-junction on a deformable solid surface</li>
-</ol>
-
-    <nav class="md-post__action">
-      <a href="2023/10/22/second-order-stencil-descent-for-interior-point-hyperelasticity/">
         Continue reading
       </a>
     </nav>
@@ -542,6 +562,38 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
+    <h2 id="second-order-stencil-descent-for-interior-point-hyperelasticity"><a class="toclink" href="2023/10/22/second-order-stencil-descent-for-interior-point-hyperelasticity/">Second-order Stencil Descent for Interior-point Hyperelasticity</a></h2>
+<p>本文基于GPU实现了基于IPC内点法的有限元超弹性模拟算法，旨在利用GPU加速和内点法，来提高同时处理碰撞和接触约束的有限元法模拟算法的效率。文章提出的算法利用在局部利用Hessian进行迭代求解，全局使用并行计算，确保目标函数能够快速收敛，并使用互补着色和混合扫描方案来充分利用GPU计算能力。此外，文章还提出了一种专门的预热过程，用于改善迭代初值并提高算法的收敛速度和稳定性。</p>
+
+    <nav class="md-post__action">
+      <a href="2023/10/22/second-order-stencil-descent-for-interior-point-hyperelasticity/">
+        Continue reading
+      </a>
+    </nav>
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2023-10-22 00:00:00">October 22, 2023</time></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
     <h2 id="position-based-surface-tension-flow"><a class="toclink" href="2023/10/22/position-based-surface-tension-flow/">Position-Based Surface Tension Flow</a></h2>
 <p>本文提出了在PBD框架下流体表面张力的计算方法，为PBD框架下的流体模拟提供了更真实的表面张力和与固体的接触，能够支持薄膜、液滴等复杂界面。其关键是动态地对流体表面进行局部网格划分。该算法通过局部网格划分，得到每个表面粒子周围的局部几何体，并基于该几何体，计算表面张力约束，整合入PBD框架中。相较于其他方法，该算法具有较高的计算效率较高和鲁棒性。</p>
 
@@ -559,13 +611,13 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2022-10-10 00:00:00">October 10, 2022</time></li>
+          <time datetime="2023-01-30 00:00:00">January 30, 2023</time></li>
         
         
           
           <li class="md-meta__item">
             
-              1 min read
+              7 min read
             
           </li>
         
@@ -574,11 +626,10 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="a-survey-on-sph-methods-in-computer-graphics"><a class="toclink" href="2022/10/10/a-survey-on-sph-methods-in-computer-graphics/">A Survey on SPH Methods in Computer Graphics</a></h2>
-<p>SPH方法综述。</p>
+    <h2 id="fluid-simulation-in-computer-graphics"><a class="toclink" href="2023/01/30/fluid-simulation-in-computer-graphics/">Fluid Simulation in Computer Graphics</a></h2>
 
     <nav class="md-post__action">
-      <a href="2022/10/10/a-survey-on-sph-methods-in-computer-graphics/">
+      <a href="2023/01/30/fluid-simulation-in-computer-graphics/">
         Continue reading
       </a>
     </nav>
@@ -591,13 +642,13 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2020-02-02 00:00:00">February 2, 2020</time></li>
+          <time datetime="2023-01-30 00:00:00">January 30, 2023</time></li>
         
         
           
           <li class="md-meta__item">
             
-              1 min read
+              14 min read
             
           </li>
         
@@ -606,11 +657,11 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="codimensional-ipc"><a class="toclink" href="2020/02/02/codimensional-ipc/">Codimensional IPC</a></h2>
-<p>实现了多维度（2d布料、1d头发）物体之间使用IPC进行碰撞处理。</p>
+    <h2 id="an-introduction-to-physics-based-animation"><a class="toclink" href="2023/01/30/an-introduction-to-physics-based-animation/">An Introduction to Physics-based Animation</a></h2>
+<p>An Introduction to Physics-based Animation</p>
 
     <nav class="md-post__action">
-      <a href="2020/02/02/codimensional-ipc/">
+      <a href="2023/01/30/an-introduction-to-physics-based-animation/">
         Continue reading
       </a>
     </nav>
@@ -623,7 +674,38 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2020-01-01 00:00:00">January 1, 2020</time></li>
+          <time datetime="2023-01-30 00:00:00">January 30, 2023</time></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              2 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="fluid-simulation-in-computer-graphics-chapter-5-smoke"><a class="toclink" href="2023/01/30/fluid-simulation-in-computer-graphics-chapter-5-smoke/">Fluid Simulation in Computer Graphics: Chapter 5 Smoke</a></h2>
+
+    <nav class="md-post__action">
+      <a href="2023/01/30/fluid-simulation-in-computer-graphics-chapter-5-smoke/">
+        Continue reading
+      </a>
+    </nav>
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2022-11-20 00:00:00">November 20, 2022</time></li>
         
         
           
@@ -638,11 +720,48 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="ipc"><a class="toclink" href="2020/01/01/ipc/">IPC</a></h2>
-<p>内点法在碰撞处理上的应用，一篇基础文章。</p>
+    <h2 id="elasto-monolith-a-monolithic-optimization-based-liquid-solver-for-contact-aware-elastic-solid-coupling"><a class="toclink" href="2022/11/20/elasto-monolith-a-monolithic-optimization-based-liquid-solver-for-contact-aware-elastic-solid-coupling/">Elasto Monolith: A Monolithic Optimization-based Liquid Solver for Contact-Aware Elastic-Solid Coupling</a></h2>
+<p>实现了初步的FVM流体-可变形体的强流固耦合。</p>
 
     <nav class="md-post__action">
-      <a href="2020/01/01/ipc/">
+      <a href="2022/11/20/elasto-monolith-a-monolithic-optimization-based-liquid-solver-for-contact-aware-elastic-solid-coupling/">
+        Continue reading
+      </a>
+    </nav>
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2022-10-30 00:00:00">October 30, 2022</time></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              2 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="affine-particle-in-cell-method"><a class="toclink" href="2022/10/30/affine-particle-in-cell-method/">Affine Particle-In-Cell Method</a></h2>
+<p>Affine PIC 方法，相比于之前的方法</p>
+<ol>
+<li>保留了 PIC 的稳定性，但解决了耗散/误差问题</li>
+<li>保留了 FLIP 的动量、角动量守恒特性，但解决了不稳定的问题</li>
+</ol>
+<p>主要思想：用一个仿射变换来代替原本的简单插值，从而解决p-&gt;g阶段的数据丢失。</p>
+
+    <nav class="md-post__action">
+      <a href="2022/10/30/affine-particle-in-cell-method/">
         Continue reading
       </a>
     </nav>
@@ -656,7 +775,7 @@
 
 
 <nav class="md-pagination">
-  
+  <span class="md-pagination__current">1</span> <a class="md-pagination__link" href="page/2/">2</a>
 </nav>
         
       

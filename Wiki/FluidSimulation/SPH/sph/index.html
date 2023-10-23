@@ -18,7 +18,7 @@
     
     
       
-        <title>Sph - PS is not Physical Simulation</title>
+        <title>SPH Tutorial - PS is not Physical Simulation</title>
       
     
     
@@ -62,6 +62,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#sph" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -92,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Sph
+              SPH Tutorial
             
           </span>
         </div>
@@ -100,6 +105,43 @@
     </div>
     
     
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
     
     
   </nav>
@@ -155,12 +197,12 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../confandjour/" class="md-tabs__link">
+      <a href="../../../../registry/" class="md-tabs__link">
         
   
     
   
-  Conf&Jour
+  Registry
 
       </a>
     </li>
@@ -278,11 +320,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../confandjour/" class="md-nav__link">
+      <a href="../../../../registry/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Conf&Jour
+    Registry
   </span>
   
 
@@ -342,10 +384,192 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    基础
+  </a>
+  
+    <nav class="md-nav" aria-label="基础">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sph-smoothed-particle-hydrodynamics" class="md-nav__link">
+    SPH -- Smoothed Particle Hydrodynamics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    算法框架
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    邻域搜索
+  </a>
+  
+    <nav class="md-nav" aria-label="邻域搜索">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    层次数据结构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    均匀网格划分
+  </a>
+  
+    <nav class="md-nav" aria-label="均匀网格划分">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#index-sort" class="md-nav__link">
+    Index Sort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#z-index-sort" class="md-nav__link">
+    Z-index Sort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hash" class="md-nav__link">
+    Hash
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpu" class="md-nav__link">
+    GPU 方法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    总结
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    不可压缩性
+  </a>
+  
+    <nav class="md-nav" aria-label="不可压缩性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#non-iterative-eos-solvers" class="md-nav__link">
+    弱可压缩流体（Non-Iterative EOS Solvers）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    强可压缩流体
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    边界处理和流固耦合
+  </a>
+  
+    <nav class="md-nav" aria-label="边界处理和流固耦合">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    粒子方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    隐式曲面表示
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    边界压强计算
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    基于惩罚
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    总结
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -360,9 +584,263 @@
                   
 
 
-  <h1>Sph</h1>
+<p>Hierarchy in wiki:</p>
+<ul>
+<li><a href="../../../">Wiki/</a></li>
+<li><a href="../../">Wiki/FluidSimulation/</a></li>
+<li><a href="../">Wiki/FluidSimulation/SPH/</a></li>
+</ul>
+<hr>
+<div class="admonition warn">
+<p class="admonition-title">This page is not reviewed</p>
+</div>
+<!-- more -->
 
-
+<h1 id="sph">SPH 光滑粒子</h1>
+<h2 id="_1">基础</h2>
+<h3 id="sph-smoothed-particle-hydrodynamics">SPH -- Smoothed Particle Hydrodynamics</h3>
+<blockquote>
+<p>基本方程来自于：</p>
+<ol>
+<li><a href="https://arxiv.org/abs/1012.1885">Smoothed Particle Hydrodynamics and Magnetohydrodynamics. Journal of Computational Physics</a></li>
+<li><a href="https://www.researchgate.net/publication/230988821_Smoothed_Particle_Hydrodynamics">Smoothed Particle Hydrodynamics - Report on Progress in Physics</a></li>
+</ol>
+</blockquote>
+<p>​<img alt="image" src="image-20221211100007-yrg20td.png" />​</p>
+<p>思想：对于任一物理量，通过流体在一系列<strong>采样点</strong>处的值，来插值近似得到流体在任意位置的值。</p>
+<div class="arithmatex">\[
+A _ i = \sum _ {j \in \mathcal N _ i} \frac{m _ j} { \rho _ j } A _ j W _ {ij}
+\]</div>
+<p>其中的<span class="arithmatex">\(W_{ij}\)</span>是权重函数。</p>
+<p>从而定义如下的空间离散微分运算</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\nabla A_i = \rho_i + \sum_{j} m_j  \left ( \frac { A _ i} { \rho _ i  ^ 2} + \frac{A _ j} {\rho _ j ^ 2}\right) \nabla W_ { i j }\\
+\nabla \cdot \mathbf{A}_i = - \frac 1 { \rho _ i} \sum _ j m _ j \mathbf A _ {ij} \cdot \nabla W _ {ij} \\
+\nabla ^ 2 A _ i = 2 \sum _ { j } \frac { m _ j} { \rho _ j} A _ {ij} \frac {\mathbf x _ {ij} \cdot \nabla W _ { ij }}{\mathbf x _ {ij} \cdot \mathbf x _ {ij} + 0.01 h ^ 2}
+\end{aligned}
+\]</div>
+<p>最后一个公式是拉普拉斯算子，<span class="arithmatex">\(0.01h^2\)</span>是正则化项。</p>
+<p>密度能够用如下公式计算</p>
+<div class="arithmatex">\[
+\rho_i  = \sum_j m_j W_{ij}
+\]</div>
+<h3 id="_2">算法框架</h3>
+<p>SPH 求解器有如下三大组件：</p>
+<ol>
+<li>邻域搜索</li>
+<li>压强计算</li>
+<li>时间积分</li>
+</ol>
+<p>其中时间积分通常和压强计算一起讨论，主要研究内容是如何计算压强以满足流体的不可压缩性。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>foreach Particle P: -&gt; 1
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  find neighbours.
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>foreach Particle P: 
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  compute density.
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>foreach Particle P: -&gt; 2
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  compute pressure force.
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  compute viscosity force
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  compute external force
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  merge all the forces.
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>foreach Particle P: -&gt; 3
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>  update velocity, position.
+</code></pre></div>
+<p>时间积分步长：</p>
+<blockquote>
+<p><strong>CFL Condition</strong> should be considered carefully when using this method.</p>
+</blockquote>
+<div class="arithmatex">\[
+\Delta t \le \lambda \frac{ h } { \| v _ {\max} \| }, \qquad \mathrm{with}~~\lambda \approx 0.4
+\]</div>
+<h2 id="_3">邻域搜索</h2>
+<p>主要有两类算法</p>
+<ol>
+<li>层次数据结构</li>
+<li>均匀网格划分</li>
+</ol>
+<h3 id="_4">层次数据结构</h3>
+<p>主要有如下几种数据结构：</p>
+<ol>
+<li>Kd树（八叉树）和多分辨率网格方法</li>
+<li>VDB数据结构</li>
+</ol>
+<h3 id="_5">均匀网格划分</h3>
+<p>将整个空间均匀地划分为网格，构建时将粒子分配到各个网格中，查询邻居时查询相邻多个网格中的粒子。</p>
+<h4 id="index-sort">Index Sort</h4>
+<p>在构建时尽可能避免Race Condition，利用并行提高性能。</p>
+<ol>
+<li><a href="http://developer.download.nvidia. com/presentations/2008/GDC/GDC08_ ParticleFluids.pdf">Particle-based ﬂuid simulation.</a></li>
+</ol>
+<h4 id="z-index-sort">Z-index Sort</h4>
+<p>提升程序的空间连续性，增加缓存命中概率。</p>
+<ol>
+<li><a href="https://dl.acm.org/doi/10.5555/1921427.1921437">Interactive SPH simulation and rendering on the GPU</a></li>
+</ol>
+<h4 id="hash">Hash</h4>
+<p>使用空间散列方法。</p>
+<ol>
+<li><a href="https://www.researchgate.net/publication/220506746_A_parallel_SPH_implementation_on_multi-core_CPUs">A parallel SPH implementation on multi-core CPUs.</a></li>
+</ol>
+<h4 id="gpu">GPU 方法</h4>
+<p>SPH方法几乎没有数据依赖问题，因此可以利用GPU来进行加速。</p>
+<ol>
+<li>Real-time smoke rendering using compensated ray marching.</li>
+<li>Temporal blending for adaptive SPH.</li>
+</ol>
+<h3 id="_6">总结</h3>
+<p>时间复杂度：Hierarchy &gt; Grid</p>
+<ol>
+<li>Grids: <span class="arithmatex">\(O(n)\)</span> build, <span class="arithmatex">\(O(1)\)</span> access</li>
+<li>Hierarchy: <span class="arithmatex">\(O(n log n)\)</span> build, <span class="arithmatex">\(O(log n)\)</span> access.</li>
+</ol>
+<p>空间复杂度：Hierarchy &lt; Grid.</p>
+<ol>
+<li>Iterative: Reuse the structure frequently, and we can store the neighborhood set, and rebuild it from time to time.</li>
+<li>Non-Iterative:</li>
+</ol>
+<h2 id="_7">不可压缩性</h2>
+<p>流体的不可压缩性体现在压强上。</p>
+<p>大体上有两类解法：</p>
+<ol>
+<li>
+<p>弱可压缩：弱可压缩流体并没有严格求解不可压缩方程<span class="arithmatex">\(\nabla u = 0\)</span>，但通过压强来施加一个恢复原本体积的力，来“模拟”不可压缩性。</p>
+<p>对应：<u>Local</u> Pressure Solver
+2. 强可压缩：相反的，其求解了不可压缩方程，使得不可压缩性严格满足</p>
+<p>对应：<u>Global</u> Pressure Solver</p>
+</li>
+</ol>
+<h3 id="non-iterative-eos-solvers">弱可压缩流体（Non-Iterative EOS Solvers）</h3>
+<p>弱可压缩性直接通过单次、显式的压强计算来体现：</p>
+<p>例如直接用EOS（状态方程）求解</p>
+<div class="arithmatex">\[
+p = p (\rho , T) = \frac{\mu}{R} \rho T
+\]</div>
+<p>通常使用的是：</p>
+<div class="arithmatex">\[
+p_i = k \left( \left ( \frac{\rho_i}{\rho_0}\right) ^ 7 - 1 \right)
+\]</div>
+<p>也有多种不同的选择：</p>
+<ol>
+<li>A switch to reduce SPH viscosity.</li>
+<li><span class="arithmatex">\(p_i = k (\rho_i - \rho_0)\)</span>：Smoothed particles: A new paradigm for animating highly deformable bodies.</li>
+<li><span class="arithmatex">\(p_i= k(\frac{\rho_i}{\rho_0}- 1)\)</span>：Adaptively sampled particle ﬂuids</li>
+</ol>
+<p>也通过 Operator Splitting 来将压强计算和其他力的计算分开：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>foreach P: find neighbours
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>foreach P: compute Non-Pressure forces  -&gt; Advection
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>foreach P: compute Pressure forces.     -&gt; Projection, use data from Advection
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>foreach P: update velocity &amp; position
+</code></pre></div>
+<h3 id="_8">强可压缩流体</h3>
+<p>强可压缩流体可以通过：</p>
+<ol>
+<li>多次迭代应用弱可压缩流体的方程（Operator Splitting的第三步多次迭代）</li>
+<li>直接求解EOS方程</li>
+</ol>
+<p>第一类的实现：</p>
+<ol>
+<li>PCISPH</li>
+<li>LPSPH</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>foreach P: find neighbours
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>foreach P: compute Non-Pressure part.       -&gt; Advection
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>repeat until convergence:                   -&gt; Projection(weak)
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  foreach P: compute density and pressure
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  foreach P: update velocity and positions
+</code></pre></div>
+<p>第二类的实现：</p>
+<ol>
+<li>IISPH</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>foreach P: find neighbours
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>foreach P: compute Non-Pressure part.       -&gt; Advection
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>foreach P: compute rho*
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>solve PPE                                   -&gt; Projection
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>compute Pressure Force
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>update v, x
+</code></pre></div>
+<h2 id="_9">边界处理和流固耦合</h2>
+<p>主要有如下几类方法：</p>
+<ol>
+<li>基于粒子</li>
+<li>基于隐式曲面</li>
+<li>基于边界压强</li>
+<li>基于惩罚</li>
+</ol>
+<h3 id="_10">粒子方法</h3>
+<p>对于其他物体表面也离散为粒子，计算基于粒子距离的惩罚力</p>
+<blockquote>
+<p>The boundary particles serve as additional sampling points and typically have the same radius as the fluid particles.</p>
+</blockquote>
+<div class="arithmatex">\[
+\rho_i = \rho_{\mathcal{F}} + \rho_{\mathcal{B}} \approx \sum_j m_j W_{ij} + \sum_k \tilde{m}_k W_{ik}
+\]</div>
+<p>计算压强和力时，需要考虑从其他物体表面采样的其他粒子。</p>
+<p>根据采样方法的不同，可以分为：</p>
+<ol>
+<li>均匀采样、非均匀采样：对于曲率较大处的边界应该被分配更多的采样点来保持细节</li>
+<li>单层、多层采样：多层采样有助于防止穿透</li>
+</ol>
+<p>优点：</p>
+<ol>
+<li>算法实现简单：生成采样点、积分、计算实现简单</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>对于弱可压缩流体，需要小时间步长（压强变化大）</li>
+<li>简单的几何图形都需要大规模的粒子</li>
+<li>
+<p>边界处理并不准确</p>
+<blockquote>
+<p><em>bumpy representation</em>: reduce the accuracy of pressure computation, introduce artificial friction. → Implicit boundary representation.
+</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="_11">隐式曲面表示</h3>
+<p>‍</p>
+<h3 id="_12">边界压强计算</h3>
+<p>不依赖于粒子，而直接对于边界生成压强：</p>
+<p>Original, without boundary:</p>
+<div class="arithmatex">\[
+(a_i^P)^l = - \frac{1}{\rho_i} \nabla p_i^l = - \sum_j m \left( p_i^l/\rho_i^2 + p_j^l/\rho_j^2 \right)\Delta W_{ij}
+\]</div>
+<p>With boundary:</p>
+<div class="arithmatex">\[
+(a_i^P)^l = - \sum_j m_j \left( p_i^l/\rho_i^2 + p_j^l/\rho_j^2 \right)\Delta W_{ij} - \sum_k m_k \left( p_i^l/\rho_i^2 + p_k^l/\rho_k^2 \right)\Delta W_{ik}
+\]</div>
+<p>对于其中的<span class="arithmatex">\(p_k\)</span>，有几种定义方式：</p>
+<ol>
+<li>Pressure Mirroring: <span class="arithmatex">\(p_k = p_i\)</span></li>
+<li>Pressure Extrapolation:</li>
+</ol>
+<div class="arithmatex">\[
+p_k = \frac{\sum_l p_lW_{kl}+ \mathbf{g} \cdot \sum_j \rho_l(x_k - x_l)W_{kl}}{\sum_l W_{kl}}
+\]</div>
+<p>‍</p>
+<h3 id="_13">基于惩罚</h3>
+<p><strong>缺点</strong>: hard to control the stiffness, and have small time steps.</p>
+<h2 id="_14">总结</h2>
+<p>SPH 方法的问题：</p>
+<ol>
+<li>
+<p>Approximate Quality:</p>
+<ol>
+<li>particle count is low =&gt; degradation of approximation</li>
+<li>lack of practical and sufficient solution: because negative pressure are clamped to 0, only projective Jacobi or GS Iteration is allowed. Conj-Grad is not available currently.</li>
+<li>
+<p>Unified Solver &amp; Ultimate Coupling:</p>
+</li>
+<li>
+<p>Unified Coupling solver.</p>
+</li>
+<li>Suitable for multiple particle-resolution.</li>
+<li>Artist Control</li>
+<li>Data Driven</li>
+</ol>
+</li>
+</ol>
 
 
 
