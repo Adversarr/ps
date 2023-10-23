@@ -25,10 +25,10 @@ The paper collection is automatic. See pages in `/docs/Papers/_articles` for det
 
 ### Understanding the hook
 
-The collection of paper is implemented in `libr.py`, to add your hook, modify 
+Take paper registry as an example, The collection of paper is implemented in `registry.py`, to add your hook, modify 
 ```yaml
 hooks:
-  - libr.py
+  - hooks/registry.py
 ```
 in `mkdocs.yml`
 

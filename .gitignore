@@ -1,2 +1,4 @@
 __pycache__
 site
+.DS_Store
+.cache

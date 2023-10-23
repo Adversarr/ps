@@ -2,7 +2,7 @@
 
 ## Simulation
 
-### Fluid
+### [Fluid](FluidSimulation/index.md)
 
 Common methods:
 
