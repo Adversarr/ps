@@ -77,7 +77,6 @@ def on_page_markdown(markdown: str, page: Page, **kwargs):
     registry[paper_source_name].add_paper(p)
 
 
-
 def on_env(env, config, files: Files):
   for f in files:
     if f.src_path == paper_source_index_path:
