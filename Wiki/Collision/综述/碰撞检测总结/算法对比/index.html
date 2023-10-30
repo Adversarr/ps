@@ -1,0 +1,675 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://adversarr.github.io/ps/Wiki/Collision/%E7%BB%BC%E8%BF%B0/%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E6%80%BB%E7%BB%93/%E7%AE%97%E6%B3%95%E5%AF%B9%E6%AF%94/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
+    
+    
+      
+        <title>算法对比 - PS is not Physical Simulation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="PS is not Physical Simulation" class="md-header__button md-logo" aria-label="PS is not Physical Simulation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PS is not Physical Simulation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              算法对比
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../Papers/" class="md-tabs__link">
+        
+  
+    
+  
+  Papers
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../registry/" class="md-tabs__link">
+        
+  
+    
+  
+  Registry
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../tags/" class="md-tabs__link">
+        
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../" class="md-tabs__link">
+        
+  
+    
+  
+  Wiki
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="PS is not Physical Simulation" class="md-nav__button md-logo" aria-label="PS is not Physical Simulation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    PS is not Physical Simulation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Papers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Papers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../registry/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Registry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tags/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tags
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wiki
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    预备知识
+  </a>
+  
+    <nav class="md-nav" aria-label="预备知识">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multivariate-ccd-formulation" class="md-nav__link">
+    Multivariate CCD Formulation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#univariate-ccd-ccd" class="md-nav__link">
+    Univariate CCD 单变量CCD
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    方法介绍
+  </a>
+  
+    <nav class="md-nav" aria-label="方法介绍">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#irf" class="md-nav__link">
+    IRF
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uirf" class="md-nav__link">
+    UIRF
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fprf" class="md-nav__link">
+    FPRF
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tightccd" class="md-nav__link">
+    TightCCD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rp-rrp" class="md-nav__link">
+    RP / RRP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bsc" class="md-nav__link">
+    BSC
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    其他思路
+  </a>
+  
+    <nav class="md-nav" aria-label="其他思路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bridson-2009" class="md-nav__link">
+    Bridson 2009
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<p>Hierarchy in wiki:</p>
+<ul>
+<li><a href="../../../../">Wiki/</a></li>
+<li><a href="../../../">Wiki/Collision/</a></li>
+<li><a href="../">Wiki/Collision/%E7%BB%BC%E8%BF%B0/%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E6%80%BB%E7%BB%93/</a></li>
+</ul>
+<hr>
+<h1 id="_1">算法对比</h1>
+<p>Collision Detection 整理5 – CCD 算法对比</p>
+<p>准确说，这篇blog是一篇论文的整理emmm，但由于老板的任务就是做 collsion 的汇总，这篇论文的涉及面也算是相对 Broad 的了。</p>
+<p>论文主要用了：</p>
+<ol>
+<li>IRF：interval-root-finder</li>
+<li>UIRF：Unifromed-Interval-Root-Finder</li>
+<li>FPRF：floating-point time-of-impact root finder</li>
+<li>TightCCD(TCCD)</li>
+<li>Root Parity(RP)</li>
+<li>Rational implementation of RP</li>
+<li>MSRF：minimum seperation floating-point time-of-impact root finder</li>
+</ol>
+<h2 id="_2">预备知识</h2>
+<p>首先论文对于 CCD 的数学背景进行了简要的介绍：考虑三角网格，每一个时间步长内都以线性轨迹运动。那么CCD可以简化为VT和EE检查。</p>
+<h3 id="multivariate-ccd-formulation">Multivariate CCD Formulation</h3>
+<p>最简单的方法是直接对于CCD条件参数化，转化为关于 <span class="arithmatex">\(u,v,t\)</span> 的方程求解即可。</p>
+<h3 id="univariate-ccd-ccd">Univariate CCD 单变量CCD</h3>
+<p>实际上上面一种求解方法一步到位解出了 <span class="arithmatex">\(u,v,t\)</span> 但没有注意到在接触时，四点共面的事实，所以，在[Provot 97] 中，改为先求解三次方程，然后检查是否满足条件的问题</p>
+<h2 id="_3">方法介绍</h2>
+<h3 id="irf">IRF</h3>
+<p>类似于计算 Minkowski 差，逐个检查原点在哪一个时间片中，并迭代缩小时间片。</p>
+<p>优点：</p>
+<ol>
+<li>保守估计，每一步都保证包含 <span class="arithmatex">\(0\)</span>，所以能够确保检查到碰撞</li>
+<li>通过改变时间片的允许最小大小，来改变算法的精度和速度</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>基于二分查找 — 慢</li>
+<li>难以实施编译优化</li>
+</ol>
+<h3 id="uirf">UIRF</h3>
+<p>差不多的思路，但是是用二分法求的是单变量的方程根。</p>
+<blockquote>
+<p>由于可能出现无穷多个根，所以这个算法必须在定义遇上按最大分辨率逐个检查，从而产生大量的计算浪费。</p>
+<p>与此同时，它不能满足控制求解器的运行精度</p>
+</blockquote>
+<h3 id="fprf">FPRF</h3>
+<blockquote>
+<p>Robust treatment of simultaneous collisions.</p>
+</blockquote>
+<p>主要问题：</p>
+<ol>
+<li>FN太多，即有很多碰撞点不被检测到。</li>
+<li>当平行时无法处理 EE 的情况。</li>
+</ol>
+<p>优点：</p>
+<ol>
+<li>速度</li>
+</ol>
+<h3 id="tightccd">TightCCD</h3>
+<p>老朋友了，还是用了单变量的求解，观察三次方程特征来减少计算。</p>
+<p>优点：</p>
+<ol>
+<li>速度快</li>
+<li>完全没有检测不出的点</li>
+</ol>
+<p>问题：</p>
+<ol>
+<li>为了 FN == 0，牺牲了 FP</li>
+<li>如果图元在同一平面上移动，它总是检测到碰撞，而与它们的相对位置无关。</li>
+</ol>
+<h3 id="rp-rrp">RP / RRP</h3>
+<p>转化为光线投射问题：设 <span class="arithmatex">\(\partial \Omega\)</span> 是其边界，通过从原点射出射线，通过观察交点在射线上的位置来判断是否发生碰撞。</p>
+<p>问题：</p>
+<ol>
+<li>实际上只能做DCD – 小TS</li>
+<li>容易出现漏报的问题：在 <span class="arithmatex">\([t,t+\Delta t]\)</span> 内有 2 解</li>
+</ol>
+<p>原理：</p>
+<blockquote>
+<p>根据 Brouwer topological degree theory：</p>
+<p>假设 <span class="arithmatex">\(\Omega\)</span> 是一个 <span class="arithmatex">\(n\)</span> 多面体，设 <span class="arithmatex">\(F:\Omega \rarr \mathbb R^{n}\)</span>满足 <span class="arithmatex">\(C^2\)</span>，且有有限多个根，且没有在边界<span class="arithmatex">\(\Gamma=\partial \Omega\)</span> 上的根，在每一个根处的 Jacobian 都非奇异，则若有光线从 <span class="arithmatex">\(0\)</span> 出发，记交点数为 <span class="arithmatex">\(q\)</span> ，<span class="arithmatex">\(F\)</span> 在交点处光滑且不相切于光线，那么 <span class="arithmatex">\(p,q\)</span> 有相同的奇偶性。</p>
+</blockquote>
+<p>从而得出：对于一个封闭的曲面，一条（起点在外部）射线只能穿过该曲面偶数次（切点算两次）</p>
+<h3 id="bsc">BSC</h3>
+<blockquote>
+<p>Fast and exact continuous collision detection with bernstein sign classification</p>
+</blockquote>
+<p>通过分解为Bernstein多项式（n=3）来加速CCD。当且仅当其都在拐点同一侧有效，（需要二分求解）</p>
+<p>缺点：</p>
+<ol>
+<li>False Positive + False Negative</li>
+</ol>
+<blockquote>
+<p>实际上这个思路和我一开始想的是几乎一致的：</p>
+<p>既然这是一个三次函数，理论上讲也就四个参数，那么我对于整个区间采样四次，一定能确定这四个参数。但反过来想，确定参数是不能解决问题。因为我们的目标是给出是否在这个时间区间之内有根。</p>
+<p>我们在高中时就已经经常做一种题，研究的就是三次函数在几个采样点处的值，然后通过这几个值来确定三次函数的一些性质。一个直观的理解是，通过四个等距采样点上的三次函数值直接判断三次函数是否有解！</p>
+</blockquote>
+<p>原理上：给定一个三次函数 <span class="arithmatex">\(Y(t)\)</span> 用伯恩斯坦多项式唯一分解，对应了一个三次贝塞尔曲线，而每一个三次贝塞尔曲线可以被分类为</p>
+<p><img alt="" src="../assets/image-20220412105920274-20221202161849-y8zx91r.png" /></p>
+<h2 id="_4">其他思路</h2>
+<h3 id="bridson-2009">Bridson 2009</h3>
+<p>添加一个时间维度，通过在四维空间中的相交检测来实现碰撞检测。</p>
+<p>问题：</p>
+<ol>
+<li>不直观、不常用</li>
+<li>导致了 FP 的出现 — 平行的两个三角形认定为碰撞。</li>
+</ol>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["header.autohide", "navigation.tabs"], "search": "../../../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
