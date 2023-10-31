@@ -100,7 +100,7 @@ $$
 
 在构建时尽可能避免Race Condition，利用并行提高性能。
 
-1. [Particle-based ﬂuid simulation.](http://developer.download.nvidia. com/presentations/2008/GDC/GDC08_ ParticleFluids.pdf)
+1. [Particle-based ﬂuid simulation.](http://developer.download.nvidia.com/presentations/2008/GDC/GDC08_ ParticleFluids.pdf)
 
 #### Z-index Sort
 

@@ -15,6 +15,7 @@ Functions:
 import logging
 from mkdocs.structure.pages import Page
 from mkdocs.structure.files import File, Files
+import re
 
 class PaperSource:
   def __init__(self, name):
@@ -35,11 +36,24 @@ class Paper:
 log = logging.getLogger('mkdocs')
 paper_source_index_path = ''
 registry = {}
+link_re = re.compile(r"^\s*\[.*\]\((.*)\)\s*$")
+wiki_files = {}
+wiki_folder = 'Wiki'
 
 def on_config(config):
-  global paper_source_index_path
+  global paper_source_index_path, wiki_folder
   paper_source_index_path = config.get("paperSourceIndexFile", paper_source_index_path)
+  wiki_folder = config.get("wikiFolder", wiki_folder)
+  log.info(f"=> Wiki folder is {wiki_folder}")
 
+def render_hierarchy(f, url):
+  global wiki_files
+  result = "<p>Hierarchy in wiki:</p>\n<ul>\n"
+  for k, v in wiki_files.items():
+    if url.startswith(k) and k != url:
+      relpath = v.file.url_relative_to(f)
+      result += f"<li><a href=\"{relpath}\">{v.meta.get('title', k)}</a></li>\n"
+  return result + "</ul>\n<hr>\n"
 
 def render_paper_source(f:File, name, ps: PaperSource):
   log.info(f"=> Rendering Paper source {name}")
@@ -57,12 +71,15 @@ def render_paper_source(f:File, name, ps: PaperSource):
     result += "</ul>\n"
   return result + "\n"
 
+def is_page_paper(page: Page):
+  return page.meta.get('paperSource', "") != ""
 
+def is_page_wiki(page: Page):
+  url = page.url
+  return url.startswith(wiki_folder)
 
-def on_page_markdown(markdown: str, page: Page, **kwargs):
+def process_paper(page: Page):
   paper_source_name = page.meta.get('paperSource', "").upper()
-  if paper_source_name == '':
-    return
   title = page.meta.get('title', "")
   tags = page.meta.get('tags', [])
   author = page.meta.get('paperAuthor', "UNKNOWN")
@@ -76,6 +93,20 @@ def on_page_markdown(markdown: str, page: Page, **kwargs):
   else:
     registry[paper_source_name].add_paper(p)
 
+def process_wiki(page):
+  wiki_files[page.url] = page
+
+def on_page_markdown(markdown: str, page: Page, **kwargs):
+  if is_page_paper(page):
+    process_paper(page)
+  elif is_page_wiki(page):
+    process_wiki(page)
+
+def on_page_content(html: str, page: Page, config, files):
+  if is_page_wiki(page):
+    log.info(f"=> Rendering Wiki page {page.url}")
+    result = render_hierarchy(page.file, page.url)
+    return result + html
 
 def on_env(env, config, files: Files):
   for f in files:

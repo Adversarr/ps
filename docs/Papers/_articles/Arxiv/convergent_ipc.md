@@ -10,9 +10,17 @@ title: Convergent Incremental Potential Contact
 date: 2023-10-30
 ---
 
+本文解决了原本IPC模型在模型细化过程中出现的势能不一致问题。主要贡献在于推导了IPC距离势能的连续表示，给出了更加严格、精确的连续和离散形式。
+
 <!-- more -->
 
-# The following content is generated with [ChatPaper](https://chatwithpaper.org/)
+1. IPC 公式
+2. 最大耗散原理的公式
+3. 最大值函数的高效率离散化、平滑化
+
+---
+
+The following content is generated with [ChatPaper](https://chatwithpaper.org/)
 
 ## 论文简要 :
 

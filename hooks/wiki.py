@@ -14,13 +14,6 @@ def on_config(config):
   wiki_folder = config.get("wikiFolder", wiki_folder)
   log.info(f"=> Wiki folder is {wiki_folder}")
 
-# def on_files(files, config):
-#   global wiki_files
-#   for f in files:
-#     if f.url.startswith(wiki_folder):
-#       wiki_files[f.url] = f
-#       log.info(f"=> Found wiki file {f.url}")
-
 def is_wiki_url(url):
   return url.startswith(wiki_folder)
 

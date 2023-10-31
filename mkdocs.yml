@@ -9,7 +9,6 @@ nav:
 
 hooks:
   - hooks/registry.py
-  - hooks/wiki.py
 paperSourceIndexFile: 'registry.md'
 wikiFolder: "Wiki"
 
