@@ -475,10 +475,10 @@
 <!-- more -->
 
 <h1 id="fluid-simulation-in-computer-graphics">Fluid Simulation in Computer Graphics</h1>
-<p>Reference: <a href="Fluid Simulation in Computer Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-20221205095122-jadx3x2.pdf">Fluid_Simulatio  n_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf</a></p>
+<p>Reference: Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf</p>
 <h1 id="the-equations-of-fluids">The Equations of Fluids</h1>
 <blockquote>
-<p><a href="Fluid Simulation in Computer Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-20221205095122-jadx3x2.pdf?p=16">Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p16 - Most fluid flow of interest in animation is governed by the famous incompressible Navier-Stokes equations, a set of partial differential equations that are supposed to hold throughout the fluid. </a></p>
+<p>[Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p16 - Most fluid flow of interest in animation is governed by the famous incompressible Navier-Stokes equations, a set of partial differential equations that are supposed to hold throughout the fluid. ]</p>
 </blockquote>
 <p>流体控制方程主要是如下形式：（非守恒形式）</p>
 <blockquote>
@@ -526,10 +526,10 @@ m \frac{D\vec u}{Dt} = \vec F
 <p>分别考虑重力、压强、粘度的影响。</p>
 <ol>
 <li>
-<p><a href="Fluid Simulation in Computer Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-20221205095122-jadx3x2.pdf?p=18">Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p18 - We only see an effect on the fluid particle when there is an imbalance, i.e. higher pressure on one side of the particle than on the other side, resulting in a force pointing away from the high pressure and toward the low pressure.</a></p>
+<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p18 - We only see an effect on the fluid particle when there is an imbalance, i.e. higher pressure on one side of the particle than on the other side, resulting in a force pointing away from the high pressure and toward the low pressure.</p>
 <p><span class="arithmatex">\(-\nabla p V\)</span>
-2. <a href="Fluid Simulation in Computer Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-20221205095122-jadx3x2.pdf?p=18">Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p18 - A viscous fluid tries to resist deforming.</a></p>
-<p><a href="Fluid Simulation in Computer Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-20221205095122-jadx3x2.pdf?p=18">Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p18 - that tries to minimize differences in velocity between nearby bits of fluid</a></p>
+2. Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p18 - A viscous fluid tries to resist deforming.</p>
+<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p18 - that tries to minimize differences in velocity between nearby bits of fluid</p>
 <p><span class="arithmatex">\(V\mu \nabla \cdot \nabla \vec u\)</span></p>
 </li>
 </ol>
@@ -561,7 +561,7 @@ m \frac{D\vec u}{D t} = m\vec g - V \nabla p + V \mu \nabla^2\vec u
 \end{aligned}
 \]</div>
 <blockquote>
-<p><a href="Fluid Simulation in Computer Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-20221205095122-jadx3x2.pdf?p=21">Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p21 - Let’s review the two terms that go into the material derivative. The first is ∂q/∂t, which is just how fast q is changing at that fixed point in space, an Eulerian measurement. The second term, ∇q · ~u, is correcting for how much of that change is due just to differences in the fluid flowing past</a></p>
+<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p21 - Let’s review the two terms that go into the material derivative. The first is ∂q/∂t, which is just how fast q is changing at that fixed point in space, an Eulerian measurement. The second term, ∇q · ~u, is correcting for how much of that change is due just to differences in the fluid flowing past</p>
 </blockquote>
 <p>Def: <strong>Advection ​</strong>使用材料导数解如下的方程：</p>
 <div class="arithmatex">\[
@@ -569,7 +569,7 @@ Dq/Dt = 0
 \]</div>
 <ul>
 <li>说明该量在拉格朗日视角下是不变的（守恒的）</li>
-<li><a href="Fluid Simulation in Computer Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-20221205095122-jadx3x2.pdf?p=22">Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p22 - This just means the quantity is moving around but isn’t changing in the Lagrangian viewpoint.</a></li>
+<li>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p22 - This just means the quantity is moving around but isn’t changing in the Lagrangian viewpoint.</li>
 </ul>
 <h3 id="example">Example</h3>
 <p>考虑一维的情况，取 <span class="arithmatex">\(q\)</span> 为温度 <span class="arithmatex">\(T\)</span>：</p>
@@ -627,7 +627,7 @@ D\vec u/ D t = \frac{\partial u}{\partial t} + \vec u \cdot \nabla \vec u
 \end{aligned}
 \]</div>
 <blockquote>
-<p><a href="Fluid Simulation in Computer Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-20221205095122-jadx3x2.pdf?p=26">Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p26 - The Navier-Stokes equations without viscosity are called the Euler equations and such an ideal fluid with no viscosity is called inviscid.</a></p>
+<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p26 - The Navier-Stokes equations without viscosity are called the Euler equations and such an ideal fluid with no viscosity is called inviscid.</p>
 </blockquote>
 <p>该方程是我们主要使用的方程。</p>
 <h2 id="boundary-conditions">Boundary Conditions</h2>
@@ -660,7 +660,7 @@ q^{n+1}&amp; = \mathcal G(\delta t, \tilde q)
 \end{aligned}
 \]</div>
 <blockquote>
-<p><a href="Fluid Simulation in Computer Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-20221205095122-jadx3x2.pdf?p=32">Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p32 - Splitting really is just the principle of divide-and-conquer applied to differential equations: solving the whole problem may be too hard, but you can split it into pieces that are easier to solve and then combine the solutions</a></p>
+<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p32 - Splitting really is just the principle of divide-and-conquer applied to differential equations: solving the whole problem may be too hard, but you can split it into pieces that are easier to solve and then combine the solutions</p>
 </blockquote>
 <h2 id="splitting-the-fluid-equations">Splitting the Fluid Equations</h2>
 <div class="arithmatex">\[
@@ -672,7 +672,7 @@ s.t. \nabla \cdot \vec u &amp; = 0&amp;(pressure/incompressibility)
 \end{aligned}
 \]</div>
 <blockquote>
-<p><a href="Fluid Simulation in Computer Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-20221205095122-jadx3x2.pdf?p=33">Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p33 - We used the generic quantity q in the advection equation because we may be interested in advecting other things, not just velocity ~v.</a></p>
+<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p33 - We used the generic quantity q in the advection equation because we may be interested in advecting other things, not just velocity ~v.</p>
 </blockquote>
 <ol>
 <li>Advection Step: Chapter 3</li>
@@ -686,7 +686,7 @@ s.t. \nabla \cdot \vec u &amp; = 0&amp;(pressure/incompressibility)
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  Project();
 </code></pre></div>
 <blockquote>
-<p><a href="Fluid Simulation in Computer Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-20221205095122-jadx3x2.pdf?p=33">Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p33 - Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-P33-20230104194916</a></p>
+<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p33 - Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-P33-20230104194916</p>
 </blockquote>
 <h2 id="time-steps">Time Steps</h2>
 <ol>
@@ -697,25 +697,25 @@ s.t. \nabla \cdot \vec u &amp; = 0&amp;(pressure/incompressibility)
 <h2 id="grids">Grids</h2>
 <p>MAC Grid</p>
 <blockquote>
-<p><a href="Fluid Simulation in Computer Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-20221205095122-jadx3x2.pdf?p=35">Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p35 - Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-P35-20230125121752</a></p>
+<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p35 - Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-P35-20230125121752</p>
 <p><img alt="" src="../../../../SIGCourse/Fluid%20Simulation%20in%20Computer%20Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition%20optimized-medium-res-P35-20230125121752-20230125121754-le4w69z.png" />​</p>
 </blockquote>
 <p>为何不使用普通 Grid：</p>
-<p><a href="Fluid Simulation in Computer Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-20221205095122-jadx3x2.pdf?p=36">Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p36 - The problem with formula (2.11) is technically known as having anon-trivial null-space: the set of functions where the formula evaluates tozero contains more than just the constant functions to which it should berestricted.</a></p>
+<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p36 - The problem with formula (2.11) is technically known as having anon-trivial null-space: the set of functions where the formula evaluates tozero contains more than just the constant functions to which it should berestricted.</p>
 <blockquote>
 <p>中心差分允许<span class="arithmatex">\(q_{i} \ne q_{i-1} = q_{i+1}\)</span></p>
 </blockquote>
 <p>但MAC-Grid允许有二阶精度、估计是无偏的。</p>
-<p><a href="Fluid Simulation in Computer Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-20221205095122-jadx3x2.pdf?p=37">Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p37 - Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-P37-20230125143514</a><br />
+<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p37 - Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-P37-20230125143514<br />
 计算公式如上。</p>
-<p><a href="Fluid Simulation in Computer Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-20221205095122-jadx3x2.pdf?p=38">Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p38 - Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-P38-20230125143610</a></p>
+<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p38 - Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-P38-20230125143610</p>
 <p>需要存储的代码实现如上</p>
 <h2 id="two-dimensional-simulations">Two Dimensional Simulations</h2>
 <p>Always prototype a 3d solver in 2d first!</p>
 <h1 id="advection-algorithms">Advection Algorithms</h1>
 <p>主要讲Grid上如何进行速度→位移的更新。</p>
 <ul>
-<li>Time step size：CFL condition。<a href="Fluid Simulation in Computer Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-20221205095122-jadx3x2.pdf?p=48">Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p48 - CFL condition. </a></li>
+<li>Time step size：CFL condition。Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p48 - CFL condition. </li>
 </ul>
 <p>令<span class="arithmatex">\(c = \max\|u\|\)</span>, CFL:</p>
 <div class="arithmatex">\[
@@ -737,45 +737,45 @@ u^* = u - \Delta t \frac 1 {\rho} \nabla p
 <h2 id="discrete-pressure-gradient">Discrete Pressure Gradient</h2>
 <p>（离散压强梯度）</p>
 <p>压强可以用于直接求解出不可压缩流体自身产生的加速度场，公式如下：</p>
-<p><a href="Fluid Simulation in Computer Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-20221205095122-jadx3x2.pdf?p=82">Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p82 - Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-P82-20230125145851</a></p>
+<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p82 - Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-P82-20230125145851</p>
 <p>​<img alt="image" src="../../../../SIGCourse/Fluid%20Simulation%20in%20Computer%20Graphics/image-20230126110233-e8mn55o.png" />​</p>
 <p>​<img alt="image" src="../../../../SIGCourse/Fluid%20Simulation%20in%20Computer%20Graphics/image-20230126110239-9bvdhlk.png" />​</p>
 <p>对于两类边界条件：</p>
 <ol>
-<li>Dirichlet边界，例如空气和流体的界面，其压强为0，直接设置为0即可。<a href="Fluid Simulation in Computer Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-20221205095122-jadx3x2.pdf?p=82">Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p82 - This is called a Dirichlet boundary condition if you’re interested in the technical lingo: Dirichlet means we’re directly specifying the value of the quantity at the boundary.</a></li>
+<li>Dirichlet边界，例如空气和流体的界面，其压强为0，直接设置为0即可。Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p82 - This is called a Dirichlet boundary condition if you’re interested in the technical lingo: Dirichlet means we’re directly specifying the value of the quantity at the boundary.</li>
 <li>Neumann边界条件，对于固体边界面，直接设置流体速度为固体速度，作为速度场的后处理。Ghost value for pressure inside.</li>
 </ol>
 <p>​<img alt="image" src="../../../../SIGCourse/Fluid%20Simulation%20in%20Computer%20Graphics/image-20230126110257-zopctta.png" />​</p>
 <h2 id="discrete-divergence">Discrete divergence</h2>
 <p>可以直接计算出Divergence，如下：</p>
-<p><a href="Fluid Simulation in Computer Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-20221205095122-jadx3x2.pdf?p=85">Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p85 - Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-P85-20230125153857</a>  </p>
+<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p85 - Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-P85-20230125153857  </p>
 <p>​<img alt="image" src="../../../../SIGCourse/Fluid%20Simulation%20in%20Computer%20Graphics/image-20230126110320-2rgyhen.png" />​</p>
 <h2 id="pressure-equations">Pressure Equations</h2>
 <p>通过上述几个公式，推导并整理得到（流体内部）：</p>
 <blockquote>
-<p>左侧实际上是离散Laplace算子，右侧为<span class="arithmatex">\(\nabla \cdot u\)</span><a href="Fluid Simulation in Computer Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-20221205095122-jadx3x2.pdf?p=88">Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p88 - ：Observe that Equations (5.6) and (5.8) are numerical approximations to the Poisson problem −∆t/ρ∇ · ∇p = −∇ · ~u.</a></p>
+<p>左侧实际上是离散Laplace算子，右侧为<span class="arithmatex">\(\nabla \cdot u\)</span>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p88 - ：Observe that Equations (5.6) and (5.8) are numerical approximations to the Poisson problem −∆t/ρ∇ · ∇p = −∇ · ~u.</p>
 </blockquote>
-<p>（2D）<a href="Fluid Simulation in Computer Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-20221205095122-jadx3x2.pdf?p=87">Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p87 - Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-P87-20230126112635</a><br />
+<p>（2D）Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p87 - Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-P87-20230126112635<br />
 ​<img alt="" src="../../../../SIGCourse/Fluid%20Simulation%20in%20Computer%20Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition%20optimized-medium-res-P87-20230126112635-20230126112637-j3hpsut.png" />​</p>
-<p>（3D）<a href="Fluid Simulation in Computer Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-20221205095122-jadx3x2.pdf?p=88">Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p88 - Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-P88-20230126112652</a><br />
+<p>（3D）Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p88 - Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-P88-20230126112652<br />
 ​<img alt="" src="../../../../SIGCourse/Fluid%20Simulation%20in%20Computer%20Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition%20optimized-medium-res-P88-20230126112652-20230126112653-f7idvfo.png" />​</p>
 <blockquote>
-<p><a href="Fluid Simulation in Computer Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-20221205095122-jadx3x2.pdf?p=88">Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p88 - If a fluid grid cell is at the boundary, recall that the new velocities on the boundary faces involve pressures outside the fluid that we have to define through boundary conditions: we need to use that here.</a></p>
+<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p88 - If a fluid grid cell is at the boundary, recall that the new velocities on the boundary faces involve pressures outside the fluid that we have to define through boundary conditions: we need to use that here.</p>
 </blockquote>
 <p>对于流固的边界面，引入<span class="arithmatex">\(u_{solid}\)</span>，来进行耦合，对于流气边界，直接设置为0，公式上体现为：</p>
-<p><a href="Fluid Simulation in Computer Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-20221205095122-jadx3x2.pdf?p=89">Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p89 - Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-P89-20230126151642</a><br />
+<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p89 - Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-P89-20230126151642<br />
 ​<img alt="" src="../../../../SIGCourse/Fluid%20Simulation%20in%20Computer%20Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition%20optimized-medium-res-P89-20230126151642-20230126151644-l9q8myz.png" />​</p>
 <p>具体代码实现为</p>
-<p><a href="Fluid Simulation in Computer Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-20221205095122-jadx3x2.pdf?p=89">Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p89 - Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-P89-20230126113237</a><br />
+<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p89 - Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-P89-20230126113237<br />
 ​<img alt="" src="../../../../SIGCourse/Fluid%20Simulation%20in%20Computer%20Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition%20optimized-medium-res-P89-20230126113237-20230126113241-0wodztf.png" />​</p>
 <p>这一小节的后半部分具体解释了如何进行求解，以及常见算法：</p>
 <ol>
-<li><a href="Fluid Simulation in Computer Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-20221205095122-jadx3x2.pdf?p=90">Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p90 - Putting It In Matrix-Vector Form</a></li>
-<li><a href="Fluid Simulation in Computer Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-20221205095122-jadx3x2.pdf?p=91">Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p91 - The Conjugate Gradient Algorithm</a>：选用Preconditioned CG</li>
-<li><a href="Fluid Simulation in Computer Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-20221205095122-jadx3x2.pdf?p=96">Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p96 - Incomplete Cholesky</a></li>
-<li><a href="Fluid Simulation in Computer Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-20221205095122-jadx3x2.pdf?p=98">Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p98 - Modified Incomplete Cholesky</a></li>
+<li>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p90 - Putting It In Matrix-Vector Form</li>
+<li>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p91 - The Conjugate Gradient Algorithm：选用Preconditioned CG</li>
+<li>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p96 - Incomplete Cholesky</li>
+<li>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p98 - Modified Incomplete Cholesky</li>
 </ol>
-<h2 id="fluid_simulation_for_computer_graphics_second_edition-optimized-medium-respdf-p104-more-accurate-curved-boundaries"><a href="Fluid Simulation in Computer Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-20221205095122-jadx3x2.pdf?p=104">Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p104 - More Accurate Curved Boundaries</a></h2>
+<h2 id="fluid_simulation_for_computer_graphics_second_edition-optimized-medium-respdf-p104-more-accurate-curved-boundaries">Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p104 - More Accurate Curved Boundaries</h2>
 <p>Smoke</p>
 
 

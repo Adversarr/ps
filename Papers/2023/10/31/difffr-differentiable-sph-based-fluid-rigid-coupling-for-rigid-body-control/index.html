@@ -7,14 +7,14 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
-      
-        <link rel="canonical" href="https://adversarr.github.io/ps/Papers/2023/01/30/fluid-simulation-in-computer-graphics-chapter-5-smoke/">
-      
-      
-        <link rel="prev" href="../../../../2022/11/20/elasto-monolith-a-monolithic-optimization-based-liquid-solver-for-contact-aware-elastic-solid-coupling/">
+        <meta name="author" content="Adversarr">
       
       
-        <link rel="next" href="../an-introduction-to-physics-based-animation/">
+        <link rel="canonical" href="https://adversarr.github.io/ps/Papers/2023/10/31/difffr-differentiable-sph-based-fluid-rigid-coupling-for-rigid-body-control/">
+      
+      
+        <link rel="prev" href="../diffpd-differentiable-projective-dynamics/">
+      
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Fluid Simulation in Computer Graphics: Chapter 5 Smoke - PS is not Physical Simulation</title>
+        <title>DiffFR: Differentiable SPH-based Fluid-Rigid Coupling for Rigid Body Control - PS is not Physical Simulation</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#smoke" class="md-skip">
+        <a href="#diff-fr" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Fluid Simulation in Computer Graphics: Chapter 5 Smoke
+              DiffFR: Differentiable SPH-based Fluid-Rigid Coupling for Rigid Body Control
             
           </span>
         </div>
@@ -405,6 +405,49 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-information" class="md-nav__link">
+    Basic Information:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    论文简要 :
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    背景信息:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    方法:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    结果:
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -440,7 +483,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2023-01-30 00:00:00" class="md-ellipsis">January 30, 2023</time>
+                        <time datetime="2023-10-31 00:00:00" class="md-ellipsis">October 31, 2023</time>
                       </div>
                     </li>
                     
@@ -452,7 +495,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              2 min read
+                              1 min read
                             
                           </span>
                         </div>
@@ -472,48 +515,42 @@
         
 
 
+<p>本总结源自于LLM的总结，请注意数据判别. Power by ChatPaper. End.</p>
 <!-- more -->
 
-<h1 id="smoke">Smoke</h1>
-<h1 id="temperature-and-smoke-concentration">Temperature and Smoke concentration.</h1>
-<p>Standard paper: Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p112 - the standard reference papers by Foster and Metaxas [FM97] and by Fedkiw et al. [FSJ01], with some additional capabilities added</p>
-<p>Two extra fluid variables:</p>
-<ol>
-<li>Temperature <span class="arithmatex">\(T%\)</span>​</li>
-<li>Concentration <span class="arithmatex">\(s\)</span>​</li>
-</ol>
-<blockquote>
-<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p112 - two extra fluid variables: the temperature T of the air and the concentration s of smoke particles—what we actually can see</p>
-</blockquote>
-<p>Use Material Derivative to describe: For normal cell, with no Source Term.</p>
-<div class="arithmatex">\[
-DT/Dt = Ds / Dt = 0
-\]</div>
-<blockquote>
-<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p112 - This gives us the simplest possible equations</p>
-</blockquote>
-<p>源的处理：
-​<img alt="" src="../../../../SIGCourse/Smoke/Fluid_Simulation_for_Computer_Graphics_Second_Edition%20optimized-medium-res-P113-20231005203636-20231005203638-uu1sg1j.png" />​</p>
-<p>​<img alt="" src="../../../../SIGCourse/Smoke/Fluid_Simulation_for_Computer_Graphics_Second_Edition%20optimized-medium-res-P113-20231005203753-20231005203758-50iplyy.png" />​</p>
-<p>Diffusion of Heat and concentration:</p>
-<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p113 - Heat and smoke concentration both can diffuse as well</p>
-<p>​<img alt="" src="../../../../SIGCourse/Smoke/Fluid_Simulation_for_Computer_Graphics_Second_Edition%20optimized-medium-res-P114-20231005211310-20231005211312-ofhvxi5.png" />​</p>
-<h1 id="bouyancy">Bouyancy</h1>
-<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p115 - simplified buoyancy model commonly used in graphics.</p>
-<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p115 - Formula​<br />
-​<img alt="" src="../../../../SIGCourse/Smoke/Fluid_Simulation_for_Computer_Graphics_Second_Edition%20optimized-medium-res-P115-20231005212143-20231005212144-t0ris0b.png" />​</p>
-<h1 id="variable-density-solves">Variable Density Solves</h1>
-<div class="arithmatex">\[
-\rho_\text{air} = P/RT
-\]</div>
-<p>如果认为<span class="arithmatex">\(P\)</span>是可以变的，那么也就说明了 <span class="arithmatex">\(\rho\)</span> 是可变的，是一种可压缩的流体模型：Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p116 - as otherwise we end up in a significantly more complicated compressible flow model</p>
-<div class="arithmatex">\[
-\rho = (1-s)\rho_{air} + s\rho_{soot} = \rho_{air} (1 + \alpha s)
-\]</div>
-<p>误差：烟灰是没有“膨胀”的。Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p116 - the soot has the same thermal expansion as the air. This is of course false, but we consider this error negligible relative to other modeling errors.</p>
-<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p118 - 根据不同的 rho 来确定 Poisson 方程的右端项<br />
-​<img alt="" src="../../../../SIGCourse/Smoke/Fluid_Simulation_for_Computer_Graphics_Second_Edition%20optimized-medium-res-P118-20231005215637-20231005215639-so9o05j.png" />​</p>
-<p>‍</p>
+<h1 id="diff-fr">Diff FR</h1>
+<h2 id="basic-information">Basic Information:</h2>
+<ul>
+<li>Title: DiffFR: Differentiable SPH-based Fluid-Rigid Coupling for Rigid Body Control (DiffFR: 可微分的基于SPH的流体-刚体耦合用于刚体控制)</li>
+<li>Authors: Zhehao Li, Qingyu Xu, Xiaohan Ye, Bo Ren, Ligang Liu</li>
+<li>Affiliation: Zhehao Li - University of Science and Technology of China, China (中国科学技术大学); Qingyu Xu - University of Science and Technology of China, China (中国科学技术大学); Xiaohan Ye, Bo Ren - TMCC, College of Computer Science, Nankai University, China (南开大学计算机科学学院); Ligang Liu - University of Science and Technology of China, China (中国科学技术大学)</li>
+<li>Keywords: Differentiable Simulation, Physics-based Simulation, Fluid-Rigid Coupling</li>
+<li>URLs: <a href="https://doi.org/10.1145/3618318">Paper</a>, [GitHub: None]</li>
+</ul>
+<h2 id="_1">论文简要 :</h2>
+<ul>
+<li>本文提出了一种基于SPH的可微分流体-刚体耦合模拟器，用于解决刚体控制问题，通过优化初始速度使刚体在与流体相互作用后达到预定目标。</li>
+</ul>
+<h2 id="_2">背景信息:</h2>
+<ul>
+<li>论文背景: 可微分的物理模拟在逆向设计问题中显示出其有效性，但对于流体-刚体耦合的逆向设计问题，仍然存在两个主要挑战：流体-固体相互作用中普遍存在的不连续接触以及由于流体动力学的大自由度而导致的梯度计算的高计算成本。</li>
+<li>过去方案: 过去的研究主要集中在单向流体-刚体耦合或对流体模型进行强假设的情况下，或者需要大量训练数据来学习流体动力学的情况下，无法直接应用于流体-刚体耦合的逆向设计问题。</li>
+<li>论文的Motivation: 鉴于流体-刚体耦合在日常生活中的广泛应用，如水瓶翻转使其在旋转后正立着落，或在湖面上跳石头以实现多次弹跳，本文旨在提供一种可微分的流体-刚体耦合模拟器，用于解决刚体控制任务中的逆向设计问题。本文通过提出一种基于SPH的流体-刚体耦合模拟器，解决了梯度爆炸和高计算成本的问题，并在各种具有多样化流体-刚体相互作用的刚体控制任务中展示了方法的有效性、可扩展性和可拓展性。</li>
+</ul>
+<h2 id="_3">方法:</h2>
+<ul>
+<li>a. 理论背景:</li>
+<li>本文介绍了可微分物理模拟的概念及其在逆向设计问题中的应用。重点强调了在液体-刚体耦合中需要可微分模拟器的需求。该模拟器的开发面临的挑战包括流体-固体相互作用中的不连续接触和梯度计算的高计算成本。本文提出了一种新颖的基于SPH的可微分流体-刚体耦合模拟器来解决这些挑战。</li>
+<li>b. 技术路线:</li>
+<li>本文提出了一种基于SPH的可微分流体-刚体耦合模拟器，用于刚体控制任务的逆向设计。该模拟器使用粒子来统一表示流体和固体。然而，前向模拟粒子系统的微分计算遇到了梯度爆炸的问题。为了解决这个问题，本文提出了一种可行的梯度计算方案，通过减小问题规模并仅考虑梯度计算中固体周围的流体，实现了局部梯度计算方案。这种局部梯度计算方案可以高效地计算流体-刚体耦合的梯度，而不会产生高计算成本。</li>
+</ul>
+<h2 id="_4">结果:</h2>
+<ul>
+<li>a. 详细的实验设置:</li>
+<li>本文未提供详细的实验设置。</li>
+<li>b. 详细的实验结果:</li>
+<li>本文未提供详细的实验结果。</li>
+</ul>
 
 
 

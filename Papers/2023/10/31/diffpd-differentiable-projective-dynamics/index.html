@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://adversarr.github.io/ps/Papers/2023/01/30/fluid-simulation-in-computer-graphics-chapter-5-smoke/">
+        <link rel="canonical" href="https://adversarr.github.io/ps/Papers/2023/10/31/diffpd-differentiable-projective-dynamics/">
       
       
-        <link rel="prev" href="../../../../2022/11/20/elasto-monolith-a-monolithic-optimization-based-liquid-solver-for-contact-aware-elastic-solid-coupling/">
+        <link rel="prev" href="../../30/convergent-incremental-potential-contact/">
       
       
-        <link rel="next" href="../an-introduction-to-physics-based-animation/">
+        <link rel="next" href="../difffr-differentiable-sph-based-fluid-rigid-coupling-for-rigid-body-control/">
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Fluid Simulation in Computer Graphics: Chapter 5 Smoke - PS is not Physical Simulation</title>
+        <title>DiffPD： Differentiable Projective Dynamics - PS is not Physical Simulation</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#smoke" class="md-skip">
+        <a href="#diffpd-differentiable-projective-dynamics" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Fluid Simulation in Computer Graphics: Chapter 5 Smoke
+              DiffPD： Differentiable Projective Dynamics
             
           </span>
         </div>
@@ -405,6 +405,49 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-information" class="md-nav__link">
+    Basic Information:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    论文简要 :
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    背景信息:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    方法:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    结果:
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -440,7 +483,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2023-01-30 00:00:00" class="md-ellipsis">January 30, 2023</time>
+                        <time datetime="2023-10-31 00:00:00" class="md-ellipsis">October 31, 2023</time>
                       </div>
                     </li>
                     
@@ -452,7 +495,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              2 min read
+                              1 min read
                             
                           </span>
                         </div>
@@ -470,50 +513,66 @@
     <article class="md-content__inner md-typeset">
       
         
+  
+  
+
+<nav class="md-tags" >
+  
+    
+    
+    
+      <a href="../../../../../tags/#differentiable-simulation" class="md-tag">Differentiable Simulation</a>
+    
+  
+    
+    
+    
+      <a href="../../../../../tags/#projective-dynamics" class="md-tag">Projective Dynamics</a>
+    
+  
+</nav>
 
 
+
+<p>可微分的 Projective Dynamics 模拟框架，提升了可微仿真 Backward 的效率。核心思想是，用于 Forward 过程的求解器同样适用于逆向导数的求解。</p>
 <!-- more -->
 
-<h1 id="smoke">Smoke</h1>
-<h1 id="temperature-and-smoke-concentration">Temperature and Smoke concentration.</h1>
-<p>Standard paper: Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p112 - the standard reference papers by Foster and Metaxas [FM97] and by Fedkiw et al. [FSJ01], with some additional capabilities added</p>
-<p>Two extra fluid variables:</p>
-<ol>
-<li>Temperature <span class="arithmatex">\(T%\)</span>​</li>
-<li>Concentration <span class="arithmatex">\(s\)</span>​</li>
-</ol>
-<blockquote>
-<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p112 - two extra fluid variables: the temperature T of the air and the concentration s of smoke particles—what we actually can see</p>
-</blockquote>
-<p>Use Material Derivative to describe: For normal cell, with no Source Term.</p>
-<div class="arithmatex">\[
-DT/Dt = Ds / Dt = 0
-\]</div>
-<blockquote>
-<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p112 - This gives us the simplest possible equations</p>
-</blockquote>
-<p>源的处理：
-​<img alt="" src="../../../../SIGCourse/Smoke/Fluid_Simulation_for_Computer_Graphics_Second_Edition%20optimized-medium-res-P113-20231005203636-20231005203638-uu1sg1j.png" />​</p>
-<p>​<img alt="" src="../../../../SIGCourse/Smoke/Fluid_Simulation_for_Computer_Graphics_Second_Edition%20optimized-medium-res-P113-20231005203753-20231005203758-50iplyy.png" />​</p>
-<p>Diffusion of Heat and concentration:</p>
-<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p113 - Heat and smoke concentration both can diffuse as well</p>
-<p>​<img alt="" src="../../../../SIGCourse/Smoke/Fluid_Simulation_for_Computer_Graphics_Second_Edition%20optimized-medium-res-P114-20231005211310-20231005211312-ofhvxi5.png" />​</p>
-<h1 id="bouyancy">Bouyancy</h1>
-<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p115 - simplified buoyancy model commonly used in graphics.</p>
-<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p115 - Formula​<br />
-​<img alt="" src="../../../../SIGCourse/Smoke/Fluid_Simulation_for_Computer_Graphics_Second_Edition%20optimized-medium-res-P115-20231005212143-20231005212144-t0ris0b.png" />​</p>
-<h1 id="variable-density-solves">Variable Density Solves</h1>
-<div class="arithmatex">\[
-\rho_\text{air} = P/RT
-\]</div>
-<p>如果认为<span class="arithmatex">\(P\)</span>是可以变的，那么也就说明了 <span class="arithmatex">\(\rho\)</span> 是可变的，是一种可压缩的流体模型：Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p116 - as otherwise we end up in a significantly more complicated compressible flow model</p>
-<div class="arithmatex">\[
-\rho = (1-s)\rho_{air} + s\rho_{soot} = \rho_{air} (1 + \alpha s)
-\]</div>
-<p>误差：烟灰是没有“膨胀”的。Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p116 - the soot has the same thermal expansion as the air. This is of course false, but we consider this error negligible relative to other modeling errors.</p>
-<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p118 - 根据不同的 rho 来确定 Poisson 方程的右端项<br />
-​<img alt="" src="../../../../SIGCourse/Smoke/Fluid_Simulation_for_Computer_Graphics_Second_Edition%20optimized-medium-res-P118-20231005215637-20231005215639-so9o05j.png" />​</p>
-<p>‍</p>
+<h1 id="diffpd-differentiable-projective-dynamics">DiffPD： Differentiable Projective Dynamics</h1>
+<ul>
+<li>本总结源自于 LLM 的总结，请注意数据判别. Power by ChatPaper. End.</li>
+</ul>
+<h2 id="basic-information">Basic Information:</h2>
+<ul>
+<li>Title: DiffPD: Differentiable Projective Dynamics (DiffPD: 可微分的投影动力学)</li>
+<li>Authors: Tao Du, Kui Wu, Pingchuan Ma, Sebastien Wah, Andrew Spielberg, Daniela Rus, Wojciech Matusik</li>
+<li>Affiliation: MIT CSAIL (麻省理工学院计算机科学与人工智能实验室)</li>
+<li>Keywords: differentiable simulation, projective dynamics, soft-body dynamics, contact handling (可微分仿真, 投影动力学, 软体动力学, 接触处理)</li>
+<li>URLs: <a href="https://doi.org/10.1145/3490168">Paper</a>, [GitHub: None]</li>
+</ul>
+<h2 id="_1">论文简要 :</h2>
+<ul>
+<li>本文提出了一种新颖的、快速可微分的软体学习和控制应用模拟器 DiffPD。通过基于投影动力学（PD）的隐式时间积分，DiffPD 在前向 PD 模拟中利用预分解的 Cholesky 分解加速反向传播，支持两种类型的接触处理，并在多个应用中展示了其高效性能。</li>
+</ul>
+<h2 id="_2">背景信息:</h2>
+<ul>
+<li>论文背景: 近年来，可微分物理学的兴起引发了可微分模拟器的出现，并在具有模拟优化循环的逆问题中取得了成功。然而，由于软体动力学中自由度的增加，可微分软体模拟器的研究仍处于初级阶段。</li>
+<li>过去方案: 过去的研究主要分为两类：一类是基于显式时间积分方案的模拟器，需要较小的时间步长以避免梯度计算中的数值不稳定性；另一类是基于隐式时间积分的模拟器，通常通过使用伴随方法和求解昂贵的线性化动力学来计算梯度。</li>
+<li>论文的 Motivation: 本文的动机是开发一种可微分的软体模拟器，以解决软体动力学中自由度增加的挑战。与基于神经网络的方法不同，本文的方法基于物理学原理，直接对软体动力学的控制方程进行求导，同时通过借鉴投影动力学的思想，提出了一种高效的隐式时间积分方案，并支持接触处理。</li>
+</ul>
+<h2 id="_3">方法:</h2>
+<ul>
+<li>a. 理论背景:</li>
+<li>本文介绍了可微分模拟器的概念及其在逆问题、运动规划、控制器设计和优化中的应用。它强调了可微分模拟器在为物理系统提供额外指导和促进各种下游应用的定量研究方面的潜力。</li>
+<li>b. 技术路线:</li>
+<li>本文提出了 DiffPD，一种基于有限元方法（FEM）和隐式时间步进方案的高效可微分软体模拟器。DiffPD 利用 PD 中的非线性分解概念加速正向模拟和反向传播。它支持使用基于惩罚的接触和摩擦力或基于互补性的非穿透接触和静摩擦力进行可微分接触处理。DiffPD 在各种 3D 应用中进行了评估，并与显式和隐式可微分 FEM 模拟进行了比较。</li>
+</ul>
+<h2 id="_4">结果:</h2>
+<ul>
+<li>a. 详细的实验设置:</li>
+<li>本文未提及具体的实验设置。</li>
+<li>b. 详细的实验结果:</li>
+<li>本文未提及具体的实验结果。</li>
+</ul>
 
 
 

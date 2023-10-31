@@ -1027,7 +1027,7 @@
 <!-- 也可以使用分离轴定理计算CCD -->
 
 <h4 id="_6">代数方程求解</h4>
-<p>这种方法仅适用于简单而特殊的情况，例如<a href="Survey/http://www.realtimerendering.com/intersections.html">Ref</a>：</p>
+<p>这种方法仅适用于简单而特殊的情况，例如<a href="http://www.realtimerendering.com/intersections.html">Ref</a>：</p>
 <ol>
 <li>光线</li>
 <li>平面</li>
@@ -1042,7 +1042,7 @@
 <p>物理模拟中有时会使用二分法（二分搜索）来查找撞击时间：使用这种方案，可以非常快速地到达撞击时间，但我们不涉及Tunnel问题，因为如果在第 i 帧和第 i + 1 帧没有碰撞，二分就不会开始。</p>
 <h4 id="swept-volumn">Swept Volumn</h4>
 <p>考察<span class="arithmatex">\(t\)</span>和<span class="arithmatex">\(t+1\)</span>时刻物体对应点连线（按物体形状、沿直线执行扫描）构成的体积区域，不难发现，如果有相交，则可能会出现碰撞。计算TOI（碰撞时间）后将物体移动到改时间，执行碰撞处理（如计算速度等）然后重新扫描。</p>
-<p>在物体角速度很大的情况下会产生不精确的结果 <a href="Survey/https://docs.unity3d.com/Manual/ContinuousCollisionDetection.html">Ref</a>：</p>
+<p>在物体角速度很大的情况下会产生不精确的结果 <a href="https://docs.unity3d.com/Manual/ContinuousCollisionDetection.html">Ref</a>：</p>
 <p><img alt="Unity 3D" src="../assets/2022-04-14-15-52-26-20221202161849-uvfpuxf.png" /></p>
 <h4 id="speculative-ccd">Speculative CCD</h4>
 <p>Speculative CCD 的工作原理是根据物体的速度和角速度，计算物体的AABB，从而推测出下一个物理步骤中所有潜在的接触。然后将所有可能接触送入求解器，以确保满足所有接触约束，以便对象不会通过任何穿模（Tunnel）的情况。求解器使用速度、体积来精确计算CCD。</p>
