@@ -1,12 +1,12 @@
 ---
 title: "Elasto Monolith: A Monolithic Optimization-based Liquid Solver for Contact-Aware Elastic-Solid Coupling"
 tags: 
-  - Collision,
+  - Collision
   - FSI
   - FVM
 date: 2022-11-20
 paperAuthor: #TODO
-paperDate: 2020
+paperYear: 2020
 paperSource: SIGGRAPH ASIA
 ---
 

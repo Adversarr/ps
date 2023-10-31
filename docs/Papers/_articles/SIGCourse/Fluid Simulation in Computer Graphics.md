@@ -2,7 +2,7 @@
 title: Fluid Simulation in Computer Graphics
 date: 2023-01-30
 paperAuthor: 
-paperDate: 2015
+paperYear: 2015
 paperSource: SIGGRAPH Course
 ---
 

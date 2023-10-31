@@ -2,7 +2,7 @@
 title: Affine Particle-In-Cell Method
 date: 2022-10-30
 paperAuthor: Chenfanfu Jiang
-paperDate: 2015
+paperYear: 2015
 paperSource: SIGGRAPH
 tags: 
    - Fluid​​

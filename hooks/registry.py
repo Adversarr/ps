@@ -83,7 +83,7 @@ def process_paper(page: Page):
   title = page.meta.get('title', "")
   tags = page.meta.get('tags', [])
   author = page.meta.get('paperAuthor', "UNKNOWN")
-  year = page.meta.get('paperYear', 1984)
+  year = page.meta.get('paperYear', "Unknown")
   p = Paper(page.file, title, author, year, tags)
   log.info(f"=> Found paper: {title} by {author} (Year {year}, tags: {tags}, PS={paper_source_name})")
   if registry.get(paper_source_name) is None:

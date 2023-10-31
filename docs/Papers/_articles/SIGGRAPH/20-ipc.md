@@ -1,5 +1,6 @@
 ---
 date: 2020-01-01
+paperYear: 2020
 title: "Incremental Potential Contact: Intersection- and Inversion-free, Large-Deformation Dynamics"
 author: Minchen Li
 tags:

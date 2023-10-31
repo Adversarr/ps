@@ -12,7 +12,7 @@ date: 2023-10-22
 tags:
   - IPC
   - GPU
-  - ProjectiveDynamics
+  - Projective Dynamics
   - Mass Spring
 ---
 

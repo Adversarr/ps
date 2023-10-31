@@ -10,13 +10,13 @@ tag:
   - Differential Simulation
 ---
 
-
-本总结源自于LLM的总结，请注意数据判别. Power by ChatPaper. End.
+本文使用SPH模型，实现了流固的弱双向耦合。解决了模拟过程中的导数数值稳定性、高维度输入下的计算效率问题。
 
 <!-- more -->
 
-# Diff FR
+# LLM Summary
 
+本总结源自于LLM的总结，请注意数据判别. Power by ChatPaper. End.
 ## Basic Information:
 
 - Title: DiffFR: Differentiable SPH-based Fluid-Rigid Coupling for Rigid Body Control (DiffFR: 可微分的基于SPH的流体-刚体耦合用于刚体控制)

@@ -2,7 +2,7 @@
 title: An Introduction to Physics-based Animation
 date: 2023-01-30
 paperAuthor: 
-paperDate: 2021
+paperYear: 2021
 paperSource: SIGGRAPH Course
 ---
 

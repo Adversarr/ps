@@ -2,7 +2,7 @@
 paperAuthor: "TAO DU, KUI WU, PINGCHUAN MA, SEBASTIEN WAH, ANDREW SPIELBERG, DANIELA RUS, and WOJCIECH MATUSIK, MIT CSAIL"
 paperSource: TOG
 paperYear: 2021
-title: DiffPD： Differentiable Projective Dynamics
+title: "DiffPD: Differentiable Projective Dynamics"
 date: 2023-10-31
 doi: "https://doi.org/10.1145/3490168"
 tags:
