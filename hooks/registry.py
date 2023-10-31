@@ -112,3 +112,4 @@ def on_env(env, config, files: Files):
   for f in files:
     if f.src_path == paper_source_index_path:
       f.page.content += "\n".join([ render_paper_source(f, k, v) for k, v in registry.items() ])
+  log.info("Registry Done.")

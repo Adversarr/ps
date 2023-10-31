@@ -29,6 +29,7 @@ plugins:
       enabled: true
       blog_dir: Papers
       post_dir: "{blog}/_articles"
+      archive: false
 
 markdown_extensions:
   - admonition

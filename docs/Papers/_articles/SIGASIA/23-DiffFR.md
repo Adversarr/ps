@@ -1,8 +1,8 @@
 ---
 title: "DiffFR: Differentiable SPH-based Fluid-Rigid Coupling for Rigid Body Control"
-paperAuthor: "ZHEHAO LI, University of Science and Technology of China, China QINGYU XU, University of Science and Technology of China, China XIAOHAN YE, TMCC, College of Computer Science, Nankai University, China BO REN∗, TMCC, College of Computer Science, Nankai University, China LIGANG LIU, University of Science and Technology of China, China"
 paperSource: "siggraph asia"
 paperYear: 2023
+date: 2023-10-31
 author: Adversarr
 doi: "https://doi.org/10.1145/3618318"
 tag:
@@ -11,10 +11,11 @@ tag:
 ---
 
 
+本总结源自于LLM的总结，请注意数据判别. Power by ChatPaper. End.
 
 <!-- more -->
 
-本总结源自于LLM的总结，请注意数据判别. Power by ChatPaper. End.
+# Diff FR
 
 ## Basic Information:
 

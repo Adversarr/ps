@@ -1,24 +1,22 @@
 ---
-title: "DiffPD: Differentiable Projective Dynamics"
-paperAuthor: TAO DU, KUI WU, PINGCHUAN MA, SEBASTIEN WAH, ANDREW SPIELBERG, DANIELA RUS, and WOJCIECH MATUSIK, MIT CSAIL
+paperAuthor: "TAO DU, KUI WU, PINGCHUAN MA, SEBASTIEN WAH, ANDREW SPIELBERG, DANIELA RUS, and WOJCIECH MATUSIK, MIT CSAIL"
 paperSource: TOG
 paperYear: 2021
-doi: https://doi.org/10.1145/3490168
+title: DiffPD： Differentiable Projective Dynamics
+date: 2023-10-31
+doi: "https://doi.org/10.1145/3490168"
 tags:
   - Differentiable Simulation
   - Projective Dynamics
-author: Adversarr
-date: 2023-10-31
 ---
 
-可微分的 Projective Dynamics 模拟框架，提升了可微仿真 Backward 的效率。核心思想是，用于Forward过程的求解器同样适用于逆向导数的求解。
+可微分的 Projective Dynamics 模拟框架，提升了可微仿真 Backward 的效率。核心思想是，用于 Forward 过程的求解器同样适用于逆向导数的求解。
 
 <!-- more -->
 
----
+# DiffPD： Differentiable Projective Dynamics
 
 - 本总结源自于 LLM 的总结，请注意数据判别. Power by ChatPaper. End.
-
 
 ## Basic Information:
 
