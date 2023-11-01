@@ -16,6 +16,8 @@ import logging
 from mkdocs.structure.pages import Page
 from mkdocs.structure.files import File, Files
 import re
+# import pydoi
+
 
 class PaperSource:
   def __init__(self, name):
@@ -78,12 +80,19 @@ def is_page_wiki(page: Page):
   url = page.url
   return url.startswith(wiki_folder)
 
+
+# def process_doi(doi: str):
+#   log.info(pydoi.resolve(doi))
+
 def process_paper(page: Page):
   paper_source_name = page.meta.get('paperSource', "").upper()
   title = page.meta.get('title', "")
   tags = page.meta.get('tags', [])
   author = page.meta.get('paperAuthor', "UNKNOWN")
   year = page.meta.get('paperYear', "Unknown")
+  # doi = page.meta.get('doi', "")
+  # if len(doi) > 0:
+  #   doi = process_doi(doi)
   p = Paper(page.file, title, author, year, tags)
   log.info(f"=> Found paper: {title} by {author} (Year {year}, tags: {tags}, PS={paper_source_name})")
   if registry.get(paper_source_name) is None:

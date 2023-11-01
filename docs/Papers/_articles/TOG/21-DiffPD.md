@@ -4,7 +4,7 @@ paperSource: TOG
 paperYear: 2021
 title: "DiffPD: Differentiable Projective Dynamics"
 date: 2023-10-31
-doi: "https://doi.org/10.1145/3490168"
+doi: "10.1145/3490168"
 tags:
   - Differentiable Simulation
   - Projective Dynamics

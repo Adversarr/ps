@@ -4,7 +4,7 @@ paperSource: "siggraph asia"
 paperYear: 2023
 date: 2023-10-31
 author: Adversarr
-doi: "https://doi.org/10.1145/3618318"
+doi: "10.1145/3618318"
 tag:
   - SPH
   - Differential Simulation
