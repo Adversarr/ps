@@ -7,16 +7,14 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
-        <meta name="author" content="Adversarr">
+      
+        <link rel="canonical" href="https://adversarr.github.io/ps/Papers/2023/11/01/diffcloth-differentiable-cloth-simulation-with-dry-frictional-contact/">
       
       
-        <link rel="canonical" href="https://adversarr.github.io/ps/Papers/2023/10/31/difffr-differentiable-sph-based-fluid-rigid-coupling-for-rigid-body-control/">
+        <link rel="prev" href="../../../10/31/difffr-differentiable-sph-based-fluid-rigid-coupling-for-rigid-body-control/">
       
       
-        <link rel="prev" href="../diffpd-differentiable-projective-dynamics/">
-      
-      
-        <link rel="next" href="../../../11/01/diffcloth-differentiable-cloth-simulation-with-dry-frictional-contact/">
+        <link rel="next" href="../differentiable-optimal-control-for-retargeting-motions-onto-legged-robots/">
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
@@ -24,7 +22,7 @@
     
     
       
-        <title>DiffFR: Differentiable SPH-based Fluid-Rigid Coupling for Rigid Body Control - PS is not Physical Simulation</title>
+        <title>DiffCloth: Differentiable Cloth Simulation with Dry Frictional Contact - PS is not Physical Simulation</title>
       
     
     
@@ -69,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#llm-summary" class="md-skip">
+        <a href="#basic-information" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              DiffFR: Differentiable SPH-based Fluid-Rigid Coupling for Rigid Body Control
+              DiffCloth: Differentiable Cloth Simulation with Dry Frictional Contact
             
           </span>
         </div>
@@ -404,8 +402,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -485,7 +481,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2023-10-31 00:00:00" class="md-ellipsis">October 31, 2023</time>
+                        <time datetime="2023-11-01 00:00:00" class="md-ellipsis">November 1, 2023</time>
                       </div>
                     </li>
                     
@@ -515,44 +511,73 @@
     <article class="md-content__inner md-typeset">
       
         
+  
+  
+
+<nav class="md-tags" >
+  
+    
+    
+    
+      <a href="../../../../../tags/#projective-dynamics" class="md-tag">Projective Dynamics</a>
+    
+  
+    
+    
+    
+      <a href="../../../../../tags/#differentiable-simulation" class="md-tag">Differentiable Simulation</a>
+    
+  
+    
+    
+    
+      <a href="../../../../../tags/#cloth" class="md-tag">Cloth</a>
+    
+  
+</nav>
 
 
-<p>本文使用SPH模型，实现了流固的弱双向耦合。解决了模拟过程中的导数数值稳定性、高维度输入下的计算效率问题。</p>
+
+  <h1>DiffCloth: Differentiable Cloth Simulation with Dry Frictional Contact</h1>
+
+<p>本文提出了一种具有干摩擦接触的可微布料模拟器，通过优化材料参数，实现了对布料行为的精确控制，并在多个应用领域展示了其有效性。</p>
 <!-- more -->
 
-<h1 id="llm-summary">LLM Summary</h1>
-<p>本总结源自于LLM的总结，请注意数据判别. Power by ChatPaper. End.</p>
 <h2 id="basic-information">Basic Information:</h2>
 <ul>
-<li>Title: DiffFR: Differentiable SPH-based Fluid-Rigid Coupling for Rigid Body Control (DiffFR: 可微分的基于SPH的流体-刚体耦合用于刚体控制)</li>
-<li>Authors: Zhehao Li, Qingyu Xu, Xiaohan Ye, Bo Ren, Ligang Liu</li>
-<li>Affiliation: Zhehao Li - University of Science and Technology of China, China (中国科学技术大学); Qingyu Xu - University of Science and Technology of China, China (中国科学技术大学); Xiaohan Ye, Bo Ren - TMCC, College of Computer Science, Nankai University, China (南开大学计算机科学学院); Ligang Liu - University of Science and Technology of China, China (中国科学技术大学)</li>
-<li>Keywords: Differentiable Simulation, Physics-based Simulation, Fluid-Rigid Coupling</li>
-<li>URLs: <a href="https://doi.org/10.1145/3618318">Paper</a>, [GitHub: None]</li>
+<li>Title: DiffCloth: Differentiable Cloth Simulation with Dry Frictional Contact (DiffCloth：具有干摩擦接触的可微布料模拟)</li>
+<li>Authors: Yifei Li, Tao Du, Kui Wu, Jie Xu, and Wojciech Matusik</li>
+<li>Affiliation: MIT CSAIL, USA (麻省理工学院计算机科学与人工智能实验室，美国)</li>
+<li>Keywords: Projective Dynamics, differentiable simulation, cloth simulation</li>
+<li>URLs: <a href="https://doi.org/10.1145/3527660">Paper</a>, <a href="github:">GitHub Code</a></li>
 </ul>
 <h2 id="_1">论文简要 :</h2>
 <ul>
-<li>本文提出了一种基于SPH的可微分流体-刚体耦合模拟器，用于解决刚体控制问题，通过优化初始速度使刚体在与流体相互作用后达到预定目标。</li>
+<li>本文提出了一种具有干摩擦接触的可微布料模拟器，通过优化材料参数，实现了对布料行为的精确控制，并在多个应用领域展示了其有效性。</li>
 </ul>
 <h2 id="_2">背景信息:</h2>
 <ul>
-<li>论文背景: 可微分的物理模拟在逆向设计问题中显示出其有效性，但对于流体-刚体耦合的逆向设计问题，仍然存在两个主要挑战：流体-固体相互作用中普遍存在的不连续接触以及由于流体动力学的大自由度而导致的梯度计算的高计算成本。</li>
-<li>过去方案: 过去的研究主要集中在单向流体-刚体耦合或对流体模型进行强假设的情况下，或者需要大量训练数据来学习流体动力学的情况下，无法直接应用于流体-刚体耦合的逆向设计问题。</li>
-<li>论文的Motivation: 鉴于流体-刚体耦合在日常生活中的广泛应用，如水瓶翻转使其在旋转后正立着落，或在湖面上跳石头以实现多次弹跳，本文旨在提供一种可微分的流体-刚体耦合模拟器，用于解决刚体控制任务中的逆向设计问题。本文通过提出一种基于SPH的流体-刚体耦合模拟器，解决了梯度爆炸和高计算成本的问题，并在各种具有多样化流体-刚体相互作用的刚体控制任务中展示了方法的有效性、可扩展性和可拓展性。</li>
+<li>论文背景: 布料模拟在计算机动画、服装设计和机器人辅助穿衣等领域具有广泛应用。本文提出了一种不同iable的布料模拟器，通过提供额外的梯度信息，为布料相关应用提供了便利。</li>
+<li>过去方案: 过去的可微模拟器主要集中在刚体和软体动力学方面，而对于布料模拟的可微化研究相对较少。由于布料模拟中频繁的接触事件和自碰撞问题，导致梯度的计算变得更加困难。</li>
+<li>论文的Motivation: 受到可微物理模拟的发展和在刚体和软体系统中的成功启发，本文认为高质量的可微布料模拟器也能够在布料相关应用中发挥重要作用。通过提供额外的梯度信息，可微模拟器可以使用基于梯度的优化方法，从而在下游应用中实现更高的效率。</li>
 </ul>
 <h2 id="_3">方法:</h2>
 <ul>
 <li>a. 理论背景:</li>
-<li>本文介绍了可微分物理模拟的概念及其在逆向设计问题中的应用。重点强调了在液体-刚体耦合中需要可微分模拟器的需求。该模拟器的开发面临的挑战包括流体-固体相互作用中的不连续接触和梯度计算的高计算成本。本文提出了一种新颖的基于SPH的可微分流体-刚体耦合模拟器来解决这些挑战。</li>
+<li>本文介绍了在虚拟试穿、服装设计和机器人辅助穿衣等各种应用中，布料模拟的重要性。文章强调了可微分布料模拟器的潜在优势，它可以计算梯度并实现基于梯度的优化方法。文章还提到了在接触丰富的布料模拟中推导梯度的挑战，并提出了一种具有干摩擦接触的新型可微分布料模拟器。该模拟器在系统识别、轨迹优化、闭环控制、逆向设计和真实到模拟的转换等多个应用中展示了其有效性。</li>
 <li>b. 技术路线:</li>
-<li>本文提出了一种基于SPH的可微分流体-刚体耦合模拟器，用于刚体控制任务的逆向设计。该模拟器使用粒子来统一表示流体和固体。然而，前向模拟粒子系统的微分计算遇到了梯度爆炸的问题。为了解决这个问题，本文提出了一种可行的梯度计算方案，通过减小问题规模并仅考虑梯度计算中固体周围的流体，实现了局部梯度计算方案。这种局部梯度计算方案可以高效地计算流体-刚体耦合的梯度，而不会产生高计算成本。</li>
+<li>本文介绍了基于干摩擦接触的Projective Dynamics (PD)布料模拟方法作为可微分布料模拟器的基础。使用隐式时间积分方案将布料建模为节点系统，位置和速度由向量函数表示。通过能量最小化问题来寻找鞍点，其中目标函数被最小化。内部力由潜在能量的空间梯度定义。PD利用局部和全局求解器来解决方程组。</li>
 </ul>
 <h2 id="_4">结果:</h2>
 <ul>
 <li>a. 详细的实验设置:</li>
-<li>本文未提供详细的实验设置。</li>
-<li>b. 详细的实验结果:</li>
-<li>本文未提供详细的实验结果。</li>
+<li>
+<p>作者进行了多个实验来评估他们的可微分布料模拟器与干摩擦接触的性能。他们使用系统识别任务来估计布料的摩擦系数和刚度参数。实验涉及生成具有不同设置的球体的运动序列，水平偏移量也有所变化。损失函数被定义为模拟节点位置与给定运动序列中相应位置之间的平方距离。绘制了损失函数的图景，以比较不同设置之间的平滑性。此外，还模拟了一个控制优化问题，设计每个节点的力以将布料的中心拉到目标位置。优化问题中的变量数量根据布料中的节点数而变化。比较了两种基于梯度和无梯度的方法的收敛速度，以评估梯度在优化过程中的有用性。</p>
+</li>
+<li>
+<p>b. 详细的实验结果:</p>
+</li>
+<li>实验结果显示，所有三种优化方法（L-BFGS-B、CMA-ES和（1+1）-ES）都能够优化系统参数，实现与给定输入相同的运动序列。然而，由于使用了梯度，L-BFGS-B的收敛速度要快得多。在涉及自碰撞和摩擦的“T恤”示例中，L-BFGS-B在收敛速度方面优于无梯度方法。在只有一个参数和凹凸不平的损失函数图景的“球体”示例中，无梯度方法可以通过自由探索摩擦接触的整个范围来实现更低的最终损失。</li>
 </ul>
 
 
