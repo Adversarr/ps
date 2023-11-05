@@ -9,6 +9,11 @@
 3. [FVM](FVM/index.md)
 4. [LBM](LBM/index.md)
 
+## Special Objects
+
+1. Liquid
+2. Smoke: See [Houdini](https://www.sidefx.com/docs/houdini/pyro/background.html)
+
 ## Problems
 
 # Basic Equation and Terminologies

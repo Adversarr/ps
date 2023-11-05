@@ -2,7 +2,7 @@
 title: "DiffCloth: Differentiable Cloth Simulation with Dry Frictional Contact"
 date: 2023-11-01
 tags:
-  - Projective Dynamics
+  - Frictional Contact
   - Differentiable Simulation
   - Cloth
 paperAuthor: Yifei Li, Tao Du, Kui Wu, Jie Xu, and Wojciech Matusik
@@ -11,7 +11,7 @@ paperSource: SIGGRAPH
 doi: 10.1145/3527660
 ---
 
-本文提出了一种具有干摩擦接触的可微布料模拟器，通过优化材料参数，实现了对布料行为的精确控制，并在多个应用领域展示了其有效性。
+本文提出了一种具有**干摩擦接触的可微布料模拟器**，通过优化材料参数，实现了对布料行为的精确控制，并在多个应用领域展示了其有效性。
 
 <!-- more -->
 

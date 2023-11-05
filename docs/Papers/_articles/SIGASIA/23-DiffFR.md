@@ -17,6 +17,7 @@ tag:
 # LLM Summary
 
 本总结源自于LLM的总结，请注意数据判别. Power by ChatPaper. End.
+
 ## Basic Information:
 
 - Title: DiffFR: Differentiable SPH-based Fluid-Rigid Coupling for Rigid Body Control (DiffFR: 可微分的基于SPH的流体-刚体耦合用于刚体控制)
