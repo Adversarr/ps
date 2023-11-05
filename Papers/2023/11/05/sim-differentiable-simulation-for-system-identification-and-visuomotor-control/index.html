@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://adversarr.github.io/ps/Papers/2023/11/01/differentiable-optimal-control-for-retargeting-motions-onto-legged-robots/">
+        <link rel="canonical" href="https://adversarr.github.io/ps/Papers/2023/11/05/sim-differentiable-simulation-for-system-identification-and-visuomotor-control/">
       
       
-        <link rel="prev" href="../diffcloth-differentiable-cloth-simulation-with-dry-frictional-contact/">
+        <link rel="prev" href="../chainqueen-a-real-time-differentiable-physical-simulator-for-soft-robotics/">
       
-      
-        <link rel="next" href="../../04/fluidic-topology-optimization-with-an-anisotropic-mixture-model/">
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
@@ -22,7 +20,7 @@
     
     
       
-        <title>Differentiable Optimal Control for Retargeting Motions onto Legged Robots - PS is not Physical Simulation</title>
+        <title>∇Sim: Differentiable simulation for system identification and visuomotor control - PS is not Physical Simulation</title>
       
     
     
@@ -67,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#basic-information" class="md-skip">
+        <a href="#note" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Differentiable Optimal Control for Retargeting Motions onto Legged Robots
+              ∇Sim: Differentiable simulation for system identification and visuomotor control
             
           </span>
         </div>
@@ -402,6 +400,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -444,13 +444,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#note" class="md-nav__link">
-    Note:
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -488,7 +481,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2023-11-01 00:00:00" class="md-ellipsis">November 1, 2023</time>
+                        <time datetime="2023-11-05 00:00:00" class="md-ellipsis">November 5, 2023</time>
                       </div>
                     </li>
                     
@@ -526,63 +519,57 @@
     
     
     
-      <a href="../../../../../tags/#differentiable-simulation" class="md-tag">Differentiable Simulation</a>
+      <a href="../../../../../tags/#differentiabl-simulation" class="md-tag">Differentiabl Simulation</a>
     
   
     
     
     
-      <a href="../../../../../tags/#control" class="md-tag">Control</a>
+      <a href="../../../../../tags/#system-identification" class="md-tag">System Identification</a>
     
   
 </nav>
 
 
 
-  <h1>Differentiable Optimal Control for Retargeting Motions onto Legged Robots</h1>
-
-<p>本文提出了一种可微分最优控制（DOC）框架，用于将动物或动画的丰富动作重新定位到四足机器人上，通过优化参数来最小化重新定位误差，并展示了在不同比例和质量分布的机器人上的重新定位结果。</p>
+<p>本文提出了一种名为 ∇Sim 的可微分仿真框架，通过结合可微分多物理仿真和可微分渲染，<strong>从图像序列中直接估计物体的物理属性</strong>，解决了系统识别问题和视觉运动控制问题。</p>
 <!-- more -->
 
+<h1 id="note">Note:</h1>
+<ul>
+<li>本总结源自于 LLM 的总结，请注意数据判别. Power by ChatPaper. End.</li>
+</ul>
 <h2 id="basic-information">Basic Information:</h2>
 <ul>
-<li>Title: Differentiable Optimal Control for Retargeting Motions onto Legged Robots (可微分最优控制用于将动作重新定位到四足机器人上)</li>
-<li>Authors: Ruben Grandia, Farbod Farshidian, Espen Knoop, Christian Schumacher, Marco Hutter, Moritz Bächer</li>
-<li>Affiliation: Ruben Grandia - Disney Research, Switzerland (瑞士迪士尼研究所)</li>
-<li>Keywords: differentiable optimal control, motion retargeting, model-predictive control (可微分最优控制，动作重新定位，模型预测控制)</li>
-<li>URLs: <a href="https://doi.org/10.1145/3592454">Paper</a>, [GitHub: None]</li>
+<li>Title: DIFFERENTIABLE SIMULATION FOR SYSTEM IDENTIFICATION AND VISUOMOTOR CONTROL (可微分仿真用于系统识别和视觉运动控制)</li>
+<li>Authors: Krishna Murthy Jatavallabhula, Miles Macklin, Florian Golemo, Vikram Voleti, Linda Petrini, Martin Weiss, Breandan Considine, Jérôme Parent-Lévesque, Kevin Xie, Kenny Erleben, Liam Paull, Florian Shkurti, Derek Nowrouzezahrai, Sanja Fidler</li>
+<li>Affiliation: Montreal Robotics and Embodied AI Lab, NVIDIA, Mila, Université de Montréal, McGill, University of Toronto, Vector Institute, University of Copenhagen</li>
+<li>Keywords: system identification, visuomotor control, differentiable simulation, differentiable rendering, physical properties estimation</li>
+<li>URLs: [Paper], <a href="https://gradsim.github.io/">GitHub</a></li>
 </ul>
 <h2 id="_1">论文简要 :</h2>
 <ul>
-<li>本文提出了一种可微分最优控制（DOC）框架，用于将动物或动画的丰富动作重新定位到四足机器人上，通过优化参数来最小化重新定位误差，并展示了在不同比例和质量分布的机器人上的重新定位结果。</li>
+<li>本文提出了一种名为 ∇Sim 的可微分仿真框架，通过结合可微分多物理仿真和可微分渲染，从图像序列中直接估计物体的物理属性，解决了系统识别问题和视觉运动控制问题。</li>
 </ul>
 <h2 id="_2">背景信息:</h2>
 <ul>
-<li>论文背景: 四足机器人设计用于执行高度动态的运动，但是将表达性动作重新定位到这些复杂系统上仍然具有挑战性。</li>
-<li>过去方案: 过去的方法要求机器人具有相似的比例、完全驱动或使用与机器人相同自由度的动画。</li>
-<li>论文的Motivation: 为了解决这些问题，本文提出了一种不受比例、自由度和质量分布差异影响的重新定位技术，通过可微分最优控制框架实现动作的优化和重新定位。</li>
+<li>论文背景: 准确地从图像序列中预测物体的动力学和物理特性是计算机视觉领域长期以来的挑战。现有的解决方案需要精确的三维标签，但收集这些标签非常耗时，对于可变形固体或布料等许多系统来说几乎不可行。</li>
+<li>过去方案: 过去的解决方案主要分为黑盒、灰盒和白盒方法。黑盒方法通过学习嵌入状态或观测的方式来建模动力系统的状态，但由于变分因素的纠缠或无监督学习的模糊性，缺乏可解释性。灰盒方法利用对系统动力学的部分知识来提高性能。白盒方法通过使用显式动力学模型来引入先验知识，减少可学习参数的空间，提高系统的可解释性。</li>
+<li>论文的 Motivation: 然而，所有这些方法都需要精确的三维标签，而这些标签的收集非常耗时，对于可变形固体或布料等许多系统来说几乎不可行。本文旨在通过结合可微分多物理仿真和可微分渲染，消除白盒动力学方法对三维监督的依赖，从而实现仅使用图像空间监督进行学习。这样的方法可以从视频像素到生成它们的物理属性进行反向传播，并在视觉运动控制任务中实现学习，而无需依赖精确的三维标签。</li>
 </ul>
 <h2 id="_3">方法:</h2>
 <ul>
 <li>a. 理论背景:</li>
-<li>本文介绍了一种不同iable Optimal Control (DOC)框架，用于将丰富的动作从动物或动画转移到四足机器人上。该框架通过优化参数来最小化重定向误差，从而实现了对不同比例和自由度的机器人的动作重定向。</li>
+<li>本文介绍了 ∇Sim，这是一个结合可微分多物理仿真和可微分渲染的框架，用于从视频序列中直接估计物体的物理属性。∇Sim 通过建模场景动力学和图像形成，实现了从视频像素到底层物理属性的反向传播。该方法旨在在不依赖于 3D 监督的情况下，展示 ∇Sim 在系统识别和视觉运动控制任务中的有效性。</li>
 <li>b. 技术路线:</li>
-<li>作者使用Differentiable Optimal Control (DOC)框架，将动作捕捉或动画数据转移到具有不同比例和质量分布的四足机器人上。</li>
-<li>作者使用Model-Predictive Control (MPC)公式，将DOC应用于机器人上，以实现动作的重定向。</li>
-<li>作者通过在线MPC，展示了重定向的动作在物理上是可行的，并且机器人保留了对意外干扰的反应能力。</li>
+<li>∇Sim 是一个统一的可微分仿真引擎，结合了物理估计和渲染。仿真被表示为一个函数 Sim(p, t) = I，其中 p 表示仿真状态和参数，t 表示仿真时间，I 是生成的图像。通过在图像空间上优化损失函数，使用基于梯度的优化方法，目标是从视频中估计物理参数。∇Sim 由一个可微分的物理引擎和一个可微分的渲染器组成。</li>
 </ul>
 <h2 id="_4">结果:</h2>
 <ul>
 <li>a. 详细的实验设置:</li>
-<li>作者使用物理机器人进行实验，并使用Model-Predictive Control (MPC)跟踪重定向的动作。</li>
+<li>作者进行了一系列实验，评估了 ∇Sim 在从视频中识别物理参数和视觉运动控制方面的效果。他们测试了 ∇Sim 在从视频观察中识别质量、摩擦力和弹性等物理属性的准确性。他们还将 ∇Sim 的性能与需要 3D 监督的可微分物理引擎进行了比较。实验涉及具有特定物理力和约束的环境，并通过对模拟器进行反向传播来恢复最佳物理参数。</li>
 <li>b. 详细的实验结果:</li>
-<li>作者展示了一组具有不同比例和质量分布的机器人的重定向结果。</li>
-<li>重定向的动作在意外干扰之前和之后都能自然地紧跟目标动作。</li>
-<li>该系统展示了处理具有非周期性脚步模式的动态运动的能力。</li>
-</ul>
-<h2 id="note">Note:</h2>
-<ul>
-<li>本总结源自于LLM的总结，请注意数据判别. Power by ChatPaper. End.</li>
+<li>实验结果表明，∇Sim 能够准确地从视频观察中识别物理参数。结果表明，在性能方面，∇Sim 与仅可微分物理引擎相比具有竞争力或更好的表现。∇Sim 的损失景观被发现是平滑的。实验还表明，∇Sim 可以在不需要 3D 监督的情况下用于视觉运动控制任务。在系统级别上，∇Sim 对建模假设的敏感性被认为是中等的。</li>
 </ul>
 
 

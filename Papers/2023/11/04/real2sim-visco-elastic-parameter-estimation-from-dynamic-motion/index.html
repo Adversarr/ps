@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://adversarr.github.io/ps/Papers/2023/11/01/differentiable-optimal-control-for-retargeting-motions-onto-legged-robots/">
+        <link rel="canonical" href="https://adversarr.github.io/ps/Papers/2023/11/04/real2sim-visco-elastic-parameter-estimation-from-dynamic-motion/">
       
       
-        <link rel="prev" href="../diffcloth-differentiable-cloth-simulation-with-dry-frictional-contact/">
+        <link rel="prev" href="../add-analytically-differentiable-dynamics-for-multi-body-systems-with-frictional-contact/">
       
       
-        <link rel="next" href="../../04/fluidic-topology-optimization-with-an-anisotropic-mixture-model/">
+        <link rel="next" href="../primaldual-descent-methods-for-dynamics/">
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Differentiable Optimal Control for Retargeting Motions onto Legged Robots - PS is not Physical Simulation</title>
+        <title>Real2Sim: Visco-elastic parameter estimation from dynamic motion - PS is not Physical Simulation</title>
       
     
     
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Differentiable Optimal Control for Retargeting Motions onto Legged Robots
+              Real2Sim: Visco-elastic parameter estimation from dynamic motion
             
           </span>
         </div>
@@ -437,20 +437,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    结果:
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#note" class="md-nav__link">
-    Note:
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -488,7 +474,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2023-11-01 00:00:00" class="md-ellipsis">November 1, 2023</time>
+                        <time datetime="2023-11-04 00:00:00" class="md-ellipsis">November 4, 2023</time>
                       </div>
                     </li>
                     
@@ -529,60 +515,41 @@
       <a href="../../../../../tags/#differentiable-simulation" class="md-tag">Differentiable Simulation</a>
     
   
-    
-    
-    
-      <a href="../../../../../tags/#control" class="md-tag">Control</a>
-    
-  
 </nav>
 
 
 
-  <h1>Differentiable Optimal Control for Retargeting Motions onto Legged Robots</h1>
+  <h1>Real2Sim: Visco-elastic parameter estimation from dynamic motion</h1>
 
-<p>本文提出了一种可微分最优控制（DOC）框架，用于将动物或动画的丰富动作重新定位到四足机器人上，通过优化参数来最小化重新定位误差，并展示了在不同比例和质量分布的机器人上的重新定位结果。</p>
+<p><em>从动态运动中估计粘弹性参数</em></p>
+<p>本文提出了一种从真实世界的软物体的动态运动中优化粘弹性材料参数的方法，<strong>通过直接敏感性分析或伴随状态方法计算材料参数的梯度</strong>，并优化材料参数以使模拟运动尽可能接近真实观测。通过这种方式，<strong>我们可以直接构建一个能够捕捉感兴趣样本的粘弹性行为的有用模拟模型</strong>。我们在各种示例中展示了我们方法的有效性，包括数值粗化、自定义目标函数以及由泡沫或3D打印格子结构制成的真实柔性弹性物体，包括软体机器人的演示应用。</p>
 <!-- more -->
 
 <h2 id="basic-information">Basic Information:</h2>
 <ul>
-<li>Title: Differentiable Optimal Control for Retargeting Motions onto Legged Robots (可微分最优控制用于将动作重新定位到四足机器人上)</li>
-<li>Authors: Ruben Grandia, Farbod Farshidian, Espen Knoop, Christian Schumacher, Marco Hutter, Moritz Bächer</li>
-<li>Affiliation: Ruben Grandia - Disney Research, Switzerland (瑞士迪士尼研究所)</li>
-<li>Keywords: differentiable optimal control, motion retargeting, model-predictive control (可微分最优控制，动作重新定位，模型预测控制)</li>
-<li>URLs: <a href="https://doi.org/10.1145/3592454">Paper</a>, [GitHub: None]</li>
+<li>Title: Real2Sim: Visco-elastic parameter estimation from dynamic motion (Real2Sim：从动态运动中估计粘弹性参数)</li>
+<li>Authors: David Hahn, Pol Banzet, James M. Bern, Stelian Coros</li>
+<li>Affiliation: ETH Zürich (ETH苏黎世联邦理工学院)</li>
+<li>Keywords: Deformable Models, Motion Capture, Optimization, Physically-based Simulation, Robotics</li>
+<li>URLs: <a href="https://doi.org/10.1145/3355089.3356548">Paper</a>, [GitHub: None]</li>
 </ul>
 <h2 id="_1">论文简要 :</h2>
 <ul>
-<li>本文提出了一种可微分最优控制（DOC）框架，用于将动物或动画的丰富动作重新定位到四足机器人上，通过优化参数来最小化重新定位误差，并展示了在不同比例和质量分布的机器人上的重新定位结果。</li>
+<li>本文提出了一种从真实世界的软物体的动态运动中优化粘弹性材料参数的方法，通过直接敏感性分析或伴随状态方法计算材料参数的梯度，并优化材料参数以使模拟运动尽可能接近真实观测。通过这种方式，我们可以直接构建一个能够捕捉感兴趣样本的粘弹性行为的有用模拟模型。我们在各种示例中展示了我们方法的有效性，包括数值粗化、自定义目标函数以及由泡沫或3D打印格子结构制成的真实柔性弹性物体，包括软体机器人的演示应用。</li>
 </ul>
 <h2 id="_2">背景信息:</h2>
 <ul>
-<li>论文背景: 四足机器人设计用于执行高度动态的运动，但是将表达性动作重新定位到这些复杂系统上仍然具有挑战性。</li>
-<li>过去方案: 过去的方法要求机器人具有相似的比例、完全驱动或使用与机器人相同自由度的动画。</li>
-<li>论文的Motivation: 为了解决这些问题，本文提出了一种不受比例、自由度和质量分布差异影响的重新定位技术，通过可微分最优控制框架实现动作的优化和重新定位。</li>
+<li>论文背景: 创建准确捕捉真实物体变形行为的快速模拟模型并不容易。即使物理材料参数已知（例如通过专门的测量工具），由于各种其他问题，这些参数可能无法直接转化为实际模拟，这些问题包括所选择的数值方法的局限性、需要高分辨率离散化以获得准确解以及非线性材料的测试和模拟变形范围之间的不匹配。许多软材料还由于制造过程中的不一致性而在相同基础材料制成的多个物体之间表现出粘弹性参数的大幅变化。</li>
+<li>过去方案: 传统方法是首先使用标准测试测量材料的小样本，然后构建足够分辨率的模拟模型以重现测量数据，最后将该模型应用于实际感兴趣的物体。然而，这些步骤中的每一步都需要高精度才能获得令人满意的结果。此外，许多材料测试设备（如流变仪）只能测量线性变形范围，即材料的小应变行为。如何将这些测量推广到非线性范围对于许多材料来说并不完全清楚。总的来说，即使可以以这种方式构建准确的模拟模型，由于数值误差和伪影，它可能无法用于快速、低分辨率的模拟，需要额外的修正，如数值粗化，才能达到实际有用的模拟。</li>
+<li>论文的Motivation: 鉴于这些挑战，我们的目标是回答以下问题：我们如何找到一个模拟模型，它能够（a）捕捉感兴趣的变形行为，（b）适用于非线性和可能非均匀的材料，（c）在实际分辨率下使用？</li>
 </ul>
 <h2 id="_3">方法:</h2>
 <ul>
 <li>a. 理论背景:</li>
-<li>本文介绍了一种不同iable Optimal Control (DOC)框架，用于将丰富的动作从动物或动画转移到四足机器人上。该框架通过优化参数来最小化重定向误差，从而实现了对不同比例和自由度的机器人的动作重定向。</li>
+<li>本文提出了一种优化有限元模拟中粘弹性材料参数的方法，以最佳逼近真实软物体的动态运动。目标是找到一个适合实际分辨率的模拟模型，能够捕捉非线性和可能非均匀材料的变形行为。传统的测量材料参数和构建模拟模型的方法在快速、低分辨率模拟中可能由于数值误差和伪影而无法使用。所提出的方法直接将粘弹性有限元模拟与真实运动数据拟合，从而得到适用于相对粗糙的网格和感兴趣的变形和运动范围的模拟模型。这项工作在软体机器人控制和软物体操纵方面具有应用价值。</li>
 <li>b. 技术路线:</li>
-<li>作者使用Differentiable Optimal Control (DOC)框架，将动作捕捉或动画数据转移到具有不同比例和质量分布的四足机器人上。</li>
-<li>作者使用Model-Predictive Control (MPC)公式，将DOC应用于机器人上，以实现动作的重定向。</li>
-<li>作者通过在线MPC，展示了重定向的动作在物理上是可行的，并且机器人保留了对意外干扰的反应能力。</li>
-</ul>
-<h2 id="_4">结果:</h2>
-<ul>
-<li>a. 详细的实验设置:</li>
-<li>作者使用物理机器人进行实验，并使用Model-Predictive Control (MPC)跟踪重定向的动作。</li>
-<li>b. 详细的实验结果:</li>
-<li>作者展示了一组具有不同比例和质量分布的机器人的重定向结果。</li>
-<li>重定向的动作在意外干扰之前和之后都能自然地紧跟目标动作。</li>
-<li>该系统展示了处理具有非周期性脚步模式的动态运动的能力。</li>
-</ul>
-<h2 id="note">Note:</h2>
-<ul>
-<li>本总结源自于LLM的总结，请注意数据判别. Power by ChatPaper. End.</li>
+<li>本文首先描述了一种弹性动力学有限元方法（FEM），然后使用直接敏感性分析和伴随状态方法推导了目标函数的梯度。得到的方程允许计算目标函数的梯度。作者还讨论了使用二阶向后差分公式（BDF2）进行时间离散化，并解释了为什么选择了这种方法。</li>
+<li>实验方法涉及使用商业光学运动捕捉系统和10个OptiTrack Prime 13相机。使用小型半球形反射标记物跟踪软标本的变形，使用带有运动捕捉标记物的刚性夹具跟踪夹具的运动，并将其映射到模拟中的Dirichlet边界条件。运动捕捉数据和模拟共享一个公共坐标系。目标函数基于运动捕捉标记物的跟踪轨迹与模拟中的“虚拟标记物”之间的距离来制定。计算每个标记物的均方根误差以评估模拟的准确性。测试标本和软体机器人的材料采用了柔性聚氨酯泡沫，具体是Smooth-On公司的FlexFoam-iT III和V。泡沫的混合和成型，其材料参数根据环境温度和混合比等因素而变化。快速参数估计对于确定每个标本的特定参数至关重</li>
 </ul>
 
 

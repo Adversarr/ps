@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://adversarr.github.io/ps/Papers/2023/11/01/differentiable-optimal-control-for-retargeting-motions-onto-legged-robots/">
+        <link rel="canonical" href="https://adversarr.github.io/ps/Papers/2023/11/05/chainqueen-a-real-time-differentiable-physical-simulator-for-soft-robotics/">
       
       
-        <link rel="prev" href="../diffcloth-differentiable-cloth-simulation-with-dry-frictional-contact/">
+        <link rel="prev" href="../single-level-differentiable-contact-simulation/">
       
       
-        <link rel="next" href="../../04/fluidic-topology-optimization-with-an-anisotropic-mixture-model/">
+        <link rel="next" href="../sim-differentiable-simulation-for-system-identification-and-visuomotor-control/">
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Differentiable Optimal Control for Retargeting Motions onto Legged Robots - PS is not Physical Simulation</title>
+        <title>ChainQueen: A Real-Time Differentiable Physical Simulator for Soft Robotics - PS is not Physical Simulation</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#basic-information" class="md-skip">
+        <a href="#note" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Differentiable Optimal Control for Retargeting Motions onto Legged Robots
+              ChainQueen: A Real-Time Differentiable Physical Simulator for Soft Robotics
             
           </span>
         </div>
@@ -402,6 +402,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -444,13 +446,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#note" class="md-nav__link">
-    Note:
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -488,7 +483,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2023-11-01 00:00:00" class="md-ellipsis">November 1, 2023</time>
+                        <time datetime="2023-11-05 00:00:00" class="md-ellipsis">November 5, 2023</time>
                       </div>
                     </li>
                     
@@ -532,57 +527,64 @@
     
     
     
-      <a href="../../../../../tags/#control" class="md-tag">Control</a>
+      <a href="../../../../../tags/#mpm" class="md-tag">MPM</a>
     
   
 </nav>
 
 
 
-  <h1>Differentiable Optimal Control for Retargeting Motions onto Legged Robots</h1>
-
-<p>本文提出了一种可微分最优控制（DOC）框架，用于将动物或动画的丰富动作重新定位到四足机器人上，通过优化参数来最小化重新定位误差，并展示了在不同比例和质量分布的机器人上的重新定位结果。</p>
+<p>本文提出了一种用于软体机器人的实时可微分物理模拟器ChainQueen，基于Moving Least Squares Material Point Method (MLS-MPM)，能够高精度地进行前向模拟和反向梯度计算，并成功应用于软体机器人的控制任务。</p>
 <!-- more -->
 
+<h1 id="note">Note:</h1>
+<ul>
+<li>本总结源自于LLM的总结，请注意数据判别. Power by ChatPaper. End.</li>
+</ul>
 <h2 id="basic-information">Basic Information:</h2>
 <ul>
-<li>Title: Differentiable Optimal Control for Retargeting Motions onto Legged Robots (可微分最优控制用于将动作重新定位到四足机器人上)</li>
-<li>Authors: Ruben Grandia, Farbod Farshidian, Espen Knoop, Christian Schumacher, Marco Hutter, Moritz Bächer</li>
-<li>Affiliation: Ruben Grandia - Disney Research, Switzerland (瑞士迪士尼研究所)</li>
-<li>Keywords: differentiable optimal control, motion retargeting, model-predictive control (可微分最优控制，动作重新定位，模型预测控制)</li>
-<li>URLs: <a href="https://doi.org/10.1145/3592454">Paper</a>, [GitHub: None]</li>
+<li>Title: ChainQueen: A Real-Time Differentiable Physical Simulator for Soft Robotics (ChainQueen：一种用于软体机器人的实时可微分物理模拟器)</li>
+<li>Authors: Yuanming Hu, Jiancheng Liu, Andrew Spielberg, Joshua B. Tenenbaum, William T. Freeman, Jiajun Wu, Daniela Rus, Wojciech Matusik</li>
+<li>Affiliation: Massachusetts Institute of Technology (麻省理工学院)</li>
+<li>Keywords: physical simulator, soft robotics, differentiable simulation, deformable objects, MLS-MPM</li>
+<li>URLs: <a href="https://arxiv.org/abs/1810.01054">Paper</a>, <a href="https://github.com/yuanming-hu/chainqueen">GitHub Code</a></li>
 </ul>
 <h2 id="_1">论文简要 :</h2>
 <ul>
-<li>本文提出了一种可微分最优控制（DOC）框架，用于将动物或动画的丰富动作重新定位到四足机器人上，通过优化参数来最小化重新定位误差，并展示了在不同比例和质量分布的机器人上的重新定位结果。</li>
+<li>本文提出了一种用于软体机器人的实时可微分物理模拟器ChainQueen，基于Moving Least Squares Material Point Method (MLS-MPM)，能够高精度地进行前向模拟和反向梯度计算，并成功应用于软体机器人的控制任务。</li>
 </ul>
 <h2 id="_2">背景信息:</h2>
 <ul>
-<li>论文背景: 四足机器人设计用于执行高度动态的运动，但是将表达性动作重新定位到这些复杂系统上仍然具有挑战性。</li>
-<li>过去方案: 过去的方法要求机器人具有相似的比例、完全驱动或使用与机器人相同自由度的动画。</li>
-<li>论文的Motivation: 为了解决这些问题，本文提出了一种不受比例、自由度和质量分布差异影响的重新定位技术，通过可微分最优控制框架实现动作的优化和重新定位。</li>
+<li>论文背景: 物理模拟器在机器人规划和控制算法中起着重要作用，而可微分的物理模拟器能够通过梯度优化算法进行反向问题的求解，提高控制效率和精度。</li>
+<li>过去方案: 目前已经有了许多针对刚体的可微分物理模拟器的研究，但对于软体物体的模拟仍存在挑战，包括模拟速度慢、接触检测和解决困难、梯度计算复杂等问题。</li>
+<li>论文的Motivation: 鉴于软体机器人的特殊性，本文提出了一种基于MLS-MPM的实时可微分物理模拟器ChainQueen，能够高效地模拟软体物体的运动，并实现了对整个模拟过程的梯度计算，从而在软体机器人的控制和系统识别等方面具有广泛的应用前景。</li>
 </ul>
 <h2 id="_3">方法:</h2>
 <ul>
 <li>a. 理论背景:</li>
-<li>本文介绍了一种不同iable Optimal Control (DOC)框架，用于将丰富的动作从动物或动画转移到四足机器人上。该框架通过优化参数来最小化重定向误差，从而实现了对不同比例和自由度的机器人的动作重定向。</li>
+<li>本文提出了一种名为ChainQueen的可微分物理模拟器，用于模拟可变形物体。</li>
+<li>ChainQueen基于Moving Least Squares Material Point Method (MLS-MPM)，可以模拟具有接触的可变形物体。</li>
+<li>该模拟器完全可微分，并且可以高效地计算状态和模型参数的梯度。</li>
+<li>它可以用于基于优化的闭环控制器设计、轨迹优化和机器人几何、材料和控制的共同设计。</li>
 <li>b. 技术路线:</li>
-<li>作者使用Differentiable Optimal Control (DOC)框架，将动作捕捉或动画数据转移到具有不同比例和质量分布的四足机器人上。</li>
-<li>作者使用Model-Predictive Control (MPC)公式，将DOC应用于机器人上，以实现动作的重定向。</li>
-<li>作者通过在线MPC，展示了重定向的动作在物理上是可行的，并且机器人保留了对意外干扰的反应能力。</li>
+<li>该模拟器ChainQueen基于MLS-MPM方法构建。</li>
+<li>它被设计用于模拟软体机器人的弹性材料。</li>
+<li>ChainQueen完全可微分，并且比当前最先进的模拟器快4-9倍。</li>
+<li>数值和实验验证表明，ChainQueen在正向模拟和反向梯度计算方面具有高精度。</li>
 </ul>
 <h2 id="_4">结果:</h2>
 <ul>
 <li>a. 详细的实验设置:</li>
-<li>作者使用物理机器人进行实验，并使用Model-Predictive Control (MPC)跟踪重定向的动作。</li>
+<li>使用ChainQueen模拟器进行了一系列实验，包括物理参数推断、软体机器人控制和机器人臂结构设计的共同设计。</li>
+<li>在物理参数推断任务中，使用模拟器推断了两个碰撞弹性球的相对密度。</li>
+<li>在控制任务中，优化了基于回归的软体机器人控制器，发现了稳定的步态。</li>
+<li>在共同设计任务中，模拟器实现了对软体机器人结构设计参数的优化，例如多连杆机器人臂的刚度分布。</li>
 <li>b. 详细的实验结果:</li>
-<li>作者展示了一组具有不同比例和质量分布的机器人的重定向结果。</li>
-<li>重定向的动作在意外干扰之前和之后都能自然地紧跟目标动作。</li>
-<li>该系统展示了处理具有非周期性脚步模式的动态运动的能力。</li>
-</ul>
-<h2 id="note">Note:</h2>
-<ul>
-<li>本总结源自于LLM的总结，请注意数据判别. Power by ChatPaper. End.</li>
+<li>ChainQueen在基于梯度的优化任务中展示了其有效性。</li>
+<li>在物理参数推断任务中，模拟器成功推断了碰撞球的相对密度。</li>
+<li>在控制任务中，与最先进的强化学习算法相比，优化后的软体机器人控制器表现出更好的性能。</li>
+<li>在共同设计任务中，优化后的机器人臂设计在实现目标目标时比固定设计具有更低的驱动成本。</li>
+<li>实验结果突出了ChainQueen在各种软体机器人应用中的高效性和准确性。</li>
 </ul>
 
 

@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://adversarr.github.io/ps/Papers/2023/11/01/differentiable-optimal-control-for-retargeting-motions-onto-legged-robots/">
+        <link rel="canonical" href="https://adversarr.github.io/ps/Papers/2023/11/04/primaldual-descent-methods-for-dynamics/">
       
       
-        <link rel="prev" href="../diffcloth-differentiable-cloth-simulation-with-dry-frictional-contact/">
+        <link rel="prev" href="../real2sim-visco-elastic-parameter-estimation-from-dynamic-motion/">
       
       
-        <link rel="next" href="../../04/fluidic-topology-optimization-with-an-anisotropic-mixture-model/">
+        <link rel="next" href="../differentiable-simulation-of-soft-multi-body-systems/">
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Differentiable Optimal Control for Retargeting Motions onto Legged Robots - PS is not Physical Simulation</title>
+        <title>Primal/Dual Descent Methods for Dynamics - PS is not Physical Simulation</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#basic-information" class="md-skip">
+        <a href="#note" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Differentiable Optimal Control for Retargeting Motions onto Legged Robots
+              Primal/Dual Descent Methods for Dynamics
             
           </span>
         </div>
@@ -402,6 +402,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -444,13 +446,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#note" class="md-nav__link">
-    Note:
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -488,7 +483,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2023-11-01 00:00:00" class="md-ellipsis">November 1, 2023</time>
+                        <time datetime="2023-11-04 00:00:00" class="md-ellipsis">November 4, 2023</time>
                       </div>
                     </li>
                     
@@ -529,60 +524,54 @@
       <a href="../../../../../tags/#differentiable-simulation" class="md-tag">Differentiable Simulation</a>
     
   
-    
-    
-    
-      <a href="../../../../../tags/#control" class="md-tag">Control</a>
-    
-  
 </nav>
 
 
 
-  <h1>Differentiable Optimal Control for Retargeting Motions onto Legged Robots</h1>
-
-<p>本文提出了一种可微分最优控制（DOC）框架，用于将动物或动画的丰富动作重新定位到四足机器人上，通过优化参数来最小化重新定位误差，并展示了在不同比例和质量分布的机器人上的重新定位结果。</p>
+<p>本文提出了一种新的预处理摩擦接触求解器，该求解器与现有的原始优化方法兼容，并且在与对偶方法相比时<strong>生成了更好的接触力分布</strong>，具有可微性，非常适合轨迹优化。通过从共同的变分观点推导出原始和对偶方法，并对两种方法进行了全面的数值分析，证明了该方法在刚体接触、可变形模拟和机器人操作等场景中的有效性。</p>
 <!-- more -->
 
+<h1 id="note">Note:</h1>
+<ul>
+<li>本总结源自于LLM的总结，请注意数据判别. Power by ChatPaper. End.</li>
+</ul>
 <h2 id="basic-information">Basic Information:</h2>
 <ul>
-<li>Title: Differentiable Optimal Control for Retargeting Motions onto Legged Robots (可微分最优控制用于将动作重新定位到四足机器人上)</li>
-<li>Authors: Ruben Grandia, Farbod Farshidian, Espen Knoop, Christian Schumacher, Marco Hutter, Moritz Bächer</li>
-<li>Affiliation: Ruben Grandia - Disney Research, Switzerland (瑞士迪士尼研究所)</li>
-<li>Keywords: differentiable optimal control, motion retargeting, model-predictive control (可微分最优控制，动作重新定位，模型预测控制)</li>
-<li>URLs: <a href="https://doi.org/10.1145/3592454">Paper</a>, [GitHub: None]</li>
+<li>Title: Primal/Dual Descent Methods for Dynamics (动力学的原始/对偶下降方法)</li>
+<li>Authors: M. Macklin, K. Erleben, M. Müller, N. Chentanez, S. Jeschke, T.Y. Kim</li>
+<li>Affiliation: NVIDIA, University of Copenhagen (作者所属机构：NVIDIA, University of Copenhagen)</li>
+<li>Keywords: contact, friction, numerical optimization, robotics (关键词：接触、摩擦、数值优化、机器人)</li>
+<li>URLs: <a href="https://onlinelibrary.wiley.com/doi/10.1111/cgf.14104">Paper</a>, <a href="github:">GitHub Code</a></li>
 </ul>
 <h2 id="_1">论文简要 :</h2>
 <ul>
-<li>本文提出了一种可微分最优控制（DOC）框架，用于将动物或动画的丰富动作重新定位到四足机器人上，通过优化参数来最小化重新定位误差，并展示了在不同比例和质量分布的机器人上的重新定位结果。</li>
+<li>本文提出了一种新的预处理摩擦接触求解器，该求解器与现有的原始优化方法兼容，并且在与对偶方法相比时生成了更好的接触力分布，具有可微性，非常适合轨迹优化。通过从共同的变分观点推导出原始和对偶方法，并对两种方法进行了全面的数值分析，证明了该方法在刚体接触、可变形模拟和机器人操作等场景中的有效性。</li>
 </ul>
 <h2 id="_2">背景信息:</h2>
 <ul>
-<li>论文背景: 四足机器人设计用于执行高度动态的运动，但是将表达性动作重新定位到这些复杂系统上仍然具有挑战性。</li>
-<li>过去方案: 过去的方法要求机器人具有相似的比例、完全驱动或使用与机器人相同自由度的动画。</li>
-<li>论文的Motivation: 为了解决这些问题，本文提出了一种不受比例、自由度和质量分布差异影响的重新定位技术，通过可微分最优控制框架实现动作的优化和重新定位。</li>
+<li>论文背景: 隐式时间积分在计算机图形学和机器人学中非常流行，由于其鲁棒性和高效性。然而，隐式时间离散化通常会导致非线性方程组。为了解决这些离散化的运动方程，许多数值方法被提出，可以广泛归类为原始方法和对偶方法。原始方法是以系统自由度（位置、速度和作用力）为表达和求解的，而对偶方法则侧重于自由度之间的约束，并以拉格朗日乘子的形式求解。</li>
+<li>过去方案: 在可变形模拟中，变分框架（如投影动力学）已被广泛采用，但在刚体模拟等接触丰富的场景中尚未得到应用。而对偶方法在这些场景中得到了广泛应用，但其接触力分布相对于原始方法来说并不理想。</li>
+<li>论文的Motivation: 本文旨在研究动力学的原始和对偶形式之间的关系，并提出一种新的预处理摩擦接触求解器，该求解器与现有的原始优化方法兼容，并且在与对偶方法相比时生成了更好的接触力分布。此外，该方法具有可微性，非常适合轨迹优化。通过从共同的变分观点推导出原始和对偶方法，并对两种方法进行了全面的数值分析，证明了该方法在刚体接触、可变形模拟和机器人操作等场景中的有效性。</li>
 </ul>
 <h2 id="_3">方法:</h2>
 <ul>
 <li>a. 理论背景:</li>
-<li>本文介绍了一种不同iable Optimal Control (DOC)框架，用于将丰富的动作从动物或动画转移到四足机器人上。该框架通过优化参数来最小化重定向误差，从而实现了对不同比例和自由度的机器人的动作重定向。</li>
+<li>本文作者在可变形和刚体模拟的背景下，研究了动力学的原始和对偶形式之间的关系。他们提出了一种新的预条件摩擦接触求解器，与现有的原始优化方法兼容，并且与互补性方法相竞争。作者从共同的变分观点导出了原始和对偶方法，并对两种方法的条件进行了全面的数值分析。所提出的接触动力学的原始模型是可微的，并且非常适合轨迹优化。作者在包括刚体接触、可变形模拟和机器人操纵的场景中演示了他们的方法。</li>
 <li>b. 技术路线:</li>
-<li>作者使用Differentiable Optimal Control (DOC)框架，将动作捕捉或动画数据转移到具有不同比例和质量分布的四足机器人上。</li>
-<li>作者使用Model-Predictive Control (MPC)公式，将DOC应用于机器人上，以实现动作的重定向。</li>
-<li>作者通过在线MPC，展示了重定向的动作在物理上是可行的，并且机器人保留了对意外干扰的反应能力。</li>
+<li>作者引入了一种隐式时间步进方案来解决他们方法中的优化问题。他们将该方案构建为离散变分优化问题，并讨论了用于解决该问题的原始和对偶数值方法的使用。他们还分析了两种方法的敏感性和相对优势。作者定义了广义系统坐标及其时间导数，并对系统进行重新参数化以简化推导。他们提出了运动的离散方程，并为优化问题定义了目标函数。他们讨论了使用梯度下降作为解决最小化问题的简单方法，并引入了一个预条件矩阵来改善收敛性。他们还讨论了使用二次势能，并为这些势能导出了Hessian矩阵和力雅可比矩阵。最后，他们介绍了对偶上升方法，并展示了它如何导致约束动力学方法，如扩展位置基动力学（XPBD）。</li>
 </ul>
 <h2 id="_4">结果:</h2>
 <ul>
 <li>a. 详细的实验设置:</li>
-<li>作者使用物理机器人进行实验，并使用Model-Predictive Control (MPC)跟踪重定向的动作。</li>
+<li>通过使用一个简单的双摆和一个质量比分别为10000:1和4096:1的接触场景，演示了原始和对偶方法对质量比的敏感性。</li>
+<li>使用两个由弹簧连接的质点进行了刚度比测试，刚度系数之间的比率变化为10000:1。</li>
+<li>使用由256k个刚体组成的颗粒材料和一个圆柱形重物进行了刚性堆积实验，创建了一个质量比为80000:1的场景。</li>
+<li>使用512个碗从一定高度落下进行了碗落实验，每个碗由1160个面的三角网格表示。</li>
+<li>通过悬挂一块由800个三角形建模的布料并从一定高度落下一个刚体，进行了布料模拟实验。</li>
+<li>使用机器人操纵任务进行了抓握稳定性测试，测量了摩擦刚度变化对抓握稳定性的影响。</li>
+<li>进行了可微性实验，优化涉及与两个表面的碰撞的轨迹，以找到一个起始冲量，使得弹跳球在t = 0.5s时击中目标。</li>
 <li>b. 详细的实验结果:</li>
-<li>作者展示了一组具有不同比例和质量分布的机器人的重定向结果。</li>
-<li>重定向的动作在意外干扰之前和之后都能自然地紧跟目标动作。</li>
-<li>该系统展示了处理具有非周期性脚步模式的动态运动的能力。</li>
-</ul>
-<h2 id="note">Note:</h2>
-<ul>
-<li>本总结源自于LLM的总结，请注意数据判别. Power by ChatPaper. End.</li>
+<li>表1提供了本文中示例的模拟统计数据和性能指标，包括原始和对偶下降方法的步数、迭代次数、接触次数和每帧平均毫秒数。</li>
 </ul>
 
 

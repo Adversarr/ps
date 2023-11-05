@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://adversarr.github.io/ps/Papers/2023/11/01/differentiable-optimal-control-for-retargeting-motions-onto-legged-robots/">
+        <link rel="canonical" href="https://adversarr.github.io/ps/Papers/2023/11/04/add-analytically-differentiable-dynamics-for-multi-body-systems-with-frictional-contact/">
       
       
-        <link rel="prev" href="../diffcloth-differentiable-cloth-simulation-with-dry-frictional-contact/">
+        <link rel="prev" href="../fluidic-topology-optimization-with-an-anisotropic-mixture-model/">
       
       
-        <link rel="next" href="../../04/fluidic-topology-optimization-with-an-anisotropic-mixture-model/">
+        <link rel="next" href="../real2sim-visco-elastic-parameter-estimation-from-dynamic-motion/">
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Differentiable Optimal Control for Retargeting Motions onto Legged Robots - PS is not Physical Simulation</title>
+        <title>ADD: Analytically Differentiable Dynamics for Multi-Body Systems with Frictional Contact - PS is not Physical Simulation</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#basic-information" class="md-skip">
+        <a href="#note" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Differentiable Optimal Control for Retargeting Motions onto Legged Robots
+              ADD: Analytically Differentiable Dynamics for Multi-Body Systems with Frictional Contact
             
           </span>
         </div>
@@ -402,6 +402,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -444,13 +446,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#note" class="md-nav__link">
-    Note:
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -488,7 +483,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2023-11-01 00:00:00" class="md-ellipsis">November 1, 2023</time>
+                        <time datetime="2023-11-04 00:00:00" class="md-ellipsis">November 4, 2023</time>
                       </div>
                     </li>
                     
@@ -532,57 +527,65 @@
     
     
     
-      <a href="../../../../../tags/#control" class="md-tag">Control</a>
+      <a href="../../../../../tags/#rigid-body-dynamics" class="md-tag">Rigid-body Dynamics</a>
+    
+  
+    
+    
+    
+      <a href="../../../../../tags/#frictional-contact" class="md-tag">Frictional Contact</a>
     
   
 </nav>
 
 
 
-  <h1>Differentiable Optimal Control for Retargeting Motions onto Legged Robots</h1>
-
-<p>本文提出了一种可微分最优控制（DOC）框架，用于将动物或动画的丰富动作重新定位到四足机器人上，通过优化参数来最小化重新定位误差，并展示了在不同比例和质量分布的机器人上的重新定位结果。</p>
+<p>本文提出了一种可解析可微分的动力学求解器，能够在统一框架下处理<strong>刚性和可变形物体的摩擦接触问题</strong>。通过对法向和切向接触力进行原则性的平滑处理，我们的方法克服了摩擦接触的非光滑特性所带来的主要困难。</p>
 <!-- more -->
 
+<h1 id="note">Note:</h1>
+<ul>
+<li>本总结源自于LLM的总结，请注意数据判别. Power by ChatPaper. End.</li>
+</ul>
 <h2 id="basic-information">Basic Information:</h2>
 <ul>
-<li>Title: Differentiable Optimal Control for Retargeting Motions onto Legged Robots (可微分最优控制用于将动作重新定位到四足机器人上)</li>
-<li>Authors: Ruben Grandia, Farbod Farshidian, Espen Knoop, Christian Schumacher, Marco Hutter, Moritz Bächer</li>
-<li>Affiliation: Ruben Grandia - Disney Research, Switzerland (瑞士迪士尼研究所)</li>
-<li>Keywords: differentiable optimal control, motion retargeting, model-predictive control (可微分最优控制，动作重新定位，模型预测控制)</li>
-<li>URLs: <a href="https://doi.org/10.1145/3592454">Paper</a>, [GitHub: None]</li>
+<li>Title: ADD: Analytically Differentiable Dynamics for Multi-Body Systems with Frictional Contact (ADD: 可解析可微分的多体系统摩擦接触动力学)</li>
+<li>Authors: Geilinger, M., Hahn, D., Zender, J., Bächer, M., Thomaszewski, B., Coros, S.</li>
+<li>Affiliation: Geilinger, M. - ETH Zürich (瑞士苏黎世联邦理工学院)</li>
+<li>Keywords: differentiable dynamics, frictional contact, multi-body systems, simulation, parameter estimation, motion planning, self-supervised learning</li>
+<li>URLs: <a href="https://arxiv.org/abs/2007.00987v1">Paper</a>, [GitHub: None]</li>
 </ul>
 <h2 id="_1">论文简要 :</h2>
 <ul>
-<li>本文提出了一种可微分最优控制（DOC）框架，用于将动物或动画的丰富动作重新定位到四足机器人上，通过优化参数来最小化重新定位误差，并展示了在不同比例和质量分布的机器人上的重新定位结果。</li>
+<li>本文提出了一种可解析可微分的动力学求解器，能够在统一框架下处理刚性和可变形物体的摩擦接触问题。通过对法向和切向接触力进行原则性的平滑处理，我们的方法克服了摩擦接触的非光滑特性所带来的主要困难。我们将这种新的接触模型与完全隐式的时间积分相结合，得到了一个稳健高效的可解析可微分的动力学求解器。通过伴随灵敏度分析，我们的方法使得能够在模拟精度和目标函数平滑性之间进行自适应权衡的梯度优化成为可能。我们在一系列模拟示例中对我们的方法进行了详细分析，涉及刚体、粘弹性材料和耦合多体系统。我们还展示了我们的可微分模拟器在可变形物体参数估计、机器人操作的运动规划、柔性步行机器人的轨迹优化以及高效的自监督学习控制策略等应用领域的潜力。</li>
 </ul>
 <h2 id="_2">背景信息:</h2>
 <ul>
-<li>论文背景: 四足机器人设计用于执行高度动态的运动，但是将表达性动作重新定位到这些复杂系统上仍然具有挑战性。</li>
-<li>过去方案: 过去的方法要求机器人具有相似的比例、完全驱动或使用与机器人相同自由度的动画。</li>
-<li>论文的Motivation: 为了解决这些问题，本文提出了一种不受比例、自由度和质量分布差异影响的重新定位技术，通过可微分最优控制框架实现动作的优化和重新定位。</li>
+<li>论文背景: 仿真工具在工程和机器人学的各种应用中至关重要，可以在第一个原型制造之前测试设计的性能。然而，基于正向仿真的虚拟验证通常局限于试错方法，用户需要费力地找到适当的控制或设计参数。反向仿真工具承诺一种更直接和强大的方法，因为它们可以预测和利用参数变化对设计性能的影响方式。与正向仿真不同，这种反向方法依赖于计算仿真运行的导数能力。</li>
+<li>过去方案: 近年来，可微分仿真在视觉、图形和机器人领域越来越受关注，例如在流体动画、软体动力学和光传输等领域。然而，由于碰撞和摩擦接触引起的强非线性和准不连续性是现实世界交互的特征，这对可微分仿真提出了重大挑战。</li>
+<li>论文的Motivation: 本文旨在克服非光滑问题设置的困难，提出了一种可解析可微分的模拟器，将完全隐式的时间步进与法向和切向接触力的原则性平滑处理相结合。我们的模拟模型通过伴随灵敏度分析能够计算仿真结果的导数，从而实现了精确性和目标函数平滑性之间的易于调整的权衡。我们展示了该模型在可变形物体参数估计、机器人操作的运动规划、柔性步行机器人的轨迹优化以及高效的自监督学习控制策略等应用领域的潜力。</li>
 </ul>
 <h2 id="_3">方法:</h2>
 <ul>
 <li>a. 理论背景:</li>
-<li>本文介绍了一种不同iable Optimal Control (DOC)框架，用于将丰富的动作从动物或动画转移到四足机器人上。该框架通过优化参数来最小化重定向误差，从而实现了对不同比例和自由度的机器人的动作重定向。</li>
+<li>本文介绍了在工程和机器人应用中模拟工具的重要性。作者强调了正向模拟的局限性以及反向模拟的潜力，后者具有更直接和强大的方法。他们强调了计算模拟运行的导数对于反向模拟工具的必要性。</li>
 <li>b. 技术路线:</li>
-<li>作者使用Differentiable Optimal Control (DOC)框架，将动作捕捉或动画数据转移到具有不同比例和质量分布的四足机器人上。</li>
-<li>作者使用Model-Predictive Control (MPC)公式，将DOC应用于机器人上，以实现动作的重定向。</li>
-<li>作者通过在线MPC，展示了重定向的动作在物理上是可行的，并且机器人保留了对意外干扰的反应能力。</li>
+<li>本文提出了一种处理刚体和可变形体的摩擦接触的解析可微动力学求解器。该方法基于正向和伴随模拟的组合，并使用软约束形式处理摩擦接触，从而实现了模拟模型的简单微分。该方法使用隐式时间积分结合惩罚力模型，准确地处理了摩擦接触的正常和切向分量。</li>
 </ul>
 <h2 id="_4">结果:</h2>
 <ul>
-<li>a. 详细的实验设置:</li>
-<li>作者使用物理机器人进行实验，并使用Model-Predictive Control (MPC)跟踪重定向的动作。</li>
-<li>b. 详细的实验结果:</li>
-<li>作者展示了一组具有不同比例和质量分布的机器人的重定向结果。</li>
-<li>重定向的动作在意外干扰之前和之后都能自然地紧跟目标动作。</li>
-<li>该系统展示了处理具有非周期性脚步模式的动态运动的能力。</li>
-</ul>
-<h2 id="note">Note:</h2>
-<ul>
-<li>本总结源自于LLM的总结，请注意数据判别. Power by ChatPaper. End.</li>
+<li>
+<p>a. 详细的实验设置:</p>
+</li>
+<li>
+<p>本文没有明确提及实验设置。它主要关注开发一种解析可微动力学方法，并没有提供具体的实验设置或条件。</p>
+</li>
+<li>
+<p>b. 详细的实验结果:</p>
+</li>
+<li>
+<p>本文没有提供数值实验结果。它主要关注开发一种解析可微动力学方法，并没有提供具体的实验数据或性能评估。</p>
+</li>
 </ul>
 
 

@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://adversarr.github.io/ps/Papers/2023/11/01/differentiable-optimal-control-for-retargeting-motions-onto-legged-robots/">
+        <link rel="canonical" href="https://adversarr.github.io/ps/Papers/2023/11/05/single-level-differentiable-contact-simulation/">
       
       
-        <link rel="prev" href="../diffcloth-differentiable-cloth-simulation-with-dry-frictional-contact/">
+        <link rel="prev" href="../../04/difftaichi-differentiable-programming-for-physical-simulation/">
       
       
-        <link rel="next" href="../../04/fluidic-topology-optimization-with-an-anisotropic-mixture-model/">
+        <link rel="next" href="../chainqueen-a-real-time-differentiable-physical-simulator-for-soft-robotics/">
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Differentiable Optimal Control for Retargeting Motions onto Legged Robots - PS is not Physical Simulation</title>
+        <title>Single-Level Differentiable Contact Simulation - PS is not Physical Simulation</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#basic-information" class="md-skip">
+        <a href="#note" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Differentiable Optimal Control for Retargeting Motions onto Legged Robots
+              Single-Level Differentiable Contact Simulation
             
           </span>
         </div>
@@ -402,6 +402,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -433,20 +435,6 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     方法:
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    结果:
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#note" class="md-nav__link">
-    Note:
   </a>
   
 </li>
@@ -488,7 +476,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2023-11-01 00:00:00" class="md-ellipsis">November 1, 2023</time>
+                        <time datetime="2023-11-05 00:00:00" class="md-ellipsis">November 5, 2023</time>
                       </div>
                     </li>
                     
@@ -532,57 +520,51 @@
     
     
     
-      <a href="../../../../../tags/#control" class="md-tag">Control</a>
+      <a href="../../../../../tags/#contact-modeling" class="md-tag">Contact Modeling</a>
     
   
 </nav>
 
 
 
-  <h1>Differentiable Optimal Control for Retargeting Motions onto Legged Robots</h1>
-
-<p>本文提出了一种可微分最优控制（DOC）框架，用于将动物或动画的丰富动作重新定位到四足机器人上，通过优化参数来最小化重新定位误差，并展示了在不同比例和质量分布的机器人上的重新定位结果。</p>
+<p>本文提出了一种单层可微分刚体接触动力学的表达方式，用于表示由<strong>凸多面体</strong>组成的物体和机器人。通过将<strong>接触仿真和碰撞检测结合为一个统一的单层优化问题</strong>，解决了传统物理引擎和最新的优化方法在现实接触仿真场景中的问题。通过在机器人操作任务中的应用，证明了该方法的可行性和优越性能。</p>
 <!-- more -->
 
+<h1 id="note">Note:</h1>
+<ul>
+<li>本总结源自于 LLM 的总结，请注意数据判别. Power by ChatPaper. End.</li>
+</ul>
 <h2 id="basic-information">Basic Information:</h2>
 <ul>
-<li>Title: Differentiable Optimal Control for Retargeting Motions onto Legged Robots (可微分最优控制用于将动作重新定位到四足机器人上)</li>
-<li>Authors: Ruben Grandia, Farbod Farshidian, Espen Knoop, Christian Schumacher, Marco Hutter, Moritz Bächer</li>
-<li>Affiliation: Ruben Grandia - Disney Research, Switzerland (瑞士迪士尼研究所)</li>
-<li>Keywords: differentiable optimal control, motion retargeting, model-predictive control (可微分最优控制，动作重新定位，模型预测控制)</li>
-<li>URLs: <a href="https://doi.org/10.1145/3592454">Paper</a>, [GitHub: None]</li>
+<li>Title: Single-Level Differentiable Contact Simulation (单层可微分接触仿真)</li>
+<li>Authors: Simon Le Cleac’h, Mac Schwager, Zachary Manchester, Vikas Sindhwani, Pete Florence, Sumeet Singh</li>
+<li>Affiliation: Simon Le Cleac’h is affiliated with Stanford University, Mac Schwager is affiliated with Stanford University, Zachary Manchester is affiliated with Carnegie Mellon University, Vikas Sindhwani, Pete Florence, and Sumeet Singh are affiliated with Google Research.</li>
+<li>Keywords: Simulation and animation, contact modeling, differentiable contact simulation, dexterous manipulation.</li>
+<li>URLs: <a href="https://ieeexplore.ieee.org/document/9630007">Paper</a>, <a href="https://github.com/simon-lc/Silico.jl">GitHub</a></li>
 </ul>
 <h2 id="_1">论文简要 :</h2>
 <ul>
-<li>本文提出了一种可微分最优控制（DOC）框架，用于将动物或动画的丰富动作重新定位到四足机器人上，通过优化参数来最小化重新定位误差，并展示了在不同比例和质量分布的机器人上的重新定位结果。</li>
+<li>本文提出了一种单层可微分刚体接触动力学的表达方式，用于表示由凸多面体组成的物体和机器人。通过将接触仿真和碰撞检测结合为一个统一的单层优化问题，解决了传统物理引擎和最新的优化方法在现实接触仿真场景中的问题。通过在机器人操作任务中的应用，证明了该方法的可行性和优越性能。</li>
 </ul>
 <h2 id="_2">背景信息:</h2>
 <ul>
-<li>论文背景: 四足机器人设计用于执行高度动态的运动，但是将表达性动作重新定位到这些复杂系统上仍然具有挑战性。</li>
-<li>过去方案: 过去的方法要求机器人具有相似的比例、完全驱动或使用与机器人相同自由度的动画。</li>
-<li>论文的Motivation: 为了解决这些问题，本文提出了一种不受比例、自由度和质量分布差异影响的重新定位技术，通过可微分最优控制框架实现动作的优化和重新定位。</li>
+<li>论文背景: 物理引擎在机器人操作和运动任务的规划和控制中起着越来越重要的作用。然而，传统的物理引擎和最新的优化方法在接触仿真方面存在一些问题，如非可微分的碰撞检测和接触位置的不确定性。</li>
+<li>过去方案: 传统的物理引擎依赖于非可微分的碰撞检测算法，而最新的优化方法则将碰撞检测和接触仿真分离为两个层次的优化问题。然而，这些方法在现实接触仿真场景中不可靠，因为将碰撞检测问题隔离开来会导致接触位置的不唯一性。</li>
+<li>论文的 Motivation: 为了解决传统物理引擎和最新优化方法在接触仿真中的问题，本文提出了一种单层可微分接触仿真的新方法，通过将接触仿真和碰撞检测结合为一个统一的优化问题，解决了接触位置不唯一性的问题，并提供了更可靠和计算复杂度更低的仿真方法。通过在机器人操作任务中的应用，证明了该方法的有效性和优越性能。</li>
 </ul>
 <h2 id="_3">方法:</h2>
 <ul>
 <li>a. 理论背景:</li>
-<li>本文介绍了一种不同iable Optimal Control (DOC)框架，用于将丰富的动作从动物或动画转移到四足机器人上。该框架通过优化参数来最小化重定向误差，从而实现了对不同比例和自由度的机器人的动作重定向。</li>
+<li>本文介绍了一种可微分的刚体接触动力学的表达方式，适用于由凸多面体组成的物体和机器人。它强调了传统物理引擎和最近的基于优化的方法在模拟真实接触场景方面的局限性。所提出的方法将接触模拟和碰撞检测结合为一个统一的单层优化问题，提高了模拟的鲁棒性并降低了计算复杂性。本文还讨论了物理引擎在机器人操作和运动控制中的重要性。</li>
 <li>b. 技术路线:</li>
-<li>作者使用Differentiable Optimal Control (DOC)框架，将动作捕捉或动画数据转移到具有不同比例和质量分布的四足机器人上。</li>
-<li>作者使用Model-Predictive Control (MPC)公式，将DOC应用于机器人上，以实现动作的重定向。</li>
-<li>作者通过在线MPC，展示了重定向的动作在物理上是可行的，并且机器人保留了对意外干扰的反应能力。</li>
+<li>本文首先介绍了一种用于模拟刚性物体之间非弹性接触的变分积分方案。通过将约束的最小作用量原理与最大耗散原理相结合，将可行性问题形式化。在每个积分步骤中求解该问题，以找到下一个时间步长的配置。该方案可以处理多个接触的情况。接触模拟需要三个映射：有符号距离函数（SDF）用于测量物体与环境之间的距离，接触点指示接触力矩被施加的位置，接触法线定义了施加冲击力的方向。该方案还包括动力学、非穿透、摩擦锥和最大耗散的约束。</li>
 </ul>
-<h2 id="_4">结果:</h2>
+<h1 id="_4">结果:</h1>
 <ul>
 <li>a. 详细的实验设置:</li>
-<li>作者使用物理机器人进行实验，并使用Model-Predictive Control (MPC)跟踪重定向的动作。</li>
+<li>本文使用凸束和面对面接触作为模拟场景，评估了单层方案的能力。凸形状可以通过联合操作组合成复杂的非凸形状。凸多面体的 Minkowski 和用于形成复杂的凸形状。面对面接触发生在两个物体彼此接触时。这种情况在机器人场景中很常见，例如将物体放在平地上、堆叠块以形成塔和进行钉孔插入。</li>
 <li>b. 详细的实验结果:</li>
-<li>作者展示了一组具有不同比例和质量分布的机器人的重定向结果。</li>
-<li>重定向的动作在意外干扰之前和之后都能自然地紧跟目标动作。</li>
-<li>该系统展示了处理具有非周期性脚步模式的动态运动的能力。</li>
-</ul>
-<h2 id="note">Note:</h2>
-<ul>
-<li>本总结源自于LLM的总结，请注意数据判别. Power by ChatPaper. End.</li>
+<li>本文将单层方案与双层方案在模拟精度和可靠性方面进行了比较。与双层方案相比，单层方法显示出改进的模拟鲁棒性和减少的地面穿透。模拟器的可微性被利用来解决通过接触的优化问题。单层方案的能力在一组常见的机器人场景中得到了证明，包括抓取、堆叠和钉孔插入。模拟结果在视频中呈现，并附带了 3D 中的其他实验。</li>
 </ul>
 
 
