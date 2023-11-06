@@ -10,7 +10,7 @@ paperYear: 2020
 paperSource: SIGGRAPH ASIA
 ---
 
-实现了初步的FVM流体-可变形体的强流固耦合。
+通过统一的优化形式，实现了暴力的FVM流体-可变形体的强流固耦合。
 
 <!-- more -->
 

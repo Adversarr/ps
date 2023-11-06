@@ -6,7 +6,7 @@ doi:
 title: "∇Sim: Differentiable simulation for system identification and visuomotor control"
 date: 2023-11-05
 tags:
-  - Differentiabl Simulation
+  - Differentiable Simulation
   - System Identification
 ---
 

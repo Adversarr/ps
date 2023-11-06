@@ -19,6 +19,7 @@ theme:
     - navigation.tabs
 
 plugins:
+  - markmap
   - search:
       separator: '[\s\-\.]+'
       indexing: 'sections'
