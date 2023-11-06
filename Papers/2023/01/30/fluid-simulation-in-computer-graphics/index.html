@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
     
     
       
@@ -473,7 +473,6 @@
 
 
 <!-- more -->
-
 <h1 id="fluid-simulation-in-computer-graphics">Fluid Simulation in Computer Graphics</h1>
 <p>Reference: Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf</p>
 <h1 id="the-equations-of-fluids">The Equations of Fluids</h1>
@@ -507,7 +506,7 @@
 </ol>
 <blockquote>
 <p>Viscosity：The <strong>viscosity</strong> of a <a href="https://en.wikipedia.org/wiki/Fluid">fluid</a> is a measure of its <a href="https://en.wikipedia.org/wiki/Drag_(physics)">resistance</a> to deformation at a given rate. For liquids, it corresponds to the informal concept of "thickness": for example, <a href="https://en.wikipedia.org/wiki/Syrup">syrup</a> has a higher viscosity than <a href="https://en.wikipedia.org/wiki/Water">water</a>.[<a href="https://en.wikipedia.org/wiki/Viscosity#cite_note-FOOTNOTESymon1971-1">1</a>]</p>
-<p>​<img alt="Viscosities" src="../../../../SIGCourse/Fluid%20Simulation%20in%20Computer%20Graphics/Viscosities-20221210105149-ffrc8wj.gif" />​</p>
+<p>​<img alt="Viscosities" src="../../../../SIGCourse/Fluid%20Simulation%20in%20Computer%20Graphics/Viscosities-20221210105149-ffrc8wj.gif"/>​</p>
 </blockquote>
 <h2 id="the-momentum-equation">The Momentum Equation</h2>
 <blockquote>
@@ -617,7 +616,7 @@ D\vec u/ D t = \frac{\partial u}{\partial t} + \vec u \cdot \nabla \vec u
 \nabla \cdot \frac{1}{\rho} \nabla p=\nabla \cdot (-\vec u\cdot \nabla \vec u + \vec g + \nu \nabla ^2 \vec u)
 \]</div>
 <h2 id="dropping-viscosity">Dropping Viscosity</h2>
-<p>无粘性的流体 <span class="arithmatex">\(\nu = 0\)</span>  </p>
+<p>无粘性的流体 <span class="arithmatex">\(\nu = 0\)</span> </p>
 <p>因此整体的方程变为：</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -679,11 +678,11 @@ s.t. \nabla \cdot \vec u &amp; = 0&amp;(pressure/incompressibility)
 <li>Body force: use forward euler is fine</li>
 <li>Pressure, Incompressibility: Chapter 5</li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Init();
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>for-each Timestep:
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  Advect();
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  ApplyExternalForces();
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  Project();
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>Init();
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>for-each Timestep:
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>  Advect();
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>  ApplyExternalForces();
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>  Project();
 </code></pre></div>
 <blockquote>
 <p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p33 - Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-P33-20230104194916</p>
@@ -698,7 +697,7 @@ s.t. \nabla \cdot \vec u &amp; = 0&amp;(pressure/incompressibility)
 <p>MAC Grid</p>
 <blockquote>
 <p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p35 - Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-P35-20230125121752</p>
-<p><img alt="" src="../../../../SIGCourse/Fluid%20Simulation%20in%20Computer%20Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition%20optimized-medium-res-P35-20230125121752-20230125121754-le4w69z.png" />​</p>
+<p><img alt="" src="../../../../SIGCourse/Fluid%20Simulation%20in%20Computer%20Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition%20optimized-medium-res-P35-20230125121752-20230125121754-le4w69z.png"/>​</p>
 </blockquote>
 <p>为何不使用普通 Grid：</p>
 <p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p36 - The problem with formula (2.11) is technically known as having anon-trivial null-space: the set of functions where the formula evaluates tozero contains more than just the constant functions to which it should berestricted.</p>
@@ -706,7 +705,7 @@ s.t. \nabla \cdot \vec u &amp; = 0&amp;(pressure/incompressibility)
 <p>中心差分允许<span class="arithmatex">\(q_{i} \ne q_{i-1} = q_{i+1}\)</span></p>
 </blockquote>
 <p>但MAC-Grid允许有二阶精度、估计是无偏的。</p>
-<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p37 - Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-P37-20230125143514<br />
+<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p37 - Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-P37-20230125143514<br/>
 计算公式如上。</p>
 <p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p38 - Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-P38-20230125143610</p>
 <p>需要存储的代码实现如上</p>
@@ -738,36 +737,36 @@ u^* = u - \Delta t \frac 1 {\rho} \nabla p
 <p>（离散压强梯度）</p>
 <p>压强可以用于直接求解出不可压缩流体自身产生的加速度场，公式如下：</p>
 <p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p82 - Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-P82-20230125145851</p>
-<p>​<img alt="image" src="../../../../SIGCourse/Fluid%20Simulation%20in%20Computer%20Graphics/image-20230126110233-e8mn55o.png" />​</p>
-<p>​<img alt="image" src="../../../../SIGCourse/Fluid%20Simulation%20in%20Computer%20Graphics/image-20230126110239-9bvdhlk.png" />​</p>
+<p>​<img alt="image" src="../../../../SIGCourse/Fluid%20Simulation%20in%20Computer%20Graphics/image-20230126110233-e8mn55o.png"/>​</p>
+<p>​<img alt="image" src="../../../../SIGCourse/Fluid%20Simulation%20in%20Computer%20Graphics/image-20230126110239-9bvdhlk.png"/>​</p>
 <p>对于两类边界条件：</p>
 <ol>
 <li>Dirichlet边界，例如空气和流体的界面，其压强为0，直接设置为0即可。Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p82 - This is called a Dirichlet boundary condition if you’re interested in the technical lingo: Dirichlet means we’re directly specifying the value of the quantity at the boundary.</li>
 <li>Neumann边界条件，对于固体边界面，直接设置流体速度为固体速度，作为速度场的后处理。Ghost value for pressure inside.</li>
 </ol>
-<p>​<img alt="image" src="../../../../SIGCourse/Fluid%20Simulation%20in%20Computer%20Graphics/image-20230126110257-zopctta.png" />​</p>
+<p>​<img alt="image" src="../../../../SIGCourse/Fluid%20Simulation%20in%20Computer%20Graphics/image-20230126110257-zopctta.png"/>​</p>
 <h2 id="discrete-divergence">Discrete divergence</h2>
 <p>可以直接计算出Divergence，如下：</p>
 <p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p85 - Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-P85-20230125153857  </p>
-<p>​<img alt="image" src="../../../../SIGCourse/Fluid%20Simulation%20in%20Computer%20Graphics/image-20230126110320-2rgyhen.png" />​</p>
+<p>​<img alt="image" src="../../../../SIGCourse/Fluid%20Simulation%20in%20Computer%20Graphics/image-20230126110320-2rgyhen.png"/>​</p>
 <h2 id="pressure-equations">Pressure Equations</h2>
 <p>通过上述几个公式，推导并整理得到（流体内部）：</p>
 <blockquote>
 <p>左侧实际上是离散Laplace算子，右侧为<span class="arithmatex">\(\nabla \cdot u\)</span>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p88 - ：Observe that Equations (5.6) and (5.8) are numerical approximations to the Poisson problem −∆t/ρ∇ · ∇p = −∇ · ~u.</p>
 </blockquote>
-<p>（2D）Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p87 - Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-P87-20230126112635<br />
-​<img alt="" src="../../../../SIGCourse/Fluid%20Simulation%20in%20Computer%20Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition%20optimized-medium-res-P87-20230126112635-20230126112637-j3hpsut.png" />​</p>
-<p>（3D）Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p88 - Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-P88-20230126112652<br />
-​<img alt="" src="../../../../SIGCourse/Fluid%20Simulation%20in%20Computer%20Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition%20optimized-medium-res-P88-20230126112652-20230126112653-f7idvfo.png" />​</p>
+<p>（2D）Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p87 - Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-P87-20230126112635<br/>
+​<img alt="" src="../../../../SIGCourse/Fluid%20Simulation%20in%20Computer%20Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition%20optimized-medium-res-P87-20230126112635-20230126112637-j3hpsut.png"/>​</p>
+<p>（3D）Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p88 - Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-P88-20230126112652<br/>
+​<img alt="" src="../../../../SIGCourse/Fluid%20Simulation%20in%20Computer%20Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition%20optimized-medium-res-P88-20230126112652-20230126112653-f7idvfo.png"/>​</p>
 <blockquote>
 <p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p88 - If a fluid grid cell is at the boundary, recall that the new velocities on the boundary faces involve pressures outside the fluid that we have to define through boundary conditions: we need to use that here.</p>
 </blockquote>
 <p>对于流固的边界面，引入<span class="arithmatex">\(u_{solid}\)</span>，来进行耦合，对于流气边界，直接设置为0，公式上体现为：</p>
-<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p89 - Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-P89-20230126151642<br />
-​<img alt="" src="../../../../SIGCourse/Fluid%20Simulation%20in%20Computer%20Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition%20optimized-medium-res-P89-20230126151642-20230126151644-l9q8myz.png" />​</p>
+<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p89 - Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-P89-20230126151642<br/>
+​<img alt="" src="../../../../SIGCourse/Fluid%20Simulation%20in%20Computer%20Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition%20optimized-medium-res-P89-20230126151642-20230126151644-l9q8myz.png"/>​</p>
 <p>具体代码实现为</p>
-<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p89 - Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-P89-20230126113237<br />
-​<img alt="" src="../../../../SIGCourse/Fluid%20Simulation%20in%20Computer%20Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition%20optimized-medium-res-P89-20230126113237-20230126113241-0wodztf.png" />​</p>
+<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p89 - Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res-P89-20230126113237<br/>
+​<img alt="" src="../../../../SIGCourse/Fluid%20Simulation%20in%20Computer%20Graphics/Fluid_Simulation_for_Computer_Graphics_Second_Edition%20optimized-medium-res-P89-20230126113237-20230126113241-0wodztf.png"/>​</p>
 <p>这一小节的后半部分具体解释了如何进行求解，以及常见算法：</p>
 <ol>
 <li>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p90 - Putting It In Matrix-Vector Form</li>
@@ -820,7 +819,7 @@ u^* = u - \Delta t \frac 1 {\rho} \nabla p
     <script id="__config" type="application/json">{"base": "../../../../..", "features": ["header.autohide", "navigation.tabs"], "search": "../../../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.81fa17fe.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

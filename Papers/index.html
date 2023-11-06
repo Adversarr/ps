@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
     
     
       
@@ -444,6 +444,172 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2023-11-06 00:00:00">November 6, 2023</time></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="differentiable-fluids-with-solid-coupling-for-learning-and-control"><a class="toclink" href="2023/11/06/differentiable-fluids-with-solid-coupling-for-learning-and-control/">Differentiable Fluids with Solid Coupling for Learning and Control</a></h2>
+<p>本文提出了一种高效的可微分流体模拟器，可以与深度神经网络集成，作为学习动力学和解决控制问题的一部分。通过使用变分原理，该模拟器能够处理流体与刚体物体的<strong>单向耦合</strong>，并在流体-固体界面上自然地施加必要的边界条件。通过应用伴随方法，该模拟器能够高效地计算多个时间步长的流体模拟的梯度，并在解决涉及单向耦合固体的逆问题和控制问题时表现出比先前的梯度计算、无导数优化和无模型强化学习技术至少高一个数量级的性能。</p>
+
+    <nav class="md-post__action">
+      <a href="2023/11/06/differentiable-fluids-with-solid-coupling-for-learning-and-control/">
+        Continue reading
+      </a>
+    </nav>
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2023-11-06 00:00:00">November 6, 2023</time></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="rethinking-optimization-with-differentiable-simulation-from-a-global-perspective"><a class="toclink" href="2023/11/06/rethinking-optimization-with-differentiable-simulation-from-a-global-perspective/">Rethinking Optimization with Differentiable Simulation from a Global Perspective</a></h2>
+<p>本研究从全局视角重新思考了可微分仿真优化，针对接触丰富的场景提出了一种结合贝叶斯优化和半局部搜索的方法，通过有效利用梯度并在具有噪声梯度的区域保持鲁棒性，取得了优于其他基于梯度和无梯度的方法的结果。</p>
+
+    <nav class="md-post__action">
+      <a href="2023/11/06/rethinking-optimization-with-differentiable-simulation-from-a-global-perspective/">
+        Continue reading
+      </a>
+    </nav>
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2023-11-06 00:00:00">November 6, 2023</time></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="differentiable-position-based-simulation-of-compliant-constraint-dynamics"><a class="toclink" href="2023/11/06/differentiable-position-based-simulation-of-compliant-constraint-dynamics/">Differentiable Position-Based Simulation of Compliant Constraint Dynamics</a></h2>
+<p>本文提出了一种全面可微分的求解器，可以通过计算目标函数的梯度来获得与所需参数相关的梯度，从而实现目标函数的最小化。作者通过优化身体形状和姿势，仅通过观察服装，优化时间变化的外部力序列，以及弹性布料和体积材料参数估计等示例，展示了该方法的有效性和高效性。</p>
+
+    <nav class="md-post__action">
+      <a href="2023/11/06/differentiable-position-based-simulation-of-compliant-constraint-dynamics/">
+        Continue reading
+      </a>
+    </nav>
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2023-11-06 00:00:00">November 6, 2023</time></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="differentiable-physics-simulations-with-contacts-do-they-have-correct-gradients-wrt-position-velocity-and-control"><a class="toclink" href="2023/11/06/differentiable-physics-simulations-with-contacts-do-they-have-correct-gradients-wrt-position-velocity-and-control/">Differentiable Physics Simulations with Contacts: Do They Have Correct Gradients w.r.t. Position, Velocity and Control?</a></h2>
+<p>本研究探讨了可微分物理模拟中不同接触模型对位置、速度和控制的梯度计算的正确性，并通过比较模拟计算的梯度与解析梯度的结果，揭示了当前可微分模拟器的局限性，并为开发更可靠的物理模拟器提供了新的研究机会。</p>
+
+    <nav class="md-post__action">
+      <a href="2023/11/06/differentiable-physics-simulations-with-contacts-do-they-have-correct-gradients-wrt-position-velocity-and-control/">
+        Continue reading
+      </a>
+    </nav>
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2023-11-06 00:00:00">November 6, 2023</time></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="multi-layer-thick-shells"><a class="toclink" href="2023/11/06/multi-layer-thick-shells/">Multi-Layer Thick Shells</a></h2>
+<p>实现了Thick Shell的模拟，实现了一定的褶皱，并且提出了一个交替方法来快速求解。</p>
+<ol>
+<li>Reduced Prism Elements：三棱柱+中轴面建模 <strong>Thick</strong> Shell ⇒ 解决 Shell Locking</li>
+<li>Complementary Wrinkle Coupling：褶皱耦合系统</li>
+<li>Alternating Minimization：交替最小化，先固定低频信息（PN+Cholesky）、再处理高频信息（PN+CG）。</li>
+</ol>
+<p>例子：瑜伽垫、皮衣、记忆枕等</p>
+
+    <nav class="md-post__action">
+      <a href="2023/11/06/multi-layer-thick-shells/">
+        Continue reading
+      </a>
+    </nav>
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2023-11-05 00:00:00">November 5, 2023</time></li>
         
         
@@ -598,168 +764,6 @@
   </div>
 </article>
       
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2023-11-04 00:00:00">November 4, 2023</time></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="differentiable-simulation-of-soft-multi-body-systems"><a class="toclink" href="2023/11/04/differentiable-simulation-of-soft-multi-body-systems/">Differentiable Simulation of Soft Multi-body Systems</a></h2>
-<p>本文提出了一种可微分仿真<strong>软多体系统</strong>的方法，通过将物理动力学与基于梯度的流程相结合，实现了可微分仿真。通过引入新的矩阵分解策略，我们设计了一种自上而下的矩阵组装算法，并推导出了<strong>适用于软连续体的广义干摩擦模型</strong>。</p>
-
-    <nav class="md-post__action">
-      <a href="2023/11/04/differentiable-simulation-of-soft-multi-body-systems/">
-        Continue reading
-      </a>
-    </nav>
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2023-11-04 00:00:00">November 4, 2023</time></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="primaldual-descent-methods-for-dynamics"><a class="toclink" href="2023/11/04/primaldual-descent-methods-for-dynamics/">Primal/Dual Descent Methods for Dynamics</a></h2>
-<p>本文提出了一种新的预处理摩擦接触求解器，该求解器与现有的原始优化方法兼容，并且在与对偶方法相比时<strong>生成了更好的接触力分布</strong>，具有可微性，非常适合轨迹优化。通过从共同的变分观点推导出原始和对偶方法，并对两种方法进行了全面的数值分析，证明了该方法在刚体接触、可变形模拟和机器人操作等场景中的有效性。</p>
-
-    <nav class="md-post__action">
-      <a href="2023/11/04/primaldual-descent-methods-for-dynamics/">
-        Continue reading
-      </a>
-    </nav>
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2023-11-04 00:00:00">November 4, 2023</time></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="real2sim-visco-elastic-parameter-estimation-from-dynamic-motion"><a class="toclink" href="2023/11/04/real2sim-visco-elastic-parameter-estimation-from-dynamic-motion/">Real2Sim: Visco-elastic parameter estimation from dynamic motion</a></h2>
-<p><em>从动态运动中估计粘弹性参数</em></p>
-<p>本文提出了一种从真实世界的软物体的动态运动中优化粘弹性材料参数的方法，<strong>通过直接敏感性分析或伴随状态方法计算材料参数的梯度</strong>，并优化材料参数以使模拟运动尽可能接近真实观测。通过这种方式，<strong>我们可以直接构建一个能够捕捉感兴趣样本的粘弹性行为的有用模拟模型</strong>。我们在各种示例中展示了我们方法的有效性，包括数值粗化、自定义目标函数以及由泡沫或3D打印格子结构制成的真实柔性弹性物体，包括软体机器人的演示应用。</p>
-
-    <nav class="md-post__action">
-      <a href="2023/11/04/real2sim-visco-elastic-parameter-estimation-from-dynamic-motion/">
-        Continue reading
-      </a>
-    </nav>
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2023-11-04 00:00:00">November 4, 2023</time></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="add-analytically-differentiable-dynamics-for-multi-body-systems-with-frictional-contact"><a class="toclink" href="2023/11/04/add-analytically-differentiable-dynamics-for-multi-body-systems-with-frictional-contact/">ADD: Analytically Differentiable Dynamics for Multi-Body Systems with Frictional Contact</a></h2>
-<p>本文提出了一种可解析可微分的动力学求解器，能够在统一框架下处理<strong>刚性和可变形物体的摩擦接触问题</strong>。通过对法向和切向接触力进行原则性的平滑处理，我们的方法克服了摩擦接触的非光滑特性所带来的主要困难。</p>
-
-    <nav class="md-post__action">
-      <a href="2023/11/04/add-analytically-differentiable-dynamics-for-multi-body-systems-with-frictional-contact/">
-        Continue reading
-      </a>
-    </nav>
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2023-11-04 00:00:00">November 4, 2023</time></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="fluidic-topology-optimization-with-an-anisotropic-mixture-model"><a class="toclink" href="2023/11/04/fluidic-topology-optimization-with-an-anisotropic-mixture-model/">Fluidic Topology Optimization with an Anisotropic Mixture Model</a></h2>
-<p>提出了一种新的拓扑优化方法，用于在Stokes流环境中设计流体装置。我们的方法的特点是能够适应固体-流体界面的广泛边界条件。</p>
-<p>主要贡献是<strong>各向异性和可微分本构模型</strong>，该模型统一了斯托克斯模型中不同相和边界条件的表示，从而实现了<strong>拓扑优化</strong>方法，该方法可以<strong>从背景网格离散化中合成具有精确边界条件的新结构</strong>。</p>
-
-    <nav class="md-post__action">
-      <a href="2023/11/04/fluidic-topology-optimization-with-an-anisotropic-mixture-model/">
-        Continue reading
-      </a>
-    </nav>
-  </div>
-</article>
-      
       
         
           
@@ -767,7 +771,7 @@
 
 
 <nav class="md-pagination">
-  <span class="md-pagination__current">1</span> <a class="md-pagination__link" href="page/2/">2</a> <a class="md-pagination__link" href="page/3/">3</a>
+  <span class="md-pagination__current">1</span> <a class="md-pagination__link" href="page/2/">2</a> <a class="md-pagination__link" href="page/3/">3</a> <a class="md-pagination__link" href="page/4/">4</a>
 </nav>
         
       
@@ -806,7 +810,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.tabs"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="../assets/javascripts/bundle.81fa17fe.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

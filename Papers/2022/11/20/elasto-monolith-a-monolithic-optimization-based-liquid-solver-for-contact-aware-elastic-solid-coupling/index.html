@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
     
     
       
@@ -525,9 +525,8 @@
 
 
 
-<p>实现了初步的FVM流体-可变形体的强流固耦合。</p>
+<p>通过统一的优化形式，实现了暴力的FVM流体-可变形体的强流固耦合。</p>
 <!-- more -->
-
 <h1 id="elastomonolith-a-monolithic-optimization-based-liquid-solver-for-contact-aware-elastic-solid-coupling">ElastoMonolith: A Monolithic Optimization-based Liquid Solver for Contact-Aware Elastic-Solid Coupling</h1>
 <h2 id="elasto-monolith-overview">Elasto Monolith Overview</h2>
 <p>使用基于优化的时间积分器，来实现流固动力学计算及其耦合。</p>
@@ -536,11 +535,11 @@
 <li>变形体动力学：Position-level Optimization</li>
 <li>刚体动力学：Velocity-level Friction contact handling(ref: Siggraph 2022 course)</li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Algorithm EM:
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>1. map fluid velocity (P-&gt;G)
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>2. add Explicit External Force
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>3. solve the system
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>4. advect particles and update rigid body positions.
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>Algorithm EM:
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>1. map fluid velocity (P-&gt;G)
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>2. add Explicit External Force
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>3. solve the system
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>4. advect particles and update rigid body positions.
 </code></pre></div>
 <p>该最小化问题集成了：</p>
 <ol>
@@ -617,7 +616,7 @@ v_r = v_{r}^{*} + \Delta t (\alpha M_r)^{-1} (F_{r s} s + F_{r p} p + \alpha J_r
     <script id="__config" type="application/json">{"base": "../../../../..", "features": ["header.autohide", "navigation.tabs"], "search": "../../../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.81fa17fe.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

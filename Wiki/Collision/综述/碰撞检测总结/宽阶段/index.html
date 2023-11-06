@@ -14,7 +14,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
     
     
       
@@ -429,7 +429,7 @@
 </ul>
 <hr>
 <h1 id="_1">宽阶段</h1>
-<p>title: Collision Detection 整理 2 - Broad Phase 阶段<br />
+<p>title: Collision Detection 整理 2 - Broad Phase 阶段<br/>
 date: 2022-03-28  </p>
 <p>介绍几种在各类代码库中应用的 Broad Phase 算法</p>
 <blockquote>
@@ -499,16 +499,16 @@ date: 2022-03-28  </p>
 <li>Convex, primitives vs Convex, primitives</li>
 </ul>
 </blockquote>
-<p><img alt="Nvidia- Sort and sweep" src="https://developer.nvidia.com/sites/all/modules/custom/gpugems/books/GPUGems3/elementLinks/32fig01.jpg" /></p>
-<p><img alt="Sweep Method 的角速度过大，导致CCD失败" src="https://docs.unity3d.com/uploads/Main/SpeculativeCCD1.gif" /></p>
-<p><img alt="speculative ccd" src="https://docs.unity3d.com/uploads/Main/SpeculativeCCD2.png" /></p>
+<p><img alt="Nvidia- Sort and sweep" src="https://developer.nvidia.com/sites/all/modules/custom/gpugems/books/GPUGems3/elementLinks/32fig01.jpg"/></p>
+<p><img alt="Sweep Method 的角速度过大，导致CCD失败" src="https://docs.unity3d.com/uploads/Main/SpeculativeCCD1.gif"/></p>
+<p><img alt="speculative ccd" src="https://docs.unity3d.com/uploads/Main/SpeculativeCCD2.png"/></p>
 <p>考虑两种情形：</p>
 <ol>
 <li>只有 Rigid Body：不可能产生自交问题，这样子的话</li>
 <li>Rigid + Deformed：Rigid肯定不会自交，但是Deformed物体可能存在自交问题、Rigid-Deformed之间可能产生相交</li>
 </ol>
 <p>BVH 和 Spatial Hashing 来实现</p>
-<hr />
+<hr/>
 
 
 
@@ -550,7 +550,7 @@ date: 2022-03-28  </p>
     <script id="__config" type="application/json">{"base": "../../../../..", "features": ["header.autohide", "navigation.tabs"], "search": "../../../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.81fa17fe.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

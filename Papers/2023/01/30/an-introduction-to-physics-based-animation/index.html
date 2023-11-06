@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
     
     
       
@@ -881,12 +881,11 @@
 
 <p>An Introduction to Physics-based Animation</p>
 <!-- more -->
-
 <h1 id="sig21-an-introduction-to-physics-based-animation">SIG21-An Introduction to Physics-based Animation</h1>
 <h2 id="a-simple-start-particle-dynamics">A simple start: Particle Dynamics</h2>
 <h3 id="passive-particle-in-velocity-field">Passive Particle in Velocity Field</h3>
-<p>sig19 Intro to PBA optimized.pdf - p5 - sig19 Intro to PBA optimized-P5-20230128114412<br />
-​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P5-20230128114412-20230128114414-famhayj.png" />​</p>
+<p>sig19 Intro to PBA optimized.pdf - p5 - sig19 Intro to PBA optimized-P5-20230128114412<br/>
+​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P5-20230128114412-20230128114414-famhayj.png"/>​</p>
 <p>问题：给定速度场<span class="arithmatex">\(v(x, t)\)</span>，求运动</p>
 <p>本质上：I.V.P（初值问题）</p>
 <div class="arithmatex">\[
@@ -896,12 +895,12 @@ x_p(0) = x_0 \\
 \end{aligned}
 \]</div>
 <p>常微分方程 -- 只有 <span class="arithmatex">\(t\)</span>。且是一阶 ODE。用有限差分法求。具体从解析到离散的推导为：</p>
-<p>sig19 Intro to PBA optimized.pdf - p5 - sig19 Intro to PBA optimized-P5-20230128114500<br />
-​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P5-20230128114500-20230128114502-ls19xtk.png" />​</p>
+<p>sig19 Intro to PBA optimized.pdf - p5 - sig19 Intro to PBA optimized-P5-20230128114500<br/>
+​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P5-20230128114500-20230128114502-ls19xtk.png"/>​</p>
 <h3 id="particle-with-mass">Particle with mass</h3>
 <p>如果给定的不是速度场，而是力场，可以用牛顿第二定律来进行计算：</p>
-<p>sig19 Intro to PBA optimized.pdf - p6 - sig19 Intro to PBA optimized-P6-20230128114553<br />
-​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P6-20230128114553-20230128114553-g0pl6qk.png" />​</p>
+<p>sig19 Intro to PBA optimized.pdf - p6 - sig19 Intro to PBA optimized-P6-20230128114553<br/>
+​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P6-20230128114553-20230128114553-g0pl6qk.png"/>​</p>
 <div class="arithmatex">\[
 \begin{aligned}
 x_p(0) = x_0 \\
@@ -920,14 +919,14 @@ x_p(0) = x_0 \\
 <blockquote>
 <p>区别于半隐式欧拉。</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Particle</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="n">mass</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="n">position</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="n">velocity</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="n">force_accumulator</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="p">...</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="p">(</span><span class="n">i</span><span class="p">.</span><span class="n">e</span><span class="p">.</span><span class="w"> </span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="p">)</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">};</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Particle</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">  </span><span class="n">mass</span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">  </span><span class="n">position</span>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">  </span><span class="n">velocity</span>
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">  </span><span class="n">force_accumulator</span>
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">  </span><span class="p">...</span>
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">  </span><span class="p">(</span><span class="n">i</span><span class="p">.</span><span class="n">e</span><span class="p">.</span><span class="w"> </span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="p">)</span>
+<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="p">};</span>
 </code></pre></div>
 <blockquote>
 <p>sig19 Intro to PBA optimized.pdf - p6 - Particle structure would typically store, at a minimum: mass, position, velocity, and a force accumulator.</p>
@@ -939,8 +938,8 @@ x_p(0) = x_0 \\
 f_p = k(\| x_q - x_p \|/ r - 1) (x_q - x_p) / \| x_q - x_p \|
 \]</div>
 <p>两个弹簧节点之间的相互作用力可以如上定义。算法实现如下：</p>
-<p>sig19 Intro to PBA optimized.pdf - p8 - sig19 Intro to PBA optimized-P8-20230128114851<br />
-​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P8-20230128114851-20230128114851-2mt17ny.png" />​</p>
+<p>sig19 Intro to PBA optimized.pdf - p8 - sig19 Intro to PBA optimized-P8-20230128114851<br/>
+​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P8-20230128114851-20230128114851-2mt17ny.png"/>​</p>
 <h2 id="mathematical-models">Mathematical Models</h2>
 <blockquote>
 <p>Continuum Mechanics: Assume the underlying materials are continuous.</p>
@@ -962,8 +961,8 @@ f_p = k(\| x_q - x_p \|/ r - 1) (x_q - x_p) / \| x_q - x_p \|
 </ol>
 <h4 id="sig19-intro-to-pba-optimizedpdf-p10-conservation-of-mass-momentum-energy">质量守恒、动量守恒、能量守恒 sig19 Intro to PBA optimized.pdf - p10 - Conservation of Mass, Momentum, Energy</h4>
 <p>守恒视角下，牛顿定律：</p>
-<p>sig19 Intro to PBA optimized.pdf - p10 - sig19 Intro to PBA optimized-P10-20230128154753<br />
-​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P10-20230128154753-20230128154755-ehci3f4.png" />​</p>
+<p>sig19 Intro to PBA optimized.pdf - p10 - sig19 Intro to PBA optimized-P10-20230128154753<br/>
+​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P10-20230128154753-20230128154755-ehci3f4.png"/>​</p>
 <p>sig19 Intro to PBA optimized.pdf - p11 - Conservation laws for continua. ：对于连续介质，有质量守恒给出了如下公式</p>
 <div class="arithmatex">\[
 \frac{d}{dt} \int_\Omega \rho dV = - \oint _{\partial \Omega} \rho v(x, t) \cdot n(x) dS
@@ -975,17 +974,17 @@ f_p = k(\| x_q - x_p \|/ r - 1) (x_q - x_p) / \| x_q - x_p \|
 <h3 id="materials">Materials</h3>
 <h4 id="sig19-intro-to-pba-optimizedpdf-p12-rigid-bodies">sig19 Intro to PBA optimized.pdf - p12 - Rigid Bodies</h4>
 <h5 id="6dof">6DoF 模型</h5>
-<p>sig19 Intro to PBA optimized.pdf - p13 - sig19 Intro to PBA optimized-P13-20230128175401<br />
-​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P13-20230128175401-20230128175403-2c2hb7d.png" />​</p>
+<p>sig19 Intro to PBA optimized.pdf - p13 - sig19 Intro to PBA optimized-P13-20230128175401<br/>
+​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P13-20230128175401-20230128175403-2c2hb7d.png"/>​</p>
 <p>一个刚体只有6dof，分为Object Space 和 World Space</p>
 <ol>
 <li>质心位置<span class="arithmatex">\(\mathbf x(t)\)</span></li>
 <li>三维旋转<span class="arithmatex">\(\mathbf r(t)\)</span></li>
-<li>质心计算：质量加权的平均位置sig19 Intro to PBA optimized.pdf - p12 - sig19 Intro to PBA optimized-P12-20230128175004<br />
-   ​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P12-20230128175004-20230128175007-tkts5k7.png" />​</li>
+<li>质心计算：质量加权的平均位置sig19 Intro to PBA optimized.pdf - p12 - sig19 Intro to PBA optimized-P12-20230128175004<br/>
+   ​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P12-20230128175004-20230128175007-tkts5k7.png"/>​</li>
 </ol>
-<p>计算刚体上的点的世界坐标： sig19 Intro to PBA optimized.pdf - p13 - sig19 Intro to PBA optimized-P13-20230129095515<br />
-​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P13-20230129095515-20230129095517-q2bn9cu.png" />​</p>
+<p>计算刚体上的点的世界坐标： sig19 Intro to PBA optimized.pdf - p13 - sig19 Intro to PBA optimized-P13-20230129095515<br/>
+​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P13-20230129095515-20230129095517-q2bn9cu.png"/>​</p>
 <p>通过上式对时间求微分，得到（刚体上某点的）速度方程：</p>
 <div class="arithmatex">\[
 v(t) = \dot{x}(t) + \dot{R} (t) r_0
@@ -1002,8 +1001,8 @@ v(t) = \dot{x}(t) + \dot{R} (t) r_0
 P(t) = \sum_{i=1}^{N} m_i v_i(t) = \underline{
 \left(\sum_{i = 1}^N  m_i\right) \dot{x}(t)} + \omega(t) \times\sum_{i=1}^N m_i r_i(t)
 \]</div>
-<p>sig19 Intro to PBA optimized.pdf - p15 - sig19 Intro to PBA optimized-P15-20230129111005<br />
-​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P15-20230129111005-20230129111007-mfrq9hb.png" />​</p>
+<p>sig19 Intro to PBA optimized.pdf - p15 - sig19 Intro to PBA optimized-P15-20230129111005<br/>
+​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P15-20230129111005-20230129111007-mfrq9hb.png"/>​</p>
 <p><strong>角动量(Angular Momentum)</strong>:sig19 Intro to PBA optimized.pdf - p15 - Angular Momentum.</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1028,15 +1027,15 @@ L(t)&amp; = (\sum_i m_i r_i^{*} r_i^{*T}) \omega(t)\\
 &amp;=I(t) \omega (t)
 \end{aligned}
 \]</div>
-<p>其中的<span class="arithmatex">\(I(t)\)</span>通过下式计算：sig19 Intro to PBA optimized.pdf - p16 - sig19 Intro to PBA optimized-P16-20230129112855<br />
-​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P16-20230129112855-20230129112855-188q80d.png" />​</p>
+<p>其中的<span class="arithmatex">\(I(t)\)</span>通过下式计算：sig19 Intro to PBA optimized.pdf - p16 - sig19 Intro to PBA optimized-P16-20230129112855<br/>
+​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P16-20230129112855-20230129112855-188q80d.png"/>​</p>
 <p><strong>Force and Torque</strong></p>
 <div class="arithmatex">\[
 \frac{d}{dt} \left(P;L\right) = \left(f; \tau\right)
 \]</div>
 <p>其中<span class="arithmatex">\(\tau = r \times f\)</span></p>
-<p>Summary: sig19 Intro to PBA optimized.pdf - p16 - sig19 Intro to PBA optimized-P16-20230129113036<br />
-​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P16-20230129113036-20230129113038-3ry5prx.png" />​</p>
+<p>Summary: sig19 Intro to PBA optimized.pdf - p16 - sig19 Intro to PBA optimized-P16-20230129113036<br/>
+​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P16-20230129113036-20230129113038-3ry5prx.png"/>​</p>
 <h4 id="soft-bodies">Soft Bodies</h4>
 <blockquote>
 <p>Central: deformation gradient</p>
@@ -1086,10 +1085,10 @@ Strain(x_r) = 0
 <div class="arithmatex">\[
 \epsilon_{ij} = \frac{1}{2} (F^T F - I)
 \]</div>
-<p>sig19 Intro to PBA optimized.pdf - p18 - sig19 Intro to PBA optimized-P18-20230130113230<br />
-​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P18-20230130113230-20230130113232-5ig88uv.png" />​</p>
-<p>sig19 Intro to PBA optimized.pdf - p18 - sig19 Intro to PBA optimized-P18-20230130113306<br />
-​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P18-20230130113306-20230130113308-hca2udj.png" />​</p>
+<p>sig19 Intro to PBA optimized.pdf - p18 - sig19 Intro to PBA optimized-P18-20230130113230<br/>
+​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P18-20230130113230-20230130113232-5ig88uv.png"/>​</p>
+<p>sig19 Intro to PBA optimized.pdf - p18 - sig19 Intro to PBA optimized-P18-20230130113306<br/>
+​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P18-20230130113306-20230130113308-hca2udj.png"/>​</p>
 <p>Cauchy infinitesimal strain: 如果 <span class="arithmatex">\(D^TD\)</span>项可以忽略。</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1098,8 +1097,8 @@ Strain(x_r) = 0
 \end{aligned}
 \]</div>
 <p>如果用Einstein Notation：</p>
-<p>sig19 Intro to PBA optimized.pdf - p19 - sig19 Intro to PBA optimized-P19-20230130113523<br />
-​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P19-20230130113523-20230130113524-njqz5z9.png" />​</p>
+<p>sig19 Intro to PBA optimized.pdf - p19 - sig19 Intro to PBA optimized-P19-20230130113523<br/>
+​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P19-20230130113523-20230130113524-njqz5z9.png"/>​</p>
 <p>主要好处在于，该strain是线性的，导出的形变能量是二次的，具有常数的Hessian。sig19 Intro to PBA optimized.pdf - p19 - The primary advantage of this strain metric is that it is linear, which leads to a quadratic energy and a constant Hessian that can be pre-factored or otherwise analyzed</p>
 <p>缺点在于，这个strain受到world-space rotation的影响。sig19 Intro to PBA optimized.pdf - p19 - Unfortunately, this strain metric does penalize world-space rotations, leading to a variety of unpleasant artifacts under large deformations.</p>
 <p>在图形学中最常用的是 co-rotated strain metric:</p>
@@ -1158,8 +1157,8 @@ f_i = -\frac{\partial \eta}{\partial x_i}
 <div class="arithmatex">\[
 f = \int_{\partial R} \sigma n \mathrm{d}S
 \]</div>
-<p>sig19 Intro to PBA optimized.pdf - p20 - sig19 Intro to PBA optimized-P20-20230130120242<br />
-​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P20-20230130120242-20230130120245-xqcxh2o.png" />​</p>
+<p>sig19 Intro to PBA optimized.pdf - p20 - sig19 Intro to PBA optimized-P20-20230130120242<br/>
+​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P20-20230130120242-20230130120245-xqcxh2o.png"/>​</p>
 <h5 id="stress-revisit">Stress Revisit</h5>
 <p>Definition of Stress: Maps <em>normal</em> to <em>force</em></p>
 <blockquote>
@@ -1170,7 +1169,7 @@ f = \int_{\partial R} \sigma n \mathrm{d}S
 <li>如果是<strong>世界坐标系</strong>下的法向和Stress 计算得到对应 Cauchy Stress -- <span class="arithmatex">\(\sigma\)</span></li>
 </ul>
 <p>sig19 Intro to PBA optimized.pdf - p20 - If both normals and forces are in world space, the stress is known as a Cauchy stress and often written as 𝝈
-* 物体坐标系的法向到物体坐标系的力 - 对应PK stress - <span class="arithmatex">\(S\)</span>  </p>
+* 物体坐标系的法向到物体坐标系的力 - 对应PK stress - <span class="arithmatex">\(S\)</span> </p>
 <p>sig19 Intro to PBA optimized.pdf - p20 - If the stress maps normals in material space to forces in material space it is known as a second Piola-Kirchhoff stress and sometimes written as 𝐒.
 * <strong>物体坐标系</strong>的法向到<strong>世界坐标系</strong>的力 - 对应PK1 stress - P</p>
 <p>sig19 Intro to PBA optimized.pdf - p20 - A first Piola-Kirchhoff stress maps normals in material space to forces in world space and is written 𝐏</p>
@@ -1181,8 +1180,8 @@ f = \int_{\partial R} \sigma n \mathrm{d}S
 P = J \sigma F^{-T} = FS
 \]</div>
 <p>好处在于，PK1 给出的是从参考到世界坐标的映射。</p>
-<p>sig19 Intro to PBA optimized.pdf - p20 - sig19 Intro to PBA optimized-P20-20230130141155<br />
-​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P20-20230130141155-20230130141201-t2scluh.png" />​</p>
+<p>sig19 Intro to PBA optimized.pdf - p20 - sig19 Intro to PBA optimized-P20-20230130141155<br/>
+​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P20-20230130141155-20230130141201-t2scluh.png"/>​</p>
 <h5 id="_2">塑性形变</h5>
 <p>sig19 Intro to PBA optimized.pdf - p20 - Plasticity. Plasticity refers to permanent deformation that typically occurs when a material fails</p>
 <div class="arithmatex">\[
@@ -1238,8 +1237,8 @@ Du / Dt = u_t + u \cdot \nabla u
 <li>FDM &amp; FEM</li>
 </ol>
 <h3 id="sig19-intro-to-pba-optimizedpdf-p24-lagrangian-vs-eulerian">sig19 Intro to PBA optimized.pdf - p24 - Lagrangian vs Eulerian</h3>
-<p>sig19 Intro to PBA optimized.pdf - p24 - sig19 Intro to PBA optimized-P24-20230130141500<br />
-​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P24-20230130141500-20230130141502-v2eynn4.png" />​</p>
+<p>sig19 Intro to PBA optimized.pdf - p24 - sig19 Intro to PBA optimized-P24-20230130141500<br/>
+​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P24-20230130141500-20230130141502-v2eynn4.png"/>​</p>
 <h3 id="sig19-intro-to-pba-optimizedpdf-p24-grids-meshes-particles">sig19 Intro to PBA optimized.pdf - p24 - Grids, Meshes, Particles</h3>
 <h4 id="grid">Grid</h4>
 <blockquote>
@@ -1256,29 +1255,29 @@ Du / Dt = u_t + u \cdot \nabla u
 <p>MPM, FLIP ...</p>
 <h3 id="interpolation">Interpolation</h3>
 <p>1-d情况下，<strong>线性插值</strong>是指：</p>
-<p>sig19 Intro to PBA optimized.pdf - p26 - sig19 Intro to PBA optimized-P26-20230130143507<br />
-​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P26-20230130143507-20230130143508-9rim08t.png" />​</p>
+<p>sig19 Intro to PBA optimized.pdf - p26 - sig19 Intro to PBA optimized-P26-20230130143507<br/>
+​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P26-20230130143507-20230130143508-9rim08t.png"/>​</p>
 <p>可以推广到双线性、三线性、重心坐标插值等等技术。</p>
 <p>2d情况，可以考虑<strong>双线性插值</strong>：</p>
-<p>sig19 Intro to PBA optimized.pdf - p27 - sig19 Intro to PBA optimized-P27-20230130143733<br />
-​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P27-20230130143733-20230130143735-ong722m.png" />​</p>
+<p>sig19 Intro to PBA optimized.pdf - p27 - sig19 Intro to PBA optimized-P27-20230130143733<br/>
+​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P27-20230130143733-20230130143735-ong722m.png"/>​</p>
 <p>3-d情况，<strong>三线性插值</strong>：</p>
-<p>sig19 Intro to PBA optimized.pdf - p27 - sig19 Intro to PBA optimized-P27-20230130144004<br />
-​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P27-20230130144004-20230130144006-i91uidf.png" />​</p>
+<p>sig19 Intro to PBA optimized.pdf - p27 - sig19 Intro to PBA optimized-P27-20230130144004<br/>
+​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P27-20230130144004-20230130144006-i91uidf.png"/>​</p>
 <blockquote>
 <p>直观上来说，内部点对某一个采样点的权就是对边/面/体的测度。</p>
 </blockquote>
 <p>另外，对于mesh，有<strong>重心坐标</strong>插值：</p>
-<p>sig19 Intro to PBA optimized.pdf - p28 - sig19 Intro to PBA optimized-P28-20230130144137<br />
-​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P28-20230130144137-20230130144139-whqxuaf.png" />​</p>
+<p>sig19 Intro to PBA optimized.pdf - p28 - sig19 Intro to PBA optimized-P28-20230130144137<br/>
+​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P28-20230130144137-20230130144139-whqxuaf.png"/>​</p>
 <p><strong>多项式插值：</strong>例如拉格朗日多项式</p>
-<p>sig19 Intro to PBA optimized.pdf - p29 - sig19 Intro to PBA optimized-P29-20230130144224<br />
-​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P29-20230130144224-20230130144226-jfxfgfe.png" />​</p>
+<p>sig19 Intro to PBA optimized.pdf - p29 - sig19 Intro to PBA optimized-P29-20230130144224<br/>
+​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P29-20230130144224-20230130144226-jfxfgfe.png"/>​</p>
 <p><strong>逼近函数</strong>：例如傅立叶变换后的傅立叶系数，实际上是一种到某一组基函数的投影。sig19 Intro to PBA optimized.pdf - p29 - Approximating functions.</p>
 <h3 id="finite-differences">Finite Differences</h3>
 <p>二阶差分格式：</p>
-<p>sig19 Intro to PBA optimized.pdf - p31 - sig19 Intro to PBA optimized-P31-20230130150631<br />
-​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P31-20230130150631-20230130150632-kj6dnil.png" />​</p>
+<p>sig19 Intro to PBA optimized.pdf - p31 - sig19 Intro to PBA optimized-P31-20230130150631<br/>
+​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P31-20230130150631-20230130150632-kj6dnil.png"/>​</p>
 <p>也会带来一些问题（震荡）</p>
 <blockquote>
 <p>sig19 Intro to PBA optimized.pdf - p31 - When choosing a finite difference scheme, order of accuracy is only one of several considerations. Other considerations include the overall stability of the scheme, the nature of the errors produced by the scheme (e.g., dissipative or dispersive), and the conservation properties of the scheme. </p>
@@ -1286,22 +1285,22 @@ Du / Dt = u_t + u \cdot \nabla u
 <p>解决方法为：sig19 Intro to PBA optimized.pdf - p31 - Upwind discretizations are often preferred for advection. T</p>
 <h4 id="sig19-intro-to-pba-optimizedpdf-p32-laplacian-operator">sig19 Intro to PBA optimized.pdf - p32 - Laplacian operator.</h4>
 <p>数值计算上：</p>
-<p>sig19 Intro to PBA optimized.pdf - p32 - sig19 Intro to PBA optimized-P32-20230130160916<br />
-​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P32-20230130160916-20230130160918-mswzitq.png" />​</p>
+<p>sig19 Intro to PBA optimized.pdf - p32 - sig19 Intro to PBA optimized-P32-20230130160916<br/>
+​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P32-20230130160916-20230130160918-mswzitq.png"/>​</p>
 <h3 id="finite-elements">Finite Elements</h3>
 <p>sig19 Intro to PBA optimized.pdf - p34 - Arbitrary functions in the equations we wish to solve are then projected onto this piecewise linear space. This projection is often referred to as a Galerkin projection. </p>
 <h4 id="soft-bodies_1">Soft bodies</h4>
 <blockquote>
 <p>sig19 Intro to PBA optimized.pdf - p34 - Finite elements are commonly used in graphics for animating elastic bodies</p>
 </blockquote>
-<p>sig19 Intro to PBA optimized.pdf - p35 - sig19 Intro to PBA optimized-P35-20230130165255<br />
-​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P35-20230130165255-20230130165256-cog7h9a.png" />​</p>
+<p>sig19 Intro to PBA optimized.pdf - p35 - sig19 Intro to PBA optimized-P35-20230130165255<br/>
+​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P35-20230130165255-20230130165256-cog7h9a.png"/>​</p>
 <p>算法如下：</p>
-<p>sig19 Intro to PBA optimized.pdf - p36 - sig19 Intro to PBA optimized-P36-20230130165358<br />
-​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P36-20230130165358-20230130165359-twfjsaw.png" />​</p>
+<p>sig19 Intro to PBA optimized.pdf - p36 - sig19 Intro to PBA optimized-P36-20230130165358<br/>
+​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P36-20230130165358-20230130165359-twfjsaw.png"/>​</p>
 <p>部分约定解释如下：</p>
-<p>sig19 Intro to PBA optimized.pdf - p35 - sig19 Intro to PBA optimized-P35-20230130165759<br />
-​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P35-20230130165759-20230130165801-3vzf0pa.png" />​</p>
+<p>sig19 Intro to PBA optimized.pdf - p35 - sig19 Intro to PBA optimized-P35-20230130165759<br/>
+​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P35-20230130165759-20230130165801-3vzf0pa.png"/>​</p>
 <h2 id="integrators">Integrators</h2>
 <ol>
 <li>
@@ -1309,23 +1308,23 @@ Du / Dt = u_t + u \cdot \nabla u
 <ol>
 <li>
 <p>Trapzoidal / Mid point method</p>
-<p>sig19 Intro to PBA optimized.pdf - p37 - sig19 Intro to PBA optimized-P37-20230130172105<br />
-​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P37-20230130172105-20230130172106-12dl1ab.png" />​</p>
-<p>sig19 Intro to PBA optimized.pdf - p37 - sig19 Intro to PBA optimized-P37-20230130172142<br />
-​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P37-20230130172142-20230130172143-woug9rp.png" />​
+<p>sig19 Intro to PBA optimized.pdf - p37 - sig19 Intro to PBA optimized-P37-20230130172105<br/>
+​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P37-20230130172105-20230130172106-12dl1ab.png"/>​</p>
+<p>sig19 Intro to PBA optimized.pdf - p37 - sig19 Intro to PBA optimized-P37-20230130172142<br/>
+​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P37-20230130172142-20230130172143-woug9rp.png"/>​
     2. <a href="https://en.wikipedia.org/wiki/Verlet_integration">Verlet Method</a></p>
-<p><img alt="image" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/image-20230130171940-pszeark.png" />​
+<p><img alt="image" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/image-20230130171940-pszeark.png"/>​
     3. Symplectic Euler</p>
-<p>sig19 Intro to PBA optimized.pdf - p37 - sig19 Intro to PBA optimized-P37-20230130172220<br />
-​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P37-20230130172220-20230130172222-eu032a6.png" />​</p>
+<p>sig19 Intro to PBA optimized.pdf - p37 - sig19 Intro to PBA optimized-P37-20230130172220<br/>
+​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P37-20230130172220-20230130172222-eu032a6.png"/>​</p>
 </li>
 </ol>
 </li>
 </ol>
 <h3 id="implicit-integration">Implicit Integration</h3>
 <p>sig19 Intro to PBA optimized.pdf - p39 - Sometimes we wish to solve stiff problems. “Stiff problem” is not particularly well defined, but they occur, for example, when materials have very strong resistance to deformation.</p>
-<p>sig19 Intro to PBA optimized.pdf - p40 - sig19 Intro to PBA optimized-P40-20230130172324<br />
-​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P40-20230130172324-20230130172326-a9ez1sm.png" />​</p>
+<p>sig19 Intro to PBA optimized.pdf - p40 - sig19 Intro to PBA optimized-P40-20230130172324<br/>
+​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P40-20230130172324-20230130172326-a9ez1sm.png"/>​</p>
 <h2 id="constraints">Constraints</h2>
 <h3 id="bilateral-unilateral-constraints">Bilateral / Unilateral constraints</h3>
 <p>等式约束、不等式约束</p>
@@ -1354,20 +1353,20 @@ Du / Dt = u_t + u \cdot \nabla u
 <p>sig19 Intro to PBA optimized.pdf - p43 - Nevertheless, penalty methods are still widely used, and researchers continue to develop approaches to mitigate their drawbacks</p>
 <h4 id="sig19-intro-to-pba-optimizedpdf-p43-lagrange-multipliers">sig19 Intro to PBA optimized.pdf - p43 - Lagrange multipliers.</h4>
 <p>sig19 Intro to PBA optimized.pdf - p43 - The method of Lagrange multipliers is an approach that explicitly includes in the equations of motion the constraint forces necessary to maintain the constraints.</p>
-<p>虚功原理：sig19 Intro to PBA optimized.pdf - p44 - sig19 Intro to PBA optimized-P44-20230131111140<br />
-​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P44-20230131111140-20230131111142-sa2z13y.png" />​</p>
+<p>虚功原理：sig19 Intro to PBA optimized.pdf - p44 - sig19 Intro to PBA optimized-P44-20230131111140<br/>
+​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P44-20230131111140-20230131111142-sa2z13y.png"/>​</p>
 <p>总的来说，牛顿第二定律为：</p>
-<p>sig19 Intro to PBA optimized.pdf - p45 - sig19 Intro to PBA optimized-P45-20230131111424<br />
-​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P45-20230131111424-20230131111425-0hx295w.png" />​</p>
+<p>sig19 Intro to PBA optimized.pdf - p45 - sig19 Intro to PBA optimized-P45-20230131111424<br/>
+​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P45-20230131111424-20230131111425-0hx295w.png"/>​</p>
 <p>总体推导为(185)：</p>
-<p>sig19 Intro to PBA optimized.pdf - p45 - sig19 Intro to PBA optimized-P45-20230131111637<br />
-​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P45-20230131111637-20230131111638-iwwaidy.png" />​</p>
+<p>sig19 Intro to PBA optimized.pdf - p45 - sig19 Intro to PBA optimized-P45-20230131111637<br/>
+​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P45-20230131111637-20230131111638-iwwaidy.png"/>​</p>
 <h4 id="sig19-intro-to-pba-optimizedpdf-p45-generalized-coordinates">广义坐标法sig19 Intro to PBA optimized.pdf - p45 - Generalized coordinates.</h4>
-<p>sig19 Intro to PBA optimized.pdf - p46 - sig19 Intro to PBA optimized-P46-20230131111727<br />
-​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P46-20230131111727-20230131111729-vw0jg4x.png" />​</p>
+<p>sig19 Intro to PBA optimized.pdf - p46 - sig19 Intro to PBA optimized-P46-20230131111727<br/>
+​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P46-20230131111727-20230131111729-vw0jg4x.png"/>​</p>
 <h3 id="sig19-intro-to-pba-optimizedpdf-p48-practical-constrained-rigid-body-systems">sig19 Intro to PBA optimized.pdf - p48 - Practical Constrained Rigid Body Systems</h3>
-<p>sig19 Intro to PBA optimized.pdf - p50 - sig19 Intro to PBA optimized-P50-20230131111915<br />
-​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P50-20230131111915-20230131111916-i9h4egr.png" />​</p>
+<p>sig19 Intro to PBA optimized.pdf - p50 - sig19 Intro to PBA optimized-P50-20230131111915<br/>
+​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P50-20230131111915-20230131111916-i9h4egr.png"/>​</p>
 <h3 id="collisions">Collisions</h3>
 <p>主要研究：</p>
 <ol>
@@ -1392,8 +1391,8 @@ Du / Dt = u_t + u \cdot \nabla u
 <ol>
 <li>
 <p>sig19 Intro to PBA optimized.pdf - p54 - Coulomb friction model</p>
-<p>摩擦锥：sig19 Intro to PBA optimized.pdf - p54 - sig19 Intro to PBA optimized-P54-20230131112746<br />
-​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P54-20230131112746-20230131112747-y9uc0wl.png" />​</p>
+<p>摩擦锥：sig19 Intro to PBA optimized.pdf - p54 - sig19 Intro to PBA optimized-P54-20230131112746<br/>
+​<img alt="" src="../../../../SIGCourse/SIG21-An%20Introduction%20to%20Physics-based%20Animation/sig19%20Intro%20to%20PBA%20optimized-P54-20230131112746-20230131112747-y9uc0wl.png"/>​</p>
 </li>
 </ol>
 </li>
@@ -1443,7 +1442,7 @@ Du / Dt = u_t + u \cdot \nabla u
     <script id="__config" type="application/json">{"base": "../../../../..", "features": ["header.autohide", "navigation.tabs"], "search": "../../../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.81fa17fe.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

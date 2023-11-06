@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
     
     
       
@@ -473,7 +473,6 @@
 
 
 <!-- more -->
-
 <h1 id="smoke">Smoke</h1>
 <h1 id="temperature-and-smoke-concentration">Temperature and Smoke concentration.</h1>
 <p>Standard paper: Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p112 - the standard reference papers by Foster and Metaxas [FM97] and by Fedkiw et al. [FSJ01], with some additional capabilities added</p>
@@ -493,15 +492,15 @@ DT/Dt = Ds / Dt = 0
 <p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p112 - This gives us the simplest possible equations</p>
 </blockquote>
 <p>源的处理：
-​<img alt="" src="../../../../SIGCourse/Smoke/Fluid_Simulation_for_Computer_Graphics_Second_Edition%20optimized-medium-res-P113-20231005203636-20231005203638-uu1sg1j.png" />​</p>
-<p>​<img alt="" src="../../../../SIGCourse/Smoke/Fluid_Simulation_for_Computer_Graphics_Second_Edition%20optimized-medium-res-P113-20231005203753-20231005203758-50iplyy.png" />​</p>
+​<img alt="" src="../../../../SIGCourse/Smoke/Fluid_Simulation_for_Computer_Graphics_Second_Edition%20optimized-medium-res-P113-20231005203636-20231005203638-uu1sg1j.png"/>​</p>
+<p>​<img alt="" src="../../../../SIGCourse/Smoke/Fluid_Simulation_for_Computer_Graphics_Second_Edition%20optimized-medium-res-P113-20231005203753-20231005203758-50iplyy.png"/>​</p>
 <p>Diffusion of Heat and concentration:</p>
 <p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p113 - Heat and smoke concentration both can diffuse as well</p>
-<p>​<img alt="" src="../../../../SIGCourse/Smoke/Fluid_Simulation_for_Computer_Graphics_Second_Edition%20optimized-medium-res-P114-20231005211310-20231005211312-ofhvxi5.png" />​</p>
+<p>​<img alt="" src="../../../../SIGCourse/Smoke/Fluid_Simulation_for_Computer_Graphics_Second_Edition%20optimized-medium-res-P114-20231005211310-20231005211312-ofhvxi5.png"/>​</p>
 <h1 id="bouyancy">Bouyancy</h1>
 <p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p115 - simplified buoyancy model commonly used in graphics.</p>
-<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p115 - Formula​<br />
-​<img alt="" src="../../../../SIGCourse/Smoke/Fluid_Simulation_for_Computer_Graphics_Second_Edition%20optimized-medium-res-P115-20231005212143-20231005212144-t0ris0b.png" />​</p>
+<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p115 - Formula​<br/>
+​<img alt="" src="../../../../SIGCourse/Smoke/Fluid_Simulation_for_Computer_Graphics_Second_Edition%20optimized-medium-res-P115-20231005212143-20231005212144-t0ris0b.png"/>​</p>
 <h1 id="variable-density-solves">Variable Density Solves</h1>
 <div class="arithmatex">\[
 \rho_\text{air} = P/RT
@@ -511,8 +510,8 @@ DT/Dt = Ds / Dt = 0
 \rho = (1-s)\rho_{air} + s\rho_{soot} = \rho_{air} (1 + \alpha s)
 \]</div>
 <p>误差：烟灰是没有“膨胀”的。Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p116 - the soot has the same thermal expansion as the air. This is of course false, but we consider this error negligible relative to other modeling errors.</p>
-<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p118 - 根据不同的 rho 来确定 Poisson 方程的右端项<br />
-​<img alt="" src="../../../../SIGCourse/Smoke/Fluid_Simulation_for_Computer_Graphics_Second_Edition%20optimized-medium-res-P118-20231005215637-20231005215639-so9o05j.png" />​</p>
+<p>Fluid_Simulation_for_Computer_Graphics_Second_Edition optimized-medium-res.pdf - p118 - 根据不同的 rho 来确定 Poisson 方程的右端项<br/>
+​<img alt="" src="../../../../SIGCourse/Smoke/Fluid_Simulation_for_Computer_Graphics_Second_Edition%20optimized-medium-res-P118-20231005215637-20231005215639-so9o05j.png"/>​</p>
 <p>‍</p>
 
 
@@ -557,7 +556,7 @@ DT/Dt = Ds / Dt = 0
     <script id="__config" type="application/json">{"base": "../../../../..", "features": ["header.autohide", "navigation.tabs"], "search": "../../../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.81fa17fe.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

@@ -14,7 +14,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
     
     
       
@@ -595,7 +595,6 @@
 <p class="admonition-title">This page is not reviewed</p>
 </div>
 <!-- more -->
-
 <h1 id="sph">SPH 光滑粒子</h1>
 <h2 id="_1">基础</h2>
 <h3 id="sph-smoothed-particle-hydrodynamics">SPH -- Smoothed Particle Hydrodynamics</h3>
@@ -606,7 +605,7 @@
 <li><a href="https://www.researchgate.net/publication/230988821_Smoothed_Particle_Hydrodynamics">Smoothed Particle Hydrodynamics - Report on Progress in Physics</a></li>
 </ol>
 </blockquote>
-<p>​<img alt="image" src="image-20221211100007-yrg20td.png" />​</p>
+<p>​<img alt="image" src="image-20221211100007-yrg20td.png"/>​</p>
 <p>思想：对于任一物理量，通过流体在一系列<strong>采样点</strong>处的值，来插值近似得到流体在任意位置的值。</p>
 <div class="arithmatex">\[
 A _ i = \sum _ {j \in \mathcal N _ i} \frac{m _ j} { \rho _ j } A _ j W _ {ij}
@@ -633,18 +632,18 @@ A _ i = \sum _ {j \in \mathcal N _ i} \frac{m _ j} { \rho _ j } A _ j W _ {ij}
 <li>时间积分</li>
 </ol>
 <p>其中时间积分通常和压强计算一起讨论，主要研究内容是如何计算压强以满足流体的不可压缩性。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>foreach Particle P: -&gt; 1
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  find neighbours.
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>foreach Particle P: 
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  compute density.
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>foreach Particle P: -&gt; 2
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  compute pressure force.
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  compute viscosity force
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  compute external force
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  merge all the forces.
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>foreach Particle P: -&gt; 3
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>  update velocity, position.
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>foreach Particle P: -&gt; 1
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>  find neighbours.
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>foreach Particle P: 
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>  compute density.
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>foreach Particle P: -&gt; 2
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>  compute pressure force.
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a>  compute viscosity force
+<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>  compute external force
+<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a>  merge all the forces.
+<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a>
+<a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a>foreach Particle P: -&gt; 3
+<a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a>  update velocity, position.
 </code></pre></div>
 <p>时间积分步长：</p>
 <blockquote>
@@ -727,10 +726,10 @@ p_i = k \left( \left ( \frac{\rho_i}{\rho_0}\right) ^ 7 - 1 \right)
 <li><span class="arithmatex">\(p_i= k(\frac{\rho_i}{\rho_0}- 1)\)</span>：Adaptively sampled particle ﬂuids</li>
 </ol>
 <p>也通过 Operator Splitting 来将压强计算和其他力的计算分开：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>foreach P: find neighbours
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>foreach P: compute Non-Pressure forces  -&gt; Advection
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>foreach P: compute Pressure forces.     -&gt; Projection, use data from Advection
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>foreach P: update velocity &amp; position
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>foreach P: find neighbours
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>foreach P: compute Non-Pressure forces  -&gt; Advection
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>foreach P: compute Pressure forces.     -&gt; Projection, use data from Advection
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>foreach P: update velocity &amp; position
 </code></pre></div>
 <h3 id="_8">强可压缩流体</h3>
 <p>强可压缩流体可以通过：</p>
@@ -743,22 +742,22 @@ p_i = k \left( \left ( \frac{\rho_i}{\rho_0}\right) ^ 7 - 1 \right)
 <li>PCISPH</li>
 <li>LPSPH</li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>foreach P: find neighbours
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>foreach P: compute Non-Pressure part.       -&gt; Advection
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>repeat until convergence:                   -&gt; Projection(weak)
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  foreach P: compute density and pressure
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  foreach P: update velocity and positions
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>foreach P: find neighbours
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>foreach P: compute Non-Pressure part.       -&gt; Advection
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>repeat until convergence:                   -&gt; Projection(weak)
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a>  foreach P: compute density and pressure
+<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a>  foreach P: update velocity and positions
 </code></pre></div>
 <p>第二类的实现：</p>
 <ol>
 <li>IISPH</li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>foreach P: find neighbours
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>foreach P: compute Non-Pressure part.       -&gt; Advection
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>foreach P: compute rho*
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>solve PPE                                   -&gt; Projection
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>compute Pressure Force
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>update v, x
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>foreach P: find neighbours
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>foreach P: compute Non-Pressure part.       -&gt; Advection
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>foreach P: compute rho*
+<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a>solve PPE                                   -&gt; Projection
+<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a>compute Pressure Force
+<a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a>update v, x
 </code></pre></div>
 <h2 id="_9">边界处理和流固耦合</h2>
 <p>主要有如下几类方法：</p>
@@ -882,7 +881,7 @@ p_k = \frac{\sum_l p_lW_{kl}+ \mathbf{g} \cdot \sum_j \rho_l(x_k - x_l)W_{kl}}{\
     <script id="__config" type="application/json">{"base": "../../../..", "features": ["header.autohide", "navigation.tabs"], "search": "../../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.81fa17fe.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
