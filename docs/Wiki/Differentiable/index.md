@@ -6,10 +6,27 @@ title: Differentiable Simulation
 
 # Differentiable Simulation
 
+| Body\Contact              | Penalty, Barrier(Soft)                              | Constraint(Hard)                                         | IPC contact.                                                 |
+| ------------------------- | --------------------------------------------------- | -------------------------------------------------------- | ------------------------------------------------------------ |
+| Rigid Body                | Fast, not Robust, but Friction is difficult to diff | Robust, Accurate, but algorithm is too complex (NP Hard) | Robust, Accurate, and friction is more accurate than Penalty. |
+| Soft body(General)        | Penetration may occur, but generally preferrable    | the original implementation is difficult.                | Accurate                                                     |
+| Fluid                     | No friction (Free slip-DiffFR)                      | Is that possible for FSI?                                | Need a Lagrangian view.                                      |
+| PD                        | No friction is possible.                            | handle static friction only.                             | \                                                            |
+| PBD                       | Fast, but mostly inaccurate.                        | impossible, because PBD seeks for performance            | \                                                            |
+| Cloth(Topology is simple) | ?                                                   | ?                                                        | \                                                            |
+| What                      | is                                                  | the                                                      | Future?                                                      |
+
+We care about two main aspects:
+
+1. Given forwards scheme, how to compute the derivitive efficiently and accurately?
+2. Collision, coupling, frictional contact, or constraint, what is the derivative? is the derivative correct?
+
+Overall, the first question is answered, and foreach method, we have a good 
+
 ```markmap
 # Differentiable Simulation
 
-## Objects
+## By Objects
 
 * Rigid Body
 * Cloth
@@ -26,7 +43,6 @@ title: Differentiable Simulation
 * Forward Method(Dual)
 * Graph-Based & Tape Based
 * Backward: adjoint method
-
 ```
 
 ## Objects
@@ -44,6 +60,12 @@ title: Differentiable Simulation
 3. 线元
    1. 头发
 
+流体：
+
+1. 体积法
+2. MPM
+3. SPH
+
 ## [Methods for diff](./backward.md)
 
 1. Forward mode diff. -> use taylor series.
@@ -54,6 +76,7 @@ Some libraries:
 1. [NVIDIA/warp](https://github.com/NVIDIA/warp/tree/main/examples)
 2. [Taichi]
 3. [DiffPD]
+4. brax (Google DeepMind)
 
 ## Collision Handling
 
