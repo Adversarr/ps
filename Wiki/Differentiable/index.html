@@ -243,9 +243,69 @@
 </ul>
 <hr/>
 <h1 id="differentiable-simulation">Differentiable Simulation</h1>
+<table>
+<thead>
+<tr>
+<th>Body\Contact</th>
+<th>Penalty, Barrier(Soft)</th>
+<th>Constraint(Hard)</th>
+<th>IPC contact.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rigid Body</td>
+<td>Fast, not Robust, but Friction is difficult to diff</td>
+<td>Robust, Accurate, but algorithm is too complex (NP Hard)</td>
+<td>Robust, Accurate, and friction is more accurate than Penalty.</td>
+</tr>
+<tr>
+<td>Soft body(General)</td>
+<td>Penetration may occur, but generally preferrable</td>
+<td>the original implementation is difficult.</td>
+<td>Accurate</td>
+</tr>
+<tr>
+<td>Fluid</td>
+<td>No friction (Free slip-DiffFR)</td>
+<td>Is that possible for FSI?</td>
+<td>Need a Lagrangian view.</td>
+</tr>
+<tr>
+<td>PD</td>
+<td>No friction is possible.</td>
+<td>handle static friction only.</td>
+<td>\</td>
+</tr>
+<tr>
+<td>PBD</td>
+<td>Fast, but mostly inaccurate.</td>
+<td>impossible, because PBD seeks for performance</td>
+<td>\</td>
+</tr>
+<tr>
+<td>Cloth(Topology is simple)</td>
+<td>?</td>
+<td>?</td>
+<td>\</td>
+</tr>
+<tr>
+<td>What</td>
+<td>is</td>
+<td>the</td>
+<td>Future?</td>
+</tr>
+</tbody>
+</table>
+<p>We care about two main aspects:</p>
+<ol>
+<li>Given forwards scheme, how to compute the derivitive efficiently and accurately?</li>
+<li>Collision, coupling, frictional contact, or constraint, what is the derivative? is the derivative correct?</li>
+</ol>
+<p>Overall, the first question is answered, and foreach method, we have a good </p>
 <div class="language-markmap mkdocs-markmap"><markmap-data hidden="true"># Differentiable Simulation
 
-## Objects
+## By Objects
 
 * Rigid Body
 * Cloth
@@ -261,8 +321,7 @@
 
 * Forward Method(Dual)
 * Graph-Based &amp; Tape Based
-* Backward: adjoint method
-</markmap-data></div>
+* Backward: adjoint method</markmap-data></div>
 <h2 id="objects">Objects</h2>
 <p>“固形物”，按照维度分：</p>
 <ol>
@@ -277,6 +336,12 @@
 <li>线元</li>
 <li>头发</li>
 </ol>
+<p>流体：</p>
+<ol>
+<li>体积法</li>
+<li>MPM</li>
+<li>SPH</li>
+</ol>
 <h2 id="methods-for-diff"><a href="backward/">Methods for diff</a></h2>
 <ol>
 <li>Forward mode diff. -&gt; use taylor series.</li>
@@ -286,7 +351,8 @@
 <p>Some libraries:
 1. <a href="https://github.com/NVIDIA/warp/tree/main/examples">NVIDIA/warp</a>
 2. [Taichi]
-3. [DiffPD]</p>
+3. [DiffPD]
+4. brax (Google DeepMind)</p>
 <h2 id="collision-handling">Collision Handling</h2>
 <p>Collision, or Interaction is discontinuous, if we use traditional Discrete Collision Detection and handling methods.</p>
 <p>一方面，是不连续的，另一方面，存在摩擦（都是间断的）</p>
