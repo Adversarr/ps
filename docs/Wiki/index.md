@@ -36,13 +36,13 @@ Note: A bullet point with multiple papers is a paper bundle that needs to be pre
 
 **Optimization-based Time Integration**
 
-- Projective dynamics: Fusing constraint projections for fast simulation (2014)
+- [Projective dynamics: Fusing constraint projections for fast simulation](../Papers/_articles/SIGGRAPH/14-ProjectiveDynamics.md) (2014)
 - Optimization Integrator for Large Time Steps (2015)
 - XPBD: Position-Based Simulation of Compliant Constrained Dynamics (2016)
 - ADMM ⊇ Projective Dynamics: Fast Simulation of Hyperelastic Models with Dynamic Constraints (2017)
 - Quasi-newton methods for real-time simulation of hyperelastic materials (2017)
-- A GPU-Based Multilevel Additive Schwarz Preconditioner for Cloth and Deformable Body Simulation (2022)
-- Second-order Stencil Descent for Interior-point Hyperelasticity (2023)
+- [A GPU-Based Multilevel Additive Schwarz Preconditioner for Cloth and Deformable Body Simulation](../Papers/_articles/TOG/22-A%20GPU-Based%20Multilevel%20Additive%20Schwarz%20Preconditioner%20for%20Cloth%20and%20Deformable%20Body%20Simulation.md) (2022)
+- [Second-order Stencil Descent for Interior-point Hyperelasticity](../Papers/_articles/SIGGRAPH/23-Second-order%20Stencil%20Descent%20for%20Interior-point%20Hyperelasticity.md) (2023)
 
 **(Adaptive) Spatial Discretization**
 
@@ -52,8 +52,8 @@ Note: A bullet point with multiple papers is a paper bundle that needs to be pre
 - Hybrid grains: Adaptive coupling of discrete and continuum simulations of granular media (2018)
 - Fast Corotated Elastic SPH Solids with Implicit Zero-Energy Mode Control (2021)
 - Surface-Only Dynamic Deformables using a Boundary Element Method (2022)
-- Multi-Layer Thick Shells (2023)
-- High-Order Incremental Potential Contact for Elastodynamic Simulation on Curved Meshes (2023)
+- [Multi-Layer Thick Shells](../Papers/_articles/SIGGRAPH/23-multi-layer-thick-shell.md) (2023)
+- [High-Order Incremental Potential Contact for Elastodynamic Simulation on Curved Meshes](../Papers/_articles/SIGGRAPH/23-High-Order.md) (2023)
 - Adaptive Anisotropic Remeshing for Cloth Simulation (2012)
 
 **Contact and Friction**
@@ -64,7 +64,7 @@ Note: A bullet point with multiple papers is a paper bundle that needs to be pre
 - Non-smooth Newton Methods for Deformable Multi-body Dynamics (2019)
 - Incremental Potential Contact: Intersection- and Inversion-free, Large-Deformation Dynamics (2020), Codimensional incremental potential contact (2021)
 - Augmented Incremental Potential Contact for Sticky Interactions (2023)
-- Efficient BVH-based Collision Detection Scheme with Ordering and Restructuring (2018)
+- [Efficient BVH-based Collision Detection Scheme with Ordering and Restructuring](../Papers/_articles/EG/18-Efﬁcient%20BVH.md) (2018)
 - A Large Scale Benchmark and an Inclusion-Based Algorithm for Continuous Collision Detection (2021)
 
 **Inversion-Robust Elasticity, Anisotropic Elasticity**
