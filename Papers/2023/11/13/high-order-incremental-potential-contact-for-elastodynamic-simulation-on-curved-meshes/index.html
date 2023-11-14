@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://adversarr.github.io/ps/Papers/2023/11/06/differentiable-fluids-with-solid-coupling-for-learning-and-control/">
+        <link rel="canonical" href="https://adversarr.github.io/ps/Papers/2023/11/13/high-order-incremental-potential-contact-for-elastodynamic-simulation-on-curved-meshes/">
       
       
-        <link rel="prev" href="../rethinking-optimization-with-differentiable-simulation-from-a-global-perspective/">
+        <link rel="prev" href="../a-gpu-based-multilevel-additive-schwarz-preconditioner-for-cloth-and-deformable-body-simulation/">
       
       
-        <link rel="next" href="../../11/flowfixer-using-bfecc-for-fluid-simulation/">
+        <link rel="next" href="../">
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Differentiable Fluids with Solid Coupling for Learning and Control  - PS is not Physical Simulation</title>
+        <title>High-Order Incremental Potential Contact for Elastodynamic Simulation on Curved Meshes - PS is not Physical Simulation</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#note" class="md-skip">
+        <a href="#basic-information" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Differentiable Fluids with Solid Coupling for Learning and Control 
+              High-Order Incremental Potential Contact for Elastodynamic Simulation on Curved Meshes
             
           </span>
         </div>
@@ -405,49 +405,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#basic-information" class="md-nav__link">
-    Basic Information:
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    论文简要 :
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    背景信息:
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    方法:
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    结果:
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -483,7 +440,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2023-11-06 00:00:00" class="md-ellipsis">November 6, 2023</time>
+                        <time datetime="2023-11-13 00:00:00" class="md-ellipsis">November 13, 2023</time>
                       </div>
                     </li>
                     
@@ -521,64 +478,61 @@
     
     
     
-      <a href="../../../../../tags/#differentiable-simulaation" class="md-tag">Differentiable Simulaation</a>
+      <a href="../../../../../tags/#fem" class="md-tag">FEM</a>
     
   
     
     
     
-      <a href="../../../../../tags/#fsi" class="md-tag">FSI</a>
+      <a href="../../../../../tags/#ipc" class="md-tag">IPC</a>
     
   
 </nav>
 
 
 
-<p>本文提出了一种高效的可微分流体模拟器，可以与深度神经网络集成，作为学习动力学和解决控制问题的一部分。通过使用变分原理，该模拟器能够处理流体与刚体物体的<strong>单向耦合</strong>，并在流体-固体界面上自然地施加必要的边界条件。通过应用伴随方法，该模拟器能够高效地计算多个时间步长的流体模拟的梯度，并在解决涉及单向耦合固体的逆问题和控制问题时表现出比先前的梯度计算、无导数优化和无模型强化学习技术至少高一个数量级的性能。</p>
+<p>本文提出了一种在曲面网格上进行高阶增量潜力接触的弹性动力学模拟方法，通过使用高阶基函数和高阶几何表示，实现了更高的精度和效率，并在图形学、计算制造和科学计算等领域展示了其有效性。</p>
 <!-- more -->
-<h1 id="note">Note:</h1>
+<h1 id="basic-information">Basic Information:</h1>
 <ul>
-<li>本总结源自于LLM的总结，请注意数据判别. Power by ChatPaper. End.</li>
+<li>Title: High-Order Incremental Potential Contact for Elastodynamic Simulation on Curved Meshes (曲面网格上的高阶增量潜力接触弹性动力学模拟)</li>
+<li>Authors: Zachary Ferguson, Pranav Jain, Denis Zorin, Teseo Schneider, Daniele Panozzo</li>
+<li>Affiliation: New York University (纽约大学)</li>
+<li>Keywords: Finite element method, Elastodynamics, Frictional contact (有限元方法，弹性动力学，摩擦接触)</li>
+<li>URLs: <a href="https://doi.org/10.1145/3588432.3591488">Paper</a>, <a href="github:">GitHub Code</a></li>
 </ul>
-<h2 id="basic-information">Basic Information:</h2>
+<h1 id="_1">论文简要 :</h1>
 <ul>
-<li>Title: Differentiable Fluids with Solid Coupling for Learning and Control (可学习和控制的可微分流体与固体耦合)</li>
-<li>Authors: Tetsuya Takahashi, Junbang Liang, Yi-Ling Qiao, Ming C. Lin</li>
-<li>Affiliation: Adobe, University of Maryland at College Park (第一作者隶属于Adobe)</li>
-<li>Keywords: differentiable fluids, solid coupling, learning, control</li>
-<li>URLs: <a href="https://ojs.aaai.org/index.php/AAAI/article/view/16547">Paper</a>, [GitHub: None]</li>
+<li>本文提出了一种在曲面网格上进行高阶增量潜力接触的弹性动力学模拟方法，通过使用高阶基函数和高阶几何表示，实现了更高的精度和效率，并在图形学、计算制造和科学计算等领域展示了其有效性。</li>
 </ul>
-<h2 id="_1">论文简要 :</h2>
+<h1 id="_2">背景信息:</h1>
 <ul>
-<li>本文提出了一种高效的可微分流体模拟器，可以与深度神经网络集成，作为学习动力学和解决控制问题的一部分。通过使用变分原理，该模拟器能够处理流体与刚体物体的<strong>单向耦合</strong>，并在流体-固体界面上自然地施加必要的边界条件。通过应用伴随方法，该模拟器能够高效地计算多个时间步长的流体模拟的梯度，并在解决涉及单向耦合固体的逆问题和控制问题时表现出比先前的梯度计算、无导数优化和无模型强化学习技术至少高一个数量级的性能。</li>
-</ul>
-<h2 id="_2">背景信息:</h2>
-<ul>
-<li>论文背景: 可微分物理学是一种强大而有效的方法，用于解决控制和逆问题。不同于传统的物理模拟方法，可微分物理学的不同之处在于其能够计算具有用户定义目标函数的梯度，从而可以使用基于梯度的优化器来高效地解决问题。</li>
-<li>过去方案: 过去的研究已经提出了许多可微分物理学的方法，包括刚体、可变形物体、薄壳和布料等不同类型的物体。然而，针对流体材料的可微分方法因其不同的流体模拟方法而有所不同，通常由于空间离散化技术的差异。</li>
-<li>论文的Motivation: 由于流体系统的自由度较多且计算成本较高，利用梯度信息来高效地最小化目标函数是必不可少的。然而，现有的可微分流体模拟方法在处理涉及固体相互作用的流体行为时仍存在一些挑战，因此需要开发一种新的方法来解决这些问题。</li>
+<li>论文背景: 弹性动力学模拟在图形学、机器人学、机械工程、科学计算和生物力学等领域中被广泛应用。然而，不同领域对精度的要求不同，因此需要针对不同应用场景选择合适的方法。</li>
+<li>过去方案: 有限元方法是一种常用的弹性动力学模拟方法，通过使用线性四面体元素和线性拉格朗日函数来表示物体的形变。然而，线性形状和基函数的选择限制了模拟的精度和效率。</li>
+<li>论文的Motivation: 本文的动机在于提出一种支持高阶几何和高阶基函数的弹性动力学模拟方法，通过线性变换来实现线性轨迹，并扩展了最近提出的增量潜力接触模型，从而在保持非穿透性和大时间步长的同时，提高了模拟的精度和效率。</li>
 </ul>
 <h2 id="_3">方法:</h2>
 <ul>
 <li>a. 理论背景:</li>
-<li>本文介绍了一种可与深度神经网络集成的可微分流体模拟器，用于学习动力学和解决控制问题。该模拟器使用变分原理处理流体与刚体物体的单向耦合，并在流体-固体界面处强制施加必要的边界条件。采用伴随方法有效地计算多个时间步长的流体模拟的梯度，用户可以定义目标函数。该方法在梯度计算、无导数优化和无模型强化学习技术方面优于以往的方法。</li>
+<li>本文提出了一种用于高阶（曲线）网格上弹性动力学模拟的高阶有限元（FE）公式。作者引入了高阶基函数，相比于线性基函数，提供了更高的精度和效率。该方法基于以下观察结果：用于最小化弹性、接触和摩擦势能的每个优化步骤都会导致线性轨迹，即使在非线性网格或基函数的情况下也是如此。位移和接触力在线性碰撞代理和高阶表示之间进行映射，从而允许使用高阶几何和基函数。作者在图形学、计算制造和科学计算等各种问题中展示了他们方法的有效性。</li>
 <li>b. 技术路线:</li>
-<li>本文提出的可微分流体模拟器作为深度神经网络中的一部分进行集成，实现端到端的学习和梯度反向传播。该模拟器通过强制流体不可压缩性和在流体-固体界面处应用自由滑移边界条件来处理单向耦合的固体。伴随方法应用于动力系统的整个模拟步骤，实现高效可扩展的梯度计算。模拟器基于高级流体模拟操作的自动微分计算梯度，避免了低级原始操作的昂贵反向模式自动微分。</li>
+<li>本文的方法将隐式位置校正（IPC）公式扩展到曲线网格。该公式可以处理网格上线性和高阶基函数的不同组合。该方法涉及在网格的体积和接触表面上定义函数，并使用线性算子Φ在两个域之间传递这些函数。公式中使用的势能函数取决于网格，而其他参数仅取决于接触表面。该方法允许使用任意线性算子Φ，并且碰撞网格的分辨率可以高于体积网格。线性算子Φ的构建可以通过上采样表面或使用任意三角形网格代理来完成。该方法还讨论了将IPC适应于任意Φ的方法，这需要在组装阶段进行更改。</li>
 </ul>
 <h2 id="_4">结果:</h2>
 <ul>
 <li>a. 详细的实验设置:</li>
-<li>本文未提及实验设置。</li>
+<li>本文未提及具体的实验设置。</li>
 <li>b. 详细的实验结果:</li>
-<li>本文进行了多个实验比较：<ul>
-<li>对比试验：作者将基于伴随方法的方法与使用中心有限差分法（FD）进行了比较。结果表明，作者的方法比FD快得多，平均相对误差小于1.0%。作者的方法的计算成本与控制输入的数量基本无关，而FD的计算成本与控制自由度的数量呈线性增长。作者得出结论，他们的方法在实际应用中具有优势。</li>
-<li>与体素化方法的比较：作者将他们的方法与McNamara等人（2004）的体素化方法进行了比较。结果表明，作者的方法实现了亚网格精度，而体素化方法实现了体素分辨率。在反向传递中忽略体积分数会对梯度的准确性产生负面影响。考虑体积分数的梯度的相对误差为1.8%，而不考虑体积分数的相对误差为6.4%。</li>
-<li>与PhiFlow的比较：作者将他们的方法与PhiFlow（Holl, Thuerey和Koltun 2020）进行了比较。结果表明，作者的方法在梯度计算性能方面比PhiFlow快1-2个数量级。</li>
-<li>与低级自动微分的比较：作者将他们的高级自动微分（AD）与使用PyTorch 1.5中的C++ AD实现的低级AD进行了比较。结果表明，作者的高级AD比低级AD快得多。</li>
-<li>空间-时间优化：作者展示了他们的可微分模拟器在流体控制的空间-时间优化中的效率。他们将他们的方法与无导数优化器CMA-ES进行了比较。他们的方法快速收敛并生成所需的速度场，而CMA-ES无法收敛并生成与所需速度场相距甚远的速度场。</li>
-<li>学习和控制：作者将他们的模拟器与神经网络集成，用于学习和控制。他们在一个控制场景中展示了他们的方法的有效性，其中一个刚性盒子被控制以生成所需的速度。他们使用训练好的神经网络在每个模拟步骤生成控制输入，并实现了所需的速度。</li>
+<li>弯曲梁：使用高阶基函数和网格相比于粗网格上的线性基函数，提高了模拟的准确性。在粗网格上使用高阶基函数得到的结果与参考解几乎无法区分，而成本只是参考解的一小部分。</li>
+<li>弹跳球：在粗网格上使用线性基函数会导致不准确的结果，而用更密集的碰撞网格替换粗网格可以提高准确性。使用具有二次位移的高阶网格产生的结果与密集线性模拟类似。</li>
+<li>滚动球：我们的方法能够在有限元网格上滚动球时保持纯切向摩擦力。使用立方体有限元网格的动力学与基准球形有限元网格的动力学相似，但我们的方法速度快了7.5倍。</li>
+<li>材料扭曲：在粗线性网格上使用标准IPC模拟材料扭曲示例会产生可见的伪影。使用高阶基函数进行位移可以产生平滑的结果和更快的模拟。为了获得类似的结果，更细的线性解需要运行时间增加10倍。</li>
+<li>微结构：我们的方法可以通过使用不同的基函数来模拟各向异性场景。使用线性和二次基函数进行模拟所需的时间相似。</li>
+<li>滚动的犰狳：当将粗有限元网格与原始表面结合使用线性元素时，我们的方法实现了60倍的加速。使用优化的粗曲线网格与二次元素可以实现30倍的模拟加速。上采样曲线网格的表面以生成新的碰撞网格会导致8倍的模拟加速。</li>
 </ul>
-</li>
+<h2 id="note">Note:</h2>
+<ul>
+<li>本总结源自于LLM的总结，请注意数据判别. Power by ChatPaper. End.</li>
 </ul>
 
 

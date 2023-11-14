@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://adversarr.github.io/ps/Papers/2023/11/06/differentiable-fluids-with-solid-coupling-for-learning-and-control/">
+        <link rel="canonical" href="https://adversarr.github.io/ps/Papers/2023/11/13/efficient-and-accurate-collision-response-for-elastically-deformable-models/">
       
       
-        <link rel="prev" href="../rethinking-optimization-with-differentiable-simulation-from-a-global-perspective/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="../../11/flowfixer-using-bfecc-for-fluid-simulation/">
+        <link rel="next" href="../projective-dynamics-fusing-constraint-projections-for-fast-simulation/">
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Differentiable Fluids with Solid Coupling for Learning and Control  - PS is not Physical Simulation</title>
+        <title>Efficient and Accurate Collision Response for Elastically Deformable Models - PS is not Physical Simulation</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#note" class="md-skip">
+        <a href="#basic-information" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Differentiable Fluids with Solid Coupling for Learning and Control 
+              Efficient and Accurate Collision Response for Elastically Deformable Models
             
           </span>
         </div>
@@ -402,8 +402,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -483,7 +481,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2023-11-06 00:00:00" class="md-ellipsis">November 6, 2023</time>
+                        <time datetime="2023-11-13 00:00:00" class="md-ellipsis">November 13, 2023</time>
                       </div>
                     </li>
                     
@@ -521,64 +519,48 @@
     
     
     
-      <a href="../../../../../tags/#differentiable-simulaation" class="md-tag">Differentiable Simulaation</a>
-    
-  
-    
-    
-    
-      <a href="../../../../../tags/#fsi" class="md-tag">FSI</a>
+      <a href="../../../../../tags/#collision" class="md-tag">Collision</a>
     
   
 </nav>
 
 
 
-<p>本文提出了一种高效的可微分流体模拟器，可以与深度神经网络集成，作为学习动力学和解决控制问题的一部分。通过使用变分原理，该模拟器能够处理流体与刚体物体的<strong>单向耦合</strong>，并在流体-固体界面上自然地施加必要的边界条件。通过应用伴随方法，该模拟器能够高效地计算多个时间步长的流体模拟的梯度，并在解决涉及单向耦合固体的逆问题和控制问题时表现出比先前的梯度计算、无导数优化和无模型强化学习技术至少高一个数量级的性能。</p>
+  <h1>Efficient and Accurate Collision Response for Elastically Deformable Models</h1>
+
+<p>本文提出了一种高效准确的弹性可变形模型碰撞响应方法，通过直接解决混合线性互补问题（MLCP）来处理碰撞问题，避免了构建线性互补问题（LCP）矩阵的过程，使用共轭残差（CR）求解器作为碰撞响应系统的核心，通过动态更新活动约束集合，可以高效地解决带有不等式约束的MLCP问题，并提出了一个简单而有效的预处理器以加快收敛速度，实验结果表明该方法比现有方法更快且能准确处理摩擦。</p>
 <!-- more -->
-<h1 id="note">Note:</h1>
-<ul>
-<li>本总结源自于LLM的总结，请注意数据判别. Power by ChatPaper. End.</li>
-</ul>
 <h2 id="basic-information">Basic Information:</h2>
 <ul>
-<li>Title: Differentiable Fluids with Solid Coupling for Learning and Control (可学习和控制的可微分流体与固体耦合)</li>
-<li>Authors: Tetsuya Takahashi, Junbang Liang, Yi-Ling Qiao, Ming C. Lin</li>
-<li>Affiliation: Adobe, University of Maryland at College Park (第一作者隶属于Adobe)</li>
-<li>Keywords: differentiable fluids, solid coupling, learning, control</li>
-<li>URLs: <a href="https://ojs.aaai.org/index.php/AAAI/article/view/16547">Paper</a>, [GitHub: None]</li>
+<li>Title: Efficient and Accurate Collision Response for Elastically Deformable Models (高效准确的弹性可变形模型碰撞响应)</li>
+<li>Authors: Mickeal Verschoor, Andrei C. Jalba</li>
+<li>Affiliation: Mickeal Verschoor - Eindhoven University of Technology and Universidad Rey Juan Carlos (荷兰埃因霍温科技大学和西班牙胡安卡洛斯大学), Andrei C. Jalba - Eindhoven University of Technology (荷兰埃因霍温科技大学)</li>
+<li>Keywords: Collision response, conjugate residual (碰撞响应, 共轭残差)</li>
+<li>URLs: <a href="https://doi.org/10.1145/3209887">Paper</a>, [GitHub: None]</li>
 </ul>
 <h2 id="_1">论文简要 :</h2>
 <ul>
-<li>本文提出了一种高效的可微分流体模拟器，可以与深度神经网络集成，作为学习动力学和解决控制问题的一部分。通过使用变分原理，该模拟器能够处理流体与刚体物体的<strong>单向耦合</strong>，并在流体-固体界面上自然地施加必要的边界条件。通过应用伴随方法，该模拟器能够高效地计算多个时间步长的流体模拟的梯度，并在解决涉及单向耦合固体的逆问题和控制问题时表现出比先前的梯度计算、无导数优化和无模型强化学习技术至少高一个数量级的性能。</li>
+<li>本文提出了一种高效准确的弹性可变形模型碰撞响应方法，通过直接解决混合线性互补问题（MLCP）来处理碰撞问题，避免了构建线性互补问题（LCP）矩阵的过程，使用共轭残差（CR）求解器作为碰撞响应系统的核心，通过动态更新活动约束集合，可以高效地解决带有不等式约束的MLCP问题，并提出了一个简单而有效的预处理器以加快收敛速度，实验结果表明该方法比现有方法更快且能准确处理摩擦。</li>
 </ul>
 <h2 id="_2">背景信息:</h2>
 <ul>
-<li>论文背景: 可微分物理学是一种强大而有效的方法，用于解决控制和逆问题。不同于传统的物理模拟方法，可微分物理学的不同之处在于其能够计算具有用户定义目标函数的梯度，从而可以使用基于梯度的优化器来高效地解决问题。</li>
-<li>过去方案: 过去的研究已经提出了许多可微分物理学的方法，包括刚体、可变形物体、薄壳和布料等不同类型的物体。然而，针对流体材料的可微分方法因其不同的流体模拟方法而有所不同，通常由于空间离散化技术的差异。</li>
-<li>论文的Motivation: 由于流体系统的自由度较多且计算成本较高，利用梯度信息来高效地最小化目标函数是必不可少的。然而，现有的可微分流体模拟方法在处理涉及固体相互作用的流体行为时仍存在一些挑战，因此需要开发一种新的方法来解决这些问题。</li>
+<li>论文背景: 在计算机图形学中，模拟可变形模型之间以及与环境的碰撞仍然是一个具有挑战性的任务。</li>
+<li>过去方案: 传统方法通常通过构建和解决线性互补问题（LCP）来获得碰撞响应力，但这需要求解广义质量矩阵的逆，而对于可变形体问题来说，这通常很难获得。因此，研究人员通常寻求逼近或解决一系列耦合问题。</li>
+<li>论文的Motivation: 本文旨在通过直接解决混合线性互补问题（MLCP）来处理碰撞问题，避免了构建LCP矩阵的过程，并提出了一种高效的共轭残差（CR）求解器作为碰撞响应系统的核心。通过动态更新活动约束集合，可以高效地解决带有不等式约束的MLCP问题，并提出了一个简单而有效的预处理器以加快收敛速度。该方法能够处理大变形和大接触力，实现稳定堆叠（几乎）刚体对象，并准确近似库仑摩擦锥。实验结果表明，该方法比现有方法更快且能准确处理摩擦。</li>
 </ul>
 <h2 id="_3">方法:</h2>
 <ul>
 <li>a. 理论背景:</li>
-<li>本文介绍了一种可与深度神经网络集成的可微分流体模拟器，用于学习动力学和解决控制问题。该模拟器使用变分原理处理流体与刚体物体的单向耦合，并在流体-固体界面处强制施加必要的边界条件。采用伴随方法有效地计算多个时间步长的流体模拟的梯度，用户可以定义目标函数。该方法在梯度计算、无导数优化和无模型强化学习技术方面优于以往的方法。</li>
+<li>本文介绍了在计算机图形学应用中广泛使用的基于物理的模型。作者提出了一种直接解决混合线性互补问题（MLCP）的方法，用于碰撞响应，而无需构建LCP矩阵。他们使用共轭残差（CR）求解器作为碰撞响应系统的主要方法，并提出了一种预处理器以加快收敛速度。该方法能够准确处理摩擦，并且比现有方法更快，同时保持相同的准确性。</li>
 <li>b. 技术路线:</li>
-<li>本文提出的可微分流体模拟器作为深度神经网络中的一部分进行集成，实现端到端的学习和梯度反向传播。该模拟器通过强制流体不可压缩性和在流体-固体界面处应用自由滑移边界条件来处理单向耦合的固体。伴随方法应用于动力系统的整个模拟步骤，实现高效可扩展的梯度计算。模拟器基于高级流体模拟操作的自动微分计算梯度，避免了低级原始操作的昂贵反向模式自动微分。</li>
+<li>作者提出了一种用于弹性可变形模型的高效准确的碰撞响应方法。他们使用有限元方法（FEM）离散化运动方程，并使用约束响应（CR）方法求解得到的方程组。CR方法将不等式约束视为可以改变状态的等式约束，允许在求解器迭代过程中取消和重新激活约束。当约束误差低于指定的容差时，该方法收敛。作者还引入了非穿透约束，以防止可变形物体之间的碰撞。这些约束使用一阶近似将其转化为速度约束。碰撞响应使用Lagrange乘子建模，并将接触力包含在模型的运动方程中。由此产生的问题是一个混合线性互补问题（MLCP），使用CR方法求解。CR方法将MLCP转化为线性互补问题（LCP），并使用Krylov子空间方法求解。该方法还通过引入摩擦约束并在求解器迭代过程中更新它们来处理摩擦。</li>
 </ul>
 <h2 id="_4">结果:</h2>
 <ul>
 <li>a. 详细的实验设置:</li>
-<li>本文未提及实验设置。</li>
+<li>作者进行了一系列实验来验证他们的方法。他们使用了包含许多内部元素的复杂对象进行实验。他们随机放置了120只兔子，并以0.001秒的时间步长进行模拟。所有模拟中摩擦系数均设为0.5。</li>
 <li>b. 详细的实验结果:</li>
-<li>本文进行了多个实验比较：<ul>
-<li>对比试验：作者将基于伴随方法的方法与使用中心有限差分法（FD）进行了比较。结果表明，作者的方法比FD快得多，平均相对误差小于1.0%。作者的方法的计算成本与控制输入的数量基本无关，而FD的计算成本与控制自由度的数量呈线性增长。作者得出结论，他们的方法在实际应用中具有优势。</li>
-<li>与体素化方法的比较：作者将他们的方法与McNamara等人（2004）的体素化方法进行了比较。结果表明，作者的方法实现了亚网格精度，而体素化方法实现了体素分辨率。在反向传递中忽略体积分数会对梯度的准确性产生负面影响。考虑体积分数的梯度的相对误差为1.8%，而不考虑体积分数的相对误差为6.4%。</li>
-<li>与PhiFlow的比较：作者将他们的方法与PhiFlow（Holl, Thuerey和Koltun 2020）进行了比较。结果表明，作者的方法在梯度计算性能方面比PhiFlow快1-2个数量级。</li>
-<li>与低级自动微分的比较：作者将他们的高级自动微分（AD）与使用PyTorch 1.5中的C++ AD实现的低级AD进行了比较。结果表明，作者的高级AD比低级AD快得多。</li>
-<li>空间-时间优化：作者展示了他们的可微分模拟器在流体控制的空间-时间优化中的效率。他们将他们的方法与无导数优化器CMA-ES进行了比较。他们的方法快速收敛并生成所需的速度场，而CMA-ES无法收敛并生成与所需速度场相距甚远的速度场。</li>
-<li>学习和控制：作者将他们的模拟器与神经网络集成，用于学习和控制。他们在一个控制场景中展示了他们的方法的有效性，其中一个刚性盒子被控制以生成所需的速度。他们使用训练好的神经网络在每个模拟步骤生成控制输入，并实现了所需的速度。</li>
-</ul>
-</li>
+<li>作者提供了关于碰撞检测、接触解决、整个接触问题求解的平均时间和中位数时间的表格。完整的预处理器占用了总时间的约15％，构建时间可以忽略不计。与ICA方法相比，基于CR的方法平均加速了4</li>
 </ul>
 
 
