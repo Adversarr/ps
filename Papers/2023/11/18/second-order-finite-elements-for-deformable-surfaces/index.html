@@ -1,0 +1,646 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://adversarr.github.io/ps/Papers/2023/11/18/second-order-finite-elements-for-deformable-surfaces/">
+      
+      
+        <link rel="prev" href="../../13/efficient-bvh-based-collision-detection-scheme-with-ordering-and-restructuring/">
+      
+      
+        <link rel="next" href="../an-optimization-based-sph-solver-for-simulation-of-hyperelastic-solids/">
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.9">
+    
+    
+      
+        <title>Second-Order Finite Elements for Deformable Surfaces - PS is not Physical Simulation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.78cf6014.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#basic-information" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="PS is not Physical Simulation" class="md-header__button md-logo" aria-label="PS is not Physical Simulation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PS is not Physical Simulation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Second-Order Finite Elements for Deformable Surfaces
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="../../../../" class="md-tabs__link">
+        
+  
+    
+  
+  Papers
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../registry/" class="md-tabs__link">
+        
+  
+    
+  
+  Registry
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../tags/" class="md-tabs__link">
+        
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../Wiki/" class="md-tabs__link">
+        
+  
+    
+  
+  Wiki
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="PS is not Physical Simulation" class="md-nav__button md-logo" aria-label="PS is not Physical Simulation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    PS is not Physical Simulation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Papers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../registry/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Registry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tags/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tags
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Wiki/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wiki
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Information:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      论文简要 :
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      背景信息:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      方法:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      结果:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#note" class="md-nav__link">
+    <span class="md-ellipsis">
+      Note:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
+                        <time datetime="2023-11-18 00:00:00" class="md-ellipsis">November 18, 2023</time>
+                      </div>
+                    </li>
+                    
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              1 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+  
+
+<nav class="md-tags" >
+  
+    
+    
+    
+      <a href="../../../../../tags/#fem" class="md-tag">FEM</a>
+    
+  
+    
+    
+    
+      <a href="../../../../../tags/#cloth" class="md-tag">Cloth</a>
+    
+  
+</nav>
+
+
+
+  <h1>Second-Order Finite Elements for Deformable Surfaces</h1>
+
+<p>本文提出了一种用于变形表面的计算框架，采用二阶三角形有限元对平面初始形状进行模拟。该方法在二阶有限元的框架中开发了离散化拉伸、剪切和弯曲能量的数值方案，并引入了一种新的离散化方案来近似曲面上的平均曲率。此外，该框架还集成了一种支持双向耦合的虚拟节点有限元方案，无需昂贵的重新网格化即可支持切割单元弹性杆的耦合。通过与传统的线性和高阶有限元方法进行比较，我们展示了该方法在低分辨率网格、各向异性三角剖分和刚性材料等多个具有挑战性的场景中的优势。最后，我们展示了该框架在布料模拟、混合折纸和剪纸以及生物启发式软翼模拟等多个应用中的应用。</p>
+<!-- more -->
+<h2 id="basic-information">Basic Information:</h2>
+<ul>
+<li>Title: Second-Order Finite Elements for Deformable Surfaces (变形表面的二阶有限元)</li>
+<li>Authors: Qiqin Le, Yitong Deng, Jiamu Bu, Bo Zhu, Tao Du</li>
+<li>Affiliation: Qiqin Le - Shanghai Qi Zhi Institute (上海启智研究院), Yitong Deng - Dartmouth College, Jiamu Bu - Tsinghua University (清华大学), Bo Zhu - Georgia Institute of Technology, Dartmouth College, Tao Du - Tsinghua University, Shanghai Qi Zhi Institute</li>
+<li>Keywords: Higher-order finite elements, thin-shell modeling and simulation (高阶有限元，薄壳建模和仿真)</li>
+<li>URLs: <a href="https://doi.org/10.1145/3610548.3618186">Paper</a>, [GitHub: None]</li>
+</ul>
+<h2 id="_1">论文简要 :</h2>
+<ul>
+<li>本文提出了一种用于变形表面的计算框架，采用二阶三角形有限元对平面初始形状进行模拟。该方法在二阶有限元的框架中开发了离散化拉伸、剪切和弯曲能量的数值方案，并引入了一种新的离散化方案来近似曲面上的平均曲率。此外，该框架还集成了一种支持双向耦合的虚拟节点有限元方案，无需昂贵的重新网格化即可支持切割单元弹性杆的耦合。通过与传统的线性和高阶有限元方法进行比较，我们展示了该方法在低分辨率网格、各向异性三角剖分和刚性材料等多个具有挑战性的场景中的优势。最后，我们展示了该框架在布料模拟、混合折纸和剪纸以及生物启发式软翼模拟等多个应用中的应用。</li>
+</ul>
+<h2 id="_2">背景信息:</h2>
+<ul>
+<li>论文背景: 本文的研究背景是关于变形表面的模拟和仿真。过去的方法使用线性三角形有限元来模拟变形表面，但存在几个固有的问题，如几何表达能力有限、对网格质量要求高、产生不自然的弯曲等。因此，本文旨在探索使用高阶有限元方法来解决这些问题。</li>
+<li>过去方案: 过去的方法主要使用线性三角形有限元来模拟变形表面，但由于其几何表达能力有限，需要大量的元素来近似复杂的曲面。此外，线性三角形的动力学假设也会导致不自然的弯曲和过度阻尼的布料动力学。因此，过去的方法在处理变形表面时高度依赖于网格质量。</li>
+<li>论文的Motivation: 鉴于过去方法的局限性，本文的动机是探索使用高阶有限元方法来模拟变形表面，并解决与网格质量相关的弯曲、锁定和耦合问题。本文的主要挑战之一是适当定义拉伸、剪切和弯曲能量及其在高阶离散化中的处理。为了解决这个问题，本文提出了一种基于曲面三角剖分的二阶变形表面模拟算法，并引入了一种新的弹性能量定义和离散化方案。此外，本文还提出了一种支持切割单元的虚拟节点有限元方案，实现了与弹性杆的双向耦合。通过在不同的测试场景上评估该方法，本文展示了其在产生动态、平滑和可变形表面模拟方面的优势。</li>
+</ul>
+<h2 id="_3">方法:</h2>
+<ul>
+<li>a. 理论背景:</li>
+<li>本文讨论了线性三角形在模拟可变形表面时的局限性以及高阶方法的需求。强调了在高阶离散化中定义拉伸、剪切和弯曲能量的挑战。提出了一种基于曲面三角形元素的二阶可变形表面模拟算法，并引入了一种新颖的弹性能量定义和离散化方案。还介绍了一种用于将可变形表面与切割单元曲线耦合的虚拟节点有限元方案。概述了本文的主要贡献，包括平均曲率的离散化方案、虚拟节点有限元方案以及在低分辨率三角化上验证所提出框架的结果。最后提到了该方法在布料模拟、混合折纸和切割折纸以及生物启发软翼模拟中的应用。</li>
+<li>b. 技术路线:</li>
+<li>本文使用二阶有限元方法离散能量最小化问题。将域Ω划分为三角形，并在每个三角形内的节点上定义基函数。这些基函数可以是线性、二次或高阶多项式。通过加权节点值对基函数求和，可以在Ω上对函数进行逼近。这允许在有限自由度下对Ω内的任意点进行函数逼近。在二阶有限元中，三角形变为曲线。</li>
+</ul>
+<p>好的主人，这篇学术论文使用了二阶三角形有限元方法来模拟可变形表面。该方法通过数值方案对可变形表面的拉伸、剪切和弯曲能量进行离散化处理。特别地，论文介绍了一种新颖的离散化方案，用于近似曲面三角网格上的平均曲率。该框架还整合了一种支持双向耦合的虚拟节点有限元方案，无需昂贵的重新网格化即可支持切割单元杆件之间的耦合。与传统的线性和高阶有限元方法相比，我们将我们的方法应用于低分辨率网格、各向异性三角剖分和刚性材料等多个具有挑战性的场景，并展示了其优势。最后，我们展示了该框架的几个应用，包括布料模拟、混合折纸和切纸以及生物启发式软翼模拟。</p>
+<h2 id="_4">结果:</h2>
+<ul>
+<li>a. 详细的实验设置:</li>
+<li>作者使用C++实现了该方法，并使用SuiteSparse解决了稀疏线性系统。他们进行了实验，将其方法与一阶元素和其他高阶方法进行了比较。结果显示，所提出的方法对低质量网格更具容忍性，并且可以在粗糙的三角化下生成类似质量的模拟结果。该方法还缓解了一阶元素中观察到的运动学锁定问题。计算成本分析表明该方法是实用和高效的。作者还将其方法与在OOFEM中实现的其他高阶元素进行了比较，并展示了其在处理大变形方面的优越性。</li>
+<li>b. 详细的实验结果:</li>
+<li>作者提供了几个示例，以展示他们的方法在布料模拟、混合折纸和切割折纸结构以及与弹性杆的耦合中的适用性。示例包括大幕布、灯笼和蝙蝠翅膀的模拟，展示了该方法捕捉细节皱纹、变形和飞行动作的能力。</li>
+</ul>
+<h2 id="note">Note:</h2>
+<ul>
+<li>本总结源自于LLM的总结，请注意数据判别. Power by ChatPaper. End.</li>
+</ul>
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["header.autohide", "navigation.tabs"], "search": "../../../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.6c14ae12.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

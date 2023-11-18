@@ -1,0 +1,646 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://adversarr.github.io/ps/Papers/2023/11/18/an-optimization-based-sph-solver-for-simulation-of-hyperelastic-solids/">
+      
+      
+        <link rel="prev" href="../second-order-finite-elements-for-deformable-surfaces/">
+      
+      
+        <link rel="next" href="../23-interactive-design-of-2d-car-profiles-with-aerodynamic-feedback/">
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.9">
+    
+    
+      
+        <title>An Optimization-based SPH Solver for Simulation of Hyperelastic Solids - PS is not Physical Simulation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.78cf6014.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#basic-information" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="PS is not Physical Simulation" class="md-header__button md-logo" aria-label="PS is not Physical Simulation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PS is not Physical Simulation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              An Optimization-based SPH Solver for Simulation of Hyperelastic Solids
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="../../../../" class="md-tabs__link">
+        
+  
+    
+  
+  Papers
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../registry/" class="md-tabs__link">
+        
+  
+    
+  
+  Registry
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../tags/" class="md-tabs__link">
+        
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../Wiki/" class="md-tabs__link">
+        
+  
+    
+  
+  Wiki
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="PS is not Physical Simulation" class="md-nav__button md-logo" aria-label="PS is not Physical Simulation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    PS is not Physical Simulation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Papers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../registry/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Registry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tags/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tags
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Wiki/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wiki
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Information:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      论文简要 :
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      背景信息:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      方法:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      结果:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#note" class="md-nav__link">
+    <span class="md-ellipsis">
+      Note:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
+                        <time datetime="2023-11-18 00:00:00" class="md-ellipsis">November 18, 2023</time>
+                      </div>
+                    </li>
+                    
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              1 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+  
+
+<nav class="md-tags" >
+  
+    
+    
+    
+      <a href="../../../../../tags/#sph" class="md-tag">SPH</a>
+    
+  
+    
+    
+    
+      <a href="../../../../../tags/#hyperelasticity" class="md-tag">Hyperelasticity</a>
+    
+  
+</nav>
+
+
+
+  <h1>An Optimization-based SPH Solver for Simulation of Hyperelastic Solids</h1>
+
+<p>本文提出了一种基于优化的SPH求解器，用于模拟超弹性固体。通过将隐式积分方案转化为优化问题，并使用通用的拟牛顿方法进行求解，实现了对不同类型的超弹性材料（如Neo-Hookean和St. Venant-Kirchoff模型）的模拟。实验结果表明，该方法在SPH框架中能够稳定高效地模拟复杂材料，并简化了不同材料之间的耦合和碰撞处理。</p>
+<!-- more -->
+<p>提出了一种使用光滑粒子流体力学 (SPH) 模拟超弹性固体的新方法。该方法将最先进的弹性SPH固体方法扩展到包括不同类型的超弹性材料。将SPH弹性实体的隐式积分方案重新表述为优化问题，并使用通用准牛顿方法求解。使用有限内存 BFGS (L-BFGS) 算法来有效地解决 SPH 框架中的优化问题。本发明的方法演示了在SPH框架下对复杂材料进行稳定、高效的模拟。由于对固体和流体的统一表示，它简化了不同材料之间的耦合和操作碰撞。</p>
+<h2 id="basic-information">Basic Information:</h2>
+<ul>
+<li>Title: An Optimization-based SPH Solver for Simulation of Hyperelastic Solids (基于优化的SPH求解器用于超弹性固体模拟)</li>
+<li>Authors: Min Hyung Kee, Kiwon Um, HyunMo Kang, JungHyun Han</li>
+<li>Affiliation: Korea University, Korea (韩国高丽大学)</li>
+<li>Keywords: hyperelastic solids, Smoothed Particle Hydrodynamics (SPH), optimization, simulation (超弹性固体，平滑粒子流体动力学，优化，模拟)</li>
+<li>URLs: <a href="https://diglib.eg.org/">Paper</a> , [GitHub: None]</li>
+</ul>
+<h2 id="_1">论文简要 :</h2>
+<ul>
+<li>本文提出了一种基于优化的SPH求解器，用于模拟超弹性固体。通过将隐式积分方案转化为优化问题，并使用通用的拟牛顿方法进行求解，实现了对不同类型的超弹性材料（如Neo-Hookean和St. Venant-Kirchoff模型）的模拟。实验结果表明，该方法在SPH框架中能够稳定高效地模拟复杂材料，并简化了不同材料之间的耦合和碰撞处理。</li>
+</ul>
+<h2 id="_2">背景信息:</h2>
+<ul>
+<li>论文背景: 弹性固体的模拟一直是计算机图形学中的研究热点。然而，当模拟涉及到不同类型的材料和不同离散化方法时，通常需要复杂的耦合机制来稳定求解不同材料之间的相互作用。</li>
+<li>过去方案: 为了解决不同模拟方法之间的耦合问题，研究人员提出了基于粒子的统一框架，如基于位置的动力学（PBD）和平滑粒子流体动力学（SPH）。这些统一框架不仅简化了耦合机制，还便于处理相变和碰撞。</li>
+<li>论文的Motivation: 然而，现有的SPH弹性固体模拟方法在处理大变形时往往存在不稳定性问题。本文旨在提出一种新的SPH弹性固体模拟方法，通过优化求解的方式支持更复杂的超弹性模型，并解决现有方法的不稳定性问题。通过将隐式积分方案转化为优化问题，并使用L-BFGS算法进行求解，实现了对超弹性模型的稳定模拟。</li>
+</ul>
+<h2 id="_3">方法:</h2>
+<ul>
+<li>a. 理论背景:</li>
+<li>本文提出了一种新的方法，用于使用平滑粒子流体动力学（SPH）模拟超弹性固体。该方法将最先进的弹性SPH固体方法扩展到包括不同类型的超弹性材料，如Neo-Hookean和St. Venant-Kirchoff模型。该方法将SPH弹性固体的隐式积分方案重新构造为一个优化问题，并使用通用的拟牛顿方法来解决。采用有限内存BFGS（L-BFGS）算法来高效地解决SPH框架中的优化问题。该方法在SPH框架中展示了复杂材料的稳定和高效的模拟。</li>
+<li>b. 技术路线:</li>
+<li>本文提出的方法是一种基于优化的平滑粒子流体动力学（SPH）求解器，用于模拟超弹性固体。通过Bonet和Lok提出的一种鲁棒方法来评估变形梯度。使用变形梯度和弹性能量密度函数定义超弹性能量。为了解决零能量模式的问题，引入了隐式惩罚力。将优化问题形式化为最小化目标函数的系统下一个状态的问题。采用L-BFGS算法来解决优化问题。基于超弹性能量的常数近似确定Hessian矩阵的初始近似。使用无散SPH求解器实现固体-流体耦合和碰撞处理。</li>
+</ul>
+<h2 id="_4">结果:</h2>
+<ul>
+<li>a. 详细的实验设置:</li>
+<li>本文使用基于OpenMP的并行化的AMD Ryzen 7 5800X 3.8 GHz处理器进行了实验。使用了各种超弹性材料进行了测试，包括旋转、Neo-Hookean和St. Venant-Kirchoff模型，以及多个超弹性固体之间的相互作用和与流体的双向耦合。实验使用了开源的基于SPH的模拟框架SPlisHSPlasH和线性代数库Eigen。</li>
+<li>b. 详细的实验结果:</li>
+<li>本文进行了两个实验，名为“Swinging cloth”和“Stretching cube”，以展示基于优化的求解器的稳定性和鲁棒性。两个实验都使用了旋转材料。与一种名为操作分裂求解器（OSS）的最先进的基于SPH的弹性求解器相比，结果进行了比较。在“Swinging cloth”实验中，模拟了一个附着在固定点上的弹性布料受到重力作用的情况。OSS求解器在具有大变形区域中出现了振荡伪影。增加OSS中的零能量控制参数会导致不希望的刚性运动。相比之下，基于优化的求解器成功地模拟了大变形，没有振荡伪影或人为刚度。在“Stretching cube”实验中，测试了一个几乎不可压缩的弹性长方体固体的变形。基于优化的求解器只需两次迭代和较大的时间步长即可产生稳定的模拟。相比之下，OSS需要更小的时间步长才能实现稳定，所需时间大约是基于优化的求解器的五倍。其他实验还包括“Twisting beam”实验，模拟了两端扭曲的弹性梁，以及“Colliding bunnies”实验，测试了SPH框架处理复杂超弹性材料之间碰撞的能力。此外，还进行了“Melting duck”实验，模拟了一个可变形的鸭子掉落到热板上的情况。基于优化的求解器通过根据粒子温度减小弹性力大小有效地处理了熔化效应。最后，还成功地将基于优化的求解器应用于超弹性固体与流体的耦合。将多个超弹性固体投放到一个盒子中，并从两个喷嘴中向盒子中喷射流体。求解器与DFSPH流体求解器共同工作，准确地模拟了固体和流体之间的相互作用和双向耦合。</li>
+</ul>
+<h2 id="note">Note:</h2>
+<ul>
+<li>本总结源自于LLM的总结，请注意数据判别. Power by ChatPaper. End.</li>
+</ul>
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["header.autohide", "navigation.tabs"], "search": "../../../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.6c14ae12.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

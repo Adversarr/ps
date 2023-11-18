@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.9">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.4b4a2bd9.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.78cf6014.min.css">
       
       
 
@@ -428,6 +428,176 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2023-11-11 00:00:00">November 11, 2023</time></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="robogen-towards-unleashing-infinite-data-for-automated-robot-learning-via-generative-simulation"><a class="toclink" href="../../2023/11/11/robogen-towards-unleashing-infinite-data-for-automated-robot-learning-via-generative-simulation/">ROBOGEN: Towards Unleashing Infinite Data for Automated Robot Learning via Generative Simulation</a></h2>
+<p>本文提出了RoboGen，一种通过生成模拟实现自动学习多样化机器人技能的生成式机器人代理。RoboGen利用了基础模型和生成模型的最新进展，通过生成模拟自动产生多样化的任务、场景和训练监督，从而在最小的人工监督下扩展机器人技能学习。我们的方法为机器人代理配备了自主提出-生成-学习循环：代理首先提出有趣的任务和技能进行开发，然后通过合适的空间配置将相关对象和资源填充到模拟环境中生成相应的模拟环境。然后，代理将提出的高级任务分解为子任务，选择最佳的学习方法（强化学习、运动规划或轨迹优化），生成所需的训练监督，然后学习策略以获得提出的技能。我们的工作旨在提取大规模模型中嵌入的广泛而多样化的知识，并将其转移到机器人领域。我们的完全生成式流水线可以重复查询，产生与各种任务和环境相关的无限技能演示流。</p>
+<p>这篇文章的创新之处在于通过最小化人类监督来扩大机器人技能学习的规模。文章提出了一种自主引导的提出-生成-学习循环方法，使机器人代理能够自主提出有趣的任务和技能，并通过生成相应的仿真环境来学习这些技能。该方法将高级任务分解为子任务，并选择最优的学习方法（强化学习、运动规划或轨迹优化），生成所需的训练监督，并学习获取所提出的技能。这项工作试图提取大规模模型中嵌入的广泛而多样化的知识，并将其转移到机器人领域。通过不断查询，我们的完全生成式流水线可以产生与各种任务和环境相关联的无限技能演示。</p>
+
+    <nav class="md-post__action">
+      <a href="../../2023/11/11/robogen-towards-unleashing-infinite-data-for-automated-robot-learning-via-generative-simulation/">
+        Continue reading
+      </a>
+    </nav>
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2023-11-11 00:00:00">November 11, 2023</time></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="basic-information"><a class="toclink" href="../../2023/11/11/flowfixer-using-bfecc-for-fluid-simulation/">Basic Information:</a></h2>
+<ul>
+<li>Title: FlowFixer: Using BFECC for Fluid Simulation (流体模拟中的FlowFixer: 使用BFECC方法)</li>
+<li>Authors: ByungMoon Kim, Yingjie Liu, Ignacio Llamas, Jarek Rossignac</li>
+<li>Affiliation: Georgia Institute of Technology (佐治亚理工学院)</li>
+<li>Keywords: BFECC, fluid simulation, advection, level set method, velocity, smoke density, image advection (BFECC, 流体模拟, 平流, 水平集方法, 速度, 烟密度, 图像平流)</li>
+<li>URLs: <a href="https://www.researchgate.net/publication/221314833">ResearchGate</a>, [GitHub: None]</li>
+</ul>
+<h2 id="_1"><a class="toclink" href="../../2023/11/11/flowfixer-using-bfecc-for-fluid-simulation/#_1">论文简要 :</a></h2>
+<ul>
+<li>本文介绍了一种名为BFECC的方法，用于减少流体模拟中的耗散和扩散问题，并应用于速度、烟密度和图像平流等多种平流步骤。该方法在空间和时间上提供了二阶精度，并通过与变密度投影相结合，实现了逼真的两相流体动画效果。</li>
+</ul>
+<h2 id="_2"><a class="toclink" href="../../2023/11/11/flowfixer-using-bfecc-for-fluid-simulation/#_2">背景信息:</a></h2>
+<ul>
+<li>论文背景: 流体模拟涉及多个计算步骤，包括扩散、平流和压力投影。本文主要探讨流体模拟中的四种平流形式：速度、烟密度、图像和水平集平流。</li>
+<li>过去方案: 过去的方法中，一阶半拉格朗日方法在计算简单性方面具有优势，但存在较大的数值扩散和耗散问题。因此，需要更高阶的方法来解决这些问题。</li>
+<li>论文的Motivation: 本文提出了BFECC方法，通过将其添加到一阶半拉格朗日方法中，可以提高其空间和时间精度，减少速度阻尼和烟密度稀释，并在多种平流步骤中展示了其优势。</li>
+</ul>
+<h2 id="_3"><a class="toclink" href="../../2023/11/11/flowfixer-using-bfecc-for-fluid-simulation/#_3">方法:</a></h2>
+<ul>
+<li>a. 理论背景:</li>
+<li>BFECC方案可用于改善流体模拟。在使用BFECC进行水平集平流时，需要进行重新分配以保持水平集函数作为有符号距离函数。这可以通过求解重新分配方程来实现，该方程涉及重新分配的速度向量。重新分配方程可以使用一阶上风或半拉格朗日样式积分来求解。然而，将重新分配的积分公式与BFECC结合使用可能会导致从二阶精确的BFECC计算得到的良好水平集值的退化。为了解决这个问题，提出了一种简单的重新分配方法，该方法在接口附近关闭重新分配以保持良好的水平集值。这种简单的重新分配方法对于保持体积至关重要，并且易于实现。它只需要在满足某些条件的网格点处进行重新分配，例如当网格点不靠近界面或斜率足够高时。</li>
+<li>b. 技术路线:</li>
+<li>使用BFECC方案进行水平集平流。</li>
+<li>解决重新分配方程，其中包括重新分配的速度向量。</li>
+<li>使用一阶上风或半拉格朗日样式积分来求解重新分配方程。</li>
+<li>将重新分配的积分公式与BFECC结合使用。</li>
+</ul>
+<h2 id="_4"><a class="toclink" href="../../2023/11/11/flowfixer-using-bfecc-for-fluid-simulation/#_4">结果:</a></h2>
+<ul>
+<li>a. 详细的实验设置:</li>
+<li>实验中使用BFECC方案进行水平集平流。</li>
+<li>解决重新分配方程，其中包括重新分配的速度向量。</li>
+<li>使用一阶上风或半拉格朗日样式积分来求解重新分配方程。</li>
+<li>在接口附近关闭重新分配以保持良好的水平集值。</li>
+<li>b. 详细的实验结果:</li>
+<li>实验结果表明，使用BFECC方案进行水平集平流时，通过关闭接口附近的重新分配，可以保持良好的水平集值。</li>
+<li>这种简单的重新分配方法对于保持体积至关重要，并且易于实现。</li>
+<li>实验结果还表明，在满足某些条件的网格点处进行重新分配，例如当网格点不靠近界面或斜率足够高时，可以有效地实现重新分配。</li>
+</ul>
+<h2 id="note"><a class="toclink" href="../../2023/11/11/flowfixer-using-bfecc-for-fluid-simulation/#note">Note:</a></h2>
+<ul>
+<li>本总结源自于LLM的总结，请注意数据判别. Power by ChatPaper. End.</li>
+</ul>
+    <nav class="md-post__action">
+      <a href="../../2023/11/11/flowfixer-using-bfecc-for-fluid-simulation/">
+        Continue reading
+      </a>
+    </nav>
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2023-11-06 00:00:00">November 6, 2023</time></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="differentiable-fluids-with-solid-coupling-for-learning-and-control"><a class="toclink" href="../../2023/11/06/differentiable-fluids-with-solid-coupling-for-learning-and-control/">Differentiable Fluids with Solid Coupling for Learning and Control</a></h2>
+<p>本文提出了一种高效的可微分流体模拟器，可以与深度神经网络集成，作为学习动力学和解决控制问题的一部分。通过使用变分原理，该模拟器能够处理流体与刚体物体的<strong>单向耦合</strong>，并在流体-固体界面上自然地施加必要的边界条件。通过应用伴随方法，该模拟器能够高效地计算多个时间步长的流体模拟的梯度，并在解决涉及单向耦合固体的逆问题和控制问题时表现出比先前的梯度计算、无导数优化和无模型强化学习技术至少高一个数量级的性能。</p>
+
+    <nav class="md-post__action">
+      <a href="../../2023/11/06/differentiable-fluids-with-solid-coupling-for-learning-and-control/">
+        Continue reading
+      </a>
+    </nav>
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2023-11-06 00:00:00">November 6, 2023</time></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="rethinking-optimization-with-differentiable-simulation-from-a-global-perspective"><a class="toclink" href="../../2023/11/06/rethinking-optimization-with-differentiable-simulation-from-a-global-perspective/">Rethinking Optimization with Differentiable Simulation from a Global Perspective</a></h2>
+<p>本研究从全局视角重新思考了可微分仿真优化，针对接触丰富的场景提出了一种结合贝叶斯优化和半局部搜索的方法，通过有效利用梯度并在具有噪声梯度的区域保持鲁棒性，取得了优于其他基于梯度和无梯度的方法的结果。</p>
+
+    <nav class="md-post__action">
+      <a href="../../2023/11/06/rethinking-optimization-with-differentiable-simulation-from-a-global-perspective/">
+        Continue reading
+      </a>
+    </nav>
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2023-11-06 00:00:00">November 6, 2023</time></li>
         
         
@@ -620,134 +790,6 @@
   </div>
 </article>
       
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2023-11-04 00:00:00">November 4, 2023</time></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="difftaichi-differentiable-programming-for-physical-simulation"><a class="toclink" href="../../2023/11/04/difftaichi-differentiable-programming-for-physical-simulation/">DiffTaichi: Differentiable Programming For Physical Simulation</a></h2>
-<p>我们介绍了 DiffTaichi，这是<strong>一种新的可微编程语言</strong>，专为构建高性能可微物理模拟器而设计。基于命令式编程语言，DiffTaichi 使用源代码转换生成仿真步骤的梯度，从而保持算术强度和并行性。<strong>使用轻量级Tape记录整个仿真程序结构</strong>，并以相反的顺序回放梯度内核，以实现端到端的反向传播。我们在 10 个不同的物理模拟器上展示了我们的语言在基于梯度的学习和优化任务中的性能和生产力。例如，用我们的语言编写的可微弹性对象模拟器比手工设计的 CUDA 版本短 4.2×但运行速度却一样快，比 TensorFlow 实现快 188 ×。使用我们的可微分程序，神经网络控制器通常只需数十次迭代即可进行优化。</p>
-
-    <nav class="md-post__action">
-      <a href="../../2023/11/04/difftaichi-differentiable-programming-for-physical-simulation/">
-        Continue reading
-      </a>
-    </nav>
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2023-11-04 00:00:00">November 4, 2023</time></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="efficient-differentiable-simulation-of-articulated-bodies"><a class="toclink" href="../../2023/11/04/efficient-differentiable-simulation-of-articulated-bodies/">Efﬁcient Differentiable Simulation of Articulated Bodies</a></h2>
-<p>本文提出了一种高效可微分的关节体模拟方法，通过使用空间代数和<strong>伴随方法</strong>推导出前向动力学的梯度，实现了对关节体动力学的深度学习框架集成和基于梯度的神经网络优化。</p>
-
-    <nav class="md-post__action">
-      <a href="../../2023/11/04/efficient-differentiable-simulation-of-articulated-bodies/">
-        Continue reading
-      </a>
-    </nav>
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2023-11-04 00:00:00">November 4, 2023</time></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="differentiable-simulation-of-soft-multi-body-systems"><a class="toclink" href="../../2023/11/04/differentiable-simulation-of-soft-multi-body-systems/">Differentiable Simulation of Soft Multi-body Systems</a></h2>
-<p>本文提出了一种可微分仿真<strong>软多体系统</strong>的方法，通过将物理动力学与基于梯度的流程相结合，实现了可微分仿真。通过引入新的矩阵分解策略，我们设计了一种自上而下的矩阵组装算法，并推导出了<strong>适用于软连续体的广义干摩擦模型</strong>。</p>
-
-    <nav class="md-post__action">
-      <a href="../../2023/11/04/differentiable-simulation-of-soft-multi-body-systems/">
-        Continue reading
-      </a>
-    </nav>
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2023-11-04 00:00:00">November 4, 2023</time></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="primaldual-descent-methods-for-dynamics"><a class="toclink" href="../../2023/11/04/primaldual-descent-methods-for-dynamics/">Primal/Dual Descent Methods for Dynamics</a></h2>
-<p>本文提出了一种新的预处理摩擦接触求解器，该求解器与现有的原始优化方法兼容，并且在与对偶方法相比时<strong>生成了更好的接触力分布</strong>，具有可微性，非常适合轨迹优化。通过从共同的变分观点推导出原始和对偶方法，并对两种方法进行了全面的数值分析，证明了该方法在刚体接触、可变形模拟和机器人操作等场景中的有效性。</p>
-
-    <nav class="md-post__action">
-      <a href="../../2023/11/04/primaldual-descent-methods-for-dynamics/">
-        Continue reading
-      </a>
-    </nav>
-  </div>
-</article>
-      
       
         
           
@@ -794,7 +836,7 @@
     <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "navigation.tabs"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.81fa17fe.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.6c14ae12.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
