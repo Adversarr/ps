@@ -6,7 +6,7 @@ doi:
 title: "Sliced Score Matching: A Scalable Approach to Density and Score Estimation"
 date: 2024-03-14
 tags: 
-  - 
+  - Hessian Approximation
 ---
 
 ### Basic Information

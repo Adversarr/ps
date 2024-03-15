@@ -4,7 +4,7 @@ paperAuthor: "Yufeng Zhu, Robert Bridson, Danny M. Kaufman"
 paperYear: 2018
 doi: 
 title: "Blended Cured Quasi-Newton for Distortion Optimization"
-date: 
+date: 2024-03-14
 tags: 
   - Optimization
   - Geometry Optimization

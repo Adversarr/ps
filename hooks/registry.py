@@ -89,7 +89,7 @@ def process_paper(page: Page):
   title = page.meta.get('title', "")
   tags = page.meta.get('tags', [])
   author = page.meta.get('paperAuthor', "UNKNOWN")
-  year = page.meta.get('paperYear', "Unknown")
+  year = page.meta.get('paperYear', 0)
   if year < 100:
     log.warning(f"Year of {title} is less than 100, assuming it is 20{year}")
     year = year + 2000

@@ -1,7 +1,7 @@
 ---
 paperSource: EG
 paperAuthor: "Joseph Teran, Eftychios Sifakis, Geoffrey Irving, Ronald Fedkiw"
-paperYear: 
+paperYear: 2005
 doi: 
 title: "Robust Quasistatic Finite Elements and Flesh Simulation"
 date: 2024-03-14
