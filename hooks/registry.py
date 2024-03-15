@@ -90,6 +90,9 @@ def process_paper(page: Page):
   tags = page.meta.get('tags', [])
   author = page.meta.get('paperAuthor', "UNKNOWN")
   year = page.meta.get('paperYear', "Unknown")
+  if year < 100:
+    log.warning(f"Year of {title} is less than 100, assuming it is 20{year}")
+    year = year + 2000
   # doi = page.meta.get('doi', "")
   # if len(doi) > 0:
   #   doi = process_doi(doi)
