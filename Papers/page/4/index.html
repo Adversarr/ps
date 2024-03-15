@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.9">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.78cf6014.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e359304.min.css">
       
       
 
@@ -57,9 +57,6 @@
   
     <body dir="ltr">
   
-    
-    
-      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -107,6 +104,9 @@
         </div>
       </div>
     </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -182,10 +182,8 @@
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
+    <li class="md-tabs__item">
       <a href="../../" class="md-tabs__link">
         
   
@@ -287,6 +285,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../.." class="md-nav__link">
         
@@ -305,10 +304,13 @@
       
   
   
+  
+    
+      
     
   
   
-    <li class="md-nav__item md-nav__item--active">
+    <li class="md-nav__item">
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
@@ -335,6 +337,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../registry/" class="md-nav__link">
         
@@ -354,6 +357,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../tags/" class="md-nav__link">
         
@@ -370,6 +374,7 @@
     
       
       
+  
   
   
   
@@ -428,7 +433,7 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2023-10-31 00:00:00">October 31, 2023</time></li>
+          <time datetime="2023-11-06 00:00:00">November 6, 2023</time></li>
         
         
           
@@ -443,14 +448,16 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="diffpd-differentiable-projective-dynamics"><a class="toclink" href="../../2023/10/31/diffpd-differentiable-projective-dynamics/">DiffPD: Differentiable Projective Dynamics</a></h2>
-<p>可微分的 Projective Dynamics 模拟框架，提升了可微仿真 Backward 的效率。核心思想是，用于 Forward 过程的求解器同样适用于逆向导数的求解。</p>
+    <h2 id="differentiable-position-based-simulation-of-compliant-constraint-dynamics"><a class="toclink" href="../../2023/11/06/differentiable-position-based-simulation-of-compliant-constraint-dynamics/">Differentiable Position-Based Simulation of Compliant Constraint Dynamics</a></h2>
+<p>本文提出了一种全面可微分的求解器，可以通过计算目标函数的梯度来获得与所需参数相关的梯度，从而实现目标函数的最小化。作者通过优化身体形状和姿势，仅通过观察服装，优化时间变化的外部力序列，以及弹性布料和体积材料参数估计等示例，展示了该方法的有效性和高效性。</p>
 
-    <nav class="md-post__action">
-      <a href="../../2023/10/31/diffpd-differentiable-projective-dynamics/">
-        Continue reading
-      </a>
-    </nav>
+    
+      <nav class="md-post__action">
+        <a href="../../2023/11/06/differentiable-position-based-simulation-of-compliant-constraint-dynamics/">
+          Continue reading
+        </a>
+      </nav>
+    
   </div>
 </article>
       
@@ -460,7 +467,7 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2023-10-30 00:00:00">October 30, 2023</time></li>
+          <time datetime="2023-11-06 00:00:00">November 6, 2023</time></li>
         
         
           
@@ -475,14 +482,16 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="convergent-incremental-potential-contact"><a class="toclink" href="../../2023/10/30/convergent-incremental-potential-contact/">Convergent Incremental Potential Contact</a></h2>
-<p>本文解决了原本IPC模型在模型细化过程中出现的势能不一致问题。主要贡献在于推导了IPC距离势能的连续表示，给出了更加严格、精确的连续和离散形式。</p>
+    <h2 id="differentiable-physics-simulations-with-contacts-do-they-have-correct-gradients-wrt-position-velocity-and-control"><a class="toclink" href="../../2023/11/06/differentiable-physics-simulations-with-contacts-do-they-have-correct-gradients-wrt-position-velocity-and-control/">Differentiable Physics Simulations with Contacts: Do They Have Correct Gradients w.r.t. Position, Velocity and Control?</a></h2>
+<p>本研究探讨了可微分物理模拟中不同接触模型对位置、速度和控制的梯度计算的正确性，并通过比较模拟计算的梯度与解析梯度的结果，揭示了当前可微分模拟器的局限性，并为开发更可靠的物理模拟器提供了新的研究机会。</p>
 
-    <nav class="md-post__action">
-      <a href="../../2023/10/30/convergent-incremental-potential-contact/">
-        Continue reading
-      </a>
-    </nav>
+    
+      <nav class="md-post__action">
+        <a href="../../2023/11/06/differentiable-physics-simulations-with-contacts-do-they-have-correct-gradients-wrt-position-velocity-and-control/">
+          Continue reading
+        </a>
+      </nav>
+    
   </div>
 </article>
       
@@ -492,7 +501,7 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2023-10-24 00:00:00">October 24, 2023</time></li>
+          <time datetime="2023-11-06 00:00:00">November 6, 2023</time></li>
         
         
           
@@ -507,49 +516,16 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="fast-and-versatile-fluid-solid-coupling-for-turbulent-flow-simulation"><a class="toclink" href="../../2023/10/24/fast-and-versatile-fluid-solid-coupling-for-turbulent-flow-simulation/">Fast and Versatile Fluid-Solid Coupling for Turbulent Flow Simulation</a></h2>
-<p>本文提升了格子玻尔兹曼方法的流固耦合准确性。本文基于原本的Bounce-Back方法，提出了修正力项来解决因为流固边界不对齐而引入的计算误差。</p>
-
-    <nav class="md-post__action">
-      <a href="../../2023/10/24/fast-and-versatile-fluid-solid-coupling-for-turbulent-flow-simulation/">
-        Continue reading
-      </a>
-    </nav>
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2023-10-22 00:00:00">October 22, 2023</time></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="hydrophobic-and-hydrophilic-solid-fluid-interaction"><a class="toclink" href="../../2023/10/22/hydrophobic-and-hydrophilic-solid-fluid-interaction/">Hydrophobic and Hydrophilic Solid-Fluid Interaction</a></h2>
+    <h2 id="multi-layer-thick-shells"><a class="toclink" href="../../2023/11/06/multi-layer-thick-shells/">Multi-Layer Thick Shells</a></h2>
+<p>实现了Thick Shell的模拟，实现了一定的褶皱，并且提出了一个交替方法来快速求解。</p>
 <ol>
-<li>a Lagrangian model that tackles the coupling, evolution, and equilibrium of dynamic contact lines evolving on the interface between surface-tension fluid and deformable objects. </li>
-<li>a mesh-based level set method to evolve the three-phase T-junction on a deformable solid surface</li>
+<li>Reduced Prism Elements：三棱柱+中轴面建模 <strong>Thick</strong> Shell ⇒ 解决 Shell Locking</li>
+<li>Complementary Wrinkle Coupling：褶皱耦合系统</li>
+<li>Alternating Minimization：交替最小化，先固定低频信息（PN+Cholesky）、再处理高频信息（PN+CG）。</li>
 </ol>
+<p>例子：瑜伽垫、皮衣、记忆枕等</p>
 
-    <nav class="md-post__action">
-      <a href="../../2023/10/22/hydrophobic-and-hydrophilic-solid-fluid-interaction/">
-        Continue reading
-      </a>
-    </nav>
+    
   </div>
 </article>
       
@@ -559,7 +535,7 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2023-10-22 00:00:00">October 22, 2023</time></li>
+          <time datetime="2023-11-05 00:00:00">November 5, 2023</time></li>
         
         
           
@@ -574,18 +550,16 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="penetration-free-projective-dynamics-on-the-gpu"><a class="toclink" href="../../2023/10/22/penetration-free-projective-dynamics-on-the-gpu/">Penetration-free Projective Dynamics on the GPU</a></h2>
-<ol>
-<li>PD + IPC 无穿透：PD对于High Stiffness收敛慢，但IPC具有High Stiffness</li>
-<li>新的Solver A-Jacobi，充分利用GPU</li>
-<li>Faster Root Finding</li>
-</ol>
+    <h2 id="sim-differentiable-simulation-for-system-identification-and-visuomotor-control"><a class="toclink" href="../../2023/11/05/sim-differentiable-simulation-for-system-identification-and-visuomotor-control/">∇Sim: Differentiable simulation for system identification and visuomotor control</a></h2>
+<p>本文提出了一种名为 ∇Sim 的可微分仿真框架，通过结合可微分多物理仿真和可微分渲染，<strong>从图像序列中直接估计物体的物理属性</strong>，解决了系统识别问题和视觉运动控制问题。</p>
 
-    <nav class="md-post__action">
-      <a href="../../2023/10/22/penetration-free-projective-dynamics-on-the-gpu/">
-        Continue reading
-      </a>
-    </nav>
+    
+      <nav class="md-post__action">
+        <a href="../../2023/11/05/sim-differentiable-simulation-for-system-identification-and-visuomotor-control/">
+          Continue reading
+        </a>
+      </nav>
+    
   </div>
 </article>
       
@@ -595,7 +569,7 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2023-10-22 00:00:00">October 22, 2023</time></li>
+          <time datetime="2023-11-05 00:00:00">November 5, 2023</time></li>
         
         
           
@@ -610,14 +584,16 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="a-contact-proxy-splitting-method-for-lagrangian-solid-fluid-coupling"><a class="toclink" href="../../2023/10/22/a-contact-proxy-splitting-method-for-lagrangian-solid-fluid-coupling/">A Contact Proxy Splitting Method for Lagrangian Solid-Fluid Coupling</a></h2>
-<p>本文提出了一种用于FEM可变形体与SPH流体之间的强流固耦合算法。首先，本文将SPH流体的运动、不可压条件等求解转化为能量函数优化问题。其次，本文将流固耦合问题转化为流体粒子与固体网格之间的碰撞问题，通过引入了IPC模型，在运动求解的同时处理了碰撞与耦合，并提出了强流固耦合对应的能量函数优化问题。最后，本文针对提出的优化问题使用了交替迭代方法，借助Contact Proxy实现了快速且稳定的求解。</p>
+    <h2 id="chainqueen-a-real-time-differentiable-physical-simulator-for-soft-robotics"><a class="toclink" href="../../2023/11/05/chainqueen-a-real-time-differentiable-physical-simulator-for-soft-robotics/">ChainQueen: A Real-Time Differentiable Physical Simulator for Soft Robotics</a></h2>
+<p>本文提出了一种用于软体机器人的实时可微分物理模拟器ChainQueen，基于Moving Least Squares Material Point Method (MLS-MPM)，能够高精度地进行前向模拟和反向梯度计算，并成功应用于软体机器人的控制任务。</p>
 
-    <nav class="md-post__action">
-      <a href="../../2023/10/22/a-contact-proxy-splitting-method-for-lagrangian-solid-fluid-coupling/">
-        Continue reading
-      </a>
-    </nav>
+    
+      <nav class="md-post__action">
+        <a href="../../2023/11/05/chainqueen-a-real-time-differentiable-physical-simulator-for-soft-robotics/">
+          Continue reading
+        </a>
+      </nav>
+    
   </div>
 </article>
       
@@ -627,7 +603,7 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2023-10-22 00:00:00">October 22, 2023</time></li>
+          <time datetime="2023-11-05 00:00:00">November 5, 2023</time></li>
         
         
           
@@ -642,14 +618,16 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="second-order-stencil-descent-for-interior-point-hyperelasticity"><a class="toclink" href="../../2023/10/22/second-order-stencil-descent-for-interior-point-hyperelasticity/">Second-order Stencil Descent for Interior-point Hyperelasticity</a></h2>
-<p>本文基于GPU实现了基于IPC内点法的有限元超弹性模拟算法，旨在利用GPU加速和内点法，来提高同时处理碰撞和接触约束的有限元法模拟算法的效率。文章提出的算法利用在局部利用Hessian进行迭代求解，全局使用并行计算，确保目标函数能够快速收敛，并使用互补着色和混合扫描方案来充分利用GPU计算能力。此外，文章还提出了一种专门的预热过程，用于改善迭代初值并提高算法的收敛速度和稳定性。</p>
+    <h2 id="single-level-differentiable-contact-simulation"><a class="toclink" href="../../2023/11/05/single-level-differentiable-contact-simulation/">Single-Level Differentiable Contact Simulation</a></h2>
+<p>本文提出了一种单层可微分刚体接触动力学的表达方式，用于表示由<strong>凸多面体</strong>组成的物体和机器人。通过将<strong>接触仿真和碰撞检测结合为一个统一的单层优化问题</strong>，解决了传统物理引擎和最新的优化方法在现实接触仿真场景中的问题。通过在机器人操作任务中的应用，证明了该方法的可行性和优越性能。</p>
 
-    <nav class="md-post__action">
-      <a href="../../2023/10/22/second-order-stencil-descent-for-interior-point-hyperelasticity/">
-        Continue reading
-      </a>
-    </nav>
+    
+      <nav class="md-post__action">
+        <a href="../../2023/11/05/single-level-differentiable-contact-simulation/">
+          Continue reading
+        </a>
+      </nav>
+    
   </div>
 </article>
       
@@ -659,7 +637,52 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2023-10-22 00:00:00">October 22, 2023</time></li>
+          <time datetime="2023-11-04 00:00:00">November 4, 2023</time></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              2 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="nerf-representing-scenes-as-neural-radiance-fields-for-view-synthesis"><a class="toclink" href="../../2023/11/04/nerf-representing-scenes-as-neural-radiance-fields-for-view-synthesis/">NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis</a></h2>
+<h4 id="basic-information"><a class="toclink" href="../../2023/11/04/nerf-representing-scenes-as-neural-radiance-fields-for-view-synthesis/#basic-information">Basic Information</a></h4>
+<ul>
+<li><strong>Title</strong>: NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis</li>
+<li><strong>Authors</strong>: Ben Mildenhall, Pratul P. Srinivasan, Matthew Tancik, Jonathan T. Barron, Ravi Ramamoorthi, Ren Ng</li>
+<li><strong>Affiliations</strong>: University of California, Berkeley; Google Research</li>
+<li><strong>Publication Date</strong>: 2020</li>
+<li><strong>Publication Venue</strong>: ECCV 2020</li>
+</ul>
+<h4 id="introduction"><a class="toclink" href="../../2023/11/04/nerf-representing-scenes-as-neural-radiance-fields-for-view-synthesis/#introduction">Introduction</a></h4>
+<p>This paper introduces Neural Radiance Fields (NeRF), a novel approach to synthesizing photorealistic images from novel viewpoints by learning volumetric scene functions of complex 3D scenes. The method significantly advances the state-of-the-art in view synthesis, demonstrating the ability to produce highly detailed and coherent renderings from a sparse set of input photographs.</p>
+<h4 id="details"><a class="toclink" href="../../2023/11/04/nerf-representing-scenes-as-neural-radiance-fields-for-view-synthesis/#details">Details</a></h4>
+<ul>
+<li><strong>Methodology</strong>: NeRF models the scene as a continuous 5D function (spatial location and direction) using a deep neural network. It learns to map these 5D coordinates to color and density, which are then used to render images via differentiable volume rendering.</li>
+<li><strong>Techniques</strong>: The paper details the use of positional encoding to allow the model to learn high-frequency details more effectively and a hierarchical sampling strategy to improve rendering efficiency.</li>
+<li><strong>Experiments</strong>: The authors conducted extensive experiments on both synthetic and real-world datasets, comparing NeRF's performance against several baseline methods in terms of photorealism and accuracy.</li>
+</ul>
+<h4 id="conclusion"><a class="toclink" href="../../2023/11/04/nerf-representing-scenes-as-neural-radiance-fields-for-view-synthesis/#conclusion">Conclusion</a></h4>
+<p>NeRF represents a significant step forward in 3D scene representation and rendering, offering unprecedented detail and realism. The approach has potential applications in virtual and augmented reality, film production, and virtual tourism. The paper suggests areas for future research, including improving computational efficiency and extending the method to dynamic scenes.</p>
+<p>This summary follows the guidelines specified, aiming to provide a clear overview of the paper's content and contributions.</p>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2023-11-04 00:00:00">November 4, 2023</time></li>
         
         
           
@@ -674,14 +697,10 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="position-based-surface-tension-flow"><a class="toclink" href="../../2023/10/22/position-based-surface-tension-flow/">Position-Based Surface Tension Flow</a></h2>
-<p>本文提出了在PBD框架下流体表面张力的计算方法，为PBD框架下的流体模拟提供了更真实的表面张力和与固体的接触，能够支持薄膜、液滴等复杂界面。其关键是动态地对流体表面进行局部网格划分。该算法通过局部网格划分，得到每个表面粒子周围的局部几何体，并基于该几何体，计算表面张力约束，整合入PBD框架中。相较于其他方法，该算法具有较高的计算效率较高和鲁棒性。</p>
+    <h2 id="difftaichi-differentiable-programming-for-physical-simulation"><a class="toclink" href="../../2023/11/04/difftaichi-differentiable-programming-for-physical-simulation/">DiffTaichi: Differentiable Programming For Physical Simulation</a></h2>
+<p>我们介绍了 DiffTaichi，这是<strong>一种新的可微编程语言</strong>，专为构建高性能可微物理模拟器而设计。基于命令式编程语言，DiffTaichi 使用源代码转换生成仿真步骤的梯度，从而保持算术强度和并行性。<strong>使用轻量级Tape记录整个仿真程序结构</strong>，并以相反的顺序回放梯度内核，以实现端到端的反向传播。我们在 10 个不同的物理模拟器上展示了我们的语言在基于梯度的学习和优化任务中的性能和生产力。例如，用我们的语言编写的可微弹性对象模拟器比手工设计的 CUDA 版本短 4.2×但运行速度却一样快，比 TensorFlow 实现快 188 ×。使用我们的可微分程序，神经网络控制器通常只需数十次迭代即可进行优化。</p>
 
-    <nav class="md-post__action">
-      <a href="../../2023/10/22/position-based-surface-tension-flow/">
-        Continue reading
-      </a>
-    </nav>
+    
   </div>
 </article>
       
@@ -691,13 +710,13 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2023-01-30 00:00:00">January 30, 2023</time></li>
+          <time datetime="2023-11-04 00:00:00">November 4, 2023</time></li>
         
         
           
           <li class="md-meta__item">
             
-              7 min read
+              1 min read
             
           </li>
         
@@ -706,13 +725,16 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="fluid-simulation-in-computer-graphics"><a class="toclink" href="../../2023/01/30/fluid-simulation-in-computer-graphics/">Fluid Simulation in Computer Graphics</a></h2>
+    <h2 id="efficient-differentiable-simulation-of-articulated-bodies"><a class="toclink" href="../../2023/11/04/ef%EF%AC%81cient-differentiable-simulation-of-articulated-bodies/">Efﬁcient Differentiable Simulation of Articulated Bodies</a></h2>
+<p>本文提出了一种高效可微分的关节体模拟方法，通过使用空间代数和<strong>伴随方法</strong>推导出前向动力学的梯度，实现了对关节体动力学的深度学习框架集成和基于梯度的神经网络优化。</p>
 
-    <nav class="md-post__action">
-      <a href="../../2023/01/30/fluid-simulation-in-computer-graphics/">
-        Continue reading
-      </a>
-    </nav>
+    
+      <nav class="md-post__action">
+        <a href="../../2023/11/04/ef%EF%AC%81cient-differentiable-simulation-of-articulated-bodies/">
+          Continue reading
+        </a>
+      </nav>
+    
   </div>
 </article>
       
@@ -722,13 +744,13 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2023-01-30 00:00:00">January 30, 2023</time></li>
+          <time datetime="2023-11-04 00:00:00">November 4, 2023</time></li>
         
         
           
           <li class="md-meta__item">
             
-              14 min read
+              1 min read
             
           </li>
         
@@ -737,14 +759,16 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="an-introduction-to-physics-based-animation"><a class="toclink" href="../../2023/01/30/an-introduction-to-physics-based-animation/">An Introduction to Physics-based Animation</a></h2>
-<p>An Introduction to Physics-based Animation</p>
+    <h2 id="differentiable-simulation-of-soft-multi-body-systems"><a class="toclink" href="../../2023/11/04/differentiable-simulation-of-soft-multi-body-systems/">Differentiable Simulation of Soft Multi-body Systems</a></h2>
+<p>本文提出了一种可微分仿真<strong>软多体系统</strong>的方法，通过将物理动力学与基于梯度的流程相结合，实现了可微分仿真。通过引入新的矩阵分解策略，我们设计了一种自上而下的矩阵组装算法，并推导出了<strong>适用于软连续体的广义干摩擦模型</strong>。</p>
 
-    <nav class="md-post__action">
-      <a href="../../2023/01/30/an-introduction-to-physics-based-animation/">
-        Continue reading
-      </a>
-    </nav>
+    
+      <nav class="md-post__action">
+        <a href="../../2023/11/04/differentiable-simulation-of-soft-multi-body-systems/">
+          Continue reading
+        </a>
+      </nav>
+    
   </div>
 </article>
       
@@ -755,7 +779,7 @@
 
 
 <nav class="md-pagination">
-  <a class="md-pagination__link" href="../../">1</a> <a class="md-pagination__link" href="../../">2</a> <a class="md-pagination__link" href="../../">3</a> <span class="md-pagination__current">4</span> <a class="md-pagination__link" href="../5/">5</a>
+  <a class="md-pagination__link" href="../../">1</a> <a class="md-pagination__link" href="../2/">2</a> <a class="md-pagination__link" href="../3/">3</a> <span class="md-pagination__current">4</span> <a class="md-pagination__link" href="../5/">5</a> <a class="md-pagination__link" href="../6/">6</a> <a class="md-pagination__link" href="../7/">7</a>
 </nav>
         
       
@@ -763,6 +787,7 @@
   </div>
 
           
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
       </main>
@@ -791,10 +816,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "navigation.tabs"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "navigation.tabs"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.6c14ae12.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

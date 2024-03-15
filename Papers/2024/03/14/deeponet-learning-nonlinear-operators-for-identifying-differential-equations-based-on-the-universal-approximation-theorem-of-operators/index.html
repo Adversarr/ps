@@ -8,25 +8,25 @@
       
       
       
-        <link rel="canonical" href="https://adversarr.github.io/ps/Papers/2023/11/13/efficient-bvh-based-collision-detection-scheme-with-ordering-and-restructuring/">
+        <link rel="canonical" href="https://adversarr.github.io/ps/Papers/2024/03/14/deeponet-learning-nonlinear-operators-for-identifying-differential-equations-based-on-the-universal-approximation-theorem-of-operators/">
       
       
-        <link rel="prev" href="../projective-dynamics-fusing-constraint-projections-for-fast-simulation/">
+        <link rel="prev" href="../../../../2023/12/21/iq-mpm-an-interface-quadrature-material-point-method-for-non-sticky-strongly-two-way-coupled-nonlinear-solids-and-fluids/">
       
       
-        <link rel="next" href="../../18/second-order-finite-elements-for-deformable-surfaces/">
+        <link rel="next" href="../sliced-score-matching-a-scalable-approach-to-density-and-score-estimation/">
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.9">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13">
     
     
       
-        <title>Efﬁcient BVH-based Collision Detection Scheme with Ordering and Restructuring - PS is not Physical Simulation</title>
+        <title>DeepONet: Learning Nonlinear Operators for Identifying Differential Equations Based on the Universal Approximation Theorem of Operators - PS is not Physical Simulation</title>
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.78cf6014.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.7e359304.min.css">
       
       
 
@@ -57,9 +57,6 @@
   
     <body dir="ltr">
   
-    
-    
-      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -101,12 +98,15 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Efﬁcient BVH-based Collision Detection Scheme with Ordering and Restructuring
+              DeepONet: Learning Nonlinear Operators for Identifying Differential Equations Based on the Universal Approximation Theorem of Operators
             
           </span>
         </div>
       </div>
     </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -289,6 +289,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../.." class="md-nav__link">
         
@@ -305,6 +306,9 @@
     
       
       
+  
+  
+    
   
   
     
@@ -329,6 +333,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../../registry/" class="md-nav__link">
         
@@ -348,6 +353,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../../../tags/" class="md-nav__link">
         
@@ -364,6 +370,7 @@
     
       
       
+  
   
   
   
@@ -412,52 +419,34 @@
         <li class="md-nav__item">
   <a href="#basic-information" class="md-nav__link">
     <span class="md-ellipsis">
-      Basic Information:
+      Basic Information
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      论文简要 :
+      Introduction
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#details" class="md-nav__link">
     <span class="md-ellipsis">
-      背景信息:
+      Details
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#conclusion" class="md-nav__link">
     <span class="md-ellipsis">
-      方法:
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      结果:
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#note" class="md-nav__link">
-    <span class="md-ellipsis">
-      Note:
+      Conclusion
     </span>
   </a>
   
@@ -500,7 +489,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2023-11-13 00:00:00" class="md-ellipsis">November 13, 2023</time>
+                        <time datetime="2024-03-14 00:00:00" class="md-ellipsis">March 14, 2024</time>
                       </div>
                     </li>
                     
@@ -512,7 +501,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              1 min read
+                              2 min read
                             
                           </span>
                         </div>
@@ -538,63 +527,54 @@
     
     
     
-      <a href="../../../../../tags/#bvh" class="md-tag">BVH</a>
+      <a href="../../../../../tags/#deep-learning" class="md-tag">Deep Learning</a>
     
   
     
     
     
-      <a href="../../../../../tags/#accelerate" class="md-tag">Accelerate</a>
+      <a href="../../../../../tags/#pde" class="md-tag">PDE</a>
     
   
 </nav>
 
 
 
-  <h1>Efﬁcient BVH-based Collision Detection Scheme with Ordering and Restructuring</h1>
+  <h1>DeepONet: Learning Nonlinear Operators for Identifying Differential Equations Based on the Universal Approximation Theorem of Operators</h1>
 
-<p>本文提出了一种基于BVH的高效碰撞检测方案，通过排序和重构BVH和BVTT前端，解决了大变形和GPU缓存效率低下的问题，实现了高效的碰撞查询，并在具有空时相干性的模拟中表现出色。</p>
-<!-- more -->
-<h2 id="basic-information">Basic Information:</h2>
+<h3 id="basic-information">Basic Information</h3>
 <ul>
-<li>Title: Efﬁcient BVH-based Collision Detection Scheme with Ordering and Restructuring (基于BVH的高效碰撞检测方案：排序和重构)</li>
-<li>Authors: X. L. Wang, M. Tang, D. Manocha, R. F. Tong</li>
-<li>Affiliation: Zhejiang University, China (浙江大学)</li>
-<li>Keywords: collision detection, BVH, ordering, restructuring</li>
-<li>URLs: <a href="https://diglib.eg.org/handle/10.1111/cgf13499">Paper</a> , [GitHub: None]</li>
+<li><strong>Title:</strong> DeepONet: Learning Nonlinear Operators for Identifying Differential Equations Based on the Universal Approximation Theorem of Operators</li>
+<li><strong>Authors:</strong> Lu Lu, Pengzhan Jin, George Em Karniadakis</li>
+<li><strong>Publication Date:</strong> Not specified</li>
+<li><strong>Field:</strong> Computer Graphics/Deep Learning</li>
 </ul>
-<h2 id="_1">论文简要 :</h2>
+<h3 id="introduction">Introduction</h3>
 <ul>
-<li>本文提出了一种基于BVH的高效碰撞检测方案，通过排序和重构BVH和BVTT前端，解决了大变形和GPU缓存效率低下的问题，实现了高效的碰撞查询，并在具有空时相干性的模拟中表现出色。</li>
+<li><strong>Objective:</strong> The paper introduces Deep Operator Networks (DeepONets), aimed at learning nonlinear operators to efficiently identify dynamics systems and partial differential equations from data.</li>
+<li><strong>Background:</strong> Traditional approaches in modeling dynamic systems and PDEs often require extensive computational resources and data. DeepONets propose a novel way to tackle these challenges using deep learning.</li>
 </ul>
-<h2 id="_2">背景信息:</h2>
+<h3 id="details">Details</h3>
 <ul>
-<li>论文背景: 碰撞检测在基于物理的计算机模拟中通常是性能瓶颈。本文主要关注广相碰撞检测，其中广相步骤通过使用边界体积（BV）来排除不可能发生碰撞的物体，生成潜在碰撞集合。</li>
-<li>过去方案: 过去的广相碰撞检测方法主要采用空间细分和对象分割两种主要方法。空间细分算法将空间划分为单元格，而对象分割方法则使用边界体积层次结构（BVH）作为主要选择。然而，这些方法在处理大变形和GPU缓存效率低下时存在一些问题。</li>
-<li>论文的Motivation: 鉴于过去方法的局限性，本文旨在通过排序和重构BVH和BVTT前端来提高碰撞检测的效率。通过分析BVTT前端和BVH质量的动态状态，本文提出了一种基于直方图排序和辅助结构BVTT前端日志的技术，有效处理物体间和物体内的碰撞，并在具有空时相干性的模拟中表现出色。</li>
+<li><strong>Techniques:</strong> DeepONets consist of two sub-networks: a branch network that encodes input functions at predetermined sensor locations and a trunk network that encodes locations for the output function. This architecture is designed to leverage the universal approximation theorem of operators, facilitating the learning process.</li>
+<li><strong>Experiments:</strong> The paper showcases experiments comparing DeepONets to fully connected networks, demonstrating DeepONets' superior ability to reduce generalization errors and achieve high-order error convergence in identifying differential equations.</li>
+<li><strong>Results:</strong> Theoretical analysis and computational results indicate that the approximation error of DeepONets depends on the number of sensors and the types of input functions. These findings are supported by empirical evidence showing significant performance improvements over traditional methods.</li>
 </ul>
-<h2 id="_3">方法:</h2>
+<h3 id="conclusion">Conclusion</h3>
 <ul>
-<li>a. 理论背景:</li>
-<li>本文介绍了基于物理的计算机模拟中碰撞检测的问题及其在触觉、机器人和制造等领域的重要性。碰撞检测包括基于边界体积的广相位步骤和检查精确交叉的狭相位步骤。本文的重点是广相位碰撞检测。</li>
-<li>b. 技术路线:</li>
-<li>本文提出的方法旨在提高基于边界体积层次结构（BVH）的碰撞检测中的缓存命中率和内存带宽利用率。它通过优化BVH节点和BVTT前端的布局来减少缓存未命中和内存延迟。该方法包括以下步骤：<ol>
-<li>友好的缓存BVH布局计算：使用遍历的内部节点的左边界作为参考，为外部节点创建段。每个段内的内部节点位置按严格升序排列，以匹配深度优先顺序。</li>
-<li>友好的缓存和较少分歧的BVTT前端：根据每个前端节点的第二个组件，将BVTT前端分为外部和内部前端。这种分类有助于提高带宽效率和减少分支分歧。前端节点进一步按深度优先顺序布局，以更好地利用缓存。</li>
-</ol>
-</li>
+<li><strong>Contributions:</strong> The paper successfully demonstrates the potential of DeepONets in revolutionizing the way dynamic systems and PDEs are modeled and solved, offering a significant reduction in computational cost and an increase in efficiency.</li>
+<li><strong>Insights:</strong> The proposed framework highlights the importance of learning nonlinear operators in the context of differential equations and sets a new standard for research in this area. The findings suggest a promising direction for future research, especially in terms of refining the network architecture and exploring its applications in more complex systems.</li>
 </ul>
-<h2 id="_4">结果:</h2>
-<ul>
-<li>a. 详细的实验设置:</li>
-<li>本文未提及实验设置。</li>
-<li>b. 详细的实验结果:</li>
-<li>本文未提及实验结果。</li>
-</ul>
-<h2 id="note">Note:</h2>
-<ul>
-<li>本总结源自于LLM的总结，请注意数据判别. Power by ChatPaper. End.</li>
-</ul>
+
+
+
+
+
+
+
+  
+  
+
 
 
 
@@ -607,6 +587,7 @@
   </div>
 
           
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
       </main>
@@ -635,10 +616,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["header.autohide", "navigation.tabs"], "search": "../../../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["header.autohide", "navigation.tabs"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.6c14ae12.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

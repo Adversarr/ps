@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.9">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.78cf6014.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e359304.min.css">
       
       
 
@@ -57,9 +57,6 @@
   
     <body dir="ltr">
   
-    
-    
-      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -107,6 +104,9 @@
         </div>
       </div>
     </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -182,10 +182,8 @@
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
+    <li class="md-tabs__item">
       <a href="../../" class="md-tabs__link">
         
   
@@ -287,6 +285,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../.." class="md-nav__link">
         
@@ -305,10 +304,13 @@
       
   
   
+  
+    
+      
     
   
   
-    <li class="md-nav__item md-nav__item--active">
+    <li class="md-nav__item">
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
@@ -335,6 +337,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../registry/" class="md-nav__link">
         
@@ -354,6 +357,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../tags/" class="md-nav__link">
         
@@ -370,6 +374,7 @@
     
       
       
+  
   
   
   
@@ -428,7 +433,7 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2023-11-04 00:00:00">November 4, 2023</time></li>
+          <time datetime="2023-11-13 00:00:00">November 13, 2023</time></li>
         
         
           
@@ -443,14 +448,16 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="difftaichi-differentiable-programming-for-physical-simulation"><a class="toclink" href="../../2023/11/04/difftaichi-differentiable-programming-for-physical-simulation/">DiffTaichi: Differentiable Programming For Physical Simulation</a></h2>
-<p>我们介绍了 DiffTaichi，这是<strong>一种新的可微编程语言</strong>，专为构建高性能可微物理模拟器而设计。基于命令式编程语言，DiffTaichi 使用源代码转换生成仿真步骤的梯度，从而保持算术强度和并行性。<strong>使用轻量级Tape记录整个仿真程序结构</strong>，并以相反的顺序回放梯度内核，以实现端到端的反向传播。我们在 10 个不同的物理模拟器上展示了我们的语言在基于梯度的学习和优化任务中的性能和生产力。例如，用我们的语言编写的可微弹性对象模拟器比手工设计的 CUDA 版本短 4.2×但运行速度却一样快，比 TensorFlow 实现快 188 ×。使用我们的可微分程序，神经网络控制器通常只需数十次迭代即可进行优化。</p>
+    <h2 id="efficient-bvh-based-collision-detection-scheme-with-ordering-and-restructuring"><a class="toclink" href="../../2023/11/13/ef%EF%AC%81cient-bvh-based-collision-detection-scheme-with-ordering-and-restructuring/">Efﬁcient BVH-based Collision Detection Scheme with Ordering and Restructuring</a></h2>
+<p>本文提出了一种基于BVH的高效碰撞检测方案，通过排序和重构BVH和BVTT前端，解决了大变形和GPU缓存效率低下的问题，实现了高效的碰撞查询，并在具有空时相干性的模拟中表现出色。</p>
 
-    <nav class="md-post__action">
-      <a href="../../2023/11/04/difftaichi-differentiable-programming-for-physical-simulation/">
-        Continue reading
-      </a>
-    </nav>
+    
+      <nav class="md-post__action">
+        <a href="../../2023/11/13/ef%EF%AC%81cient-bvh-based-collision-detection-scheme-with-ordering-and-restructuring/">
+          Continue reading
+        </a>
+      </nav>
+    
   </div>
 </article>
       
@@ -460,7 +467,7 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2023-11-04 00:00:00">November 4, 2023</time></li>
+          <time datetime="2023-11-13 00:00:00">November 13, 2023</time></li>
         
         
           
@@ -475,14 +482,16 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="efficient-differentiable-simulation-of-articulated-bodies"><a class="toclink" href="../../2023/11/04/efficient-differentiable-simulation-of-articulated-bodies/">Efﬁcient Differentiable Simulation of Articulated Bodies</a></h2>
-<p>本文提出了一种高效可微分的关节体模拟方法，通过使用空间代数和<strong>伴随方法</strong>推导出前向动力学的梯度，实现了对关节体动力学的深度学习框架集成和基于梯度的神经网络优化。</p>
+    <h2 id="projective-dynamics-fusing-constraint-projections-for-fast-simulation"><a class="toclink" href="../../2023/11/13/projective-dynamics-fusing-constraint-projections-for-fast-simulation/">Projective dynamics: Fusing constraint projections for fast simulation</a></h2>
+<p>本文提出了一种新的隐式时间积分物理系统的方法，通过将节点有限元方法和基于位置的动力学相结合，实现了一个简单、高效、稳健且准确的求解器，支持多种不同类型的约束。通过引入特殊设计的能量势能，可以使用交替优化方法高效地求解。通过连续力学的启发，推导出一组连续势能，可以有效地融入我们的求解器。通过多个应用的实例，从固体、布料和壳体的仿真到基于示例的仿真，展示了我们方法的普适性和稳健性。与基于牛顿和基于位置的动力学求解器的比较突出了我们方法的优势。</p>
 
-    <nav class="md-post__action">
-      <a href="../../2023/11/04/efficient-differentiable-simulation-of-articulated-bodies/">
-        Continue reading
-      </a>
-    </nav>
+    
+      <nav class="md-post__action">
+        <a href="../../2023/11/13/projective-dynamics-fusing-constraint-projections-for-fast-simulation/">
+          Continue reading
+        </a>
+      </nav>
+    
   </div>
 </article>
       
@@ -492,7 +501,7 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2023-11-04 00:00:00">November 4, 2023</time></li>
+          <time datetime="2023-11-13 00:00:00">November 13, 2023</time></li>
         
         
           
@@ -507,14 +516,16 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="differentiable-simulation-of-soft-multi-body-systems"><a class="toclink" href="../../2023/11/04/differentiable-simulation-of-soft-multi-body-systems/">Differentiable Simulation of Soft Multi-body Systems</a></h2>
-<p>本文提出了一种可微分仿真<strong>软多体系统</strong>的方法，通过将物理动力学与基于梯度的流程相结合，实现了可微分仿真。通过引入新的矩阵分解策略，我们设计了一种自上而下的矩阵组装算法，并推导出了<strong>适用于软连续体的广义干摩擦模型</strong>。</p>
+    <h2 id="efficient-and-accurate-collision-response-for-elastically-deformable-models"><a class="toclink" href="../../2023/11/13/efficient-and-accurate-collision-response-for-elastically-deformable-models/">Efficient and Accurate Collision Response for Elastically Deformable Models</a></h2>
+<p>本文提出了一种高效准确的弹性可变形模型碰撞响应方法，通过直接解决混合线性互补问题（MLCP）来处理碰撞问题，避免了构建线性互补问题（LCP）矩阵的过程，使用共轭残差（CR）求解器作为碰撞响应系统的核心，通过动态更新活动约束集合，可以高效地解决带有不等式约束的MLCP问题，并提出了一个简单而有效的预处理器以加快收敛速度，实验结果表明该方法比现有方法更快且能准确处理摩擦。</p>
 
-    <nav class="md-post__action">
-      <a href="../../2023/11/04/differentiable-simulation-of-soft-multi-body-systems/">
-        Continue reading
-      </a>
-    </nav>
+    
+      <nav class="md-post__action">
+        <a href="../../2023/11/13/efficient-and-accurate-collision-response-for-elastically-deformable-models/">
+          Continue reading
+        </a>
+      </nav>
+    
   </div>
 </article>
       
@@ -524,13 +535,13 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2023-11-04 00:00:00">November 4, 2023</time></li>
+          <time datetime="2023-11-13 00:00:00">November 13, 2023</time></li>
         
         
           
           <li class="md-meta__item">
             
-              1 min read
+              2 min read
             
           </li>
         
@@ -539,14 +550,16 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="primaldual-descent-methods-for-dynamics"><a class="toclink" href="../../2023/11/04/primaldual-descent-methods-for-dynamics/">Primal/Dual Descent Methods for Dynamics</a></h2>
-<p>本文提出了一种新的预处理摩擦接触求解器，该求解器与现有的原始优化方法兼容，并且在与对偶方法相比时<strong>生成了更好的接触力分布</strong>，具有可微性，非常适合轨迹优化。通过从共同的变分观点推导出原始和对偶方法，并对两种方法进行了全面的数值分析，证明了该方法在刚体接触、可变形模拟和机器人操作等场景中的有效性。</p>
+    <h2 id="_1"><a class="toclink" href="../../2023/11/13/"></a></h2>
+<p>本文提出了一种名为仿射体动力学（ABD）的框架，用于高效、稳定且无交叉地模拟接近刚性的物体。通过利用基于障碍函数的摩擦接触建模，ABD降低了刚体建模中的碰撞和接触处理成本，同时获得高质量的无交叉轨迹。通过在具有挑战性的应力测试基准中模拟复杂的齿轮系统，ABD在所有现有的刚体模拟算法中表现出色，实现了稳定的仿真。ABD还能够在处理大位移（旋转）接触的情况下使用大时间步长，具有出色的性能表现。</p>
 
-    <nav class="md-post__action">
-      <a href="../../2023/11/04/primaldual-descent-methods-for-dynamics/">
-        Continue reading
-      </a>
-    </nav>
+    
+      <nav class="md-post__action">
+        <a href="../../2023/11/13/">
+          Continue reading
+        </a>
+      </nav>
+    
   </div>
 </article>
       
@@ -556,7 +569,7 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2023-11-04 00:00:00">November 4, 2023</time></li>
+          <time datetime="2023-11-13 00:00:00">November 13, 2023</time></li>
         
         
           
@@ -571,15 +584,16 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="real2sim-visco-elastic-parameter-estimation-from-dynamic-motion"><a class="toclink" href="../../2023/11/04/real2sim-visco-elastic-parameter-estimation-from-dynamic-motion/">Real2Sim: Visco-elastic parameter estimation from dynamic motion</a></h2>
-<p><em>从动态运动中估计粘弹性参数</em></p>
-<p>本文提出了一种从真实世界的软物体的动态运动中优化粘弹性材料参数的方法，<strong>通过直接敏感性分析或伴随状态方法计算材料参数的梯度</strong>，并优化材料参数以使模拟运动尽可能接近真实观测。通过这种方式，<strong>我们可以直接构建一个能够捕捉感兴趣样本的粘弹性行为的有用模拟模型</strong>。我们在各种示例中展示了我们方法的有效性，包括数值粗化、自定义目标函数以及由泡沫或3D打印格子结构制成的真实柔性弹性物体，包括软体机器人的演示应用。</p>
+    <h2 id="high-order-incremental-potential-contact-for-elastodynamic-simulation-on-curved-meshes"><a class="toclink" href="../../2023/11/13/high-order-incremental-potential-contact-for-elastodynamic-simulation-on-curved-meshes/">High-Order Incremental Potential Contact for Elastodynamic Simulation on Curved Meshes</a></h2>
+<p>本文提出了一种在曲面网格上进行高阶增量潜力接触的弹性动力学模拟方法，通过使用高阶基函数和高阶几何表示，实现了更高的精度和效率，并在图形学、计算制造和科学计算等领域展示了其有效性。</p>
 
-    <nav class="md-post__action">
-      <a href="../../2023/11/04/real2sim-visco-elastic-parameter-estimation-from-dynamic-motion/">
-        Continue reading
-      </a>
-    </nav>
+    
+      <nav class="md-post__action">
+        <a href="../../2023/11/13/high-order-incremental-potential-contact-for-elastodynamic-simulation-on-curved-meshes/">
+          Continue reading
+        </a>
+      </nav>
+    
   </div>
 </article>
       
@@ -589,7 +603,7 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2023-11-04 00:00:00">November 4, 2023</time></li>
+          <time datetime="2023-11-13 00:00:00">November 13, 2023</time></li>
         
         
           
@@ -604,14 +618,16 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="add-analytically-differentiable-dynamics-for-multi-body-systems-with-frictional-contact"><a class="toclink" href="../../2023/11/04/add-analytically-differentiable-dynamics-for-multi-body-systems-with-frictional-contact/">ADD: Analytically Differentiable Dynamics for Multi-Body Systems with Frictional Contact</a></h2>
-<p>本文提出了一种可解析可微分的动力学求解器，能够在统一框架下处理<strong>刚性和可变形物体的摩擦接触问题</strong>。通过对法向和切向接触力进行原则性的平滑处理，我们的方法克服了摩擦接触的非光滑特性所带来的主要困难。</p>
+    <h2 id="a-gpu-based-multilevel-additive-schwarz-preconditioner-for-cloth-and-deformable-body-simulation"><a class="toclink" href="../../2023/11/13/a-gpu-based-multilevel-additive-schwarz-preconditioner-for-cloth-and-deformable-body-simulation/">A GPU-Based Multilevel Additive Schwarz Preconditioner for Cloth and Deformable Body Simulation</a></h2>
+<p>本文提出了一种基于GPU的多层级加性Schwarz预处理器，用于布料和可变形体模拟，通过优化预处理器的设计和实现，实现了更快速和有效的模拟效果。</p>
 
-    <nav class="md-post__action">
-      <a href="../../2023/11/04/add-analytically-differentiable-dynamics-for-multi-body-systems-with-frictional-contact/">
-        Continue reading
-      </a>
-    </nav>
+    
+      <nav class="md-post__action">
+        <a href="../../2023/11/13/a-gpu-based-multilevel-additive-schwarz-preconditioner-for-cloth-and-deformable-body-simulation/">
+          Continue reading
+        </a>
+      </nav>
+    
   </div>
 </article>
       
@@ -621,7 +637,7 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2023-11-04 00:00:00">November 4, 2023</time></li>
+          <time datetime="2023-11-11 00:00:00">November 11, 2023</time></li>
         
         
           
@@ -636,15 +652,17 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="fluidic-topology-optimization-with-an-anisotropic-mixture-model"><a class="toclink" href="../../2023/11/04/fluidic-topology-optimization-with-an-anisotropic-mixture-model/">Fluidic Topology Optimization with an Anisotropic Mixture Model</a></h2>
-<p>提出了一种新的拓扑优化方法，用于在Stokes流环境中设计流体装置。我们的方法的特点是能够适应固体-流体界面的广泛边界条件。</p>
-<p>主要贡献是<strong>各向异性和可微分本构模型</strong>，该模型统一了斯托克斯模型中不同相和边界条件的表示，从而实现了<strong>拓扑优化</strong>方法，该方法可以<strong>从背景网格离散化中合成具有精确边界条件的新结构</strong>。</p>
+    <h2 id="robogen-towards-unleashing-infinite-data-for-automated-robot-learning-via-generative-simulation"><a class="toclink" href="../../2023/11/11/robogen-towards-unleashing-infinite-data-for-automated-robot-learning-via-generative-simulation/">ROBOGEN: Towards Unleashing Infinite Data for Automated Robot Learning via Generative Simulation</a></h2>
+<p>本文提出了RoboGen，一种通过生成模拟实现自动学习多样化机器人技能的生成式机器人代理。RoboGen利用了基础模型和生成模型的最新进展，通过生成模拟自动产生多样化的任务、场景和训练监督，从而在最小的人工监督下扩展机器人技能学习。我们的方法为机器人代理配备了自主提出-生成-学习循环：代理首先提出有趣的任务和技能进行开发，然后通过合适的空间配置将相关对象和资源填充到模拟环境中生成相应的模拟环境。然后，代理将提出的高级任务分解为子任务，选择最佳的学习方法（强化学习、运动规划或轨迹优化），生成所需的训练监督，然后学习策略以获得提出的技能。我们的工作旨在提取大规模模型中嵌入的广泛而多样化的知识，并将其转移到机器人领域。我们的完全生成式流水线可以重复查询，产生与各种任务和环境相关的无限技能演示流。</p>
+<p>这篇文章的创新之处在于通过最小化人类监督来扩大机器人技能学习的规模。文章提出了一种自主引导的提出-生成-学习循环方法，使机器人代理能够自主提出有趣的任务和技能，并通过生成相应的仿真环境来学习这些技能。该方法将高级任务分解为子任务，并选择最优的学习方法（强化学习、运动规划或轨迹优化），生成所需的训练监督，并学习获取所提出的技能。这项工作试图提取大规模模型中嵌入的广泛而多样化的知识，并将其转移到机器人领域。通过不断查询，我们的完全生成式流水线可以产生与各种任务和环境相关联的无限技能演示。</p>
 
-    <nav class="md-post__action">
-      <a href="../../2023/11/04/fluidic-topology-optimization-with-an-anisotropic-mixture-model/">
-        Continue reading
-      </a>
-    </nav>
+    
+      <nav class="md-post__action">
+        <a href="../../2023/11/11/robogen-towards-unleashing-infinite-data-for-automated-robot-learning-via-generative-simulation/">
+          Continue reading
+        </a>
+      </nav>
+    
   </div>
 </article>
       
@@ -654,7 +672,7 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2023-11-01 00:00:00">November 1, 2023</time></li>
+          <time datetime="2023-11-11 00:00:00">November 11, 2023</time></li>
         
         
           
@@ -669,14 +687,51 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="differentiable-optimal-control-for-retargeting-motions-onto-legged-robots"><a class="toclink" href="../../2023/11/01/differentiable-optimal-control-for-retargeting-motions-onto-legged-robots/">Differentiable Optimal Control for Retargeting Motions onto Legged Robots</a></h2>
-<p>本文提出了一种可微分最优控制（DOC）框架，用于将动物或动画的丰富动作重新定位到四足机器人上，通过优化参数来最小化重新定位误差，并展示了在不同比例和质量分布的机器人上的重新定位结果。</p>
-
-    <nav class="md-post__action">
-      <a href="../../2023/11/01/differentiable-optimal-control-for-retargeting-motions-onto-legged-robots/">
-        Continue reading
-      </a>
-    </nav>
+    <h2 id="basic-information"><a class="toclink" href="../../2023/11/11/flowfixer-using-bfecc-for-fluid-simulation/">Basic Information:</a></h2>
+<ul>
+<li>Title: FlowFixer: Using BFECC for Fluid Simulation (流体模拟中的FlowFixer: 使用BFECC方法)</li>
+<li>Authors: ByungMoon Kim, Yingjie Liu, Ignacio Llamas, Jarek Rossignac</li>
+<li>Affiliation: Georgia Institute of Technology (佐治亚理工学院)</li>
+<li>Keywords: BFECC, fluid simulation, advection, level set method, velocity, smoke density, image advection (BFECC, 流体模拟, 平流, 水平集方法, 速度, 烟密度, 图像平流)</li>
+<li>URLs: <a href="https://www.researchgate.net/publication/221314833">ResearchGate</a>, [GitHub: None]</li>
+</ul>
+<h2 id="_1"><a class="toclink" href="../../2023/11/11/flowfixer-using-bfecc-for-fluid-simulation/#_1">论文简要 :</a></h2>
+<ul>
+<li>本文介绍了一种名为BFECC的方法，用于减少流体模拟中的耗散和扩散问题，并应用于速度、烟密度和图像平流等多种平流步骤。该方法在空间和时间上提供了二阶精度，并通过与变密度投影相结合，实现了逼真的两相流体动画效果。</li>
+</ul>
+<h2 id="_2"><a class="toclink" href="../../2023/11/11/flowfixer-using-bfecc-for-fluid-simulation/#_2">背景信息:</a></h2>
+<ul>
+<li>论文背景: 流体模拟涉及多个计算步骤，包括扩散、平流和压力投影。本文主要探讨流体模拟中的四种平流形式：速度、烟密度、图像和水平集平流。</li>
+<li>过去方案: 过去的方法中，一阶半拉格朗日方法在计算简单性方面具有优势，但存在较大的数值扩散和耗散问题。因此，需要更高阶的方法来解决这些问题。</li>
+<li>论文的Motivation: 本文提出了BFECC方法，通过将其添加到一阶半拉格朗日方法中，可以提高其空间和时间精度，减少速度阻尼和烟密度稀释，并在多种平流步骤中展示了其优势。</li>
+</ul>
+<h2 id="_3"><a class="toclink" href="../../2023/11/11/flowfixer-using-bfecc-for-fluid-simulation/#_3">方法:</a></h2>
+<ul>
+<li>a. 理论背景:</li>
+<li>BFECC方案可用于改善流体模拟。在使用BFECC进行水平集平流时，需要进行重新分配以保持水平集函数作为有符号距离函数。这可以通过求解重新分配方程来实现，该方程涉及重新分配的速度向量。重新分配方程可以使用一阶上风或半拉格朗日样式积分来求解。然而，将重新分配的积分公式与BFECC结合使用可能会导致从二阶精确的BFECC计算得到的良好水平集值的退化。为了解决这个问题，提出了一种简单的重新分配方法，该方法在接口附近关闭重新分配以保持良好的水平集值。这种简单的重新分配方法对于保持体积至关重要，并且易于实现。它只需要在满足某些条件的网格点处进行重新分配，例如当网格点不靠近界面或斜率足够高时。</li>
+<li>b. 技术路线:</li>
+<li>使用BFECC方案进行水平集平流。</li>
+<li>解决重新分配方程，其中包括重新分配的速度向量。</li>
+<li>使用一阶上风或半拉格朗日样式积分来求解重新分配方程。</li>
+<li>将重新分配的积分公式与BFECC结合使用。</li>
+</ul>
+<h2 id="_4"><a class="toclink" href="../../2023/11/11/flowfixer-using-bfecc-for-fluid-simulation/#_4">结果:</a></h2>
+<ul>
+<li>a. 详细的实验设置:</li>
+<li>实验中使用BFECC方案进行水平集平流。</li>
+<li>解决重新分配方程，其中包括重新分配的速度向量。</li>
+<li>使用一阶上风或半拉格朗日样式积分来求解重新分配方程。</li>
+<li>在接口附近关闭重新分配以保持良好的水平集值。</li>
+<li>b. 详细的实验结果:</li>
+<li>实验结果表明，使用BFECC方案进行水平集平流时，通过关闭接口附近的重新分配，可以保持良好的水平集值。</li>
+<li>这种简单的重新分配方法对于保持体积至关重要，并且易于实现。</li>
+<li>实验结果还表明，在满足某些条件的网格点处进行重新分配，例如当网格点不靠近界面或斜率足够高时，可以有效地实现重新分配。</li>
+</ul>
+<h2 id="note"><a class="toclink" href="../../2023/11/11/flowfixer-using-bfecc-for-fluid-simulation/#note">Note:</a></h2>
+<ul>
+<li>本总结源自于LLM的总结，请注意数据判别. Power by ChatPaper. End.</li>
+</ul>
+    
   </div>
 </article>
       
@@ -686,7 +741,7 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2023-11-01 00:00:00">November 1, 2023</time></li>
+          <time datetime="2023-11-06 00:00:00">November 6, 2023</time></li>
         
         
           
@@ -701,14 +756,16 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="diffcloth-differentiable-cloth-simulation-with-dry-frictional-contact"><a class="toclink" href="../../2023/11/01/diffcloth-differentiable-cloth-simulation-with-dry-frictional-contact/">DiffCloth: Differentiable Cloth Simulation with Dry Frictional Contact</a></h2>
-<p>本文提出了一种具有<strong>干摩擦接触的可微布料模拟器</strong>，通过优化材料参数，实现了对布料行为的精确控制，并在多个应用领域展示了其有效性。</p>
+    <h2 id="differentiable-fluids-with-solid-coupling-for-learning-and-control"><a class="toclink" href="../../2023/11/06/differentiable-fluids-with-solid-coupling-for-learning-and-control/">Differentiable Fluids with Solid Coupling for Learning and Control</a></h2>
+<p>本文提出了一种高效的可微分流体模拟器，可以与深度神经网络集成，作为学习动力学和解决控制问题的一部分。通过使用变分原理，该模拟器能够处理流体与刚体物体的<strong>单向耦合</strong>，并在流体-固体界面上自然地施加必要的边界条件。通过应用伴随方法，该模拟器能够高效地计算多个时间步长的流体模拟的梯度，并在解决涉及单向耦合固体的逆问题和控制问题时表现出比先前的梯度计算、无导数优化和无模型强化学习技术至少高一个数量级的性能。</p>
 
-    <nav class="md-post__action">
-      <a href="../../2023/11/01/diffcloth-differentiable-cloth-simulation-with-dry-frictional-contact/">
-        Continue reading
-      </a>
-    </nav>
+    
+      <nav class="md-post__action">
+        <a href="../../2023/11/06/differentiable-fluids-with-solid-coupling-for-learning-and-control/">
+          Continue reading
+        </a>
+      </nav>
+    
   </div>
 </article>
       
@@ -718,7 +775,7 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2023-10-31 00:00:00">October 31, 2023</time></li>
+          <time datetime="2023-11-06 00:00:00">November 6, 2023</time></li>
         
         
           
@@ -733,14 +790,16 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="difffr-differentiable-sph-based-fluid-rigid-coupling-for-rigid-body-control"><a class="toclink" href="../../2023/10/31/difffr-differentiable-sph-based-fluid-rigid-coupling-for-rigid-body-control/">DiffFR: Differentiable SPH-based Fluid-Rigid Coupling for Rigid Body Control</a></h2>
-<p>本文使用SPH模型，实现了流固的弱双向耦合。解决了模拟过程中的导数数值稳定性、高维度输入下的计算效率问题。</p>
+    <h2 id="rethinking-optimization-with-differentiable-simulation-from-a-global-perspective"><a class="toclink" href="../../2023/11/06/rethinking-optimization-with-differentiable-simulation-from-a-global-perspective/">Rethinking Optimization with Differentiable Simulation from a Global Perspective</a></h2>
+<p>本研究从全局视角重新思考了可微分仿真优化，针对接触丰富的场景提出了一种结合贝叶斯优化和半局部搜索的方法，通过有效利用梯度并在具有噪声梯度的区域保持鲁棒性，取得了优于其他基于梯度和无梯度的方法的结果。</p>
 
-    <nav class="md-post__action">
-      <a href="../../2023/10/31/difffr-differentiable-sph-based-fluid-rigid-coupling-for-rigid-body-control/">
-        Continue reading
-      </a>
-    </nav>
+    
+      <nav class="md-post__action">
+        <a href="../../2023/11/06/rethinking-optimization-with-differentiable-simulation-from-a-global-perspective/">
+          Continue reading
+        </a>
+      </nav>
+    
   </div>
 </article>
       
@@ -751,7 +810,7 @@
 
 
 <nav class="md-pagination">
-  <a class="md-pagination__link" href="../../">1</a> <a class="md-pagination__link" href="../../">2</a> <span class="md-pagination__current">3</span> <a class="md-pagination__link" href="../4/">4</a> <a class="md-pagination__link" href="../5/">5</a>
+  <a class="md-pagination__link" href="../../">1</a> <a class="md-pagination__link" href="../2/">2</a> <span class="md-pagination__current">3</span> <a class="md-pagination__link" href="../4/">4</a> <a class="md-pagination__link" href="../5/">5</a> <span class="md-pagination__dots">..</span> <a class="md-pagination__link" href="../7/">7</a>
 </nav>
         
       
@@ -759,6 +818,7 @@
   </div>
 
           
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
       </main>
@@ -787,10 +847,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "navigation.tabs"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "navigation.tabs"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.6c14ae12.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

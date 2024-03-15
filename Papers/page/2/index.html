@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.9">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.78cf6014.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e359304.min.css">
       
       
 
@@ -57,9 +57,6 @@
   
     <body dir="ltr">
   
-    
-    
-      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -107,6 +104,9 @@
         </div>
       </div>
     </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -182,10 +182,8 @@
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
+    <li class="md-tabs__item">
       <a href="../../" class="md-tabs__link">
         
   
@@ -287,6 +285,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../.." class="md-nav__link">
         
@@ -305,10 +304,13 @@
       
   
   
+  
+    
+      
     
   
   
-    <li class="md-nav__item md-nav__item--active">
+    <li class="md-nav__item">
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
@@ -335,6 +337,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../registry/" class="md-nav__link">
         
@@ -354,6 +357,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../../tags/" class="md-nav__link">
         
@@ -370,6 +374,7 @@
     
       
       
+  
   
   
   
@@ -428,13 +433,13 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2023-11-11 00:00:00">November 11, 2023</time></li>
+          <time datetime="2024-03-14 00:00:00">March 14, 2024</time></li>
         
         
           
           <li class="md-meta__item">
             
-              1 min read
+              2 min read
             
           </li>
         
@@ -443,15 +448,39 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="robogen-towards-unleashing-infinite-data-for-automated-robot-learning-via-generative-simulation"><a class="toclink" href="../../2023/11/11/robogen-towards-unleashing-infinite-data-for-automated-robot-learning-via-generative-simulation/">ROBOGEN: Towards Unleashing Infinite Data for Automated Robot Learning via Generative Simulation</a></h2>
-<p>本文提出了RoboGen，一种通过生成模拟实现自动学习多样化机器人技能的生成式机器人代理。RoboGen利用了基础模型和生成模型的最新进展，通过生成模拟自动产生多样化的任务、场景和训练监督，从而在最小的人工监督下扩展机器人技能学习。我们的方法为机器人代理配备了自主提出-生成-学习循环：代理首先提出有趣的任务和技能进行开发，然后通过合适的空间配置将相关对象和资源填充到模拟环境中生成相应的模拟环境。然后，代理将提出的高级任务分解为子任务，选择最佳的学习方法（强化学习、运动规划或轨迹优化），生成所需的训练监督，然后学习策略以获得提出的技能。我们的工作旨在提取大规模模型中嵌入的广泛而多样化的知识，并将其转移到机器人领域。我们的完全生成式流水线可以重复查询，产生与各种任务和环境相关的无限技能演示流。</p>
-<p>这篇文章的创新之处在于通过最小化人类监督来扩大机器人技能学习的规模。文章提出了一种自主引导的提出-生成-学习循环方法，使机器人代理能够自主提出有趣的任务和技能，并通过生成相应的仿真环境来学习这些技能。该方法将高级任务分解为子任务，并选择最优的学习方法（强化学习、运动规划或轨迹优化），生成所需的训练监督，并学习获取所提出的技能。这项工作试图提取大规模模型中嵌入的广泛而多样化的知识，并将其转移到机器人领域。通过不断查询，我们的完全生成式流水线可以产生与各种任务和环境相关联的无限技能演示。</p>
-
-    <nav class="md-post__action">
-      <a href="../../2023/11/11/robogen-towards-unleashing-infinite-data-for-automated-robot-learning-via-generative-simulation/">
-        Continue reading
-      </a>
-    </nav>
+    <h2 id="fast-approximation-of-rotations-and-hessian-matrices"><a class="toclink" href="../../2024/03/14/fast-approximation-of-rotations-and-hessian-matrices/">Fast Approximation of Rotations and Hessian Matrices</a></h2>
+<h4 id="basic-information"><a class="toclink" href="../../2024/03/14/fast-approximation-of-rotations-and-hessian-matrices/#basic-information">Basic Information</a></h4>
+<ul>
+<li><strong>Title:</strong> Fast Approximation of Rotations and Hessian Matrices</li>
+<li><strong>Authors:</strong> Michael Mathieu and Yann LeCun</li>
+<li><strong>Affiliations:</strong> Courant Institute of Mathematical Sciences, New York University</li>
+<li><strong>Publication Date:</strong> April 29, 2014</li>
+<li><strong>Journal:</strong> arXiv:1404.7195v1 [cs.LG]</li>
+<li><strong>Keywords:</strong> Rotation matrices, Hessian matrices, Symmetric matrices, Gaussian models, Optimization, Machine learning</li>
+</ul>
+<h4 id="introduction"><a class="toclink" href="../../2024/03/14/fast-approximation-of-rotations-and-hessian-matrices/#introduction">Introduction</a></h4>
+<p>The paper introduces a novel method to represent and approximate rotation matrices with linearithmic complexity, designed to expedite computations involving symmetric matrices like covariance and Hessian matrices. This approach is pivotal for tasks such as density models, Bayesian inference, and optimization in machine learning, where direct evaluations are infeasible due to the dimensional growth of these matrices.</p>
+<h4 id="contributions"><a class="toclink" href="../../2024/03/14/fast-approximation-of-rotations-and-hessian-matrices/#contributions">Contributions</a></h4>
+<ul>
+<li>Proposed a method for approximating symmetric matrices, representing them as <span class="arithmatex">\(QDQ^T\)</span>, where <span class="arithmatex">\(Q\)</span> is a rotation matrix approximated by a series of <span class="arithmatex">\(n \log(n) / 2\)</span> Givens rotations, and <span class="arithmatex">\(D\)</span> is a diagonal matrix.</li>
+<li>Demonstrated how this approximation can speed up inference in Gaussian models and estimate and track the inverse Hessian of an objective function.</li>
+<li>Conducted experiments on synthetic matrices, real data covariance matrices, and Hessian matrices of machine learning problem objectives to validate the approach.</li>
+</ul>
+<h4 id="techniques-and-method"><a class="toclink" href="../../2024/03/14/fast-approximation-of-rotations-and-hessian-matrices/#techniques-and-method">Techniques and Method</a></h4>
+<p>The technique involves parameterizing the rotation matrix <span class="arithmatex">\(Q\)</span> as a product of elementary rotations in an FFT-like fashion, making the computational complexity linearithmic. This setup simplifies the approximation of symmetric matrices, aiding in the efficient computation of matrix-vector products and the inverse of large matrices. The approximation is optimized using stochastic gradient descent.</p>
+<h4 id="experimental-results"><a class="toclink" href="../../2024/03/14/fast-approximation-of-rotations-and-hessian-matrices/#experimental-results">Experimental Results</a></h4>
+<ul>
+<li>Experiments on synthetic and real-world matrices, including covariance matrices of the MNIST dataset, showed that the method can achieve meaningful approximations with reduced computational complexity.</li>
+<li>The approach's validity was further demonstrated through its application in approximating Hessian matrices for optimization problems, showing potential for speeding up learning and optimization processes in machine learning systems.</li>
+</ul>
+<h4 id="limitations-and-future-work"><a class="toclink" href="../../2024/03/14/fast-approximation-of-rotations-and-hessian-matrices/#limitations-and-future-work">Limitations and Future Work</a></h4>
+<p>The paper identifies the need for further exploration in:
+- Improving the approximation accuracy for a broader range of matrices.
+- Extending the method's application to more complex machine learning models and optimization scenarios.
+- Developing more sophisticated learning algorithms for optimizing the parameters of the approximation.</p>
+<h4 id="conclusion"><a class="toclink" href="../../2024/03/14/fast-approximation-of-rotations-and-hessian-matrices/#conclusion">Conclusion</a></h4>
+<p>This work presents a significant advancement in efficiently approximating rotation and Hessian matrices, facilitating faster computations in various machine learning tasks. The method's ability to reduce computational complexity while maintaining approximation accuracy offers promising avenues for enhancing performance in high-dimensional modeling and optimization challenges.</p>
+    
   </div>
 </article>
       
@@ -461,7 +490,213 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2023-11-11 00:00:00">November 11, 2023</time></li>
+          <time datetime="2024-03-14 00:00:00">March 14, 2024</time></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              2 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="modeling-the-pressure-hessian-tensor-using-deep-neural-networks"><a class="toclink" href="../../2024/03/14/modeling-the-pressure-hessian-tensor-using-deep-neural-networks/">Modeling the pressure-Hessian tensor using deep neural networks</a></h2>
+<h4 id="basic-information"><a class="toclink" href="../../2024/03/14/modeling-the-pressure-hessian-tensor-using-deep-neural-networks/#basic-information">Basic Information</a></h4>
+<ul>
+<li><strong>Title:</strong> Modeling the pressure-Hessian tensor using deep neural networks</li>
+<li><strong>Authors:</strong> Nishant Parashar, Balaji Srinivasan, and Sawan S. Sinha</li>
+<li><strong>Affiliations:</strong> Indian Institute of Technology Delhi, New Delhi, India; Indian Institute of Technology Madras, Chennai, India</li>
+<li><strong>Publication Date:</strong> November 11, 2020</li>
+<li><strong>Journal:</strong> Physical Review Fluids 5, 114604 (2020)</li>
+<li><strong>Keywords:</strong> Turbulent flows, Pressure-Hessian tensor, Deep neural networks, Isotropic turbulence, Tensor Basis Neural Network (TBNN), Machine learning</li>
+</ul>
+<h4 id="introduction"><a class="toclink" href="../../2024/03/14/modeling-the-pressure-hessian-tensor-using-deep-neural-networks/#introduction">Introduction</a></h4>
+<p>This study focuses on modeling the pressure-Hessian tensor, a critical component in the dynamics of velocity gradients in turbulent flows. The pressure-Hessian and viscous Laplacian govern the Lagrangian evolution of velocity gradients and are challenging to model due to their nonlocal and mathematically unclosed nature. The researchers critique the limitations of the existing fluid deformation closure model (RFDM) and introduce a deep learning approach using Tensor Basis Neural Networks (TBNN) trained on high-resolution direct numerical simulation (DNS) data of isotropic turbulence.</p>
+<h4 id="contributions"><a class="toclink" href="../../2024/03/14/modeling-the-pressure-hessian-tensor-using-deep-neural-networks/#contributions">Contributions</a></h4>
+<ul>
+<li>Development and evaluation of a machine learning model using TBNN to accurately predict the pressure-Hessian tensor from velocity gradient information.</li>
+<li>Demonstrated that the proposed model captures key alignment statistics and unique coefficients of the tensor basis, providing a more sophisticated model than RFDM for the pressure Hessian without changing the velocity gradient information modeling paradigm.</li>
+<li>The approach is validated against different DNS datasets, showing its capability to generalize across isotropic turbulent flows with varying Reynolds numbers.</li>
+</ul>
+<h4 id="techniques-and-method"><a class="toclink" href="../../2024/03/14/modeling-the-pressure-hessian-tensor-using-deep-neural-networks/#techniques-and-method">Techniques and Method</a></h4>
+<p>The TBNN architecture is utilized, leveraging its robustness in mapping tensorial quantities by embedding knowledge of tensor basis and invariants into the network. This model predicts the pressure-Hessian tensor as a linear combination of the integrity basis of strain-rate and rotation-rate tensors, significantly improving the alignment statistics with strain-rate tensors across different Reynolds numbers.</p>
+<h4 id="experimental-results"><a class="toclink" href="../../2024/03/14/modeling-the-pressure-hessian-tensor-using-deep-neural-networks/#experimental-results">Experimental Results</a></h4>
+<ul>
+<li>The model was trained on isotropic turbulence data at Reynolds number 433 and tested against several datasets, including data at different Reynolds numbers and conditions.</li>
+<li>Demonstrated significant improvements in alignment statistics between predicted pressure-Hessian eigenvectors and strain-rate eigenvectors compared to RFDM.</li>
+<li>Identified ten unique coefficients of the tensor basis for an effective pressure-Hessian tensor model, with negligible variance among these coefficients, simplifying the prediction process.</li>
+</ul>
+<h4 id="limitations-and-future-work"><a class="toclink" href="../../2024/03/14/modeling-the-pressure-hessian-tensor-using-deep-neural-networks/#limitations-and-future-work">Limitations and Future Work</a></h4>
+<p>The study recognizes the need for more advanced normalization strategies and acknowledges potential limitations due to the specific focus on isotropic turbulence. Future work may explore extending the model to anisotropic turbulence and further refining the machine learning architecture for better generalization across different flow conditions.</p>
+<h4 id="conclusion"><a class="toclink" href="../../2024/03/14/modeling-the-pressure-hessian-tensor-using-deep-neural-networks/#conclusion">Conclusion</a></h4>
+<p>The paper introduces a novel, machine learning-based approach to model the pressure-Hessian tensor in isotropic turbulence, leveraging deep neural networks for improved prediction accuracy and alignment statistics. This model provides a promising direction for developing more accurate closure models for the Lagrangian velocity gradient evolution equation in turbulent flows, with potential for significant impact on computational fluid dynamics.</p>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-03-14 00:00:00">March 14, 2024</time></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              2 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="optimizing-neural-networks-with-kronecker-factored-approximate-curvature"><a class="toclink" href="../../2024/03/14/optimizing-neural-networks-with-kronecker-factored-approximate-curvature/">Optimizing Neural Networks with Kronecker-factored Approximate Curvature</a></h2>
+<h4 id="basic-information"><a class="toclink" href="../../2024/03/14/optimizing-neural-networks-with-kronecker-factored-approximate-curvature/#basic-information">Basic Information</a></h4>
+<ul>
+<li><strong>Title:</strong> Optimizing Neural Networks with Kronecker-factored Approximate Curvature</li>
+<li><strong>Authors:</strong> James Martens and Roger Grosse</li>
+<li><strong>Affiliations:</strong> University of Toronto</li>
+<li><strong>Publication Date:</strong> June 8, 2020</li>
+<li><strong>Journal:</strong> arXiv:1503.05671v7 [cs.LG]</li>
+<li><strong>Keywords:</strong> Natural gradient descent, neural network optimization, Kronecker-factored approximate curvature, Fisher information matrix, efficient training algorithms.</li>
+</ul>
+<h4 id="introduction"><a class="toclink" href="../../2024/03/14/optimizing-neural-networks-with-kronecker-factored-approximate-curvature/#introduction">Introduction</a></h4>
+<p>The paper proposes Kronecker-factored Approximate Curvature (K-FAC), an efficient method for approximating natural gradient descent in neural networks. K-FAC leverages an efficiently invertible approximation of the Fisher information matrix to produce updates that significantly accelerate optimization, offering a practical alternative to stochastic gradient descent (SGD) with momentum.</p>
+<h4 id="contributions"><a class="toclink" href="../../2024/03/14/optimizing-neural-networks-with-kronecker-factored-approximate-curvature/#contributions">Contributions</a></h4>
+<ul>
+<li>Development of K-FAC, based on a block-wise approximation of the Fisher information matrix as the Kronecker product of smaller matrices, allowing efficient inversion and application.</li>
+<li>Demonstration of K-FAC's ability to significantly speed up neural network training on standard benchmarks compared to well-tuned SGD implementations.</li>
+<li>Introduction of a sophisticated damping scheme, including factored Tikhonov regularization and adaptive damping adjustments, to manage the approximation errors and ensure stable convergence.</li>
+</ul>
+<h4 id="techniques-and-method"><a class="toclink" href="../../2024/03/14/optimizing-neural-networks-with-kronecker-factored-approximate-curvature/#techniques-and-method">Techniques and Method</a></h4>
+<p>K-FAC approximates the Fisher information matrix by partitioning it into blocks corresponding to network layers and further approximating these blocks using Kronecker products. This structure allows for efficient inversion and update computation, overcoming the computational challenges associated with natural gradient descent. The method also includes an advanced damping mechanism to address the challenges posed by the approximation, ensuring that the optimization process remains robust and converges efficiently.</p>
+<h4 id="experimental-results"><a class="toclink" href="../../2024/03/14/optimizing-neural-networks-with-kronecker-factored-approximate-curvature/#experimental-results">Experimental Results</a></h4>
+<p>K-FAC was tested against standard optimization benchmarks, demonstrating its ability to converge more quickly than SGD with momentum across a variety of neural network architectures and tasks. The experiments highlighted K-FAC's superior performance, especially in scenarios where traditional optimization methods struggle due to the ill-conditioning of the objective function.</p>
+<h4 id="limitations-and-future-work"><a class="toclink" href="../../2024/03/14/optimizing-neural-networks-with-kronecker-factored-approximate-curvature/#limitations-and-future-work">Limitations and Future Work</a></h4>
+<ul>
+<li>While K-FAC offers substantial improvements in optimization efficiency, its performance depends on the quality of the Fisher information matrix approximation. Future work could explore more accurate or adaptive approximation techniques.</li>
+<li>The current implementation of K-FAC focuses on fully connected and convolutional neural networks. Extending the approach to other types of architectures, such as recurrent neural networks, presents an avenue for further research.</li>
+<li>Investigating the integration of K-FAC with other advanced optimization techniques and learning rate schedules could yield further improvements in training efficiency and model performance.</li>
+</ul>
+<h4 id="conclusion"><a class="toclink" href="../../2024/03/14/optimizing-neural-networks-with-kronecker-factored-approximate-curvature/#conclusion">Conclusion</a></h4>
+<p>K-FAC presents a significant advancement in the optimization of neural networks, offering a practical and efficient alternative to traditional gradient descent methods. By leveraging an approximated Fisher information matrix, K-FAC accelerates convergence, enabling faster and more stable training of complex models. The method's success underscores the potential of incorporating second-order optimization information in neural network training, paving the way for further innovations in optimization algorithms.</p>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-03-14 00:00:00">March 14, 2024</time></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              2 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="sliced-score-matching-a-scalable-approach-to-density-and-score-estimation"><a class="toclink" href="../../2024/03/14/sliced-score-matching-a-scalable-approach-to-density-and-score-estimation/">Sliced Score Matching: A Scalable Approach to Density and Score Estimation</a></h2>
+<h4 id="basic-information"><a class="toclink" href="../../2024/03/14/sliced-score-matching-a-scalable-approach-to-density-and-score-estimation/#basic-information">Basic Information</a></h4>
+<ul>
+<li><strong>Title:</strong> Sliced Score Matching: A Scalable Approach to Density and Score Estimation</li>
+<li><strong>Authors:</strong> Yang Song, Sahaj Garg, Jiaxin Shi, Stefano Ermon</li>
+<li><strong>Affiliations:</strong> Stanford University; Tsinghua University</li>
+<li><strong>Abstract:</strong> The paper presents sliced score matching (SSM) as a scalable method for estimating unnormalized statistical models. SSM overcomes the challenge of computing Hessians in high-dimensional data by projecting scores onto random vectors. This method allows for the use of complex models and high-dimensional data, offering a practical solution for learning deep score estimators for implicit distributions. SSM demonstrates its effectiveness in various applications, including variational inference with implicit distributions and training Wasserstein Auto-Encoders (WAE).</li>
+</ul>
+<h4 id="introduction"><a class="toclink" href="../../2024/03/14/sliced-score-matching-a-scalable-approach-to-density-and-score-estimation/#introduction">Introduction</a></h4>
+<p>Score matching is an effective technique for learning unnormalized statistical models. However, its application has been limited to low-dimensional data due to the computational challenges associated with Hessian calculations. SSM addresses this by simplifying the calculation to Hessian-vector products, which can be efficiently implemented using reverse-mode automatic differentiation, making it suitable for complex models and high-dimensional data.</p>
+<h4 id="contributions"><a class="toclink" href="../../2024/03/14/sliced-score-matching-a-scalable-approach-to-density-and-score-estimation/#contributions">Contributions</a></h4>
+<ul>
+<li><strong>Sliced Score Matching:</strong> Introduces a method that scales to deep unnormalized models and high-dimensional data by comparing projected scores along random directions.</li>
+<li><strong>Theoretical Foundation:</strong> Proves the consistency and asymptotic normality of SSM estimators.</li>
+<li><strong>Practical Applications:</strong> Demonstrates the utility of SSM in learning deep energy-based models and providing accurate score estimates for variational inference with implicit distributions and training Wasserstein Auto-Encoders.</li>
+</ul>
+<h4 id="techniques-and-method"><a class="toclink" href="../../2024/03/14/sliced-score-matching-a-scalable-approach-to-density-and-score-estimation/#techniques-and-method">Techniques and Method</a></h4>
+<p>SSM utilizes a quadratic polynomial proxy whose Hessian is approximated through random vector projections. This approach simplifies the otherwise complex Hessian computation, enabling efficient training of deep models on large datasets. SSM also involves Hessian-vector products for calculations, which are easily implemented in modern automatic differentiation frameworks.</p>
+<h4 id="experimental-results"><a class="toclink" href="../../2024/03/14/sliced-score-matching-a-scalable-approach-to-density-and-score-estimation/#experimental-results">Experimental Results</a></h4>
+<p>SSM's performance is evaluated through experiments on deep kernel exponential families and NICE flow models, showcasing its scalability and effectiveness compared to traditional score matching and its variants. It outperforms existing methods in terms of scalability and accuracy for density estimation and score function estimation tasks.</p>
+<h4 id="conclusion"><a class="toclink" href="../../2024/03/14/sliced-score-matching-a-scalable-approach-to-density-and-score-estimation/#conclusion">Conclusion</a></h4>
+<p>SSM provides a scalable and efficient solution for estimating scores in high-dimensional spaces, facilitating the training of complex models on large datasets. Its theoretical foundation ensures consistency and asymptotic normality, making it a robust choice for learning unnormalized models and estimating score functions of implicit distributions.</p>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-03-14 00:00:00">March 14, 2024</time></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              2 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="deeponet-learning-nonlinear-operators-for-identifying-differential-equations-based-on-the-universal-approximation-theorem-of-operators"><a class="toclink" href="../../2024/03/14/deeponet-learning-nonlinear-operators-for-identifying-differential-equations-based-on-the-universal-approximation-theorem-of-operators/">DeepONet: Learning Nonlinear Operators for Identifying Differential Equations Based on the Universal Approximation Theorem of Operators</a></h2>
+<h4 id="basic-information"><a class="toclink" href="../../2024/03/14/deeponet-learning-nonlinear-operators-for-identifying-differential-equations-based-on-the-universal-approximation-theorem-of-operators/#basic-information">Basic Information</a></h4>
+<ul>
+<li><strong>Title:</strong> DeepONet: Learning Nonlinear Operators for Identifying Differential Equations Based on the Universal Approximation Theorem of Operators</li>
+<li><strong>Authors:</strong> Lu Lu, Pengzhan Jin, George Em Karniadakis</li>
+<li><strong>Publication Date:</strong> Not specified</li>
+<li><strong>Field:</strong> Computer Graphics/Deep Learning</li>
+</ul>
+<h4 id="introduction"><a class="toclink" href="../../2024/03/14/deeponet-learning-nonlinear-operators-for-identifying-differential-equations-based-on-the-universal-approximation-theorem-of-operators/#introduction">Introduction</a></h4>
+<ul>
+<li><strong>Objective:</strong> The paper introduces Deep Operator Networks (DeepONets), aimed at learning nonlinear operators to efficiently identify dynamics systems and partial differential equations from data.</li>
+<li><strong>Background:</strong> Traditional approaches in modeling dynamic systems and PDEs often require extensive computational resources and data. DeepONets propose a novel way to tackle these challenges using deep learning.</li>
+</ul>
+<h4 id="details"><a class="toclink" href="../../2024/03/14/deeponet-learning-nonlinear-operators-for-identifying-differential-equations-based-on-the-universal-approximation-theorem-of-operators/#details">Details</a></h4>
+<ul>
+<li><strong>Techniques:</strong> DeepONets consist of two sub-networks: a branch network that encodes input functions at predetermined sensor locations and a trunk network that encodes locations for the output function. This architecture is designed to leverage the universal approximation theorem of operators, facilitating the learning process.</li>
+<li><strong>Experiments:</strong> The paper showcases experiments comparing DeepONets to fully connected networks, demonstrating DeepONets' superior ability to reduce generalization errors and achieve high-order error convergence in identifying differential equations.</li>
+<li><strong>Results:</strong> Theoretical analysis and computational results indicate that the approximation error of DeepONets depends on the number of sensors and the types of input functions. These findings are supported by empirical evidence showing significant performance improvements over traditional methods.</li>
+</ul>
+<h4 id="conclusion"><a class="toclink" href="../../2024/03/14/deeponet-learning-nonlinear-operators-for-identifying-differential-equations-based-on-the-universal-approximation-theorem-of-operators/#conclusion">Conclusion</a></h4>
+<ul>
+<li><strong>Contributions:</strong> The paper successfully demonstrates the potential of DeepONets in revolutionizing the way dynamic systems and PDEs are modeled and solved, offering a significant reduction in computational cost and an increase in efficiency.</li>
+<li><strong>Insights:</strong> The proposed framework highlights the importance of learning nonlinear operators in the context of differential equations and sets a new standard for research in this area. The findings suggest a promising direction for future research, especially in terms of refining the network architecture and exploring its applications in more complex systems.</li>
+</ul>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2023-12-21 00:00:00">December 21, 2023</time></li>
         
         
           
@@ -476,55 +711,36 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="basic-information"><a class="toclink" href="../../2023/11/11/flowfixer-using-bfecc-for-fluid-simulation/">Basic Information:</a></h2>
+    <h2 id="basic-information"><a class="toclink" href="../../2023/12/21/iq-mpm-an-interface-quadrature-material-point-method-for-non-sticky-strongly-two-way-coupled-nonlinear-solids-and-fluids/">Basic Information:</a></h2>
 <ul>
-<li>Title: FlowFixer: Using BFECC for Fluid Simulation (流体模拟中的FlowFixer: 使用BFECC方法)</li>
-<li>Authors: ByungMoon Kim, Yingjie Liu, Ignacio Llamas, Jarek Rossignac</li>
-<li>Affiliation: Georgia Institute of Technology (佐治亚理工学院)</li>
-<li>Keywords: BFECC, fluid simulation, advection, level set method, velocity, smoke density, image advection (BFECC, 流体模拟, 平流, 水平集方法, 速度, 烟密度, 图像平流)</li>
-<li>URLs: <a href="https://www.researchgate.net/publication/221314833">ResearchGate</a>, [GitHub: None]</li>
+<li>Title: IQ-MPM: An Interface Quadrature Material Point Method for Non-sticky Strongly Two-Way Coupled Nonlinear Solids and Fluids (IQ-MPM: 一种界面积分材料点法，用于非粘弹性固体和流体的强耦合双向耦合)</li>
+<li>Authors: Yu Fang, Ziyin Qu, Minchen Li, Xinxin Zhang, Yixin Zhu, Mridul Aanjaneya, and Chenfanfu Jiang</li>
+<li>Affiliation: University of Pennsylvania (宾夕法尼亚大学)</li>
+<li>Keywords: Fluids, numerical methods, MPM, Fluid-structure interaction</li>
+<li>URLs: <a href="https://doi.org/10.1145/3386569.3392438">Paper</a>, <a href="https://github.com/">GitHub: None</a></li>
 </ul>
-<h2 id="_1"><a class="toclink" href="../../2023/11/11/flowfixer-using-bfecc-for-fluid-simulation/#_1">论文简要 :</a></h2>
+<h2 id="_1"><a class="toclink" href="../../2023/12/21/iq-mpm-an-interface-quadrature-material-point-method-for-non-sticky-strongly-two-way-coupled-nonlinear-solids-and-fluids/#_1">论文简要 :</a></h2>
 <ul>
-<li>本文介绍了一种名为BFECC的方法，用于减少流体模拟中的耗散和扩散问题，并应用于速度、烟密度和图像平流等多种平流步骤。该方法在空间和时间上提供了二阶精度，并通过与变密度投影相结合，实现了逼真的两相流体动画效果。</li>
+<li>本研究提出了一种新颖的方案，用于模拟非粘弹性固体和不可压缩流体之间的双向耦合相互作用，通过界面积分材料点法（IQ-MPM），成功解决了传统MPM在处理多材料界面时的粘滞问题。</li>
 </ul>
-<h2 id="_2"><a class="toclink" href="../../2023/11/11/flowfixer-using-bfecc-for-fluid-simulation/#_2">背景信息:</a></h2>
+<h2 id="_2"><a class="toclink" href="../../2023/12/21/iq-mpm-an-interface-quadrature-material-point-method-for-non-sticky-strongly-two-way-coupled-nonlinear-solids-and-fluids/#_2">背景信息:</a></h2>
 <ul>
-<li>论文背景: 流体模拟涉及多个计算步骤，包括扩散、平流和压力投影。本文主要探讨流体模拟中的四种平流形式：速度、烟密度、图像和水平集平流。</li>
-<li>过去方案: 过去的方法中，一阶半拉格朗日方法在计算简单性方面具有优势，但存在较大的数值扩散和耗散问题。因此，需要更高阶的方法来解决这些问题。</li>
-<li>论文的Motivation: 本文提出了BFECC方法，通过将其添加到一阶半拉格朗日方法中，可以提高其空间和时间精度，减少速度阻尼和烟密度稀释，并在多种平流步骤中展示了其优势。</li>
+<li>论文背景: 现代应用中需要快速的固体-流体耦合方法，以模拟丰富的物理相互作用，如虚拟手术、数字制造和软体机器人等。</li>
+<li>过去方案: 传统的分离方案在稳定性方面存在问题，需要较小的时间步长；而单体方案则需要外部迭代以解决非线性问题，计算成本较高。</li>
+<li>论文的Motivation: 鉴于现有方法的局限性，研究人员提出了一种新颖的界面积分材料点法，旨在解决传统MPM在处理多材料界面时的粘滞问题，从而实现更稳定和高效的固体-流体耦合模拟。</li>
 </ul>
-<h2 id="_3"><a class="toclink" href="../../2023/11/11/flowfixer-using-bfecc-for-fluid-simulation/#_3">方法:</a></h2>
+<h2 id="_3"><a class="toclink" href="../../2023/12/21/iq-mpm-an-interface-quadrature-material-point-method-for-non-sticky-strongly-two-way-coupled-nonlinear-solids-and-fluids/#_3">方法:</a></h2>
 <ul>
 <li>a. 理论背景:</li>
-<li>BFECC方案可用于改善流体模拟。在使用BFECC进行水平集平流时，需要进行重新分配以保持水平集函数作为有符号距离函数。这可以通过求解重新分配方程来实现，该方程涉及重新分配的速度向量。重新分配方程可以使用一阶上风或半拉格朗日样式积分来求解。然而，将重新分配的积分公式与BFECC结合使用可能会导致从二阶精确的BFECC计算得到的良好水平集值的退化。为了解决这个问题，提出了一种简单的重新分配方法，该方法在接口附近关闭重新分配以保持良好的水平集值。这种简单的重新分配方法对于保持体积至关重要，并且易于实现。它只需要在满足某些条件的网格点处进行重新分配，例如当网格点不靠近界面或斜率足够高时。</li>
+<li>本文提出了一种名为IQ-MPM的新颖方案，用于模拟非线性弹性固体和不可压缩流体之间的双向耦合相互作用。该方法的关键是通过弱形式处理强耦合的非线性弹性体和不可压缩流体的幽灵矩阵算子分裂方案。该方案允许在CFL极限下处理大时间步长的稳定和高效，并且即使对于高度非线性的弹性固体，也使用单一的整体求解来处理耦合压力场。该方案采用材料点法（MPM）设计，保持了与混合拉格朗日-欧拉流体求解器的离散一致性。该方案还采用界面积分（IQ）离散化来支持自由滑移边界条件，在固体-流体界面处支持不连续的切向速度。IQ-MPM框架完全基于粒子，避免了中间水平集或显式网格表示所带来的复杂性。该方案的有效性通过各种具有挑战性的流体-弹性体相互作用模拟得到验证。</li>
 <li>b. 技术路线:</li>
-<li>使用BFECC方案进行水平集平流。</li>
-<li>解决重新分配方程，其中包括重新分配的速度向量。</li>
-<li>使用一阶上风或半拉格朗日样式积分来求解重新分配方程。</li>
-<li>将重新分配的积分公式与BFECC结合使用。</li>
+<li>该方法称为界面积分材料点法（IQ-MPM），是一种整体的双向耦合方法，将材料点法（MPM）用于非线性可压弹性和不可压自由表面流体。该方法确保了具有不连续切向速度的自由滑移界面，避免了多材料相互作用中常见的数值粘滞性伪影。</li>
+<li>该方法包括几个步骤。首先，将固体连续体视为超弹性固体组件和类似空气的无质量幽灵矩阵连续体的组合。将固体与流体的相互作用重新构造为矩阵与流体之间的仅压力相互作用。</li>
+<li>接下来，假设无粘性的不可压缩流体域。使用不可压缩性假设和滑移边界的压力来求解流体方程。</li>
+<li>为了解决完全耦合的系统，该方法采用算子分裂。使用完全非线性的牛顿求解来推进固体速度，忽略矩阵和流体。然后，固体速度替换完全线性耦合方程中的原始速度。</li>
+<li>该方法还包括对系统</li>
 </ul>
-<h2 id="_4"><a class="toclink" href="../../2023/11/11/flowfixer-using-bfecc-for-fluid-simulation/#_4">结果:</a></h2>
-<ul>
-<li>a. 详细的实验设置:</li>
-<li>实验中使用BFECC方案进行水平集平流。</li>
-<li>解决重新分配方程，其中包括重新分配的速度向量。</li>
-<li>使用一阶上风或半拉格朗日样式积分来求解重新分配方程。</li>
-<li>在接口附近关闭重新分配以保持良好的水平集值。</li>
-<li>b. 详细的实验结果:</li>
-<li>实验结果表明，使用BFECC方案进行水平集平流时，通过关闭接口附近的重新分配，可以保持良好的水平集值。</li>
-<li>这种简单的重新分配方法对于保持体积至关重要，并且易于实现。</li>
-<li>实验结果还表明，在满足某些条件的网格点处进行重新分配，例如当网格点不靠近界面或斜率足够高时，可以有效地实现重新分配。</li>
-</ul>
-<h2 id="note"><a class="toclink" href="../../2023/11/11/flowfixer-using-bfecc-for-fluid-simulation/#note">Note:</a></h2>
-<ul>
-<li>本总结源自于LLM的总结，请注意数据判别. Power by ChatPaper. End.</li>
-</ul>
-    <nav class="md-post__action">
-      <a href="../../2023/11/11/flowfixer-using-bfecc-for-fluid-simulation/">
-        Continue reading
-      </a>
-    </nav>
+    
   </div>
 </article>
       
@@ -534,7 +750,7 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2023-11-06 00:00:00">November 6, 2023</time></li>
+          <time datetime="2023-11-18 00:00:00">November 18, 2023</time></li>
         
         
           
@@ -549,14 +765,16 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="differentiable-fluids-with-solid-coupling-for-learning-and-control"><a class="toclink" href="../../2023/11/06/differentiable-fluids-with-solid-coupling-for-learning-and-control/">Differentiable Fluids with Solid Coupling for Learning and Control</a></h2>
-<p>本文提出了一种高效的可微分流体模拟器，可以与深度神经网络集成，作为学习动力学和解决控制问题的一部分。通过使用变分原理，该模拟器能够处理流体与刚体物体的<strong>单向耦合</strong>，并在流体-固体界面上自然地施加必要的边界条件。通过应用伴随方法，该模拟器能够高效地计算多个时间步长的流体模拟的梯度，并在解决涉及单向耦合固体的逆问题和控制问题时表现出比先前的梯度计算、无导数优化和无模型强化学习技术至少高一个数量级的性能。</p>
+    <h2 id="bfemp-interpenetration-free-mpm-fem-coupling-with-barrier-contact"><a class="toclink" href="../../2023/11/18/bfemp-interpenetration-free-mpm-fem-coupling-with-barrier-contact/">BFEMP: Interpenetration-Free MPM-FEM Coupling with Barrier Contact</a></h2>
+<p>本文提出了BFEMP方法，通过使用变分时间步长公式和基于障碍能的粒子-网格摩擦接触，实现了无缝耦合的材料点法（MPM）和有限元法（FEM）。该方法采用修正的线搜索牛顿法，严格防止材料点穿透FEM域，确保收敛性和可行性，无论时间步长大小或网格分辨率如何。该耦合方案还可用于在FEM域中所有节点位移都由Dirichlet边界条件指定时，施加可分离的摩擦运动边界。通过实验证明了该方法的鲁棒性和准确性。</p>
 
-    <nav class="md-post__action">
-      <a href="../../2023/11/06/differentiable-fluids-with-solid-coupling-for-learning-and-control/">
-        Continue reading
-      </a>
-    </nav>
+    
+      <nav class="md-post__action">
+        <a href="../../2023/11/18/bfemp-interpenetration-free-mpm-fem-coupling-with-barrier-contact/">
+          Continue reading
+        </a>
+      </nav>
+    
   </div>
 </article>
       
@@ -566,7 +784,7 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2023-11-06 00:00:00">November 6, 2023</time></li>
+          <time datetime="2023-11-18 00:00:00">November 18, 2023</time></li>
         
         
           
@@ -581,14 +799,10 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="rethinking-optimization-with-differentiable-simulation-from-a-global-perspective"><a class="toclink" href="../../2023/11/06/rethinking-optimization-with-differentiable-simulation-from-a-global-perspective/">Rethinking Optimization with Differentiable Simulation from a Global Perspective</a></h2>
-<p>本研究从全局视角重新思考了可微分仿真优化，针对接触丰富的场景提出了一种结合贝叶斯优化和半局部搜索的方法，通过有效利用梯度并在具有噪声梯度的区域保持鲁棒性，取得了优于其他基于梯度和无梯度的方法的结果。</p>
+    <h2 id="23-interactive-design-of-2d-car-profiles-with-aerodynamic-feedback"><a class="toclink" href="../../2023/11/18/23-interactive-design-of-2d-car-profiles-with-aerodynamic-feedback/">23-Interactive-Design-of-2D-car-profiles-with-aerodynamic-feedback</a></h2>
+<p>汽车造型的设计需要在美学和性能之间取得微妙的平衡。已经开发了一个交互式系统，以帮助设计人员创建空气动力学汽车轮廓。该系统使用神经代理模型来预测汽车形状周围的流体流动，为设计人员提供流体可视化和形状优化反馈。该模型根据来自多个预先计算的仿真的即时观测结果进行训练，从而可以对动态流特征进行可视化和优化。该模型支持在已知的汽车配置文件潜在空间内进行基于梯度的形状优化，允许以位图形式输入和输出汽车配置文件。此外，该模型支持逐点查询汽车形状周围的流体特性，从而可以根据应用需求调整计算成本。</p>
 
-    <nav class="md-post__action">
-      <a href="../../2023/11/06/rethinking-optimization-with-differentiable-simulation-from-a-global-perspective/">
-        Continue reading
-      </a>
-    </nav>
+    
   </div>
 </article>
       
@@ -598,7 +812,7 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2023-11-06 00:00:00">November 6, 2023</time></li>
+          <time datetime="2023-11-18 00:00:00">November 18, 2023</time></li>
         
         
           
@@ -613,14 +827,16 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="differentiable-position-based-simulation-of-compliant-constraint-dynamics"><a class="toclink" href="../../2023/11/06/differentiable-position-based-simulation-of-compliant-constraint-dynamics/">Differentiable Position-Based Simulation of Compliant Constraint Dynamics</a></h2>
-<p>本文提出了一种全面可微分的求解器，可以通过计算目标函数的梯度来获得与所需参数相关的梯度，从而实现目标函数的最小化。作者通过优化身体形状和姿势，仅通过观察服装，优化时间变化的外部力序列，以及弹性布料和体积材料参数估计等示例，展示了该方法的有效性和高效性。</p>
+    <h2 id="an-optimization-based-sph-solver-for-simulation-of-hyperelastic-solids"><a class="toclink" href="../../2023/11/18/an-optimization-based-sph-solver-for-simulation-of-hyperelastic-solids/">An Optimization-based SPH Solver for Simulation of Hyperelastic Solids</a></h2>
+<p>本文提出了一种基于优化的SPH求解器，用于模拟超弹性固体。通过将隐式积分方案转化为优化问题，并使用通用的拟牛顿方法进行求解，实现了对不同类型的超弹性材料（如Neo-Hookean和St. Venant-Kirchoff模型）的模拟。实验结果表明，该方法在SPH框架中能够稳定高效地模拟复杂材料，并简化了不同材料之间的耦合和碰撞处理。</p>
 
-    <nav class="md-post__action">
-      <a href="../../2023/11/06/differentiable-position-based-simulation-of-compliant-constraint-dynamics/">
-        Continue reading
-      </a>
-    </nav>
+    
+      <nav class="md-post__action">
+        <a href="../../2023/11/18/an-optimization-based-sph-solver-for-simulation-of-hyperelastic-solids/">
+          Continue reading
+        </a>
+      </nav>
+    
   </div>
 </article>
       
@@ -630,7 +846,7 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2023-11-06 00:00:00">November 6, 2023</time></li>
+          <time datetime="2023-11-18 00:00:00">November 18, 2023</time></li>
         
         
           
@@ -645,148 +861,16 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="differentiable-physics-simulations-with-contacts-do-they-have-correct-gradients-wrt-position-velocity-and-control"><a class="toclink" href="../../2023/11/06/differentiable-physics-simulations-with-contacts-do-they-have-correct-gradients-wrt-position-velocity-and-control/">Differentiable Physics Simulations with Contacts: Do They Have Correct Gradients w.r.t. Position, Velocity and Control?</a></h2>
-<p>本研究探讨了可微分物理模拟中不同接触模型对位置、速度和控制的梯度计算的正确性，并通过比较模拟计算的梯度与解析梯度的结果，揭示了当前可微分模拟器的局限性，并为开发更可靠的物理模拟器提供了新的研究机会。</p>
+    <h2 id="second-order-finite-elements-for-deformable-surfaces"><a class="toclink" href="../../2023/11/18/second-order-finite-elements-for-deformable-surfaces/">Second-Order Finite Elements for Deformable Surfaces</a></h2>
+<p>本文提出了一种用于变形表面的计算框架，采用二阶三角形有限元对平面初始形状进行模拟。该方法在二阶有限元的框架中开发了离散化拉伸、剪切和弯曲能量的数值方案，并引入了一种新的离散化方案来近似曲面上的平均曲率。此外，该框架还集成了一种支持双向耦合的虚拟节点有限元方案，无需昂贵的重新网格化即可支持切割单元弹性杆的耦合。通过与传统的线性和高阶有限元方法进行比较，我们展示了该方法在低分辨率网格、各向异性三角剖分和刚性材料等多个具有挑战性的场景中的优势。最后，我们展示了该框架在布料模拟、混合折纸和剪纸以及生物启发式软翼模拟等多个应用中的应用。</p>
 
-    <nav class="md-post__action">
-      <a href="../../2023/11/06/differentiable-physics-simulations-with-contacts-do-they-have-correct-gradients-wrt-position-velocity-and-control/">
-        Continue reading
-      </a>
-    </nav>
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
     
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2023-11-06 00:00:00">November 6, 2023</time></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="multi-layer-thick-shells"><a class="toclink" href="../../2023/11/06/multi-layer-thick-shells/">Multi-Layer Thick Shells</a></h2>
-<p>实现了Thick Shell的模拟，实现了一定的褶皱，并且提出了一个交替方法来快速求解。</p>
-<ol>
-<li>Reduced Prism Elements：三棱柱+中轴面建模 <strong>Thick</strong> Shell ⇒ 解决 Shell Locking</li>
-<li>Complementary Wrinkle Coupling：褶皱耦合系统</li>
-<li>Alternating Minimization：交替最小化，先固定低频信息（PN+Cholesky）、再处理高频信息（PN+CG）。</li>
-</ol>
-<p>例子：瑜伽垫、皮衣、记忆枕等</p>
-
-    <nav class="md-post__action">
-      <a href="../../2023/11/06/multi-layer-thick-shells/">
-        Continue reading
-      </a>
-    </nav>
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
+      <nav class="md-post__action">
+        <a href="../../2023/11/18/second-order-finite-elements-for-deformable-surfaces/">
+          Continue reading
+        </a>
+      </nav>
     
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2023-11-05 00:00:00">November 5, 2023</time></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="sim-differentiable-simulation-for-system-identification-and-visuomotor-control"><a class="toclink" href="../../2023/11/05/sim-differentiable-simulation-for-system-identification-and-visuomotor-control/">∇Sim: Differentiable simulation for system identification and visuomotor control</a></h2>
-<p>本文提出了一种名为 ∇Sim 的可微分仿真框架，通过结合可微分多物理仿真和可微分渲染，<strong>从图像序列中直接估计物体的物理属性</strong>，解决了系统识别问题和视觉运动控制问题。</p>
-
-    <nav class="md-post__action">
-      <a href="../../2023/11/05/sim-differentiable-simulation-for-system-identification-and-visuomotor-control/">
-        Continue reading
-      </a>
-    </nav>
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2023-11-05 00:00:00">November 5, 2023</time></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="chainqueen-a-real-time-differentiable-physical-simulator-for-soft-robotics"><a class="toclink" href="../../2023/11/05/chainqueen-a-real-time-differentiable-physical-simulator-for-soft-robotics/">ChainQueen: A Real-Time Differentiable Physical Simulator for Soft Robotics</a></h2>
-<p>本文提出了一种用于软体机器人的实时可微分物理模拟器ChainQueen，基于Moving Least Squares Material Point Method (MLS-MPM)，能够高精度地进行前向模拟和反向梯度计算，并成功应用于软体机器人的控制任务。</p>
-
-    <nav class="md-post__action">
-      <a href="../../2023/11/05/chainqueen-a-real-time-differentiable-physical-simulator-for-soft-robotics/">
-        Continue reading
-      </a>
-    </nav>
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2023-11-05 00:00:00">November 5, 2023</time></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="single-level-differentiable-contact-simulation"><a class="toclink" href="../../2023/11/05/single-level-differentiable-contact-simulation/">Single-Level Differentiable Contact Simulation</a></h2>
-<p>本文提出了一种单层可微分刚体接触动力学的表达方式，用于表示由<strong>凸多面体</strong>组成的物体和机器人。通过将<strong>接触仿真和碰撞检测结合为一个统一的单层优化问题</strong>，解决了传统物理引擎和最新的优化方法在现实接触仿真场景中的问题。通过在机器人操作任务中的应用，证明了该方法的可行性和优越性能。</p>
-
-    <nav class="md-post__action">
-      <a href="../../2023/11/05/single-level-differentiable-contact-simulation/">
-        Continue reading
-      </a>
-    </nav>
   </div>
 </article>
       
@@ -797,7 +881,7 @@
 
 
 <nav class="md-pagination">
-  <a class="md-pagination__link" href="../../">1</a> <span class="md-pagination__current">2</span> <a class="md-pagination__link" href="../3/">3</a> <a class="md-pagination__link" href="../4/">4</a> <a class="md-pagination__link" href="../5/">5</a>
+  <a class="md-pagination__link" href="../../">1</a> <span class="md-pagination__current">2</span> <a class="md-pagination__link" href="../3/">3</a> <a class="md-pagination__link" href="../4/">4</a> <span class="md-pagination__dots">..</span> <a class="md-pagination__link" href="../7/">7</a>
 </nav>
         
       
@@ -805,6 +889,7 @@
   </div>
 
           
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
       </main>
@@ -833,10 +918,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "navigation.tabs"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "navigation.tabs"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.6c14ae12.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
